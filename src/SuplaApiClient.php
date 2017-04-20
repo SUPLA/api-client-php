@@ -287,22 +287,22 @@ class SuplaApiClient {
         return $this->getResult('/iodevices/' . $devid);
     }
 
-    public function temperatureLog_ItemCount($channelid) {
+    public function temperatureLogItemCount($channelid) {
 
         return $this->getResult('/channels/' . $channelid . '/temperature-log-count');
     }
 
-    public function temperatureLog_GetItems($channelid, $offset = 0, $limit = 0) {
+    public function temperatureLogGetItems($channelid, $offset = 0, $limit = 0) {
 
         return $this->getResult('/channels/' . $channelid . '/temperature-log-items?offset=' . $offset . '&limit=' . $limit);
     }
 
-    public function temperatureAndHumidityLog_ItemCount($channelid) {
+    public function temperatureAndHumidityLogItemCount($channelid) {
 
         return $this->getResult('/channels/' . $channelid . '/temperature-and-humidity-count');
     }
 
-    public function temperatureAndHumidityLog_GetItems($channelid, $offset = 0, $limit = 0) {
+    public function temperatureAndHumidityLogGetItems($channelid, $offset = 0, $limit = 0) {
 
         return $this->getResult('/channels/' . $channelid . '/temperature-and-humidity-items?offset=' . $offset . '&limit=' . $limit);
     }
@@ -312,7 +312,7 @@ class SuplaApiClient {
         return $this->getResult('/channels/' . $channelid);
     }
 
-    public function channel_SetRGBW($channelid, $color, $color_brightness, $brightness) {
+    public function channelSetRGBW($channelid, $color, $color_brightness, $brightness) {
 
         $data = ['color' => $color,
             'color_brightness' => $color_brightness,
@@ -321,7 +321,7 @@ class SuplaApiClient {
         return $this->put('/channels/' . $channelid, $data);
     }
 
-    public function channel_SetRGB($channelid, $color, $color_brightness) {
+    public function channelSetRGB($channelid, $color, $color_brightness) {
 
         $data = ['color' => $color,
             'color_brightness' => $color_brightness];
@@ -329,47 +329,45 @@ class SuplaApiClient {
         return $this->put('/channels/' . $channelid, $data);
     }
 
-    public function channel_SetBrightness($channelid, $brightness) {
+    public function channelSetBrightness($channelid, $brightness) {
 
         $data = ['brightness' => $brightness];
 
         return $this->put('/channels/' . $channelid, $data);
     }
 
-    public function channel_TurnOn($channelid) {
+    public function channelTurnOn($channelid) {
 
         return $this->patch('/channels/' . $channelid, ['action' => 'turn-on']);
     }
 
-    public function channel_TurnOff($channelid) {
+    public function channelTurnOff($channelid) {
 
         return $this->patch('/channels/' . $channelid, ['action' => 'turn-off']);
     }
 
-    public function channel_Open($channelid) {
+    public function channelOpen($channelid) {
 
         return $this->patch('/channels/' . $channelid, ['action' => 'open']);
     }
 
-    public function channel_OpenClose($channelid) {
+    public function channelOpenClose($channelid) {
 
         return $this->patch('/channels/' . $channelid, ['action' => 'open-close']);
     }
 
-    public function channel_Shut($channelid, $percent = 100) {
+    public function channelShut($channelid, $percent = 100) {
 
         return $this->patch('/channels/' . $channelid, ['action' => 'shut', 'percent' => $percent]);
     }
 
-    public function channel_Reveal($channelid, $percent = 100) {
+    public function channelReveal($channelid, $percent = 100) {
 
         return $this->patch('/channels/' . $channelid, ['action' => 'reveal', 'percent' => $percent]);
     }
 
-    public function channel_Stop($channelid) {
+    public function channelStop($channelid) {
 
         return $this->patch('/channels/' . $channelid, ['action' => 'stop']);
     }
 }
-
-;

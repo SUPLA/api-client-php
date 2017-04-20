@@ -51,9 +51,7 @@ class SuplaApiClient {
         $result = false;
         $access_token = null;
 
-        if ($bearer
-            && ($access_token = $this->getAccessToken()) == ''
-        ) {
+        if ($bearer && ($access_token = $this->getAccessToken()) == '') {
             return false;
         }
 
@@ -112,28 +110,19 @@ class SuplaApiClient {
     }
 
     private function tokenRequest() {
-
         $params = ["client_id" => $this->clientId,
             "client_secret" => $this->secret,
             "grant_type" => 'password',
             "username" => $this->username,
             "password" => $this->password];
-
         $result = $this->remoteRequest($params, '/oauth/v2/token');
-
-        if ($result !== false
-            && @$result->token_type == 'bearer'
-        ) {
+        if ($result !== false && @$result->token_type == 'bearer') {
             $result->expires_in = time() + intval(@$result->expires_in);
             $this->token = $result;
-
             return true;
-        } elseif ($result === false
-            && $this->last_error === null
-        ) {
+        } elseif ($result === false && $this->last_error === null) {
             $this->setLastError('Unknown error');
         }
-
         $this->token = null;
         return false;
     }
@@ -143,11 +132,9 @@ class SuplaApiClient {
     }
 
     private function getAccessToken() {
-
         if ($this->accessTokenExists() == false) {
             $this->tokenRequest();
         }
-
         return @$this->token->access_token;
     }
 
@@ -158,77 +145,46 @@ class SuplaApiClient {
     }
 
     private function apiGET($path, $data = null) {
-
         if (is_array($data)) {
             foreach ($data as $value) {
                 $path .= '/' . urlencode($value);
             }
         }
-
         $result = $this->remoteRequest(null, $path, 'GET', true);
-
-        if ($result !== false) {
-            return $result;
-        }
-
-        return false;
+        return $result;
     }
 
     private function apiP($path, $method, $data = null) {
-
         $result = $this->remoteRequest($data, $path, $method, true);
-
         if ($result !== false) {
             return @$result->data;
         }
-
         return false;
     }
 
-    private function apiPOST($path, $data = null) {
-
-        return $this->apiP($path, 'POST', $data);
-    }
-
     private function apiPUT($path, $data = null) {
-
         return $this->apiP($path, 'PUT', $data);
     }
 
     private function apiPATCH($path, $data = null) {
-
         return $this->apiP($path, 'PATCH', $data);
     }
 
     private function getResult($path) {
-
         $result = $this->apiGET('/api' . $path);
         $this->autoLogout();
-
-        return $result;
-    }
-
-    private function post($path, $data = null) {
-
-        $result = $this->apiPOST('/api' . $path, $data);
-        $this->autoLogout();
-
         return $result;
     }
 
     private function put($path, $data = null) {
-
         $result = $this->apiPUT('/api' . $path, $data);
         $this->autoLogout();
-
         return $result;
     }
 
     private function patch($path, $data = null) {
-
         $result = $this->apiPATCH('/api' . $path, $data);
         $this->autoLogout();
-
         return $result;
     }
 
@@ -254,120 +210,95 @@ class SuplaApiClient {
     }
 
     public function logout() {
-
         if ($this->accessTokenExists()) {
             $this->apiGET('/api/logout', [@$this->token->refresh_token]);
         }
-
         $this->token = null;
     }
 
     public function getServerInfo() {
-
         return $this->getResult('/server-info');
     }
 
     public function locations() {
-
         return $this->getResult('/locations');
     }
 
     public function accessIDs() {
-
         return $this->getResult('/accessids');
     }
 
     public function ioDevices() {
-
         return $this->getResult('/iodevices');
     }
 
     public function ioDevice($devid) {
-
         return $this->getResult('/iodevices/' . $devid);
     }
 
     public function temperatureLogItemCount($channelid) {
-
         return $this->getResult('/channels/' . $channelid . '/temperature-log-count');
     }
 
     public function temperatureLogGetItems($channelid, $offset = 0, $limit = 0) {
-
         return $this->getResult('/channels/' . $channelid . '/temperature-log-items?offset=' . $offset . '&limit=' . $limit);
     }
 
     public function temperatureAndHumidityLogItemCount($channelid) {
-
         return $this->getResult('/channels/' . $channelid . '/temperature-and-humidity-count');
     }
 
     public function temperatureAndHumidityLogGetItems($channelid, $offset = 0, $limit = 0) {
-
         return $this->getResult('/channels/' . $channelid . '/temperature-and-humidity-items?offset=' . $offset . '&limit=' . $limit);
     }
 
     public function channel($channelid) {
-
         return $this->getResult('/channels/' . $channelid);
     }
 
     public function channelSetRGBW($channelid, $color, $color_brightness, $brightness) {
-
         $data = ['color' => $color,
             'color_brightness' => $color_brightness,
             'brightness' => $brightness];
-
         return $this->put('/channels/' . $channelid, $data);
     }
 
     public function channelSetRGB($channelid, $color, $color_brightness) {
-
         $data = ['color' => $color,
             'color_brightness' => $color_brightness];
-
         return $this->put('/channels/' . $channelid, $data);
     }
 
     public function channelSetBrightness($channelid, $brightness) {
-
         $data = ['brightness' => $brightness];
-
         return $this->put('/channels/' . $channelid, $data);
     }
 
     public function channelTurnOn($channelid) {
-
         return $this->patch('/channels/' . $channelid, ['action' => 'turn-on']);
     }
 
     public function channelTurnOff($channelid) {
-
         return $this->patch('/channels/' . $channelid, ['action' => 'turn-off']);
     }
 
     public function channelOpen($channelid) {
-
         return $this->patch('/channels/' . $channelid, ['action' => 'open']);
     }
 
     public function channelOpenClose($channelid) {
-
         return $this->patch('/channels/' . $channelid, ['action' => 'open-close']);
     }
 
     public function channelShut($channelid, $percent = 100) {
-
         return $this->patch('/channels/' . $channelid, ['action' => 'shut', 'percent' => $percent]);
     }
 
     public function channelReveal($channelid, $percent = 100) {
-
         return $this->patch('/channels/' . $channelid, ['action' => 'reveal', 'percent' => $percent]);
     }
 
     public function channelStop($channelid) {
-
         return $this->patch('/channels/' . $channelid, ['action' => 'stop']);
     }
 }

@@ -1,0 +1,11 @@
+{
+    "name": "supla/api-client",
+    "autoload": {
+        "psr-0" : {
+            "Supla" : "src"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    }
+}

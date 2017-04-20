@@ -1,11 +1,17 @@
 {
-    "name": "supla/api-client",
-    "autoload": {
-        "psr-0" : {
-            "Supla" : "src"
-        }
-    },
-    "require": {
-        "guzzlehttp/guzzle": "^6.2"
+  "name": "supla/api-client",
+  "autoload": {
+    "psr-4": {
+      "Supla\\ApiClient\\": "src"
     }
+  },
+  "require": {
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^2.8"
+  },
+  "scripts": {
+    "phpcs": "phpcs src --standard=phpcs-rules.xml",
+    "phpcbf": "phpcbf src --standard=phpcs-rules.xml"
+  }
 }

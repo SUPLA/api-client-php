@@ -28,8 +28,9 @@ class SuplaApiClient {
     protected $token;
     protected $auto_logout;
     protected $last_error;
+    private $sslVerify;
 
-    public function __construct($server_params, $auto_logout = true, $debug = false) {
+    public function __construct($server_params, $auto_logout = true, $debug = false, $sslVerify = true) {
         $this->server = $server_params['server'];
         $this->clientId = $server_params['clientId'];
         $this->secret = $server_params['secret'];
@@ -37,6 +38,7 @@ class SuplaApiClient {
         $this->password = $server_params['password'];
 
         $this->debug = $debug;
+        $this->sslVerify = $sslVerify;
         $this->token = null;
         $this->auto_logout = $auto_logout;
     }
@@ -84,7 +86,10 @@ class SuplaApiClient {
         }
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        if (!$this->sslVerify) {
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        }
         $cresult = curl_exec($ch);
         $result = false;
 
@@ -103,6 +108,7 @@ class SuplaApiClient {
         if ($this->debug) {
             var_dump($cresult);
             var_dump($result);
+            echo $this->getLastError() . PHP_EOL;
         }
 
         curl_close($ch);

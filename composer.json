@@ -6,6 +6,7 @@
     }
   },
   "require": {
+    "ext-curl": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8"

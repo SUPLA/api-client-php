@@ -42,4 +42,3 @@ $api = new \SuplaApi\Client\SuplaApi(
 $user = $api->users()->getCurrentUser();
 echo $user->getEmail();
 $api->users()->editCurrentUser(new \Swagger\Client\Model\Body(['action' => \Swagger\Client\Model\Body::ACTION_CHANGEPASSWORD]));
-

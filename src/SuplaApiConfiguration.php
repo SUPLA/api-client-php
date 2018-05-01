@@ -17,7 +17,6 @@
 
 namespace SuplaApi\Client;
 
-
 use Swagger\Client\Configuration;
 
 class SuplaApiConfiguration extends Configuration {

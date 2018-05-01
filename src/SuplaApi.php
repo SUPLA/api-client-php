@@ -31,7 +31,10 @@ class SuplaApi {
         if ($this->token) {
             return $this->token;
         }
-        $response = $this->httpClient->post($this->server . '/oauth/v2/token', [\GuzzleHttp\RequestOptions::JSON => $this->tokenRequestData]);
+        $response = $this->httpClient->post(
+            $this->server . '/oauth/v2/token',
+            [\GuzzleHttp\RequestOptions::JSON => $this->tokenRequestData]
+        );
         $response = json_decode($response->getBody(), true);
         return $this->token = $response['access_token'];
     }

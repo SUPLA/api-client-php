@@ -901,6 +901,7 @@
       "get" : {
         "tags" : [ "Server" ],
         "summary" : "Get the SUPLA Server status",
+        "operationId" : "getSuplaServerStatus",
         "parameters" : [ ],
         "responses" : {
           "200" : {
@@ -916,7 +917,8 @@
     "/server-info" : {
       "get" : {
         "tags" : [ "Server" ],
-        "summary" : "Get server status",
+        "summary" : "Get server info",
+        "operationId" : "getServerInfo",
         "parameters" : [ ],
         "responses" : {
           "200" : {

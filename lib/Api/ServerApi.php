@@ -88,35 +88,35 @@ class ServerApi
     }
 
     /**
-     * Operation serverInfoGet
+     * Operation getServerInfo
      *
-     * Get server status
+     * Get server info
      *
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ServerInfo
      */
-    public function serverInfoGet()
+    public function getServerInfo()
     {
-        list($response) = $this->serverInfoGetWithHttpInfo();
+        list($response) = $this->getServerInfoWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation serverInfoGetWithHttpInfo
+     * Operation getServerInfoWithHttpInfo
      *
-     * Get server status
+     * Get server info
      *
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ServerInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function serverInfoGetWithHttpInfo()
+    public function getServerInfoWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\ServerInfo';
-        $request = $this->serverInfoGetRequest();
+        $request = $this->getServerInfoRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -178,17 +178,17 @@ class ServerApi
     }
 
     /**
-     * Operation serverInfoGetAsync
+     * Operation getServerInfoAsync
      *
-     * Get server status
+     * Get server info
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverInfoGetAsync()
+    public function getServerInfoAsync()
     {
-        return $this->serverInfoGetAsyncWithHttpInfo()
+        return $this->getServerInfoAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -197,18 +197,18 @@ class ServerApi
     }
 
     /**
-     * Operation serverInfoGetAsyncWithHttpInfo
+     * Operation getServerInfoAsyncWithHttpInfo
      *
-     * Get server status
+     * Get server info
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverInfoGetAsyncWithHttpInfo()
+    public function getServerInfoAsyncWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\ServerInfo';
-        $request = $this->serverInfoGetRequest();
+        $request = $this->getServerInfoRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -248,13 +248,13 @@ class ServerApi
     }
 
     /**
-     * Create request for operation 'serverInfoGet'
+     * Create request for operation 'getServerInfo'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function serverInfoGetRequest()
+    protected function getServerInfoRequest()
     {
 
         $resourcePath = '/server-info';
@@ -331,7 +331,7 @@ class ServerApi
     }
 
     /**
-     * Operation serverStatusGet
+     * Operation getSuplaServerStatus
      *
      * Get the SUPLA Server status
      *
@@ -340,13 +340,13 @@ class ServerApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function serverStatusGet()
+    public function getSuplaServerStatus()
     {
-        $this->serverStatusGetWithHttpInfo();
+        $this->getSuplaServerStatusWithHttpInfo();
     }
 
     /**
-     * Operation serverStatusGetWithHttpInfo
+     * Operation getSuplaServerStatusWithHttpInfo
      *
      * Get the SUPLA Server status
      *
@@ -355,10 +355,10 @@ class ServerApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function serverStatusGetWithHttpInfo()
+    public function getSuplaServerStatusWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->serverStatusGetRequest();
+        $request = $this->getSuplaServerStatusRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -398,7 +398,7 @@ class ServerApi
     }
 
     /**
-     * Operation serverStatusGetAsync
+     * Operation getSuplaServerStatusAsync
      *
      * Get the SUPLA Server status
      *
@@ -406,9 +406,9 @@ class ServerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverStatusGetAsync()
+    public function getSuplaServerStatusAsync()
     {
-        return $this->serverStatusGetAsyncWithHttpInfo()
+        return $this->getSuplaServerStatusAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -417,7 +417,7 @@ class ServerApi
     }
 
     /**
-     * Operation serverStatusGetAsyncWithHttpInfo
+     * Operation getSuplaServerStatusAsyncWithHttpInfo
      *
      * Get the SUPLA Server status
      *
@@ -425,10 +425,10 @@ class ServerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverStatusGetAsyncWithHttpInfo()
+    public function getSuplaServerStatusAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->serverStatusGetRequest();
+        $request = $this->getSuplaServerStatusRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -454,13 +454,13 @@ class ServerApi
     }
 
     /**
-     * Create request for operation 'serverStatusGet'
+     * Create request for operation 'getSuplaServerStatus'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function serverStatusGetRequest()
+    protected function getSuplaServerStatusRequest()
     {
 
         $resourcePath = '/server-status';

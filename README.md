@@ -83,8 +83,8 @@ Class | Method | HTTP request | Description
 *SchedulesApi* | [**getSchedule**](docs/Api/SchedulesApi.md#getschedule) | **GET** /schedules/{id} | Get Schedule
 *SchedulesApi* | [**getSchedules**](docs/Api/SchedulesApi.md#getschedules) | **GET** /schedules | Get schedules list
 *SchedulesApi* | [**updateSchedule**](docs/Api/SchedulesApi.md#updateschedule) | **PUT** /schedules/{id} | Update schedule
-*ServerApi* | [**serverInfoGet**](docs/Api/ServerApi.md#serverinfoget) | **GET** /server-info | Get server status
-*ServerApi* | [**serverStatusGet**](docs/Api/ServerApi.md#serverstatusget) | **GET** /server-status | Get the SUPLA Server status
+*ServerApi* | [**getServerInfo**](docs/Api/ServerApi.md#getserverinfo) | **GET** /server-info | Get server info
+*ServerApi* | [**getSuplaServerStatus**](docs/Api/ServerApi.md#getsuplaserverstatus) | **GET** /server-status | Get the SUPLA Server status
 *UsersApi* | [**getCurrentUser**](docs/Api/UsersApi.md#getcurrentuser) | **GET** /users/current | Get current user
 *UsersApi* | [**updateCurrentUser**](docs/Api/UsersApi.md#updatecurrentuser) | **PATCH** /users/current | Update current user
 

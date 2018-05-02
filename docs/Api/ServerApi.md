@@ -2,17 +2,17 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serverInfoGet**](ServerApi.md#serverInfoGet) | **GET** /server-info | Get server status
-[**serverStatusGet**](ServerApi.md#serverStatusGet) | **GET** /server-status | Get the SUPLA Server status
+[**getServerInfo**](ServerApi.md#getServerInfo) | **GET** /server-info | Get server info
+[**getSuplaServerStatus**](ServerApi.md#getSuplaServerStatus) | **GET** /server-status | Get the SUPLA Server status
 
 
-# **serverInfoGet**
+# **getServerInfo**
 
-Get server status
+Get server info
 
 ### Example
 ```php
-$result = $client->server()->serverInfoGet();
+$result = $client->server()->getServerInfo();
 print_r($result);
 ```
 
@@ -24,13 +24,13 @@ print_r($result);
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **serverStatusGet**
+# **getSuplaServerStatus**
 
 Get the SUPLA Server status
 
 ### Example
 ```php
-$client->server()->serverStatusGet();
+$client->server()->getSuplaServerStatus();
 ```
 
 

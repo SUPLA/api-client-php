@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **serverInfoGet**
-> \Swagger\Client\Model\InlineResponse200 serverInfoGet($x_accept_version)
+> \Swagger\Client\Model\InlineResponse200 serverInfoGet($xAcceptVersion)
 
 Get server status
 
@@ -23,10 +23,10 @@ $apiInstance = new Swagger\Client\Api\ServerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->serverInfoGet($x_accept_version);
+    $result = $apiInstance->serverInfoGet($xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServerApi->serverInfoGet: ', $e->getMessage(), PHP_EOL;
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **serverStatusGet**
-> \Swagger\Client\Model\InlineResponse2001 serverStatusGet($x_accept_version)
+> \Swagger\Client\Model\InlineResponse2001 serverStatusGet($xAcceptVersion)
 
 Get the SUPLA Server status
 
@@ -70,10 +70,10 @@ $apiInstance = new Swagger\Client\Api\ServerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->serverStatusGet($x_accept_version);
+    $result = $apiInstance->serverStatusGet($xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ServerApi->serverStatusGet: ', $e->getMessage(), PHP_EOL;
@@ -85,7 +85,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 

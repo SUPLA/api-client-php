@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**channel_id** | **int** |  | [optional] 
-**action_id** | **int** |  | [optional] 
+**channelId** | **int** |  | [optional] 
+**actionId** | **int** |  | [optional] 
 **mode** | **string** |  | [optional] 
-**time_expression** | **string** | Schedule time expression in crontab notation (with some custom additions). | [optional] 
-**date_start** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**date_end** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**timeExpression** | **string** | Schedule time expression in crontab notation (with some custom additions). | [optional] 
+**dateStart** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**dateEnd** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **caption** | **string** |  | [optional] 
 **retry** | **bool** |  | [optional] 
 

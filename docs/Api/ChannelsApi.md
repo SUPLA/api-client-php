@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **executeAction**
-> executeAction($id, $body, $x_accept_version)
+> executeAction($id, $body, $xAcceptVersion)
 
 Execute action on the channel
 
@@ -23,10 +23,6 @@ Execute action on the channel
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -38,10 +34,10 @@ $apiInstance = new Swagger\Client\Api\ChannelsApi(
 );
 $id = 56; // int | 
 $body = new \Swagger\Client\Model\Body3(); // \Swagger\Client\Model\Body3 | Defines an action to execute on channel. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $apiInstance->executeAction($id, $body, $x_accept_version);
+    $apiInstance->executeAction($id, $body, $xAcceptVersion);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->executeAction: ', $e->getMessage(), PHP_EOL;
 }
@@ -54,7 +50,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body3**](../Model/Body3.md)| Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -62,7 +58,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -72,7 +68,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChannel**
-> \Swagger\Client\Model\Channel getChannel($id, $x_accept_version, $include)
+> \Swagger\Client\Model\Channel getChannel($id, $xAcceptVersion, $include)
 
 Get channel by ID
 
@@ -81,10 +77,6 @@ Get channel by ID
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -95,11 +87,11 @@ $apiInstance = new Swagger\Client\Api\ChannelsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->getChannel($id, $x_accept_version, $include);
+    $result = $apiInstance->getChannel($id, $xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->getChannel: ', $e->getMessage(), PHP_EOL;
@@ -112,7 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -121,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -131,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChannelMeasurementLogs**
-> \Swagger\Client\Model\InlineResponse2004[] getChannelMeasurementLogs($id, $x_accept_version, $limit, $offset)
+> \Swagger\Client\Model\InlineResponse2003[] getChannelMeasurementLogs($id, $xAcceptVersion, $limit, $offset)
 
 Get measurement logs.
 
@@ -142,10 +134,6 @@ Supported channel functions: `THERMOMETER` and `HUMIDITYANDTEMPERATURE`. Logs or
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -156,12 +144,12 @@ $apiInstance = new Swagger\Client\Api\ChannelsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $limit = 5000; // int | Maximum items count in response, from 1 to 5000
 $offset = 56; // int | Pagination offset
 
 try {
-    $result = $apiInstance->getChannelMeasurementLogs($id, $x_accept_version, $limit, $offset);
+    $result = $apiInstance->getChannelMeasurementLogs($id, $xAcceptVersion, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->getChannelMeasurementLogs: ', $e->getMessage(), PHP_EOL;
@@ -174,17 +162,17 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **limit** | **int**| Maximum items count in response, from 1 to 5000 | [optional] [default to 5000]
  **offset** | **int**| Pagination offset | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2004[]**](../Model/InlineResponse2004.md)
+[**\Swagger\Client\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -194,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChannelMeasurementLogsCsvFile**
-> \SplFileObject getChannelMeasurementLogsCsvFile($id, $x_accept_version)
+> \SplFileObject getChannelMeasurementLogsCsvFile($id, $xAcceptVersion)
 
 Get measurement logs as zipped CSV file.
 
@@ -205,10 +193,6 @@ Supported channel functions: `THERMOMETER` and `HUMIDITYANDTEMPERATURE`. Logs or
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -219,10 +203,10 @@ $apiInstance = new Swagger\Client\Api\ChannelsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->getChannelMeasurementLogsCsvFile($id, $x_accept_version);
+    $result = $apiInstance->getChannelMeasurementLogsCsvFile($id, $xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->getChannelMeasurementLogsCsvFile: ', $e->getMessage(), PHP_EOL;
@@ -235,7 +219,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -243,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -253,7 +237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChannelSchedules**
-> \Swagger\Client\Model\Schedule[] getChannelSchedules($id, $x_accept_version, $include)
+> \Swagger\Client\Model\Schedule[] getChannelSchedules($id, $xAcceptVersion, $include)
 
 Get schedules list of the channel
 
@@ -262,10 +246,6 @@ Get schedules list of the channel
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -276,11 +256,11 @@ $apiInstance = new Swagger\Client\Api\ChannelsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->getChannelSchedules($id, $x_accept_version, $include);
+    $result = $apiInstance->getChannelSchedules($id, $xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->getChannelSchedules: ', $e->getMessage(), PHP_EOL;
@@ -293,7 +273,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -302,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -312,7 +292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChannels**
-> \Swagger\Client\Model\Channel[] getChannels($x_accept_version, $include, $function, $io, $has_function)
+> \Swagger\Client\Model\Channel[] getChannels($xAcceptVersion, $include, $function, $io, $hasFunction)
 
 Get channels list
 
@@ -321,10 +301,6 @@ Get channels list
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -334,14 +310,14 @@ $apiInstance = new Swagger\Client\Api\ChannelsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 $function = array("function_example"); // string[] | 
 $io = "io_example"; // string | Return only `input` or `output` channels.
-$has_function = true; // bool | Return only channels with (`true`) or without (`false`) chosen functions.
+$hasFunction = true; // bool | Return only channels with (`true`) or without (`false`) chosen functions.
 
 try {
-    $result = $apiInstance->getChannels($x_accept_version, $include, $function, $io, $has_function);
+    $result = $apiInstance->getChannels($xAcceptVersion, $include, $function, $io, $hasFunction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->getChannels: ', $e->getMessage(), PHP_EOL;
@@ -353,11 +329,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
  **function** | [**string[]**](../Model/string.md)|  | [optional]
  **io** | **string**| Return only &#x60;input&#x60; or &#x60;output&#x60; channels. | [optional]
- **has_function** | **bool**| Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. | [optional]
+ **hasFunction** | **bool**| Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. | [optional]
 
 ### Return type
 
@@ -365,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -375,7 +351,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateChannel**
-> \Swagger\Client\Model\Channel updateChannel($id, $body, $x_accept_version)
+> \Swagger\Client\Model\Channel updateChannel($id, $body, $xAcceptVersion)
 
 Update channel
 
@@ -384,10 +360,6 @@ Update channel
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -399,10 +371,10 @@ $apiInstance = new Swagger\Client\Api\ChannelsApi(
 );
 $id = 56; // int | 
 $body = new \Swagger\Client\Model\Body2(); // \Swagger\Client\Model\Body2 | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->updateChannel($id, $body, $x_accept_version);
+    $result = $apiInstance->updateChannel($id, $body, $xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->updateChannel: ', $e->getMessage(), PHP_EOL;
@@ -416,7 +388,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body2**](../Model/Body2.md)|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -424,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 

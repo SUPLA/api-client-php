@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createChannelGroup**
-> \Swagger\Client\Model\ChannelGroup createChannelGroup($body, $x_accept_version)
+> \Swagger\Client\Model\ChannelGroup createChannelGroup($body, $xAcceptVersion)
 
 Create a new channel group
 
@@ -22,10 +22,6 @@ Create a new channel group
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -36,10 +32,10 @@ $apiInstance = new Swagger\Client\Api\ChannelGroupsApi(
     $config
 );
 $body = new \Swagger\Client\Model\Body4(); // \Swagger\Client\Model\Body4 | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->createChannelGroup($body, $x_accept_version);
+    $result = $apiInstance->createChannelGroup($body, $xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->createChannelGroup: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +48,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Swagger\Client\Model\Body4**](../Model/Body4.md)|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -60,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -70,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteChannelGroup**
-> deleteChannelGroup($id, $x_accept_version)
+> deleteChannelGroup($id, $xAcceptVersion)
 
 Delete Channel Group
 
@@ -79,10 +75,6 @@ Delete Channel Group
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -93,10 +85,10 @@ $apiInstance = new Swagger\Client\Api\ChannelGroupsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $apiInstance->deleteChannelGroup($id, $x_accept_version);
+    $apiInstance->deleteChannelGroup($id, $xAcceptVersion);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->deleteChannelGroup: ', $e->getMessage(), PHP_EOL;
 }
@@ -108,7 +100,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -116,7 +108,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -126,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **executeChannelGroupAction**
-> executeChannelGroupAction($id, $body, $x_accept_version)
+> executeChannelGroupAction($id, $body, $xAcceptVersion)
 
 Execute action on the channel group
 
@@ -135,10 +127,6 @@ Execute action on the channel group
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -150,10 +138,10 @@ $apiInstance = new Swagger\Client\Api\ChannelGroupsApi(
 );
 $id = 56; // int | 
 $body = new \Swagger\Client\Model\Body6(); // \Swagger\Client\Model\Body6 | Defines an action to execute on channel group. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $apiInstance->executeChannelGroupAction($id, $body, $x_accept_version);
+    $apiInstance->executeChannelGroupAction($id, $body, $xAcceptVersion);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->executeChannelGroupAction: ', $e->getMessage(), PHP_EOL;
 }
@@ -166,7 +154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body6**](../Model/Body6.md)| Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -174,7 +162,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -184,7 +172,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChannelGroup**
-> \Swagger\Client\Model\ChannelGroup getChannelGroup($id, $x_accept_version, $include)
+> \Swagger\Client\Model\ChannelGroup getChannelGroup($id, $xAcceptVersion, $include)
 
 Get channel group by ID
 
@@ -193,10 +181,6 @@ Get channel group by ID
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -207,11 +191,11 @@ $apiInstance = new Swagger\Client\Api\ChannelGroupsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->getChannelGroup($id, $x_accept_version, $include);
+    $result = $apiInstance->getChannelGroup($id, $xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->getChannelGroup: ', $e->getMessage(), PHP_EOL;
@@ -224,7 +208,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -233,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -243,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChannelGroups**
-> \Swagger\Client\Model\ChannelGroup[] getChannelGroups($x_accept_version, $include)
+> \Swagger\Client\Model\ChannelGroup[] getChannelGroups($xAcceptVersion, $include)
 
 Get channels list
 
@@ -252,10 +236,6 @@ Get channels list
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -265,11 +245,11 @@ $apiInstance = new Swagger\Client\Api\ChannelGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->getChannelGroups($x_accept_version, $include);
+    $result = $apiInstance->getChannelGroups($xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->getChannelGroups: ', $e->getMessage(), PHP_EOL;
@@ -281,7 +261,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -290,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -300,7 +280,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateChannelGroup**
-> \Swagger\Client\Model\ChannelGroup updateChannelGroup($id, $body, $x_accept_version)
+> \Swagger\Client\Model\ChannelGroup updateChannelGroup($id, $body, $xAcceptVersion)
 
 Update channel group
 
@@ -309,10 +289,6 @@ Update channel group
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -324,10 +300,10 @@ $apiInstance = new Swagger\Client\Api\ChannelGroupsApi(
 );
 $id = 56; // int | 
 $body = new \Swagger\Client\Model\Body5(); // \Swagger\Client\Model\Body5 | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->updateChannelGroup($id, $body, $x_accept_version);
+    $result = $apiInstance->updateChannelGroup($id, $body, $xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->updateChannelGroup: ', $e->getMessage(), PHP_EOL;
@@ -341,7 +317,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body5**](../Model/Body5.md)|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -349,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 

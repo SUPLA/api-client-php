@@ -18,6 +18,16 @@
   },
   "scripts": {
     "phpcs": "phpcs src --standard=phpcs-rules.xml",
-    "phpcbf": "phpcbf src --standard=phpcs-rules.xml"
+    "phpcbf": "phpcbf src --standard=phpcs-rules.xml",
+    "generate": [
+      "rm -fr output",
+      "mkdir output",
+      "java -jar swagger-codegen.jar generate -i swagger.json -l php -o output -t codegen-template -c codegen-template/config.json",
+      "rm -fr docs lib README.md",
+      "mv output/SuplaApiGenerated/docs .",
+      "mv output/SuplaApiGenerated/lib .",
+      "mv output/SuplaApiGenerated/README.md .",
+      "rm -fr output"
+    ]
   }
 }

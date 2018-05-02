@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**planned_timestamp** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**result_timestamp** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**plannedTimestamp** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**resultTimestamp** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **failed** | **bool** |  | [optional] 
 **result** | [**\Swagger\Client\Model\ScheduleResult**](ScheduleResult.md) |  | [optional] 
 

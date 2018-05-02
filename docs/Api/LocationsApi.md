@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createLocation**
-> \Swagger\Client\Model\Location createLocation($x_accept_version)
+> \Swagger\Client\Model\Location createLocation($xAcceptVersion)
 
 Create a new location
 
@@ -21,10 +21,6 @@ Create a new location
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -34,10 +30,10 @@ $apiInstance = new Swagger\Client\Api\LocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->createLocation($x_accept_version);
+    $result = $apiInstance->createLocation($xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->createLocation: ', $e->getMessage(), PHP_EOL;
@@ -49,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -57,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -67,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteLocation**
-> deleteLocation($id, $x_accept_version, $include)
+> deleteLocation($id, $xAcceptVersion, $include)
 
 Delete location
 
@@ -76,10 +72,6 @@ Delete location
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -90,11 +82,11 @@ $apiInstance = new Swagger\Client\Api\LocationsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $apiInstance->deleteLocation($id, $x_accept_version, $include);
+    $apiInstance->deleteLocation($id, $xAcceptVersion, $include);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->deleteLocation: ', $e->getMessage(), PHP_EOL;
 }
@@ -106,7 +98,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -115,7 +107,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -125,7 +117,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLocation**
-> \Swagger\Client\Model\Location getLocation($id, $x_accept_version, $include)
+> \Swagger\Client\Model\Location getLocation($id, $xAcceptVersion, $include)
 
 Get location by ID
 
@@ -134,10 +126,6 @@ Get location by ID
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -148,11 +136,11 @@ $apiInstance = new Swagger\Client\Api\LocationsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->getLocation($id, $x_accept_version, $include);
+    $result = $apiInstance->getLocation($id, $xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->getLocation: ', $e->getMessage(), PHP_EOL;
@@ -165,7 +153,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -174,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -184,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLocations**
-> \Swagger\Client\Model\Location[] getLocations($x_accept_version, $include)
+> \Swagger\Client\Model\Location[] getLocations($xAcceptVersion, $include)
 
 Get locations list
 
@@ -193,10 +181,6 @@ Get locations list
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -206,11 +190,11 @@ $apiInstance = new Swagger\Client\Api\LocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->getLocations($x_accept_version, $include);
+    $result = $apiInstance->getLocations($xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->getLocations: ', $e->getMessage(), PHP_EOL;
@@ -222,7 +206,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -231,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -241,7 +225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateLocation**
-> \Swagger\Client\Model\Location updateLocation($id, $body, $x_accept_version, $include)
+> \Swagger\Client\Model\Location updateLocation($id, $body, $xAcceptVersion, $include)
 
 Edit location
 
@@ -250,10 +234,6 @@ Edit location
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -265,11 +245,11 @@ $apiInstance = new Swagger\Client\Api\LocationsApi(
 );
 $id = 56; // int | 
 $body = new \Swagger\Client\Model\Body1(); // \Swagger\Client\Model\Body1 | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->updateLocation($id, $body, $x_accept_version, $include);
+    $result = $apiInstance->updateLocation($id, $body, $xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->updateLocation: ', $e->getMessage(), PHP_EOL;
@@ -283,7 +263,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body1**](../Model/Body1.md)|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -292,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 

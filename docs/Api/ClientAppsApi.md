@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **deleteClientApp**
-> deleteClientApp($id, $x_accept_version)
+> deleteClientApp($id, $xAcceptVersion)
 
 Delete Client App
 
@@ -19,10 +19,6 @@ Delete Client App
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -33,10 +29,10 @@ $apiInstance = new Swagger\Client\Api\ClientAppsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $apiInstance->deleteClientApp($id, $x_accept_version);
+    $apiInstance->deleteClientApp($id, $xAcceptVersion);
 } catch (Exception $e) {
     echo 'Exception when calling ClientAppsApi->deleteClientApp: ', $e->getMessage(), PHP_EOL;
 }
@@ -48,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -56,7 +52,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -66,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientApps**
-> \Swagger\Client\Model\ClientApp[] getClientApps($x_accept_version, $include)
+> \Swagger\Client\Model\ClientApp[] getClientApps($xAcceptVersion, $include)
 
 Get client apps
 
@@ -75,10 +71,6 @@ Get client apps
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -88,11 +80,11 @@ $apiInstance = new Swagger\Client\Api\ClientAppsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->getClientApps($x_accept_version, $include);
+    $result = $apiInstance->getClientApps($xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientAppsApi->getClientApps: ', $e->getMessage(), PHP_EOL;
@@ -104,7 +96,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -113,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -123,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateClientApp**
-> \Swagger\Client\Model\ClientApp updateClientApp($id, $body, $x_accept_version)
+> \Swagger\Client\Model\ClientApp updateClientApp($id, $body, $xAcceptVersion)
 
 Update client app
 
@@ -132,10 +124,6 @@ Update client app
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -147,10 +135,10 @@ $apiInstance = new Swagger\Client\Api\ClientAppsApi(
 );
 $id = 56; // int | 
 $body = new \Swagger\Client\Model\Body7(); // \Swagger\Client\Model\Body7 | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->updateClientApp($id, $body, $x_accept_version);
+    $result = $apiInstance->updateClientApp($id, $body, $xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientAppsApi->updateClientApp: ', $e->getMessage(), PHP_EOL;
@@ -164,7 +152,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body7**](../Model/Body7.md)|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -172,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 

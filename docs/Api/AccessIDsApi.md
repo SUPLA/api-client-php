@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **accessidsGet**
-> \Swagger\Client\Model\AccessID[] accessidsGet($x_accept_version, $include)
+> \Swagger\Client\Model\AccessID[] accessidsGet($xAcceptVersion, $include)
 
 Get Access IDs list
 
@@ -21,10 +21,6 @@ Get Access IDs list
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -34,11 +30,11 @@ $apiInstance = new Swagger\Client\Api\AccessIDsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->accessidsGet($x_accept_version, $include);
+    $result = $apiInstance->accessidsGet($xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessIDsApi->accessidsGet: ', $e->getMessage(), PHP_EOL;
@@ -50,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -59,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -69,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **accessidsPost**
-> \Swagger\Client\Model\AccessID accessidsPost($x_accept_version)
+> \Swagger\Client\Model\AccessID accessidsPost($xAcceptVersion)
 
 Create a new Access ID
 
@@ -78,10 +74,6 @@ Create a new Access ID
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -91,10 +83,10 @@ $apiInstance = new Swagger\Client\Api\AccessIDsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->accessidsPost($x_accept_version);
+    $result = $apiInstance->accessidsPost($xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessIDsApi->accessidsPost: ', $e->getMessage(), PHP_EOL;
@@ -106,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -114,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -124,7 +116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAccessID**
-> deleteAccessID($id, $x_accept_version)
+> deleteAccessID($id, $xAcceptVersion)
 
 Delete Access Identifier
 
@@ -133,10 +125,6 @@ Delete Access Identifier
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -147,10 +135,10 @@ $apiInstance = new Swagger\Client\Api\AccessIDsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $apiInstance->deleteAccessID($id, $x_accept_version);
+    $apiInstance->deleteAccessID($id, $xAcceptVersion);
 } catch (Exception $e) {
     echo 'Exception when calling AccessIDsApi->deleteAccessID: ', $e->getMessage(), PHP_EOL;
 }
@@ -162,7 +150,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -170,7 +158,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -180,7 +168,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccessID**
-> \Swagger\Client\Model\AccessID getAccessID($id, $x_accept_version, $include)
+> \Swagger\Client\Model\AccessID getAccessID($id, $xAcceptVersion, $include)
 
 Get Access ID
 
@@ -189,10 +177,6 @@ Get Access ID
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -203,11 +187,11 @@ $apiInstance = new Swagger\Client\Api\AccessIDsApi(
     $config
 );
 $id = 56; // int | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 
 try {
-    $result = $apiInstance->getAccessID($id, $x_accept_version, $include);
+    $result = $apiInstance->getAccessID($id, $xAcceptVersion, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessIDsApi->getAccessID: ', $e->getMessage(), PHP_EOL;
@@ -220,7 +204,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -229,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -239,7 +223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAccessID**
-> \Swagger\Client\Model\AccessID updateAccessID($id, $body, $x_accept_version)
+> \Swagger\Client\Model\AccessID updateAccessID($id, $body, $xAcceptVersion)
 
 Edit Access ID
 
@@ -248,10 +232,6 @@ Edit Access ID
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -263,10 +243,10 @@ $apiInstance = new Swagger\Client\Api\AccessIDsApi(
 );
 $id = 56; // int | 
 $body = new \Swagger\Client\Model\Body10(); // \Swagger\Client\Model\Body10 | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->updateAccessID($id, $body, $x_accept_version);
+    $result = $apiInstance->updateAccessID($id, $body, $xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessIDsApi->updateAccessID: ', $e->getMessage(), PHP_EOL;
@@ -280,7 +260,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body10**](../Model/Body10.md)|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -288,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 

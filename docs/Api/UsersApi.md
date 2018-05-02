@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **editCurrentUser**
-> \Swagger\Client\Model\InlineResponse2003 editCurrentUser($body, $x_accept_version)
+> \Swagger\Client\Model\InlineResponse2002 editCurrentUser($body, $xAcceptVersion)
 
 Edit current user
 
@@ -18,10 +18,6 @@ Edit current user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -32,10 +28,10 @@ $apiInstance = new Swagger\Client\Api\UsersApi(
     $config
 );
 $body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | 
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->editCurrentUser($body, $x_accept_version);
+    $result = $apiInstance->editCurrentUser($body, $xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->editCurrentUser: ', $e->getMessage(), PHP_EOL;
@@ -48,15 +44,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md)|  |
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Swagger\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 
@@ -66,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentUser**
-> \Swagger\Client\Model\InlineResponse2002 getCurrentUser($x_accept_version)
+> \Swagger\Client\Model\UserRequest getCurrentUser($xAcceptVersion)
 
 Get current user
 
@@ -75,10 +71,6 @@ Get current user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 // Configure OAuth2 access token for authorization: password
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
@@ -88,10 +80,10 @@ $apiInstance = new Swagger\Client\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$x_accept_version = "x_accept_version_example"; // string | API Version
+$xAcceptVersion = "\"2.2.0\""; // string | API Version
 
 try {
-    $result = $apiInstance->getCurrentUser($x_accept_version);
+    $result = $apiInstance->getCurrentUser($xAcceptVersion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getCurrentUser: ', $e->getMessage(), PHP_EOL;
@@ -103,15 +95,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_accept_version** | **string**| API Version | [optional]
+ **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Swagger\Client\Model\UserRequest**](../Model/UserRequest.md)
 
 ### Authorization
 
-[bearer](../../README.md#bearer), [password](../../README.md#password)
+[password](../../README.md#password)
 
 ### HTTP request headers
 

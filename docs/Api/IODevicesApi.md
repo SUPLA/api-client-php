@@ -15,15 +15,15 @@ Delete IO Device
 
 ### Example
 ```php
-$result = $client->iODevices()->deleteIoDevice($id, $xAcceptVersion);
+$id = 56; // int | 
+$result = $client->iODevices()->deleteIoDevice($id);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -37,16 +37,17 @@ Get IO Device
 
 ### Example
 ```php
-$result = $client->iODevices()->getIoDevice($id, $xAcceptVersion, $include);
+$id = 56; // int | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->iODevices()->getIoDevice($id, $include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -61,16 +62,17 @@ Get Channels that belong to IO Deice
 
 ### Example
 ```php
-$result = $client->iODevices()->getIoDeviceChannels($id, $xAcceptVersion, $include);
+$id = 56; // int | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->iODevices()->getIoDeviceChannels($id, $include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -85,15 +87,15 @@ Get IO Devices
 
 ### Example
 ```php
-$result = $client->iODevices()->getIoDevices($xAcceptVersion, $include);
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->iODevices()->getIoDevices($include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -108,17 +110,18 @@ Update IO Device
 
 ### Example
 ```php
-$result = $client->iODevices()->updateIoDevice($id, $body, $xAcceptVersion);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\Body8(); // \Swagger\Client\Model\Body8 | 
+$result = $client->iODevices()->updateIoDevice($id, $body);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body8**](../Model/Body8.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 

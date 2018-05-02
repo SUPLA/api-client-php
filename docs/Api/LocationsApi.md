@@ -15,15 +15,11 @@ Create a new location
 
 ### Example
 ```php
-$result = $client->locations()->createLocation($xAcceptVersion);
+$result = $client->locations()->createLocation();
 print_r($result);
 ```
 
-### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -37,15 +33,16 @@ Delete location
 
 ### Example
 ```php
-$result = $client->locations()->deleteLocation($id, $xAcceptVersion, $include);
+$id = 56; // int | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->locations()->deleteLocation($id, $include);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -60,16 +57,17 @@ Get location by ID
 
 ### Example
 ```php
-$result = $client->locations()->getLocation($id, $xAcceptVersion, $include);
+$id = 56; // int | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->locations()->getLocation($id, $include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -84,15 +82,15 @@ Get locations list
 
 ### Example
 ```php
-$result = $client->locations()->getLocations($xAcceptVersion, $include);
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->locations()->getLocations($include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -107,17 +105,19 @@ Edit location
 
 ### Example
 ```php
-$result = $client->locations()->updateLocation($id, $body, $xAcceptVersion, $include);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\Body1(); // \Swagger\Client\Model\Body1 | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->locations()->updateLocation($id, $body, $include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body1**](../Model/Body1.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type

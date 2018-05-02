@@ -81,7 +81,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://cloud.supla.org/api';
+    protected $host = 'https://cloud.supla.org/api/v2.2.0';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default

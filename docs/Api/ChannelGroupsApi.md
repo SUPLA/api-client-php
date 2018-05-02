@@ -16,16 +16,16 @@ Create a new channel group
 
 ### Example
 ```php
-$result = $client->channelGroups()->createChannelGroup($body, $xAcceptVersion);
+$body = new \Swagger\Client\Model\Body4(); // \Swagger\Client\Model\Body4 | 
+$result = $client->channelGroups()->createChannelGroup($body);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Swagger\Client\Model\Body4**](../Model/Body4.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -39,15 +39,15 @@ Delete Channel Group
 
 ### Example
 ```php
-$result = $client->channelGroups()->deleteChannelGroup($id, $xAcceptVersion);
+$id = 56; // int | 
+$result = $client->channelGroups()->deleteChannelGroup($id);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -61,16 +61,17 @@ Execute action on the channel group
 
 ### Example
 ```php
-$result = $client->channelGroups()->executeChannelGroupAction($id, $body, $xAcceptVersion);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\Body6(); // \Swagger\Client\Model\Body6 | Defines an action to execute on channel group. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
+$result = $client->channelGroups()->executeChannelGroupAction($id, $body);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body6**](../Model/Body6.md)| Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -84,16 +85,17 @@ Get channel group by ID
 
 ### Example
 ```php
-$result = $client->channelGroups()->getChannelGroup($id, $xAcceptVersion, $include);
+$id = 56; // int | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->channelGroups()->getChannelGroup($id, $include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -108,15 +110,15 @@ Get channels list
 
 ### Example
 ```php
-$result = $client->channelGroups()->getChannelGroups($xAcceptVersion, $include);
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->channelGroups()->getChannelGroups($include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -131,17 +133,18 @@ Update channel group
 
 ### Example
 ```php
-$result = $client->channelGroups()->updateChannelGroup($id, $body, $xAcceptVersion);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\Body5(); // \Swagger\Client\Model\Body5 | 
+$result = $client->channelGroups()->updateChannelGroup($id, $body);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body5**](../Model/Body5.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 

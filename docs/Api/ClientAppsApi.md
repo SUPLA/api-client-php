@@ -13,15 +13,15 @@ Delete Client App
 
 ### Example
 ```php
-$result = $client->clientApps()->deleteClientApp($id, $xAcceptVersion);
+$id = 56; // int | 
+$result = $client->clientApps()->deleteClientApp($id);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -35,15 +35,15 @@ Get client apps
 
 ### Example
 ```php
-$result = $client->clientApps()->getClientApps($xAcceptVersion, $include);
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->clientApps()->getClientApps($include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -58,17 +58,18 @@ Update client app
 
 ### Example
 ```php
-$result = $client->clientApps()->updateClientApp($id, $body, $xAcceptVersion);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\Body7(); // \Swagger\Client\Model\Body7 | 
+$result = $client->clientApps()->updateClientApp($id, $body);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body7**](../Model/Body7.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 

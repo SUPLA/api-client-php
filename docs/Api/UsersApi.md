@@ -12,16 +12,16 @@ Edit current user
 
 ### Example
 ```php
-$result = $client->users()->editCurrentUser($body, $xAcceptVersion);
+$body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | 
+$result = $client->users()->editCurrentUser($body);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -35,15 +35,11 @@ Get current user
 
 ### Example
 ```php
-$result = $client->users()->getCurrentUser($xAcceptVersion);
+$result = $client->users()->getCurrentUser();
 print_r($result);
 ```
 
-### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 

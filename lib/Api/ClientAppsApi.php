@@ -93,15 +93,14 @@ class ClientAppsApi
      * Delete Client App
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteClientApp($id, $xAcceptVersion = null)
+    public function deleteClientApp($id)
     {
-        $this->deleteClientAppWithHttpInfo($id, $xAcceptVersion);
+        $this->deleteClientAppWithHttpInfo($id);
     }
 
     /**
@@ -110,16 +109,15 @@ class ClientAppsApi
      * Delete Client App
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteClientAppWithHttpInfo($id, $xAcceptVersion = null)
+    public function deleteClientAppWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteClientAppRequest($id, $xAcceptVersion);
+        $request = $this->deleteClientAppRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -164,14 +162,13 @@ class ClientAppsApi
      * Delete Client App
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteClientAppAsync($id, $xAcceptVersion = null)
+    public function deleteClientAppAsync($id)
     {
-        return $this->deleteClientAppAsyncWithHttpInfo($id, $xAcceptVersion)
+        return $this->deleteClientAppAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -185,15 +182,14 @@ class ClientAppsApi
      * Delete Client App
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteClientAppAsyncWithHttpInfo($id, $xAcceptVersion = null)
+    public function deleteClientAppAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteClientAppRequest($id, $xAcceptVersion);
+        $request = $this->deleteClientAppRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -222,12 +218,11 @@ class ClientAppsApi
      * Create request for operation 'deleteClientApp'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteClientAppRequest($id, $xAcceptVersion = null)
+    protected function deleteClientAppRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -243,10 +238,6 @@ class ClientAppsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {
@@ -330,16 +321,15 @@ class ClientAppsApi
      *
      * Get client apps
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ClientApp[]
      */
-    public function getClientApps($xAcceptVersion = null, $include = null)
+    public function getClientApps($include = null)
     {
-        list($response) = $this->getClientAppsWithHttpInfo($xAcceptVersion, $include);
+        list($response) = $this->getClientAppsWithHttpInfo($include);
         return $response;
     }
 
@@ -348,17 +338,16 @@ class ClientAppsApi
      *
      * Get client apps
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ClientApp[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getClientAppsWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getClientAppsWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\ClientApp[]';
-        $request = $this->getClientAppsRequest($xAcceptVersion, $include);
+        $request = $this->getClientAppsRequest($include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -424,15 +413,14 @@ class ClientAppsApi
      *
      * Get client apps
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getClientAppsAsync($xAcceptVersion = null, $include = null)
+    public function getClientAppsAsync($include = null)
     {
-        return $this->getClientAppsAsyncWithHttpInfo($xAcceptVersion, $include)
+        return $this->getClientAppsAsyncWithHttpInfo($include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -445,16 +433,15 @@ class ClientAppsApi
      *
      * Get client apps
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getClientAppsAsyncWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getClientAppsAsyncWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\ClientApp[]';
-        $request = $this->getClientAppsRequest($xAcceptVersion, $include);
+        $request = $this->getClientAppsRequest($include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -496,13 +483,12 @@ class ClientAppsApi
     /**
      * Create request for operation 'getClientApps'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getClientAppsRequest($xAcceptVersion = null, $include = null)
+    protected function getClientAppsRequest($include = null)
     {
 
         $resourcePath = '/client-apps';
@@ -518,10 +504,6 @@ class ClientAppsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
 
@@ -600,15 +582,14 @@ class ClientAppsApi
      *
      * @param  int $id id (required)
      * @param  \Swagger\Client\Model\Body7 $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ClientApp
      */
-    public function updateClientApp($id, $body, $xAcceptVersion = null)
+    public function updateClientApp($id, $body)
     {
-        list($response) = $this->updateClientAppWithHttpInfo($id, $body, $xAcceptVersion);
+        list($response) = $this->updateClientAppWithHttpInfo($id, $body);
         return $response;
     }
 
@@ -619,16 +600,15 @@ class ClientAppsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body7 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ClientApp, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateClientAppWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function updateClientAppWithHttpInfo($id, $body)
     {
         $returnType = '\Swagger\Client\Model\ClientApp';
-        $request = $this->updateClientAppRequest($id, $body, $xAcceptVersion);
+        $request = $this->updateClientAppRequest($id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -696,14 +676,13 @@ class ClientAppsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body7 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateClientAppAsync($id, $body, $xAcceptVersion = null)
+    public function updateClientAppAsync($id, $body)
     {
-        return $this->updateClientAppAsyncWithHttpInfo($id, $body, $xAcceptVersion)
+        return $this->updateClientAppAsyncWithHttpInfo($id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -718,15 +697,14 @@ class ClientAppsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body7 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateClientAppAsyncWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function updateClientAppAsyncWithHttpInfo($id, $body)
     {
         $returnType = '\Swagger\Client\Model\ClientApp';
-        $request = $this->updateClientAppRequest($id, $body, $xAcceptVersion);
+        $request = $this->updateClientAppRequest($id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -770,12 +748,11 @@ class ClientAppsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body7 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateClientAppRequest($id, $body, $xAcceptVersion = null)
+    protected function updateClientAppRequest($id, $body)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -797,10 +774,6 @@ class ClientAppsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {

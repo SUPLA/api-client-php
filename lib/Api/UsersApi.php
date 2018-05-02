@@ -93,15 +93,14 @@ class UsersApi
      * Edit current user
      *
      * @param  \Swagger\Client\Model\Body $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse2002
      */
-    public function editCurrentUser($body, $xAcceptVersion = null)
+    public function editCurrentUser($body)
     {
-        list($response) = $this->editCurrentUserWithHttpInfo($body, $xAcceptVersion);
+        list($response) = $this->editCurrentUserWithHttpInfo($body);
         return $response;
     }
 
@@ -111,16 +110,15 @@ class UsersApi
      * Edit current user
      *
      * @param  \Swagger\Client\Model\Body $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editCurrentUserWithHttpInfo($body, $xAcceptVersion = null)
+    public function editCurrentUserWithHttpInfo($body)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2002';
-        $request = $this->editCurrentUserRequest($body, $xAcceptVersion);
+        $request = $this->editCurrentUserRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,14 +185,13 @@ class UsersApi
      * Edit current user
      *
      * @param  \Swagger\Client\Model\Body $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editCurrentUserAsync($body, $xAcceptVersion = null)
+    public function editCurrentUserAsync($body)
     {
-        return $this->editCurrentUserAsyncWithHttpInfo($body, $xAcceptVersion)
+        return $this->editCurrentUserAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,15 +205,14 @@ class UsersApi
      * Edit current user
      *
      * @param  \Swagger\Client\Model\Body $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editCurrentUserAsyncWithHttpInfo($body, $xAcceptVersion = null)
+    public function editCurrentUserAsyncWithHttpInfo($body)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2002';
-        $request = $this->editCurrentUserRequest($body, $xAcceptVersion);
+        $request = $this->editCurrentUserRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,12 +255,11 @@ class UsersApi
      * Create request for operation 'editCurrentUser'
      *
      * @param  \Swagger\Client\Model\Body $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function editCurrentUserRequest($body, $xAcceptVersion = null)
+    protected function editCurrentUserRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -280,10 +275,6 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
 
         // body params
@@ -362,15 +353,14 @@ class UsersApi
      *
      * Get current user
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\UserRequest
      */
-    public function getCurrentUser($xAcceptVersion = null)
+    public function getCurrentUser()
     {
-        list($response) = $this->getCurrentUserWithHttpInfo($xAcceptVersion);
+        list($response) = $this->getCurrentUserWithHttpInfo();
         return $response;
     }
 
@@ -379,16 +369,15 @@ class UsersApi
      *
      * Get current user
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\UserRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCurrentUserWithHttpInfo($xAcceptVersion = null)
+    public function getCurrentUserWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\UserRequest';
-        $request = $this->getCurrentUserRequest($xAcceptVersion);
+        $request = $this->getCurrentUserRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -454,14 +443,13 @@ class UsersApi
      *
      * Get current user
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCurrentUserAsync($xAcceptVersion = null)
+    public function getCurrentUserAsync()
     {
-        return $this->getCurrentUserAsyncWithHttpInfo($xAcceptVersion)
+        return $this->getCurrentUserAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -474,15 +462,14 @@ class UsersApi
      *
      * Get current user
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCurrentUserAsyncWithHttpInfo($xAcceptVersion = null)
+    public function getCurrentUserAsyncWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\UserRequest';
-        $request = $this->getCurrentUserRequest($xAcceptVersion);
+        $request = $this->getCurrentUserRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -524,12 +511,11 @@ class UsersApi
     /**
      * Create request for operation 'getCurrentUser'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCurrentUserRequest($xAcceptVersion = null)
+    protected function getCurrentUserRequest()
     {
 
         $resourcePath = '/users/current';
@@ -539,10 +525,6 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
 
         // body params

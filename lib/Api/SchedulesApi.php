@@ -93,15 +93,14 @@ class SchedulesApi
      * Create a new schedule
      *
      * @param  \Swagger\Client\Model\ScheduleRequest $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Schedule
      */
-    public function createSchedule($body, $xAcceptVersion = null)
+    public function createSchedule($body)
     {
-        list($response) = $this->createScheduleWithHttpInfo($body, $xAcceptVersion);
+        list($response) = $this->createScheduleWithHttpInfo($body);
         return $response;
     }
 
@@ -111,16 +110,15 @@ class SchedulesApi
      * Create a new schedule
      *
      * @param  \Swagger\Client\Model\ScheduleRequest $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Schedule, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createScheduleWithHttpInfo($body, $xAcceptVersion = null)
+    public function createScheduleWithHttpInfo($body)
     {
         $returnType = '\Swagger\Client\Model\Schedule';
-        $request = $this->createScheduleRequest($body, $xAcceptVersion);
+        $request = $this->createScheduleRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,14 +185,13 @@ class SchedulesApi
      * Create a new schedule
      *
      * @param  \Swagger\Client\Model\ScheduleRequest $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createScheduleAsync($body, $xAcceptVersion = null)
+    public function createScheduleAsync($body)
     {
-        return $this->createScheduleAsyncWithHttpInfo($body, $xAcceptVersion)
+        return $this->createScheduleAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,15 +205,14 @@ class SchedulesApi
      * Create a new schedule
      *
      * @param  \Swagger\Client\Model\ScheduleRequest $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createScheduleAsyncWithHttpInfo($body, $xAcceptVersion = null)
+    public function createScheduleAsyncWithHttpInfo($body)
     {
         $returnType = '\Swagger\Client\Model\Schedule';
-        $request = $this->createScheduleRequest($body, $xAcceptVersion);
+        $request = $this->createScheduleRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,12 +255,11 @@ class SchedulesApi
      * Create request for operation 'createSchedule'
      *
      * @param  \Swagger\Client\Model\ScheduleRequest $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createScheduleRequest($body, $xAcceptVersion = null)
+    protected function createScheduleRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -280,10 +275,6 @@ class SchedulesApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
 
         // body params
@@ -363,15 +354,14 @@ class SchedulesApi
      * Delete Schedule
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteSchedule($id, $xAcceptVersion = null)
+    public function deleteSchedule($id)
     {
-        $this->deleteScheduleWithHttpInfo($id, $xAcceptVersion);
+        $this->deleteScheduleWithHttpInfo($id);
     }
 
     /**
@@ -380,16 +370,15 @@ class SchedulesApi
      * Delete Schedule
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteScheduleWithHttpInfo($id, $xAcceptVersion = null)
+    public function deleteScheduleWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteScheduleRequest($id, $xAcceptVersion);
+        $request = $this->deleteScheduleRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -434,14 +423,13 @@ class SchedulesApi
      * Delete Schedule
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteScheduleAsync($id, $xAcceptVersion = null)
+    public function deleteScheduleAsync($id)
     {
-        return $this->deleteScheduleAsyncWithHttpInfo($id, $xAcceptVersion)
+        return $this->deleteScheduleAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -455,15 +443,14 @@ class SchedulesApi
      * Delete Schedule
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteScheduleAsyncWithHttpInfo($id, $xAcceptVersion = null)
+    public function deleteScheduleAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteScheduleRequest($id, $xAcceptVersion);
+        $request = $this->deleteScheduleRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -492,12 +479,11 @@ class SchedulesApi
      * Create request for operation 'deleteSchedule'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteScheduleRequest($id, $xAcceptVersion = null)
+    protected function deleteScheduleRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -513,10 +499,6 @@ class SchedulesApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {
@@ -601,15 +583,14 @@ class SchedulesApi
      * Enable schedules
      *
      * @param  \Swagger\Client\Model\Body9 $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function enableSchedules($body, $xAcceptVersion = null)
+    public function enableSchedules($body)
     {
-        $this->enableSchedulesWithHttpInfo($body, $xAcceptVersion);
+        $this->enableSchedulesWithHttpInfo($body);
     }
 
     /**
@@ -618,16 +599,15 @@ class SchedulesApi
      * Enable schedules
      *
      * @param  \Swagger\Client\Model\Body9 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enableSchedulesWithHttpInfo($body, $xAcceptVersion = null)
+    public function enableSchedulesWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->enableSchedulesRequest($body, $xAcceptVersion);
+        $request = $this->enableSchedulesRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -672,14 +652,13 @@ class SchedulesApi
      * Enable schedules
      *
      * @param  \Swagger\Client\Model\Body9 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enableSchedulesAsync($body, $xAcceptVersion = null)
+    public function enableSchedulesAsync($body)
     {
-        return $this->enableSchedulesAsyncWithHttpInfo($body, $xAcceptVersion)
+        return $this->enableSchedulesAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -693,15 +672,14 @@ class SchedulesApi
      * Enable schedules
      *
      * @param  \Swagger\Client\Model\Body9 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enableSchedulesAsyncWithHttpInfo($body, $xAcceptVersion = null)
+    public function enableSchedulesAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->enableSchedulesRequest($body, $xAcceptVersion);
+        $request = $this->enableSchedulesRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -730,12 +708,11 @@ class SchedulesApi
      * Create request for operation 'enableSchedules'
      *
      * @param  \Swagger\Client\Model\Body9 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function enableSchedulesRequest($body, $xAcceptVersion = null)
+    protected function enableSchedulesRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -751,10 +728,6 @@ class SchedulesApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
 
         // body params
@@ -834,16 +807,15 @@ class SchedulesApi
      * Get Schedule
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Schedule
      */
-    public function getSchedule($id, $xAcceptVersion = null, $include = null)
+    public function getSchedule($id, $include = null)
     {
-        list($response) = $this->getScheduleWithHttpInfo($id, $xAcceptVersion, $include);
+        list($response) = $this->getScheduleWithHttpInfo($id, $include);
         return $response;
     }
 
@@ -853,17 +825,16 @@ class SchedulesApi
      * Get Schedule
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Schedule, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getScheduleWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getScheduleWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Schedule';
-        $request = $this->getScheduleRequest($id, $xAcceptVersion, $include);
+        $request = $this->getScheduleRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -930,15 +901,14 @@ class SchedulesApi
      * Get Schedule
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getScheduleAsync($id, $xAcceptVersion = null, $include = null)
+    public function getScheduleAsync($id, $include = null)
     {
-        return $this->getScheduleAsyncWithHttpInfo($id, $xAcceptVersion, $include)
+        return $this->getScheduleAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -952,16 +922,15 @@ class SchedulesApi
      * Get Schedule
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getScheduleAsyncWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getScheduleAsyncWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Schedule';
-        $request = $this->getScheduleRequest($id, $xAcceptVersion, $include);
+        $request = $this->getScheduleRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1004,13 +973,12 @@ class SchedulesApi
      * Create request for operation 'getSchedule'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getScheduleRequest($id, $xAcceptVersion = null, $include = null)
+    protected function getScheduleRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1032,10 +1000,6 @@ class SchedulesApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -1120,16 +1084,15 @@ class SchedulesApi
      *
      * Get schedules list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Schedule[]
      */
-    public function getSchedules($xAcceptVersion = null, $include = null)
+    public function getSchedules($include = null)
     {
-        list($response) = $this->getSchedulesWithHttpInfo($xAcceptVersion, $include);
+        list($response) = $this->getSchedulesWithHttpInfo($include);
         return $response;
     }
 
@@ -1138,17 +1101,16 @@ class SchedulesApi
      *
      * Get schedules list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Schedule[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSchedulesWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getSchedulesWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\Schedule[]';
-        $request = $this->getSchedulesRequest($xAcceptVersion, $include);
+        $request = $this->getSchedulesRequest($include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1214,15 +1176,14 @@ class SchedulesApi
      *
      * Get schedules list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSchedulesAsync($xAcceptVersion = null, $include = null)
+    public function getSchedulesAsync($include = null)
     {
-        return $this->getSchedulesAsyncWithHttpInfo($xAcceptVersion, $include)
+        return $this->getSchedulesAsyncWithHttpInfo($include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1235,16 +1196,15 @@ class SchedulesApi
      *
      * Get schedules list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSchedulesAsyncWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getSchedulesAsyncWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\Schedule[]';
-        $request = $this->getSchedulesRequest($xAcceptVersion, $include);
+        $request = $this->getSchedulesRequest($include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1286,13 +1246,12 @@ class SchedulesApi
     /**
      * Create request for operation 'getSchedules'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSchedulesRequest($xAcceptVersion = null, $include = null)
+    protected function getSchedulesRequest($include = null)
     {
 
         $resourcePath = '/schedules';
@@ -1308,10 +1267,6 @@ class SchedulesApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
 
@@ -1390,16 +1345,15 @@ class SchedulesApi
      *
      * @param  int $id id (required)
      * @param  \Swagger\Client\Model\ScheduleRequest $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  bool $enable Set to &#x60;true&#x60; to enable the schedule after saving. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Schedule
      */
-    public function updateSchedule($id, $body, $xAcceptVersion = null, $enable = null)
+    public function updateSchedule($id, $body, $enable = null)
     {
-        list($response) = $this->updateScheduleWithHttpInfo($id, $body, $xAcceptVersion, $enable);
+        list($response) = $this->updateScheduleWithHttpInfo($id, $body, $enable);
         return $response;
     }
 
@@ -1410,17 +1364,16 @@ class SchedulesApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\ScheduleRequest $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  bool $enable Set to &#x60;true&#x60; to enable the schedule after saving. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Schedule, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateScheduleWithHttpInfo($id, $body, $xAcceptVersion = null, $enable = null)
+    public function updateScheduleWithHttpInfo($id, $body, $enable = null)
     {
         $returnType = '\Swagger\Client\Model\Schedule';
-        $request = $this->updateScheduleRequest($id, $body, $xAcceptVersion, $enable);
+        $request = $this->updateScheduleRequest($id, $body, $enable);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1488,15 +1441,14 @@ class SchedulesApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\ScheduleRequest $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  bool $enable Set to &#x60;true&#x60; to enable the schedule after saving. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateScheduleAsync($id, $body, $xAcceptVersion = null, $enable = null)
+    public function updateScheduleAsync($id, $body, $enable = null)
     {
-        return $this->updateScheduleAsyncWithHttpInfo($id, $body, $xAcceptVersion, $enable)
+        return $this->updateScheduleAsyncWithHttpInfo($id, $body, $enable)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1511,16 +1463,15 @@ class SchedulesApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\ScheduleRequest $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  bool $enable Set to &#x60;true&#x60; to enable the schedule after saving. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateScheduleAsyncWithHttpInfo($id, $body, $xAcceptVersion = null, $enable = null)
+    public function updateScheduleAsyncWithHttpInfo($id, $body, $enable = null)
     {
         $returnType = '\Swagger\Client\Model\Schedule';
-        $request = $this->updateScheduleRequest($id, $body, $xAcceptVersion, $enable);
+        $request = $this->updateScheduleRequest($id, $body, $enable);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1564,13 +1515,12 @@ class SchedulesApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\ScheduleRequest $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  bool $enable Set to &#x60;true&#x60; to enable the schedule after saving. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateScheduleRequest($id, $body, $xAcceptVersion = null, $enable = null)
+    protected function updateScheduleRequest($id, $body, $enable = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1595,10 +1545,6 @@ class SchedulesApi
         // query params
         if ($enable !== null) {
             $queryParams['enable'] = ObjectSerializer::toQueryValue($enable);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params

@@ -17,16 +17,17 @@ Execute action on the channel
 
 ### Example
 ```php
-$result = $client->channels()->executeAction($id, $body, $xAcceptVersion);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\Body3(); // \Swagger\Client\Model\Body3 | Defines an action to execute on channel. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
+$result = $client->channels()->executeAction($id, $body);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body3**](../Model/Body3.md)| Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -40,16 +41,17 @@ Get channel by ID
 
 ### Example
 ```php
-$result = $client->channels()->getChannel($id, $xAcceptVersion, $include);
+$id = 56; // int | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->channels()->getChannel($id, $include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -66,16 +68,18 @@ Supported channel functions: `THERMOMETER` and `HUMIDITYANDTEMPERATURE`. Logs or
 
 ### Example
 ```php
-$result = $client->channels()->getChannelMeasurementLogs($id, $xAcceptVersion, $limit, $offset);
+$id = 56; // int | 
+$limit = 5000; // int | Maximum items count in response, from 1 to 5000
+$offset = 56; // int | Pagination offset
+$result = $client->channels()->getChannelMeasurementLogs($id, $limit, $offset);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **limit** | **int**| Maximum items count in response, from 1 to 5000 | [optional] [default to 5000]
  **offset** | **int**| Pagination offset | [optional]
 
@@ -93,16 +97,16 @@ Supported channel functions: `THERMOMETER` and `HUMIDITYANDTEMPERATURE`. Logs or
 
 ### Example
 ```php
-$result = $client->channels()->getChannelMeasurementLogsCsvFile($id, $xAcceptVersion);
+$id = 56; // int | 
+$result = $client->channels()->getChannelMeasurementLogsCsvFile($id);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -116,16 +120,17 @@ Get schedules list of the channel
 
 ### Example
 ```php
-$result = $client->channels()->getChannelSchedules($id, $xAcceptVersion, $include);
+$id = 56; // int | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->channels()->getChannelSchedules($id, $include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -140,15 +145,18 @@ Get channels list
 
 ### Example
 ```php
-$result = $client->channels()->getChannels($xAcceptVersion, $include, $function, $io, $hasFunction);
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$function = array("function_example"); // string[] | 
+$io = "io_example"; // string | Return only `input` or `output` channels.
+$hasFunction = true; // bool | Return only channels with (`true`) or without (`false`) chosen functions.
+$result = $client->channels()->getChannels($include, $function, $io, $hasFunction);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
  **function** | [**string[]**](../Model/string.md)|  | [optional]
  **io** | **string**| Return only &#x60;input&#x60; or &#x60;output&#x60; channels. | [optional]
@@ -166,17 +174,18 @@ Update channel
 
 ### Example
 ```php
-$result = $client->channels()->updateChannel($id, $body, $xAcceptVersion);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\Body2(); // \Swagger\Client\Model\Body2 | 
+$result = $client->channels()->updateChannel($id, $body);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Body2**](../Model/Body2.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 

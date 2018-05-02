@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **param3** | [**\Swagger\Client\Model\ChannelParam**](ChannelParam.md) |  | [optional] 
 **altIcon** | **int** | Chosen alternative icon idenifier. Should not be greater than &#x60;funciton.maxAlternativeIconIndex&#x60; | [optional] 
 **hidden** | **bool** | Whether this channel is shown on client apps or not | [optional] 
-**inheritedLocation** | **bool** | Whether this channel inherits its IODevice&#39;s location (&#x60;true&#x60;) or not (&#x60;false&#x60;) | [optional] 
+**inheritedLocation** | **bool** | Whether this channel inherits its IO Device&#39;s location (&#x60;true&#x60;) or not (&#x60;false&#x60;) | [optional] 
 **iodeviceId** | **int** |  | [optional] 
 **locationId** | **int** |  | [optional] 
 **functionId** | **int** |  | [optional] 

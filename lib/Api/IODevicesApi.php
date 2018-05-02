@@ -93,15 +93,14 @@ class IODevicesApi
      * Delete IO Device
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteIoDevice($id, $xAcceptVersion = null)
+    public function deleteIoDevice($id)
     {
-        $this->deleteIoDeviceWithHttpInfo($id, $xAcceptVersion);
+        $this->deleteIoDeviceWithHttpInfo($id);
     }
 
     /**
@@ -110,16 +109,15 @@ class IODevicesApi
      * Delete IO Device
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteIoDeviceWithHttpInfo($id, $xAcceptVersion = null)
+    public function deleteIoDeviceWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteIoDeviceRequest($id, $xAcceptVersion);
+        $request = $this->deleteIoDeviceRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -164,14 +162,13 @@ class IODevicesApi
      * Delete IO Device
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteIoDeviceAsync($id, $xAcceptVersion = null)
+    public function deleteIoDeviceAsync($id)
     {
-        return $this->deleteIoDeviceAsyncWithHttpInfo($id, $xAcceptVersion)
+        return $this->deleteIoDeviceAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -185,15 +182,14 @@ class IODevicesApi
      * Delete IO Device
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteIoDeviceAsyncWithHttpInfo($id, $xAcceptVersion = null)
+    public function deleteIoDeviceAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteIoDeviceRequest($id, $xAcceptVersion);
+        $request = $this->deleteIoDeviceRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -222,12 +218,11 @@ class IODevicesApi
      * Create request for operation 'deleteIoDevice'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteIoDeviceRequest($id, $xAcceptVersion = null)
+    protected function deleteIoDeviceRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -243,10 +238,6 @@ class IODevicesApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {
@@ -331,16 +322,15 @@ class IODevicesApi
      * Get IO Device
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Device
      */
-    public function getIoDevice($id, $xAcceptVersion = null, $include = null)
+    public function getIoDevice($id, $include = null)
     {
-        list($response) = $this->getIoDeviceWithHttpInfo($id, $xAcceptVersion, $include);
+        list($response) = $this->getIoDeviceWithHttpInfo($id, $include);
         return $response;
     }
 
@@ -350,17 +340,16 @@ class IODevicesApi
      * Get IO Device
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getIoDeviceWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getIoDeviceWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Device';
-        $request = $this->getIoDeviceRequest($id, $xAcceptVersion, $include);
+        $request = $this->getIoDeviceRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -427,15 +416,14 @@ class IODevicesApi
      * Get IO Device
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getIoDeviceAsync($id, $xAcceptVersion = null, $include = null)
+    public function getIoDeviceAsync($id, $include = null)
     {
-        return $this->getIoDeviceAsyncWithHttpInfo($id, $xAcceptVersion, $include)
+        return $this->getIoDeviceAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -449,16 +437,15 @@ class IODevicesApi
      * Get IO Device
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getIoDeviceAsyncWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getIoDeviceAsyncWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Device';
-        $request = $this->getIoDeviceRequest($id, $xAcceptVersion, $include);
+        $request = $this->getIoDeviceRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -501,13 +488,12 @@ class IODevicesApi
      * Create request for operation 'getIoDevice'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getIoDeviceRequest($id, $xAcceptVersion = null, $include = null)
+    protected function getIoDeviceRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -529,10 +515,6 @@ class IODevicesApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -618,16 +600,15 @@ class IODevicesApi
      * Get Channels that belong to IO Deice
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Channel
      */
-    public function getIoDeviceChannels($id, $xAcceptVersion = null, $include = null)
+    public function getIoDeviceChannels($id, $include = null)
     {
-        list($response) = $this->getIoDeviceChannelsWithHttpInfo($id, $xAcceptVersion, $include);
+        list($response) = $this->getIoDeviceChannelsWithHttpInfo($id, $include);
         return $response;
     }
 
@@ -637,17 +618,16 @@ class IODevicesApi
      * Get Channels that belong to IO Deice
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Channel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getIoDeviceChannelsWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getIoDeviceChannelsWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Channel';
-        $request = $this->getIoDeviceChannelsRequest($id, $xAcceptVersion, $include);
+        $request = $this->getIoDeviceChannelsRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -714,15 +694,14 @@ class IODevicesApi
      * Get Channels that belong to IO Deice
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getIoDeviceChannelsAsync($id, $xAcceptVersion = null, $include = null)
+    public function getIoDeviceChannelsAsync($id, $include = null)
     {
-        return $this->getIoDeviceChannelsAsyncWithHttpInfo($id, $xAcceptVersion, $include)
+        return $this->getIoDeviceChannelsAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -736,16 +715,15 @@ class IODevicesApi
      * Get Channels that belong to IO Deice
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getIoDeviceChannelsAsyncWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getIoDeviceChannelsAsyncWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Channel';
-        $request = $this->getIoDeviceChannelsRequest($id, $xAcceptVersion, $include);
+        $request = $this->getIoDeviceChannelsRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -788,13 +766,12 @@ class IODevicesApi
      * Create request for operation 'getIoDeviceChannels'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getIoDeviceChannelsRequest($id, $xAcceptVersion = null, $include = null)
+    protected function getIoDeviceChannelsRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -816,10 +793,6 @@ class IODevicesApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -904,16 +877,15 @@ class IODevicesApi
      *
      * Get IO Devices
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Device[]
      */
-    public function getIoDevices($xAcceptVersion = null, $include = null)
+    public function getIoDevices($include = null)
     {
-        list($response) = $this->getIoDevicesWithHttpInfo($xAcceptVersion, $include);
+        list($response) = $this->getIoDevicesWithHttpInfo($include);
         return $response;
     }
 
@@ -922,17 +894,16 @@ class IODevicesApi
      *
      * Get IO Devices
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Device[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getIoDevicesWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getIoDevicesWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\Device[]';
-        $request = $this->getIoDevicesRequest($xAcceptVersion, $include);
+        $request = $this->getIoDevicesRequest($include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -998,15 +969,14 @@ class IODevicesApi
      *
      * Get IO Devices
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getIoDevicesAsync($xAcceptVersion = null, $include = null)
+    public function getIoDevicesAsync($include = null)
     {
-        return $this->getIoDevicesAsyncWithHttpInfo($xAcceptVersion, $include)
+        return $this->getIoDevicesAsyncWithHttpInfo($include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1019,16 +989,15 @@ class IODevicesApi
      *
      * Get IO Devices
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getIoDevicesAsyncWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getIoDevicesAsyncWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\Device[]';
-        $request = $this->getIoDevicesRequest($xAcceptVersion, $include);
+        $request = $this->getIoDevicesRequest($include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1070,13 +1039,12 @@ class IODevicesApi
     /**
      * Create request for operation 'getIoDevices'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getIoDevicesRequest($xAcceptVersion = null, $include = null)
+    protected function getIoDevicesRequest($include = null)
     {
 
         $resourcePath = '/iodevices';
@@ -1092,10 +1060,6 @@ class IODevicesApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
 
@@ -1174,15 +1138,14 @@ class IODevicesApi
      *
      * @param  int $id id (required)
      * @param  \Swagger\Client\Model\Body8 $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Device
      */
-    public function updateIoDevice($id, $body, $xAcceptVersion = null)
+    public function updateIoDevice($id, $body)
     {
-        list($response) = $this->updateIoDeviceWithHttpInfo($id, $body, $xAcceptVersion);
+        list($response) = $this->updateIoDeviceWithHttpInfo($id, $body);
         return $response;
     }
 
@@ -1193,16 +1156,15 @@ class IODevicesApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body8 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateIoDeviceWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function updateIoDeviceWithHttpInfo($id, $body)
     {
         $returnType = '\Swagger\Client\Model\Device';
-        $request = $this->updateIoDeviceRequest($id, $body, $xAcceptVersion);
+        $request = $this->updateIoDeviceRequest($id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1270,14 +1232,13 @@ class IODevicesApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body8 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateIoDeviceAsync($id, $body, $xAcceptVersion = null)
+    public function updateIoDeviceAsync($id, $body)
     {
-        return $this->updateIoDeviceAsyncWithHttpInfo($id, $body, $xAcceptVersion)
+        return $this->updateIoDeviceAsyncWithHttpInfo($id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1292,15 +1253,14 @@ class IODevicesApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body8 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateIoDeviceAsyncWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function updateIoDeviceAsyncWithHttpInfo($id, $body)
     {
         $returnType = '\Swagger\Client\Model\Device';
-        $request = $this->updateIoDeviceRequest($id, $body, $xAcceptVersion);
+        $request = $this->updateIoDeviceRequest($id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1344,12 +1304,11 @@ class IODevicesApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body8 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateIoDeviceRequest($id, $body, $xAcceptVersion = null)
+    protected function updateIoDeviceRequest($id, $body)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1371,10 +1330,6 @@ class IODevicesApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {

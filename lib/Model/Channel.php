@@ -565,7 +565,7 @@ class Channel implements ModelInterface, ArrayAccess
     /**
      * Sets inheritedLocation
      *
-     * @param bool $inheritedLocation Whether this channel inherits its IODevice's location (`true`) or not (`false`)
+     * @param bool $inheritedLocation Whether this channel inherits its IO Device's location (`true`) or not (`false`)
      *
      * @return $this
      */

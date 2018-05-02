@@ -12,15 +12,11 @@ Get server status
 
 ### Example
 ```php
-$result = $client->server()->serverInfoGet($xAcceptVersion);
+$result = $client->server()->serverInfoGet();
 print_r($result);
 ```
 
-### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -34,15 +30,11 @@ Get the SUPLA Server status
 
 ### Example
 ```php
-$result = $client->server()->serverStatusGet($xAcceptVersion);
+$result = $client->server()->serverStatusGet();
 print_r($result);
 ```
 
-### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 

@@ -42,14 +42,14 @@ PHP 5.5 and later
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://cloud.supla.org/api*
+All URIs are relative to *https://cloud.supla.org/api/v2.2.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccessIDsApi* | [**accessidsGet**](docs/Api/AccessIDsApi.md#accessidsget) | **GET** /accessids | Get Access IDs list
-*AccessIDsApi* | [**accessidsPost**](docs/Api/AccessIDsApi.md#accessidspost) | **POST** /accessids | Create a new Access ID
+*AccessIDsApi* | [**createAccessID**](docs/Api/AccessIDsApi.md#createaccessid) | **POST** /accessids | Create a new Access ID
 *AccessIDsApi* | [**deleteAccessID**](docs/Api/AccessIDsApi.md#deleteaccessid) | **DELETE** /accessids/{id} | Delete Access Identifier
-*AccessIDsApi* | [**getAccessID**](docs/Api/AccessIDsApi.md#getaccessid) | **GET** /accessids/{id} | Get Access ID
+*AccessIDsApi* | [**getAccessID**](docs/Api/AccessIDsApi.md#getaccessid) | **GET** /accessids | Get Access IDs list
+*AccessIDsApi* | [**getAccessID_0**](docs/Api/AccessIDsApi.md#getaccessid_0) | **GET** /accessids/{id} | Get Access ID
 *AccessIDsApi* | [**updateAccessID**](docs/Api/AccessIDsApi.md#updateaccessid) | **PUT** /accessids/{id} | Edit Access ID
 *ChannelGroupsApi* | [**createChannelGroup**](docs/Api/ChannelGroupsApi.md#createchannelgroup) | **POST** /channel-groups | Create a new channel group
 *ChannelGroupsApi* | [**deleteChannelGroup**](docs/Api/ChannelGroupsApi.md#deletechannelgroup) | **DELETE** /channel-groups/{id} | Delete Channel Group

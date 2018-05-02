@@ -93,15 +93,14 @@ class ChannelGroupsApi
      * Create a new channel group
      *
      * @param  \Swagger\Client\Model\Body4 $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ChannelGroup
      */
-    public function createChannelGroup($body, $xAcceptVersion = null)
+    public function createChannelGroup($body)
     {
-        list($response) = $this->createChannelGroupWithHttpInfo($body, $xAcceptVersion);
+        list($response) = $this->createChannelGroupWithHttpInfo($body);
         return $response;
     }
 
@@ -111,16 +110,15 @@ class ChannelGroupsApi
      * Create a new channel group
      *
      * @param  \Swagger\Client\Model\Body4 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ChannelGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createChannelGroupWithHttpInfo($body, $xAcceptVersion = null)
+    public function createChannelGroupWithHttpInfo($body)
     {
         $returnType = '\Swagger\Client\Model\ChannelGroup';
-        $request = $this->createChannelGroupRequest($body, $xAcceptVersion);
+        $request = $this->createChannelGroupRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,14 +185,13 @@ class ChannelGroupsApi
      * Create a new channel group
      *
      * @param  \Swagger\Client\Model\Body4 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createChannelGroupAsync($body, $xAcceptVersion = null)
+    public function createChannelGroupAsync($body)
     {
-        return $this->createChannelGroupAsyncWithHttpInfo($body, $xAcceptVersion)
+        return $this->createChannelGroupAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,15 +205,14 @@ class ChannelGroupsApi
      * Create a new channel group
      *
      * @param  \Swagger\Client\Model\Body4 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createChannelGroupAsyncWithHttpInfo($body, $xAcceptVersion = null)
+    public function createChannelGroupAsyncWithHttpInfo($body)
     {
         $returnType = '\Swagger\Client\Model\ChannelGroup';
-        $request = $this->createChannelGroupRequest($body, $xAcceptVersion);
+        $request = $this->createChannelGroupRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,12 +255,11 @@ class ChannelGroupsApi
      * Create request for operation 'createChannelGroup'
      *
      * @param  \Swagger\Client\Model\Body4 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createChannelGroupRequest($body, $xAcceptVersion = null)
+    protected function createChannelGroupRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -280,10 +275,6 @@ class ChannelGroupsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
 
         // body params
@@ -363,15 +354,14 @@ class ChannelGroupsApi
      * Delete Channel Group
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteChannelGroup($id, $xAcceptVersion = null)
+    public function deleteChannelGroup($id)
     {
-        $this->deleteChannelGroupWithHttpInfo($id, $xAcceptVersion);
+        $this->deleteChannelGroupWithHttpInfo($id);
     }
 
     /**
@@ -380,16 +370,15 @@ class ChannelGroupsApi
      * Delete Channel Group
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteChannelGroupWithHttpInfo($id, $xAcceptVersion = null)
+    public function deleteChannelGroupWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteChannelGroupRequest($id, $xAcceptVersion);
+        $request = $this->deleteChannelGroupRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -434,14 +423,13 @@ class ChannelGroupsApi
      * Delete Channel Group
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteChannelGroupAsync($id, $xAcceptVersion = null)
+    public function deleteChannelGroupAsync($id)
     {
-        return $this->deleteChannelGroupAsyncWithHttpInfo($id, $xAcceptVersion)
+        return $this->deleteChannelGroupAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -455,15 +443,14 @@ class ChannelGroupsApi
      * Delete Channel Group
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteChannelGroupAsyncWithHttpInfo($id, $xAcceptVersion = null)
+    public function deleteChannelGroupAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteChannelGroupRequest($id, $xAcceptVersion);
+        $request = $this->deleteChannelGroupRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -492,12 +479,11 @@ class ChannelGroupsApi
      * Create request for operation 'deleteChannelGroup'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteChannelGroupRequest($id, $xAcceptVersion = null)
+    protected function deleteChannelGroupRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -513,10 +499,6 @@ class ChannelGroupsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {
@@ -602,15 +584,14 @@ class ChannelGroupsApi
      *
      * @param  int $id id (required)
      * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function executeChannelGroupAction($id, $body, $xAcceptVersion = null)
+    public function executeChannelGroupAction($id, $body)
     {
-        $this->executeChannelGroupActionWithHttpInfo($id, $body, $xAcceptVersion);
+        $this->executeChannelGroupActionWithHttpInfo($id, $body);
     }
 
     /**
@@ -620,16 +601,15 @@ class ChannelGroupsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function executeChannelGroupActionWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function executeChannelGroupActionWithHttpInfo($id, $body)
     {
         $returnType = '';
-        $request = $this->executeChannelGroupActionRequest($id, $body, $xAcceptVersion);
+        $request = $this->executeChannelGroupActionRequest($id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -683,14 +663,13 @@ class ChannelGroupsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function executeChannelGroupActionAsync($id, $body, $xAcceptVersion = null)
+    public function executeChannelGroupActionAsync($id, $body)
     {
-        return $this->executeChannelGroupActionAsyncWithHttpInfo($id, $body, $xAcceptVersion)
+        return $this->executeChannelGroupActionAsyncWithHttpInfo($id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -705,15 +684,14 @@ class ChannelGroupsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function executeChannelGroupActionAsyncWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function executeChannelGroupActionAsyncWithHttpInfo($id, $body)
     {
         $returnType = '';
-        $request = $this->executeChannelGroupActionRequest($id, $body, $xAcceptVersion);
+        $request = $this->executeChannelGroupActionRequest($id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -743,12 +721,11 @@ class ChannelGroupsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function executeChannelGroupActionRequest($id, $body, $xAcceptVersion = null)
+    protected function executeChannelGroupActionRequest($id, $body)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -770,10 +747,6 @@ class ChannelGroupsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {
@@ -861,16 +834,15 @@ class ChannelGroupsApi
      * Get channel group by ID
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ChannelGroup
      */
-    public function getChannelGroup($id, $xAcceptVersion = null, $include = null)
+    public function getChannelGroup($id, $include = null)
     {
-        list($response) = $this->getChannelGroupWithHttpInfo($id, $xAcceptVersion, $include);
+        list($response) = $this->getChannelGroupWithHttpInfo($id, $include);
         return $response;
     }
 
@@ -880,17 +852,16 @@ class ChannelGroupsApi
      * Get channel group by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ChannelGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChannelGroupWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getChannelGroupWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\ChannelGroup';
-        $request = $this->getChannelGroupRequest($id, $xAcceptVersion, $include);
+        $request = $this->getChannelGroupRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -957,15 +928,14 @@ class ChannelGroupsApi
      * Get channel group by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelGroupAsync($id, $xAcceptVersion = null, $include = null)
+    public function getChannelGroupAsync($id, $include = null)
     {
-        return $this->getChannelGroupAsyncWithHttpInfo($id, $xAcceptVersion, $include)
+        return $this->getChannelGroupAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -979,16 +949,15 @@ class ChannelGroupsApi
      * Get channel group by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelGroupAsyncWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getChannelGroupAsyncWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\ChannelGroup';
-        $request = $this->getChannelGroupRequest($id, $xAcceptVersion, $include);
+        $request = $this->getChannelGroupRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1031,13 +1000,12 @@ class ChannelGroupsApi
      * Create request for operation 'getChannelGroup'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getChannelGroupRequest($id, $xAcceptVersion = null, $include = null)
+    protected function getChannelGroupRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1059,10 +1027,6 @@ class ChannelGroupsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -1147,16 +1111,15 @@ class ChannelGroupsApi
      *
      * Get channels list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ChannelGroup[]
      */
-    public function getChannelGroups($xAcceptVersion = null, $include = null)
+    public function getChannelGroups($include = null)
     {
-        list($response) = $this->getChannelGroupsWithHttpInfo($xAcceptVersion, $include);
+        list($response) = $this->getChannelGroupsWithHttpInfo($include);
         return $response;
     }
 
@@ -1165,17 +1128,16 @@ class ChannelGroupsApi
      *
      * Get channels list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ChannelGroup[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChannelGroupsWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getChannelGroupsWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\ChannelGroup[]';
-        $request = $this->getChannelGroupsRequest($xAcceptVersion, $include);
+        $request = $this->getChannelGroupsRequest($include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1241,15 +1203,14 @@ class ChannelGroupsApi
      *
      * Get channels list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelGroupsAsync($xAcceptVersion = null, $include = null)
+    public function getChannelGroupsAsync($include = null)
     {
-        return $this->getChannelGroupsAsyncWithHttpInfo($xAcceptVersion, $include)
+        return $this->getChannelGroupsAsyncWithHttpInfo($include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1262,16 +1223,15 @@ class ChannelGroupsApi
      *
      * Get channels list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelGroupsAsyncWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getChannelGroupsAsyncWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\ChannelGroup[]';
-        $request = $this->getChannelGroupsRequest($xAcceptVersion, $include);
+        $request = $this->getChannelGroupsRequest($include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1313,13 +1273,12 @@ class ChannelGroupsApi
     /**
      * Create request for operation 'getChannelGroups'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getChannelGroupsRequest($xAcceptVersion = null, $include = null)
+    protected function getChannelGroupsRequest($include = null)
     {
 
         $resourcePath = '/channel-groups';
@@ -1335,10 +1294,6 @@ class ChannelGroupsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
 
@@ -1417,15 +1372,14 @@ class ChannelGroupsApi
      *
      * @param  int $id id (required)
      * @param  \Swagger\Client\Model\Body5 $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\ChannelGroup
      */
-    public function updateChannelGroup($id, $body, $xAcceptVersion = null)
+    public function updateChannelGroup($id, $body)
     {
-        list($response) = $this->updateChannelGroupWithHttpInfo($id, $body, $xAcceptVersion);
+        list($response) = $this->updateChannelGroupWithHttpInfo($id, $body);
         return $response;
     }
 
@@ -1436,16 +1390,15 @@ class ChannelGroupsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body5 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\ChannelGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateChannelGroupWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function updateChannelGroupWithHttpInfo($id, $body)
     {
         $returnType = '\Swagger\Client\Model\ChannelGroup';
-        $request = $this->updateChannelGroupRequest($id, $body, $xAcceptVersion);
+        $request = $this->updateChannelGroupRequest($id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1513,14 +1466,13 @@ class ChannelGroupsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body5 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateChannelGroupAsync($id, $body, $xAcceptVersion = null)
+    public function updateChannelGroupAsync($id, $body)
     {
-        return $this->updateChannelGroupAsyncWithHttpInfo($id, $body, $xAcceptVersion)
+        return $this->updateChannelGroupAsyncWithHttpInfo($id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1535,15 +1487,14 @@ class ChannelGroupsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body5 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateChannelGroupAsyncWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function updateChannelGroupAsyncWithHttpInfo($id, $body)
     {
         $returnType = '\Swagger\Client\Model\ChannelGroup';
-        $request = $this->updateChannelGroupRequest($id, $body, $xAcceptVersion);
+        $request = $this->updateChannelGroupRequest($id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1587,12 +1538,11 @@ class ChannelGroupsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body5 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateChannelGroupRequest($id, $body, $xAcceptVersion = null)
+    protected function updateChannelGroupRequest($id, $body)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1614,10 +1564,6 @@ class ChannelGroupsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {

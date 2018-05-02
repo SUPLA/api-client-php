@@ -92,15 +92,14 @@ class ServerApi
      *
      * Get server status
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse200
      */
-    public function serverInfoGet($xAcceptVersion = null)
+    public function serverInfoGet()
     {
-        list($response) = $this->serverInfoGetWithHttpInfo($xAcceptVersion);
+        list($response) = $this->serverInfoGetWithHttpInfo();
         return $response;
     }
 
@@ -109,16 +108,15 @@ class ServerApi
      *
      * Get server status
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function serverInfoGetWithHttpInfo($xAcceptVersion = null)
+    public function serverInfoGetWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\InlineResponse200';
-        $request = $this->serverInfoGetRequest($xAcceptVersion);
+        $request = $this->serverInfoGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -184,14 +182,13 @@ class ServerApi
      *
      * Get server status
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverInfoGetAsync($xAcceptVersion = null)
+    public function serverInfoGetAsync()
     {
-        return $this->serverInfoGetAsyncWithHttpInfo($xAcceptVersion)
+        return $this->serverInfoGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -204,15 +201,14 @@ class ServerApi
      *
      * Get server status
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverInfoGetAsyncWithHttpInfo($xAcceptVersion = null)
+    public function serverInfoGetAsyncWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\InlineResponse200';
-        $request = $this->serverInfoGetRequest($xAcceptVersion);
+        $request = $this->serverInfoGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -254,12 +250,11 @@ class ServerApi
     /**
      * Create request for operation 'serverInfoGet'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function serverInfoGetRequest($xAcceptVersion = null)
+    protected function serverInfoGetRequest()
     {
 
         $resourcePath = '/server-info';
@@ -269,10 +264,6 @@ class ServerApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
 
         // body params
@@ -344,15 +335,14 @@ class ServerApi
      *
      * Get the SUPLA Server status
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse2001
      */
-    public function serverStatusGet($xAcceptVersion = null)
+    public function serverStatusGet()
     {
-        list($response) = $this->serverStatusGetWithHttpInfo($xAcceptVersion);
+        list($response) = $this->serverStatusGetWithHttpInfo();
         return $response;
     }
 
@@ -361,16 +351,15 @@ class ServerApi
      *
      * Get the SUPLA Server status
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function serverStatusGetWithHttpInfo($xAcceptVersion = null)
+    public function serverStatusGetWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2001';
-        $request = $this->serverStatusGetRequest($xAcceptVersion);
+        $request = $this->serverStatusGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -444,14 +433,13 @@ class ServerApi
      *
      * Get the SUPLA Server status
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverStatusGetAsync($xAcceptVersion = null)
+    public function serverStatusGetAsync()
     {
-        return $this->serverStatusGetAsyncWithHttpInfo($xAcceptVersion)
+        return $this->serverStatusGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -464,15 +452,14 @@ class ServerApi
      *
      * Get the SUPLA Server status
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverStatusGetAsyncWithHttpInfo($xAcceptVersion = null)
+    public function serverStatusGetAsyncWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2001';
-        $request = $this->serverStatusGetRequest($xAcceptVersion);
+        $request = $this->serverStatusGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -514,12 +501,11 @@ class ServerApi
     /**
      * Create request for operation 'serverStatusGet'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function serverStatusGetRequest($xAcceptVersion = null)
+    protected function serverStatusGetRequest()
     {
 
         $resourcePath = '/server-status';
@@ -529,10 +515,6 @@ class ServerApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
 
         // body params

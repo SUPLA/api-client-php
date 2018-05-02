@@ -16,16 +16,16 @@ Create a new schedule
 
 ### Example
 ```php
-$result = $client->schedules()->createSchedule($body, $xAcceptVersion);
+$body = new \Swagger\Client\Model\ScheduleRequest(); // \Swagger\Client\Model\ScheduleRequest | 
+$result = $client->schedules()->createSchedule($body);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Swagger\Client\Model\ScheduleRequest**](../Model/ScheduleRequest.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -39,15 +39,15 @@ Delete Schedule
 
 ### Example
 ```php
-$result = $client->schedules()->deleteSchedule($id, $xAcceptVersion);
+$id = 56; // int | 
+$result = $client->schedules()->deleteSchedule($id);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -61,15 +61,15 @@ Enable schedules
 
 ### Example
 ```php
-$result = $client->schedules()->enableSchedules($body, $xAcceptVersion);
+$body = new \Swagger\Client\Model\Body9(); // \Swagger\Client\Model\Body9 | 
+$result = $client->schedules()->enableSchedules($body);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Swagger\Client\Model\Body9**](../Model/Body9.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
 
 ### Return type
 
@@ -83,16 +83,17 @@ Get Schedule
 
 ### Example
 ```php
-$result = $client->schedules()->getSchedule($id, $xAcceptVersion, $include);
+$id = 56; // int | 
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->schedules()->getSchedule($id, $include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -107,15 +108,15 @@ Get schedules list
 
 ### Example
 ```php
-$result = $client->schedules()->getSchedules($xAcceptVersion, $include);
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->schedules()->getSchedules($include);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xAcceptVersion** | **string**| API Version | [optional]
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type
@@ -130,17 +131,19 @@ Update schedule
 
 ### Example
 ```php
-$result = $client->schedules()->updateSchedule($id, $body, $xAcceptVersion, $enable);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\ScheduleRequest(); // \Swagger\Client\Model\ScheduleRequest | 
+$enable = true; // bool | Set to `true` to enable the schedule after saving.
+$result = $client->schedules()->updateSchedule($id, $body, $enable);
 print_r($result);
 ```
 
-### Parameters
 
+### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\ScheduleRequest**](../Model/ScheduleRequest.md)|  |
- **xAcceptVersion** | **string**| API Version | [optional]
  **enable** | **bool**| Set to &#x60;true&#x60; to enable the schedule after saving. | [optional]
 
 ### Return type

@@ -94,15 +94,14 @@ class ChannelsApi
      *
      * @param  int $id id (required)
      * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function executeAction($id, $body, $xAcceptVersion = null)
+    public function executeAction($id, $body)
     {
-        $this->executeActionWithHttpInfo($id, $body, $xAcceptVersion);
+        $this->executeActionWithHttpInfo($id, $body);
     }
 
     /**
@@ -112,16 +111,15 @@ class ChannelsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function executeActionWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function executeActionWithHttpInfo($id, $body)
     {
         $returnType = '';
-        $request = $this->executeActionRequest($id, $body, $xAcceptVersion);
+        $request = $this->executeActionRequest($id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -175,14 +173,13 @@ class ChannelsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function executeActionAsync($id, $body, $xAcceptVersion = null)
+    public function executeActionAsync($id, $body)
     {
-        return $this->executeActionAsyncWithHttpInfo($id, $body, $xAcceptVersion)
+        return $this->executeActionAsyncWithHttpInfo($id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -197,15 +194,14 @@ class ChannelsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function executeActionAsyncWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function executeActionAsyncWithHttpInfo($id, $body)
     {
         $returnType = '';
-        $request = $this->executeActionRequest($id, $body, $xAcceptVersion);
+        $request = $this->executeActionRequest($id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -235,12 +231,11 @@ class ChannelsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function executeActionRequest($id, $body, $xAcceptVersion = null)
+    protected function executeActionRequest($id, $body)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -262,10 +257,6 @@ class ChannelsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {
@@ -353,16 +344,15 @@ class ChannelsApi
      * Get channel by ID
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Channel
      */
-    public function getChannel($id, $xAcceptVersion = null, $include = null)
+    public function getChannel($id, $include = null)
     {
-        list($response) = $this->getChannelWithHttpInfo($id, $xAcceptVersion, $include);
+        list($response) = $this->getChannelWithHttpInfo($id, $include);
         return $response;
     }
 
@@ -372,17 +362,16 @@ class ChannelsApi
      * Get channel by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Channel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChannelWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getChannelWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Channel';
-        $request = $this->getChannelRequest($id, $xAcceptVersion, $include);
+        $request = $this->getChannelRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -449,15 +438,14 @@ class ChannelsApi
      * Get channel by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelAsync($id, $xAcceptVersion = null, $include = null)
+    public function getChannelAsync($id, $include = null)
     {
-        return $this->getChannelAsyncWithHttpInfo($id, $xAcceptVersion, $include)
+        return $this->getChannelAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -471,16 +459,15 @@ class ChannelsApi
      * Get channel by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelAsyncWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getChannelAsyncWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Channel';
-        $request = $this->getChannelRequest($id, $xAcceptVersion, $include);
+        $request = $this->getChannelRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -523,13 +510,12 @@ class ChannelsApi
      * Create request for operation 'getChannel'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getChannelRequest($id, $xAcceptVersion = null, $include = null)
+    protected function getChannelRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -551,10 +537,6 @@ class ChannelsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -640,7 +622,6 @@ class ChannelsApi
      * Get measurement logs.
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  int $limit Maximum items count in response, from 1 to 5000 (optional, default to 5000)
      * @param  int $offset Pagination offset (optional)
      *
@@ -648,9 +629,9 @@ class ChannelsApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\InlineResponse2003[]
      */
-    public function getChannelMeasurementLogs($id, $xAcceptVersion = null, $limit = '5000', $offset = null)
+    public function getChannelMeasurementLogs($id, $limit = '5000', $offset = null)
     {
-        list($response) = $this->getChannelMeasurementLogsWithHttpInfo($id, $xAcceptVersion, $limit, $offset);
+        list($response) = $this->getChannelMeasurementLogsWithHttpInfo($id, $limit, $offset);
         return $response;
     }
 
@@ -660,7 +641,6 @@ class ChannelsApi
      * Get measurement logs.
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  int $limit Maximum items count in response, from 1 to 5000 (optional, default to 5000)
      * @param  int $offset Pagination offset (optional)
      *
@@ -668,10 +648,10 @@ class ChannelsApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChannelMeasurementLogsWithHttpInfo($id, $xAcceptVersion = null, $limit = '5000', $offset = null)
+    public function getChannelMeasurementLogsWithHttpInfo($id, $limit = '5000', $offset = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2003[]';
-        $request = $this->getChannelMeasurementLogsRequest($id, $xAcceptVersion, $limit, $offset);
+        $request = $this->getChannelMeasurementLogsRequest($id, $limit, $offset);
 
         try {
             $options = $this->createHttpClientOption();
@@ -746,16 +726,15 @@ class ChannelsApi
      * Get measurement logs.
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  int $limit Maximum items count in response, from 1 to 5000 (optional, default to 5000)
      * @param  int $offset Pagination offset (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelMeasurementLogsAsync($id, $xAcceptVersion = null, $limit = '5000', $offset = null)
+    public function getChannelMeasurementLogsAsync($id, $limit = '5000', $offset = null)
     {
-        return $this->getChannelMeasurementLogsAsyncWithHttpInfo($id, $xAcceptVersion, $limit, $offset)
+        return $this->getChannelMeasurementLogsAsyncWithHttpInfo($id, $limit, $offset)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -769,17 +748,16 @@ class ChannelsApi
      * Get measurement logs.
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  int $limit Maximum items count in response, from 1 to 5000 (optional, default to 5000)
      * @param  int $offset Pagination offset (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelMeasurementLogsAsyncWithHttpInfo($id, $xAcceptVersion = null, $limit = '5000', $offset = null)
+    public function getChannelMeasurementLogsAsyncWithHttpInfo($id, $limit = '5000', $offset = null)
     {
         $returnType = '\Swagger\Client\Model\InlineResponse2003[]';
-        $request = $this->getChannelMeasurementLogsRequest($id, $xAcceptVersion, $limit, $offset);
+        $request = $this->getChannelMeasurementLogsRequest($id, $limit, $offset);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -822,14 +800,13 @@ class ChannelsApi
      * Create request for operation 'getChannelMeasurementLogs'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  int $limit Maximum items count in response, from 1 to 5000 (optional, default to 5000)
      * @param  int $offset Pagination offset (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getChannelMeasurementLogsRequest($id, $xAcceptVersion = null, $limit = '5000', $offset = null)
+    protected function getChannelMeasurementLogsRequest($id, $limit = '5000', $offset = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -852,10 +829,6 @@ class ChannelsApi
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -941,15 +914,14 @@ class ChannelsApi
      * Get measurement logs as zipped CSV file.
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getChannelMeasurementLogsCsvFile($id, $xAcceptVersion = null)
+    public function getChannelMeasurementLogsCsvFile($id)
     {
-        list($response) = $this->getChannelMeasurementLogsCsvFileWithHttpInfo($id, $xAcceptVersion);
+        list($response) = $this->getChannelMeasurementLogsCsvFileWithHttpInfo($id);
         return $response;
     }
 
@@ -959,16 +931,15 @@ class ChannelsApi
      * Get measurement logs as zipped CSV file.
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChannelMeasurementLogsCsvFileWithHttpInfo($id, $xAcceptVersion = null)
+    public function getChannelMeasurementLogsCsvFileWithHttpInfo($id)
     {
         $returnType = '\SplFileObject';
-        $request = $this->getChannelMeasurementLogsCsvFileRequest($id, $xAcceptVersion);
+        $request = $this->getChannelMeasurementLogsCsvFileRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1043,14 +1014,13 @@ class ChannelsApi
      * Get measurement logs as zipped CSV file.
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelMeasurementLogsCsvFileAsync($id, $xAcceptVersion = null)
+    public function getChannelMeasurementLogsCsvFileAsync($id)
     {
-        return $this->getChannelMeasurementLogsCsvFileAsyncWithHttpInfo($id, $xAcceptVersion)
+        return $this->getChannelMeasurementLogsCsvFileAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1064,15 +1034,14 @@ class ChannelsApi
      * Get measurement logs as zipped CSV file.
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelMeasurementLogsCsvFileAsyncWithHttpInfo($id, $xAcceptVersion = null)
+    public function getChannelMeasurementLogsCsvFileAsyncWithHttpInfo($id)
     {
         $returnType = '\SplFileObject';
-        $request = $this->getChannelMeasurementLogsCsvFileRequest($id, $xAcceptVersion);
+        $request = $this->getChannelMeasurementLogsCsvFileRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1115,12 +1084,11 @@ class ChannelsApi
      * Create request for operation 'getChannelMeasurementLogsCsvFile'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getChannelMeasurementLogsCsvFileRequest($id, $xAcceptVersion = null)
+    protected function getChannelMeasurementLogsCsvFileRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1136,10 +1104,6 @@ class ChannelsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {
@@ -1224,16 +1188,15 @@ class ChannelsApi
      * Get schedules list of the channel
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Schedule[]
      */
-    public function getChannelSchedules($id, $xAcceptVersion = null, $include = null)
+    public function getChannelSchedules($id, $include = null)
     {
-        list($response) = $this->getChannelSchedulesWithHttpInfo($id, $xAcceptVersion, $include);
+        list($response) = $this->getChannelSchedulesWithHttpInfo($id, $include);
         return $response;
     }
 
@@ -1243,17 +1206,16 @@ class ChannelsApi
      * Get schedules list of the channel
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Schedule[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChannelSchedulesWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getChannelSchedulesWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Schedule[]';
-        $request = $this->getChannelSchedulesRequest($id, $xAcceptVersion, $include);
+        $request = $this->getChannelSchedulesRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1320,15 +1282,14 @@ class ChannelsApi
      * Get schedules list of the channel
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelSchedulesAsync($id, $xAcceptVersion = null, $include = null)
+    public function getChannelSchedulesAsync($id, $include = null)
     {
-        return $this->getChannelSchedulesAsyncWithHttpInfo($id, $xAcceptVersion, $include)
+        return $this->getChannelSchedulesAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1342,16 +1303,15 @@ class ChannelsApi
      * Get schedules list of the channel
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelSchedulesAsyncWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getChannelSchedulesAsyncWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Schedule[]';
-        $request = $this->getChannelSchedulesRequest($id, $xAcceptVersion, $include);
+        $request = $this->getChannelSchedulesRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1394,13 +1354,12 @@ class ChannelsApi
      * Create request for operation 'getChannelSchedules'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getChannelSchedulesRequest($id, $xAcceptVersion = null, $include = null)
+    protected function getChannelSchedulesRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1422,10 +1381,6 @@ class ChannelsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -1510,7 +1465,6 @@ class ChannelsApi
      *
      * Get channels list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      * @param  string[] $function function (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
@@ -1520,9 +1474,9 @@ class ChannelsApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Channel[]
      */
-    public function getChannels($xAcceptVersion = null, $include = null, $function = null, $io = null, $hasFunction = null)
+    public function getChannels($include = null, $function = null, $io = null, $hasFunction = null)
     {
-        list($response) = $this->getChannelsWithHttpInfo($xAcceptVersion, $include, $function, $io, $hasFunction);
+        list($response) = $this->getChannelsWithHttpInfo($include, $function, $io, $hasFunction);
         return $response;
     }
 
@@ -1531,7 +1485,6 @@ class ChannelsApi
      *
      * Get channels list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      * @param  string[] $function (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
@@ -1541,10 +1494,10 @@ class ChannelsApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Channel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChannelsWithHttpInfo($xAcceptVersion = null, $include = null, $function = null, $io = null, $hasFunction = null)
+    public function getChannelsWithHttpInfo($include = null, $function = null, $io = null, $hasFunction = null)
     {
         $returnType = '\Swagger\Client\Model\Channel[]';
-        $request = $this->getChannelsRequest($xAcceptVersion, $include, $function, $io, $hasFunction);
+        $request = $this->getChannelsRequest($include, $function, $io, $hasFunction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1610,7 +1563,6 @@ class ChannelsApi
      *
      * Get channels list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      * @param  string[] $function (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
@@ -1619,9 +1571,9 @@ class ChannelsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelsAsync($xAcceptVersion = null, $include = null, $function = null, $io = null, $hasFunction = null)
+    public function getChannelsAsync($include = null, $function = null, $io = null, $hasFunction = null)
     {
-        return $this->getChannelsAsyncWithHttpInfo($xAcceptVersion, $include, $function, $io, $hasFunction)
+        return $this->getChannelsAsyncWithHttpInfo($include, $function, $io, $hasFunction)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1634,7 +1586,6 @@ class ChannelsApi
      *
      * Get channels list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      * @param  string[] $function (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
@@ -1643,10 +1594,10 @@ class ChannelsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelsAsyncWithHttpInfo($xAcceptVersion = null, $include = null, $function = null, $io = null, $hasFunction = null)
+    public function getChannelsAsyncWithHttpInfo($include = null, $function = null, $io = null, $hasFunction = null)
     {
         $returnType = '\Swagger\Client\Model\Channel[]';
-        $request = $this->getChannelsRequest($xAcceptVersion, $include, $function, $io, $hasFunction);
+        $request = $this->getChannelsRequest($include, $function, $io, $hasFunction);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1688,7 +1639,6 @@ class ChannelsApi
     /**
      * Create request for operation 'getChannels'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      * @param  string[] $function (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
@@ -1697,7 +1647,7 @@ class ChannelsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getChannelsRequest($xAcceptVersion = null, $include = null, $function = null, $io = null, $hasFunction = null)
+    protected function getChannelsRequest($include = null, $function = null, $io = null, $hasFunction = null)
     {
 
         $resourcePath = '/channels';
@@ -1728,10 +1678,6 @@ class ChannelsApi
         // query params
         if ($hasFunction !== null) {
             $queryParams['hasFunction'] = ObjectSerializer::toQueryValue($hasFunction);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
 
@@ -1810,15 +1756,14 @@ class ChannelsApi
      *
      * @param  int $id id (required)
      * @param  \Swagger\Client\Model\Body2 $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Channel
      */
-    public function updateChannel($id, $body, $xAcceptVersion = null)
+    public function updateChannel($id, $body)
     {
-        list($response) = $this->updateChannelWithHttpInfo($id, $body, $xAcceptVersion);
+        list($response) = $this->updateChannelWithHttpInfo($id, $body);
         return $response;
     }
 
@@ -1829,16 +1774,15 @@ class ChannelsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body2 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Channel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateChannelWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function updateChannelWithHttpInfo($id, $body)
     {
         $returnType = '\Swagger\Client\Model\Channel';
-        $request = $this->updateChannelRequest($id, $body, $xAcceptVersion);
+        $request = $this->updateChannelRequest($id, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1914,14 +1858,13 @@ class ChannelsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body2 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateChannelAsync($id, $body, $xAcceptVersion = null)
+    public function updateChannelAsync($id, $body)
     {
-        return $this->updateChannelAsyncWithHttpInfo($id, $body, $xAcceptVersion)
+        return $this->updateChannelAsyncWithHttpInfo($id, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1936,15 +1879,14 @@ class ChannelsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body2 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateChannelAsyncWithHttpInfo($id, $body, $xAcceptVersion = null)
+    public function updateChannelAsyncWithHttpInfo($id, $body)
     {
         $returnType = '\Swagger\Client\Model\Channel';
-        $request = $this->updateChannelRequest($id, $body, $xAcceptVersion);
+        $request = $this->updateChannelRequest($id, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1988,12 +1930,11 @@ class ChannelsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body2 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateChannelRequest($id, $body, $xAcceptVersion = null)
+    protected function updateChannelRequest($id, $body)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2015,10 +1956,6 @@ class ChannelsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
         // path params
         if ($id !== null) {

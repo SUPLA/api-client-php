@@ -92,15 +92,14 @@ class LocationsApi
      *
      * Create a new location
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Location
      */
-    public function createLocation($xAcceptVersion = null)
+    public function createLocation()
     {
-        list($response) = $this->createLocationWithHttpInfo($xAcceptVersion);
+        list($response) = $this->createLocationWithHttpInfo();
         return $response;
     }
 
@@ -109,16 +108,15 @@ class LocationsApi
      *
      * Create a new location
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Location, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createLocationWithHttpInfo($xAcceptVersion = null)
+    public function createLocationWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\Location';
-        $request = $this->createLocationRequest($xAcceptVersion);
+        $request = $this->createLocationRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -184,14 +182,13 @@ class LocationsApi
      *
      * Create a new location
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createLocationAsync($xAcceptVersion = null)
+    public function createLocationAsync()
     {
-        return $this->createLocationAsyncWithHttpInfo($xAcceptVersion)
+        return $this->createLocationAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -204,15 +201,14 @@ class LocationsApi
      *
      * Create a new location
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createLocationAsyncWithHttpInfo($xAcceptVersion = null)
+    public function createLocationAsyncWithHttpInfo()
     {
         $returnType = '\Swagger\Client\Model\Location';
-        $request = $this->createLocationRequest($xAcceptVersion);
+        $request = $this->createLocationRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -254,12 +250,11 @@ class LocationsApi
     /**
      * Create request for operation 'createLocation'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createLocationRequest($xAcceptVersion = null)
+    protected function createLocationRequest()
     {
 
         $resourcePath = '/locations';
@@ -269,10 +264,6 @@ class LocationsApi
         $httpBody = '';
         $multipart = false;
 
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
-        }
 
 
         // body params
@@ -349,16 +340,15 @@ class LocationsApi
      * Delete location
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteLocation($id, $xAcceptVersion = null, $include = null)
+    public function deleteLocation($id, $include = null)
     {
-        $this->deleteLocationWithHttpInfo($id, $xAcceptVersion, $include);
+        $this->deleteLocationWithHttpInfo($id, $include);
     }
 
     /**
@@ -367,17 +357,16 @@ class LocationsApi
      * Delete location
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteLocationWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function deleteLocationWithHttpInfo($id, $include = null)
     {
         $returnType = '';
-        $request = $this->deleteLocationRequest($id, $xAcceptVersion, $include);
+        $request = $this->deleteLocationRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -422,15 +411,14 @@ class LocationsApi
      * Delete location
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteLocationAsync($id, $xAcceptVersion = null, $include = null)
+    public function deleteLocationAsync($id, $include = null)
     {
-        return $this->deleteLocationAsyncWithHttpInfo($id, $xAcceptVersion, $include)
+        return $this->deleteLocationAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -444,16 +432,15 @@ class LocationsApi
      * Delete location
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteLocationAsyncWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function deleteLocationAsyncWithHttpInfo($id, $include = null)
     {
         $returnType = '';
-        $request = $this->deleteLocationRequest($id, $xAcceptVersion, $include);
+        $request = $this->deleteLocationRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -482,13 +469,12 @@ class LocationsApi
      * Create request for operation 'deleteLocation'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteLocationRequest($id, $xAcceptVersion = null, $include = null)
+    protected function deleteLocationRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -510,10 +496,6 @@ class LocationsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -599,16 +581,15 @@ class LocationsApi
      * Get location by ID
      *
      * @param  int $id id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Location
      */
-    public function getLocation($id, $xAcceptVersion = null, $include = null)
+    public function getLocation($id, $include = null)
     {
-        list($response) = $this->getLocationWithHttpInfo($id, $xAcceptVersion, $include);
+        list($response) = $this->getLocationWithHttpInfo($id, $include);
         return $response;
     }
 
@@ -618,17 +599,16 @@ class LocationsApi
      * Get location by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Location, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLocationWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getLocationWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Location';
-        $request = $this->getLocationRequest($id, $xAcceptVersion, $include);
+        $request = $this->getLocationRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -695,15 +675,14 @@ class LocationsApi
      * Get location by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocationAsync($id, $xAcceptVersion = null, $include = null)
+    public function getLocationAsync($id, $include = null)
     {
-        return $this->getLocationAsyncWithHttpInfo($id, $xAcceptVersion, $include)
+        return $this->getLocationAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -717,16 +696,15 @@ class LocationsApi
      * Get location by ID
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocationAsyncWithHttpInfo($id, $xAcceptVersion = null, $include = null)
+    public function getLocationAsyncWithHttpInfo($id, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Location';
-        $request = $this->getLocationRequest($id, $xAcceptVersion, $include);
+        $request = $this->getLocationRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -769,13 +747,12 @@ class LocationsApi
      * Create request for operation 'getLocation'
      *
      * @param  int $id (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getLocationRequest($id, $xAcceptVersion = null, $include = null)
+    protected function getLocationRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -797,10 +774,6 @@ class LocationsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params
@@ -885,16 +858,15 @@ class LocationsApi
      *
      * Get locations list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Location[]
      */
-    public function getLocations($xAcceptVersion = null, $include = null)
+    public function getLocations($include = null)
     {
-        list($response) = $this->getLocationsWithHttpInfo($xAcceptVersion, $include);
+        list($response) = $this->getLocationsWithHttpInfo($include);
         return $response;
     }
 
@@ -903,17 +875,16 @@ class LocationsApi
      *
      * Get locations list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Location[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLocationsWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getLocationsWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\Location[]';
-        $request = $this->getLocationsRequest($xAcceptVersion, $include);
+        $request = $this->getLocationsRequest($include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -979,15 +950,14 @@ class LocationsApi
      *
      * Get locations list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocationsAsync($xAcceptVersion = null, $include = null)
+    public function getLocationsAsync($include = null)
     {
-        return $this->getLocationsAsyncWithHttpInfo($xAcceptVersion, $include)
+        return $this->getLocationsAsyncWithHttpInfo($include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1000,16 +970,15 @@ class LocationsApi
      *
      * Get locations list
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocationsAsyncWithHttpInfo($xAcceptVersion = null, $include = null)
+    public function getLocationsAsyncWithHttpInfo($include = null)
     {
         $returnType = '\Swagger\Client\Model\Location[]';
-        $request = $this->getLocationsRequest($xAcceptVersion, $include);
+        $request = $this->getLocationsRequest($include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1051,13 +1020,12 @@ class LocationsApi
     /**
      * Create request for operation 'getLocations'
      *
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getLocationsRequest($xAcceptVersion = null, $include = null)
+    protected function getLocationsRequest($include = null)
     {
 
         $resourcePath = '/locations';
@@ -1073,10 +1041,6 @@ class LocationsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
 
@@ -1155,16 +1119,15 @@ class LocationsApi
      *
      * @param  int $id id (required)
      * @param  \Swagger\Client\Model\Body1 $body body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Location
      */
-    public function updateLocation($id, $body, $xAcceptVersion = null, $include = null)
+    public function updateLocation($id, $body, $include = null)
     {
-        list($response) = $this->updateLocationWithHttpInfo($id, $body, $xAcceptVersion, $include);
+        list($response) = $this->updateLocationWithHttpInfo($id, $body, $include);
         return $response;
     }
 
@@ -1175,17 +1138,16 @@ class LocationsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body1 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Location, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateLocationWithHttpInfo($id, $body, $xAcceptVersion = null, $include = null)
+    public function updateLocationWithHttpInfo($id, $body, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Location';
-        $request = $this->updateLocationRequest($id, $body, $xAcceptVersion, $include);
+        $request = $this->updateLocationRequest($id, $body, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1253,15 +1215,14 @@ class LocationsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body1 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateLocationAsync($id, $body, $xAcceptVersion = null, $include = null)
+    public function updateLocationAsync($id, $body, $include = null)
     {
-        return $this->updateLocationAsyncWithHttpInfo($id, $body, $xAcceptVersion, $include)
+        return $this->updateLocationAsyncWithHttpInfo($id, $body, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1276,16 +1237,15 @@ class LocationsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body1 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateLocationAsyncWithHttpInfo($id, $body, $xAcceptVersion = null, $include = null)
+    public function updateLocationAsyncWithHttpInfo($id, $body, $include = null)
     {
         $returnType = '\Swagger\Client\Model\Location';
-        $request = $this->updateLocationRequest($id, $body, $xAcceptVersion, $include);
+        $request = $this->updateLocationRequest($id, $body, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1329,13 +1289,12 @@ class LocationsApi
      *
      * @param  int $id (required)
      * @param  \Swagger\Client\Model\Body1 $body (required)
-     * @param  string $xAcceptVersion API Version (optional)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateLocationRequest($id, $body, $xAcceptVersion = null, $include = null)
+    protected function updateLocationRequest($id, $body, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1363,10 +1322,6 @@ class LocationsApi
         }
         if ($include !== null) {
             $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-        // header params
-        if ($xAcceptVersion !== null) {
-            $headerParams['X-Accept-Version'] = ObjectSerializer::toHeaderValue($xAcceptVersion);
         }
 
         // path params

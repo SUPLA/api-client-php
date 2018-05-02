@@ -5,7 +5,7 @@
     "title" : "SUPLA Cloud API"
   },
   "host" : "cloud.supla.org",
-  "basePath" : "/api",
+  "basePath" : "/api/v2.2.0",
   "schemes" : [ "https", "http" ],
   "consumes" : [ "application/json" ],
   "produces" : [ "application/json" ],
@@ -17,15 +17,7 @@
       "get" : {
         "tags" : [ "Server" ],
         "summary" : "Get server status",
-        "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        } ],
+        "parameters" : [ ],
         "responses" : {
           "200" : {
             "description" : "Server status",
@@ -41,15 +33,7 @@
       "get" : {
         "tags" : [ "Server" ],
         "summary" : "Get the SUPLA Server status",
-        "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        } ],
+        "parameters" : [ ],
         "responses" : {
           "200" : {
             "description" : "SUPLA Server is alive",
@@ -72,15 +56,7 @@
         "tags" : [ "Users" ],
         "summary" : "Get current user",
         "operationId" : "getCurrentUser",
-        "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        } ],
+        "parameters" : [ ],
         "responses" : {
           "200" : {
             "description" : "Success",
@@ -95,14 +71,6 @@
         "summary" : "Edit current user",
         "operationId" : "editCurrentUser",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "in" : "body",
           "name" : "body",
           "required" : true,
@@ -126,14 +94,6 @@
         "summary" : "Get locations list",
         "operationId" : "getLocations",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "include",
           "in" : "query",
           "description" : "Specify what extra fields to include in the response.",
@@ -161,15 +121,7 @@
         "tags" : [ "Locations" ],
         "summary" : "Create a new location",
         "operationId" : "createLocation",
-        "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        } ],
+        "parameters" : [ ],
         "responses" : {
           "201" : {
             "description" : "Newely created location with automatic name",
@@ -186,14 +138,6 @@
         "summary" : "Get location by ID",
         "operationId" : "getLocation",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -224,14 +168,6 @@
         "summary" : "Edit location",
         "operationId" : "updateLocation",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -269,14 +205,6 @@
         "summary" : "Delete location",
         "operationId" : "deleteLocation",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -306,14 +234,6 @@
         "summary" : "Get channels list",
         "operationId" : "getChannels",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "include",
           "in" : "query",
           "description" : "Specify what extra fields to include in the response.",
@@ -367,14 +287,6 @@
         "summary" : "Get channel by ID",
         "operationId" : "getChannel",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -405,14 +317,6 @@
         "summary" : "Update channel",
         "operationId" : "updateChannel",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -445,14 +349,6 @@
         "summary" : "Execute action on the channel",
         "operationId" : "executeAction",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -485,14 +381,6 @@
         "summary" : "Get schedules list of the channel",
         "operationId" : "getChannelSchedules",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -530,14 +418,6 @@
         "operationId" : "getChannelMeasurementLogsCsvFile",
         "produces" : [ "application/zip" ],
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -566,14 +446,6 @@
         "description" : "Supported channel functions: `THERMOMETER` and `HUMIDITYANDTEMPERATURE`. Logs ordered by date, descending.",
         "operationId" : "getChannelMeasurementLogs",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -623,14 +495,6 @@
         "summary" : "Get channels list",
         "operationId" : "getChannelGroups",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "include",
           "in" : "query",
           "description" : "Specify what extra fields to include in the response.",
@@ -659,14 +523,6 @@
         "summary" : "Create a new channel group",
         "operationId" : "createChannelGroup",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "in" : "body",
           "name" : "body",
           "required" : true,
@@ -690,14 +546,6 @@
         "summary" : "Get channel group by ID",
         "operationId" : "getChannelGroup",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -728,14 +576,6 @@
         "summary" : "Update channel group",
         "operationId" : "updateChannelGroup",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -762,14 +602,6 @@
         "summary" : "Delete Channel Group",
         "operationId" : "deleteChannelGroup",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -786,14 +618,6 @@
         "summary" : "Execute action on the channel group",
         "operationId" : "executeChannelGroupAction",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -826,14 +650,6 @@
         "summary" : "Get client apps",
         "operationId" : "getClientApps",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "include",
           "in" : "query",
           "description" : "Specify what extra fields to include in the response.",
@@ -864,14 +680,6 @@
         "summary" : "Update client app",
         "operationId" : "updateClientApp",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -898,14 +706,6 @@
         "summary" : "Delete Client App",
         "operationId" : "deleteClientApp",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -924,14 +724,6 @@
         "summary" : "Get IO Devices",
         "operationId" : "getIoDevices",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "include",
           "in" : "query",
           "description" : "Specify what extra fields to include in the response.",
@@ -962,14 +754,6 @@
         "summary" : "Get IO Device",
         "operationId" : "getIoDevice",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1000,14 +784,6 @@
         "summary" : "Update IO Device",
         "operationId" : "updateIoDevice",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1034,14 +810,6 @@
         "summary" : "Delete IO Device",
         "operationId" : "deleteIoDevice",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1060,14 +828,6 @@
         "summary" : "Get Channels that belong to IO Deice",
         "operationId" : "getIoDeviceChannels",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1100,14 +860,6 @@
         "summary" : "Get schedules list",
         "operationId" : "getSchedules",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "include",
           "in" : "query",
           "description" : "Specify what extra fields to include in the response.",
@@ -1136,14 +888,6 @@
         "summary" : "Create a new schedule",
         "operationId" : "createSchedule",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "in" : "body",
           "name" : "body",
           "required" : true,
@@ -1165,14 +909,6 @@
         "summary" : "Enable schedules",
         "operationId" : "enableSchedules",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "in" : "body",
           "name" : "body",
           "required" : true,
@@ -1193,14 +929,6 @@
         "summary" : "Get Schedule",
         "operationId" : "getSchedule",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1231,14 +959,6 @@
         "summary" : "Update schedule",
         "operationId" : "updateSchedule",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1272,14 +992,6 @@
         "summary" : "Delete Schedule",
         "operationId" : "deleteSchedule",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1296,15 +1008,8 @@
       "get" : {
         "tags" : [ "Access IDs" ],
         "summary" : "Get Access IDs list",
+        "operationId" : "getAccessID",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "include",
           "in" : "query",
           "description" : "Specify what extra fields to include in the response.",
@@ -1331,15 +1036,8 @@
       "post" : {
         "tags" : [ "Access IDs" ],
         "summary" : "Create a new Access ID",
-        "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        } ],
+        "operationId" : "createAccessID",
+        "parameters" : [ ],
         "responses" : {
           "201" : {
             "description" : "Newely created AccessID with automatic name",
@@ -1356,14 +1054,6 @@
         "summary" : "Get Access ID",
         "operationId" : "getAccessID",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1394,14 +1084,6 @@
         "summary" : "Edit Access ID",
         "operationId" : "updateAccessID",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1428,14 +1110,6 @@
         "summary" : "Delete Access Identifier",
         "operationId" : "deleteAccessID",
         "parameters" : [ {
-          "name" : "X-Accept-Version",
-          "in" : "header",
-          "description" : "API Version",
-          "required" : false,
-          "type" : "string",
-          "x-example" : "2.2.0",
-          "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-        }, {
           "name" : "id",
           "in" : "path",
           "required" : true,
@@ -1641,7 +1315,7 @@
         },
         "inheritedLocation" : {
           "type" : "boolean",
-          "description" : "Whether this channel inherits its IODevice's location (`true`) or not (`false`)"
+          "description" : "Whether this channel inherits its IO Device's location (`true`) or not (`false`)"
         },
         "iodeviceId" : {
           "type" : "integer"
@@ -5369,15 +5043,6 @@
     }
   },
   "parameters" : {
-    "version" : {
-      "name" : "X-Accept-Version",
-      "in" : "header",
-      "description" : "API Version",
-      "required" : false,
-      "type" : "string",
-      "x-example" : "2.2.0",
-      "enum" : [ "2.0.0", "2.1.0", "2.2.0" ]
-    },
     "AccessIdIncludes" : {
       "name" : "include",
       "in" : "query",

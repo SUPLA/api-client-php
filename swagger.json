@@ -13,86 +13,11 @@
     "password" : [ ]
   } ],
   "paths" : {
-    "/server-info" : {
+    "/accessids" : {
       "get" : {
-        "tags" : [ "Server" ],
-        "summary" : "Get server status",
-        "parameters" : [ ],
-        "responses" : {
-          "200" : {
-            "description" : "Server status",
-            "schema" : {
-              "$ref" : "#/definitions/inline_response_200"
-            }
-          }
-        },
-        "security" : [ ]
-      }
-    },
-    "/server-status" : {
-      "get" : {
-        "tags" : [ "Server" ],
-        "summary" : "Get the SUPLA Server status",
-        "parameters" : [ ],
-        "responses" : {
-          "200" : {
-            "description" : "SUPLA Server is alive",
-            "schema" : {
-              "$ref" : "#/definitions/inline_response_200_1"
-            }
-          },
-          "503" : {
-            "description" : "SUPLA Server is down",
-            "schema" : {
-              "$ref" : "#/definitions/inline_response_503"
-            }
-          }
-        },
-        "security" : [ ]
-      }
-    },
-    "/users/current" : {
-      "get" : {
-        "tags" : [ "Users" ],
-        "summary" : "Get current user",
-        "operationId" : "getCurrentUser",
-        "parameters" : [ ],
-        "responses" : {
-          "200" : {
-            "description" : "Success",
-            "schema" : {
-              "$ref" : "#/definitions/User request"
-            }
-          }
-        }
-      },
-      "patch" : {
-        "tags" : [ "Users" ],
-        "summary" : "Edit current user",
-        "operationId" : "editCurrentUser",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/definitions/body"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Success",
-            "schema" : {
-              "$ref" : "#/definitions/inline_response_200_2"
-            }
-          }
-        }
-      }
-    },
-    "/locations" : {
-      "get" : {
-        "tags" : [ "Locations" ],
-        "summary" : "Get locations list",
-        "operationId" : "getLocations",
+        "tags" : [ "Access IDs" ],
+        "summary" : "Get Access IDs list",
+        "operationId" : "getAccessID",
         "parameters" : [ {
           "name" : "include",
           "in" : "query",
@@ -101,42 +26,42 @@
           "type" : "array",
           "items" : {
             "type" : "string",
-            "enum" : [ "channels", "iodevices", "accessids", "channelGroups", "password" ]
+            "enum" : [ "locations", "clientApps", "password" ]
           },
           "collectionFormat" : "csv"
         } ],
         "responses" : {
           "200" : {
-            "description" : "List of locations owned by the current user.",
+            "description" : "List of Access IDs owned by the current user.",
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/Location"
+                "$ref" : "#/definitions/AccessID"
               }
             }
           }
         }
       },
       "post" : {
-        "tags" : [ "Locations" ],
-        "summary" : "Create a new location",
-        "operationId" : "createLocation",
+        "tags" : [ "Access IDs" ],
+        "summary" : "Create a new Access ID",
+        "operationId" : "createAccessID",
         "parameters" : [ ],
         "responses" : {
           "201" : {
-            "description" : "Newely created location with automatic name",
+            "description" : "Newely created AccessID with automatic name",
             "schema" : {
-              "$ref" : "#/definitions/Location"
+              "$ref" : "#/definitions/AccessID"
             }
           }
         }
       }
     },
-    "/locations/{id}" : {
+    "/accessids/{id}" : {
       "get" : {
-        "tags" : [ "Locations" ],
-        "summary" : "Get location by ID",
-        "operationId" : "getLocation",
+        "tags" : [ "Access IDs" ],
+        "summary" : "Get Access ID",
+        "operationId" : "getAccessID",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -150,80 +75,58 @@
           "type" : "array",
           "items" : {
             "type" : "string",
-            "enum" : [ "channels", "iodevices", "accessids", "channelGroups", "password" ]
+            "enum" : [ "locations", "clientApps", "password" ]
           },
           "collectionFormat" : "csv"
         } ],
         "responses" : {
           "200" : {
-            "description" : "Get location",
+            "description" : "Get Access ID",
             "schema" : {
-              "$ref" : "#/definitions/Location"
+              "$ref" : "#/definitions/AccessID"
             }
           }
         }
       },
       "put" : {
-        "tags" : [ "Locations" ],
-        "summary" : "Edit location",
-        "operationId" : "updateLocation",
+        "tags" : [ "Access IDs" ],
+        "summary" : "Update Access ID",
+        "operationId" : "updateAccessID",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
           "required" : true,
           "type" : "integer"
         }, {
-          "name" : "include",
-          "in" : "query",
-          "description" : "Specify what extra fields to include in the response.",
-          "required" : false,
-          "type" : "array",
-          "items" : {
-            "type" : "string",
-            "enum" : [ "channels", "iodevices", "accessids", "channelGroups", "password" ]
-          },
-          "collectionFormat" : "csv"
-        }, {
           "in" : "body",
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_1"
+            "$ref" : "#/definitions/Access ID update request"
           }
         } ],
         "responses" : {
           "200" : {
             "description" : "Definition generated from Swagger Inspector",
             "schema" : {
-              "$ref" : "#/definitions/Location"
+              "$ref" : "#/definitions/AccessID"
             }
           }
         }
       },
       "delete" : {
-        "tags" : [ "Locations" ],
-        "summary" : "Delete location",
-        "operationId" : "deleteLocation",
+        "tags" : [ "Access IDs" ],
+        "summary" : "Delete Access Identifier",
+        "operationId" : "deleteAccessID",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
           "required" : true,
           "type" : "integer"
-        }, {
-          "name" : "include",
-          "in" : "query",
-          "description" : "Specify what extra fields to include in the response.",
-          "required" : false,
-          "type" : "array",
-          "items" : {
-            "type" : "string",
-            "enum" : [ "channels", "iodevices", "accessids", "channelGroups", "password" ]
-          },
-          "collectionFormat" : "csv"
         } ],
         "responses" : {
           "204" : {
-            "description" : "Location has been successfully deleted"
+            "description" : "Access Identifier has been successfully deleted"
           }
         }
       }
@@ -326,7 +229,7 @@
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_2"
+            "$ref" : "#/definitions/Channel update request"
           }
         } ],
         "responses" : {
@@ -339,7 +242,7 @@
           "409" : {
             "description" : "Channel update will result in data loss. Please confirm the request with `confirm=true` GET param to force.",
             "schema" : {
-              "$ref" : "#/definitions/inline_response_409"
+              "$ref" : "#/definitions/Channel update confirmation response"
             }
           }
         }
@@ -359,7 +262,7 @@
           "description" : "Defines an action to execute on channel. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_3"
+            "$ref" : "#/definitions/Channel execute action request"
           }
         } ],
         "responses" : {
@@ -369,7 +272,7 @@
           "400" : {
             "description" : "Invalid request.",
             "schema" : {
-              "$ref" : "#/definitions/inline_response_400"
+              "$ref" : "#/definitions/Channel action execution failed response"
             }
           }
         }
@@ -431,9 +334,9 @@
             }
           },
           "400" : {
-            "description" : "Unsupoorted channel",
+            "description" : "Unsupported channel",
             "schema" : {
-              "$ref" : "#/definitions/inline_response_400_1"
+              "$ref" : "#/definitions/Channel unsupported function response"
             }
           }
         }
@@ -470,7 +373,7 @@
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/inline_response_200_3"
+                "$ref" : "#/definitions/Channel measurement log"
               }
             },
             "headers" : {
@@ -483,7 +386,7 @@
           "400" : {
             "description" : "Unsupoorted channel",
             "schema" : {
-              "$ref" : "#/definitions/inline_response_400_1"
+              "$ref" : "#/definitions/Channel unsupported function response"
             }
           }
         }
@@ -527,7 +430,7 @@
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_4"
+            "$ref" : "#/definitions/ChannelGroupRequest"
           }
         } ],
         "responses" : {
@@ -585,7 +488,7 @@
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_5"
+            "$ref" : "#/definitions/ChannelGroupRequest"
           }
         } ],
         "responses" : {
@@ -628,7 +531,7 @@
           "description" : "Defines an action to execute on channel group. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_6"
+            "$ref" : "#/definitions/Channel Group execute action request"
           }
         } ],
         "responses" : {
@@ -638,7 +541,7 @@
           "400" : {
             "description" : "Invalid request.",
             "schema" : {
-              "$ref" : "#/definitions/inline_response_400"
+              "$ref" : "#/definitions/Channel action execution failed response"
             }
           }
         }
@@ -689,7 +592,7 @@
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_7"
+            "$ref" : "#/definitions/Client App update request"
           }
         } ],
         "responses" : {
@@ -793,7 +696,7 @@
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_8"
+            "$ref" : "#/definitions/IO Device update request"
           }
         } ],
         "responses" : {
@@ -852,6 +755,178 @@
             }
           }
         }
+      }
+    },
+    "/locations" : {
+      "get" : {
+        "tags" : [ "Locations" ],
+        "summary" : "Get locations list",
+        "operationId" : "getLocations",
+        "parameters" : [ {
+          "name" : "include",
+          "in" : "query",
+          "description" : "Specify what extra fields to include in the response.",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "channels", "iodevices", "accessids", "channelGroups", "password" ]
+          },
+          "collectionFormat" : "csv"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "List of locations owned by the current user.",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Location"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Locations" ],
+        "summary" : "Create a new location",
+        "operationId" : "createLocation",
+        "parameters" : [ ],
+        "responses" : {
+          "201" : {
+            "description" : "Newely created location with automatic name",
+            "schema" : {
+              "$ref" : "#/definitions/Location"
+            }
+          }
+        }
+      }
+    },
+    "/locations/{id}" : {
+      "get" : {
+        "tags" : [ "Locations" ],
+        "summary" : "Get location by ID",
+        "operationId" : "getLocation",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "include",
+          "in" : "query",
+          "description" : "Specify what extra fields to include in the response.",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "channels", "iodevices", "accessids", "channelGroups", "password" ]
+          },
+          "collectionFormat" : "csv"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Get location",
+            "schema" : {
+              "$ref" : "#/definitions/Location"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Locations" ],
+        "summary" : "Update location",
+        "operationId" : "updateLocation",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "include",
+          "in" : "query",
+          "description" : "Specify what extra fields to include in the response.",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "channels", "iodevices", "accessids", "channelGroups", "password" ]
+          },
+          "collectionFormat" : "csv"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Location update request"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Definition generated from Swagger Inspector",
+            "schema" : {
+              "$ref" : "#/definitions/Location"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Locations" ],
+        "summary" : "Delete location",
+        "operationId" : "deleteLocation",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "include",
+          "in" : "query",
+          "description" : "Specify what extra fields to include in the response.",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "channels", "iodevices", "accessids", "channelGroups", "password" ]
+          },
+          "collectionFormat" : "csv"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Location has been successfully deleted"
+          }
+        }
+      }
+    },
+    "/server-status" : {
+      "get" : {
+        "tags" : [ "Server" ],
+        "summary" : "Get the SUPLA Server status",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Supla Server is alive"
+          },
+          "503" : {
+            "description" : "SUPLA Server is down"
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/server-info" : {
+      "get" : {
+        "tags" : [ "Server" ],
+        "summary" : "Get server status",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Server Info"
+            }
+          }
+        },
+        "security" : [ ]
       }
     },
     "/schedules" : {
@@ -913,7 +988,7 @@
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_9"
+            "$ref" : "#/definitions/Schedules enable request"
           }
         } ],
         "responses" : {
@@ -1004,120 +1079,36 @@
         }
       }
     },
-    "/accessids" : {
+    "/users/current" : {
       "get" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Get Access IDs list",
-        "operationId" : "getAccessID",
-        "parameters" : [ {
-          "name" : "include",
-          "in" : "query",
-          "description" : "Specify what extra fields to include in the response.",
-          "required" : false,
-          "type" : "array",
-          "items" : {
-            "type" : "string",
-            "enum" : [ "locations", "clientApps", "password" ]
-          },
-          "collectionFormat" : "csv"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "List of Access IDs owned by the current user.",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/AccessID"
-              }
-            }
-          }
-        }
-      },
-      "post" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Create a new Access ID",
-        "operationId" : "createAccessID",
+        "tags" : [ "Users" ],
+        "summary" : "Get current user",
+        "operationId" : "getCurrentUser",
         "parameters" : [ ],
         "responses" : {
-          "201" : {
-            "description" : "Newely created AccessID with automatic name",
-            "schema" : {
-              "$ref" : "#/definitions/AccessID"
-            }
-          }
-        }
-      }
-    },
-    "/accessids/{id}" : {
-      "get" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Get Access ID",
-        "operationId" : "getAccessID",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer"
-        }, {
-          "name" : "include",
-          "in" : "query",
-          "description" : "Specify what extra fields to include in the response.",
-          "required" : false,
-          "type" : "array",
-          "items" : {
-            "type" : "string",
-            "enum" : [ "locations", "clientApps", "password" ]
-          },
-          "collectionFormat" : "csv"
-        } ],
-        "responses" : {
           "200" : {
-            "description" : "Get Access ID",
+            "description" : "Success",
             "schema" : {
-              "$ref" : "#/definitions/AccessID"
+              "$ref" : "#/definitions/User data"
             }
           }
         }
       },
-      "put" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Edit Access ID",
-        "operationId" : "updateAccessID",
+      "patch" : {
+        "tags" : [ "Users" ],
+        "summary" : "Update current user",
+        "operationId" : "updateCurrentUser",
         "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer"
-        }, {
           "in" : "body",
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/body_10"
+            "$ref" : "#/definitions/User update request"
           }
         } ],
         "responses" : {
           "200" : {
-            "description" : "Definition generated from Swagger Inspector",
-            "schema" : {
-              "$ref" : "#/definitions/AccessID"
-            }
-          }
-        }
-      },
-      "delete" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Delete Access Identifier",
-        "operationId" : "deleteAccessID",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer"
-        } ],
-        "responses" : {
-          "204" : {
-            "description" : "Access Identifier has been successfully deleted"
+            "description" : "Success"
           }
         }
       }
@@ -1208,11 +1199,1933 @@
           "softwareVersion" : "softwareVersion"
         } ],
         "caption" : "caption",
-        "locations" : [ null, null ],
-        "id" : 6,
-        "clientAppsIds" : [ 9, 9 ],
+        "locations" : [ {
+          "iodevicesIds" : [ 5, 5 ],
+          "password" : "password",
+          "channels" : [ {
+            "hidden" : true,
+            "channelNumber" : 6,
+            "iodevice" : null,
+            "caption" : "caption",
+            "type" : {
+              "output" : false,
+              "name" : "SENSORNO",
+              "caption" : "Sensor (normal open)",
+              "id" : 7
+            },
+            "param3" : null,
+            "param1" : { },
+            "param2" : null,
+            "altIcon" : 5,
+            "connected" : true,
+            "functionId" : 60,
+            "supportedFunctions" : [ {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            }, {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            } ],
+            "locationId" : 9,
+            "function" : {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            },
+            "typeId" : 1000,
+            "location" : null,
+            "id" : 1,
+            "inheritedLocation" : true,
+            "iodeviceId" : 9
+          }, {
+            "hidden" : true,
+            "channelNumber" : 6,
+            "iodevice" : null,
+            "caption" : "caption",
+            "type" : {
+              "output" : false,
+              "name" : "SENSORNO",
+              "caption" : "Sensor (normal open)",
+              "id" : 7
+            },
+            "param3" : null,
+            "param1" : { },
+            "param2" : null,
+            "altIcon" : 5,
+            "connected" : true,
+            "functionId" : 60,
+            "supportedFunctions" : [ {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            }, {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            } ],
+            "locationId" : 9,
+            "function" : {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            },
+            "typeId" : 1000,
+            "location" : null,
+            "id" : 1,
+            "inheritedLocation" : true,
+            "iodeviceId" : 9
+          } ],
+          "accessIdsIds" : [ 9, 9 ],
+          "channelGroups" : [ ],
+          "caption" : "caption",
+          "channelGroupsIds" : [ 2, 2 ],
+          "accessIds" : [ null, null ],
+          "id" : 5,
+          "iodevices" : [ {
+            "originalLocation" : null,
+            "lastIpv4" : 4,
+            "gUIDString" : "gUIDString",
+            "originalLocationId" : 1,
+            "regDate" : "2000-01-23T04:56:07.000+00:00",
+            "channelsIds" : [ 1, 1 ],
+            "enabled" : true,
+            "connected" : true,
+            "channels" : [ {
+              "hidden" : true,
+              "channelNumber" : 6,
+              "iodevice" : null,
+              "caption" : "caption",
+              "type" : {
+                "output" : false,
+                "name" : "SENSORNO",
+                "caption" : "Sensor (normal open)",
+                "id" : 7
+              },
+              "param3" : null,
+              "param1" : { },
+              "param2" : null,
+              "altIcon" : 5,
+              "connected" : true,
+              "functionId" : 60,
+              "supportedFunctions" : [ {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              }, {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              } ],
+              "locationId" : 9,
+              "function" : {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              },
+              "typeId" : 1000,
+              "location" : null,
+              "id" : 1,
+              "inheritedLocation" : true,
+              "iodeviceId" : 9
+            }, {
+              "hidden" : true,
+              "channelNumber" : 6,
+              "iodevice" : null,
+              "caption" : "caption",
+              "type" : {
+                "output" : false,
+                "name" : "SENSORNO",
+                "caption" : "Sensor (normal open)",
+                "id" : 7
+              },
+              "param3" : null,
+              "param1" : { },
+              "param2" : null,
+              "altIcon" : 5,
+              "connected" : true,
+              "functionId" : 60,
+              "supportedFunctions" : [ {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              }, {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              } ],
+              "locationId" : 9,
+              "function" : {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              },
+              "typeId" : 1000,
+              "location" : null,
+              "id" : 1,
+              "inheritedLocation" : true,
+              "iodeviceId" : 9
+            } ],
+            "lastConnected" : "2000-01-23T04:56:07.000+00:00",
+            "locationId" : 7,
+            "regIpv4" : 2,
+            "schedules" : [ {
+              "channel" : {
+                "hidden" : true,
+                "channelNumber" : 6,
+                "iodevice" : null,
+                "caption" : "caption",
+                "type" : {
+                  "output" : false,
+                  "name" : "SENSORNO",
+                  "caption" : "Sensor (normal open)",
+                  "id" : 7
+                },
+                "param3" : null,
+                "param1" : { },
+                "param2" : null,
+                "altIcon" : 5,
+                "connected" : true,
+                "functionId" : 60,
+                "supportedFunctions" : [ {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                }, {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                } ],
+                "locationId" : 9,
+                "function" : {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                },
+                "typeId" : 1000,
+                "location" : null,
+                "id" : 1,
+                "inheritedLocation" : true,
+                "iodeviceId" : 9
+              },
+              "caption" : "caption",
+              "dateEnd" : "2000-01-23T04:56:07.000+00:00",
+              "timeExpression" : "*/5 * * * *",
+              "closestExecutions" : [ {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              }, {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              } ],
+              "enabled" : true,
+              "mode" : "minutely",
+              "dateStart" : "2000-01-23T04:56:07.000+00:00",
+              "action" : {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              },
+              "actionId" : 9,
+              "id" : 6,
+              "retry" : true,
+              "channelId" : 8
+            }, {
+              "channel" : {
+                "hidden" : true,
+                "channelNumber" : 6,
+                "iodevice" : null,
+                "caption" : "caption",
+                "type" : {
+                  "output" : false,
+                  "name" : "SENSORNO",
+                  "caption" : "Sensor (normal open)",
+                  "id" : 7
+                },
+                "param3" : null,
+                "param1" : { },
+                "param2" : null,
+                "altIcon" : 5,
+                "connected" : true,
+                "functionId" : 60,
+                "supportedFunctions" : [ {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                }, {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                } ],
+                "locationId" : 9,
+                "function" : {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                },
+                "typeId" : 1000,
+                "location" : null,
+                "id" : 1,
+                "inheritedLocation" : true,
+                "iodeviceId" : 9
+              },
+              "caption" : "caption",
+              "dateEnd" : "2000-01-23T04:56:07.000+00:00",
+              "timeExpression" : "*/5 * * * *",
+              "closestExecutions" : [ {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              }, {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              } ],
+              "enabled" : true,
+              "mode" : "minutely",
+              "dateStart" : "2000-01-23T04:56:07.000+00:00",
+              "action" : {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              },
+              "actionId" : 9,
+              "id" : 6,
+              "retry" : true,
+              "channelId" : 8
+            } ],
+            "name" : "name",
+            "comment" : "comment",
+            "location" : null,
+            "id" : 3,
+            "softwareVersion" : "softwareVersion"
+          }, {
+            "originalLocation" : null,
+            "lastIpv4" : 4,
+            "gUIDString" : "gUIDString",
+            "originalLocationId" : 1,
+            "regDate" : "2000-01-23T04:56:07.000+00:00",
+            "channelsIds" : [ 1, 1 ],
+            "enabled" : true,
+            "connected" : true,
+            "channels" : [ {
+              "hidden" : true,
+              "channelNumber" : 6,
+              "iodevice" : null,
+              "caption" : "caption",
+              "type" : {
+                "output" : false,
+                "name" : "SENSORNO",
+                "caption" : "Sensor (normal open)",
+                "id" : 7
+              },
+              "param3" : null,
+              "param1" : { },
+              "param2" : null,
+              "altIcon" : 5,
+              "connected" : true,
+              "functionId" : 60,
+              "supportedFunctions" : [ {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              }, {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              } ],
+              "locationId" : 9,
+              "function" : {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              },
+              "typeId" : 1000,
+              "location" : null,
+              "id" : 1,
+              "inheritedLocation" : true,
+              "iodeviceId" : 9
+            }, {
+              "hidden" : true,
+              "channelNumber" : 6,
+              "iodevice" : null,
+              "caption" : "caption",
+              "type" : {
+                "output" : false,
+                "name" : "SENSORNO",
+                "caption" : "Sensor (normal open)",
+                "id" : 7
+              },
+              "param3" : null,
+              "param1" : { },
+              "param2" : null,
+              "altIcon" : 5,
+              "connected" : true,
+              "functionId" : 60,
+              "supportedFunctions" : [ {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              }, {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              } ],
+              "locationId" : 9,
+              "function" : {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              },
+              "typeId" : 1000,
+              "location" : null,
+              "id" : 1,
+              "inheritedLocation" : true,
+              "iodeviceId" : 9
+            } ],
+            "lastConnected" : "2000-01-23T04:56:07.000+00:00",
+            "locationId" : 7,
+            "regIpv4" : 2,
+            "schedules" : [ {
+              "channel" : {
+                "hidden" : true,
+                "channelNumber" : 6,
+                "iodevice" : null,
+                "caption" : "caption",
+                "type" : {
+                  "output" : false,
+                  "name" : "SENSORNO",
+                  "caption" : "Sensor (normal open)",
+                  "id" : 7
+                },
+                "param3" : null,
+                "param1" : { },
+                "param2" : null,
+                "altIcon" : 5,
+                "connected" : true,
+                "functionId" : 60,
+                "supportedFunctions" : [ {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                }, {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                } ],
+                "locationId" : 9,
+                "function" : {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                },
+                "typeId" : 1000,
+                "location" : null,
+                "id" : 1,
+                "inheritedLocation" : true,
+                "iodeviceId" : 9
+              },
+              "caption" : "caption",
+              "dateEnd" : "2000-01-23T04:56:07.000+00:00",
+              "timeExpression" : "*/5 * * * *",
+              "closestExecutions" : [ {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              }, {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              } ],
+              "enabled" : true,
+              "mode" : "minutely",
+              "dateStart" : "2000-01-23T04:56:07.000+00:00",
+              "action" : {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              },
+              "actionId" : 9,
+              "id" : 6,
+              "retry" : true,
+              "channelId" : 8
+            }, {
+              "channel" : {
+                "hidden" : true,
+                "channelNumber" : 6,
+                "iodevice" : null,
+                "caption" : "caption",
+                "type" : {
+                  "output" : false,
+                  "name" : "SENSORNO",
+                  "caption" : "Sensor (normal open)",
+                  "id" : 7
+                },
+                "param3" : null,
+                "param1" : { },
+                "param2" : null,
+                "altIcon" : 5,
+                "connected" : true,
+                "functionId" : 60,
+                "supportedFunctions" : [ {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                }, {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                } ],
+                "locationId" : 9,
+                "function" : {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                },
+                "typeId" : 1000,
+                "location" : null,
+                "id" : 1,
+                "inheritedLocation" : true,
+                "iodeviceId" : 9
+              },
+              "caption" : "caption",
+              "dateEnd" : "2000-01-23T04:56:07.000+00:00",
+              "timeExpression" : "*/5 * * * *",
+              "closestExecutions" : [ {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              }, {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              } ],
+              "enabled" : true,
+              "mode" : "minutely",
+              "dateStart" : "2000-01-23T04:56:07.000+00:00",
+              "action" : {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              },
+              "actionId" : 9,
+              "id" : 6,
+              "retry" : true,
+              "channelId" : 8
+            } ],
+            "name" : "name",
+            "comment" : "comment",
+            "location" : null,
+            "id" : 3,
+            "softwareVersion" : "softwareVersion"
+          } ],
+          "channelsIds" : [ 7, 7 ],
+          "enabled" : true
+        }, {
+          "iodevicesIds" : [ 5, 5 ],
+          "password" : "password",
+          "channels" : [ {
+            "hidden" : true,
+            "channelNumber" : 6,
+            "iodevice" : null,
+            "caption" : "caption",
+            "type" : {
+              "output" : false,
+              "name" : "SENSORNO",
+              "caption" : "Sensor (normal open)",
+              "id" : 7
+            },
+            "param3" : null,
+            "param1" : { },
+            "param2" : null,
+            "altIcon" : 5,
+            "connected" : true,
+            "functionId" : 60,
+            "supportedFunctions" : [ {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            }, {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            } ],
+            "locationId" : 9,
+            "function" : {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            },
+            "typeId" : 1000,
+            "location" : null,
+            "id" : 1,
+            "inheritedLocation" : true,
+            "iodeviceId" : 9
+          }, {
+            "hidden" : true,
+            "channelNumber" : 6,
+            "iodevice" : null,
+            "caption" : "caption",
+            "type" : {
+              "output" : false,
+              "name" : "SENSORNO",
+              "caption" : "Sensor (normal open)",
+              "id" : 7
+            },
+            "param3" : null,
+            "param1" : { },
+            "param2" : null,
+            "altIcon" : 5,
+            "connected" : true,
+            "functionId" : 60,
+            "supportedFunctions" : [ {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            }, {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            } ],
+            "locationId" : 9,
+            "function" : {
+              "maxAlternativeIconIndex" : 1,
+              "possibleActions" : [ {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              }, {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              } ],
+              "name" : "OPENINGSENSOR_GATE",
+              "caption" : "Gate opening sensor",
+              "id" : 60
+            },
+            "typeId" : 1000,
+            "location" : null,
+            "id" : 1,
+            "inheritedLocation" : true,
+            "iodeviceId" : 9
+          } ],
+          "accessIdsIds" : [ 9, 9 ],
+          "channelGroups" : [ ],
+          "caption" : "caption",
+          "channelGroupsIds" : [ 2, 2 ],
+          "accessIds" : [ null, null ],
+          "id" : 5,
+          "iodevices" : [ {
+            "originalLocation" : null,
+            "lastIpv4" : 4,
+            "gUIDString" : "gUIDString",
+            "originalLocationId" : 1,
+            "regDate" : "2000-01-23T04:56:07.000+00:00",
+            "channelsIds" : [ 1, 1 ],
+            "enabled" : true,
+            "connected" : true,
+            "channels" : [ {
+              "hidden" : true,
+              "channelNumber" : 6,
+              "iodevice" : null,
+              "caption" : "caption",
+              "type" : {
+                "output" : false,
+                "name" : "SENSORNO",
+                "caption" : "Sensor (normal open)",
+                "id" : 7
+              },
+              "param3" : null,
+              "param1" : { },
+              "param2" : null,
+              "altIcon" : 5,
+              "connected" : true,
+              "functionId" : 60,
+              "supportedFunctions" : [ {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              }, {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              } ],
+              "locationId" : 9,
+              "function" : {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              },
+              "typeId" : 1000,
+              "location" : null,
+              "id" : 1,
+              "inheritedLocation" : true,
+              "iodeviceId" : 9
+            }, {
+              "hidden" : true,
+              "channelNumber" : 6,
+              "iodevice" : null,
+              "caption" : "caption",
+              "type" : {
+                "output" : false,
+                "name" : "SENSORNO",
+                "caption" : "Sensor (normal open)",
+                "id" : 7
+              },
+              "param3" : null,
+              "param1" : { },
+              "param2" : null,
+              "altIcon" : 5,
+              "connected" : true,
+              "functionId" : 60,
+              "supportedFunctions" : [ {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              }, {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              } ],
+              "locationId" : 9,
+              "function" : {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              },
+              "typeId" : 1000,
+              "location" : null,
+              "id" : 1,
+              "inheritedLocation" : true,
+              "iodeviceId" : 9
+            } ],
+            "lastConnected" : "2000-01-23T04:56:07.000+00:00",
+            "locationId" : 7,
+            "regIpv4" : 2,
+            "schedules" : [ {
+              "channel" : {
+                "hidden" : true,
+                "channelNumber" : 6,
+                "iodevice" : null,
+                "caption" : "caption",
+                "type" : {
+                  "output" : false,
+                  "name" : "SENSORNO",
+                  "caption" : "Sensor (normal open)",
+                  "id" : 7
+                },
+                "param3" : null,
+                "param1" : { },
+                "param2" : null,
+                "altIcon" : 5,
+                "connected" : true,
+                "functionId" : 60,
+                "supportedFunctions" : [ {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                }, {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                } ],
+                "locationId" : 9,
+                "function" : {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                },
+                "typeId" : 1000,
+                "location" : null,
+                "id" : 1,
+                "inheritedLocation" : true,
+                "iodeviceId" : 9
+              },
+              "caption" : "caption",
+              "dateEnd" : "2000-01-23T04:56:07.000+00:00",
+              "timeExpression" : "*/5 * * * *",
+              "closestExecutions" : [ {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              }, {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              } ],
+              "enabled" : true,
+              "mode" : "minutely",
+              "dateStart" : "2000-01-23T04:56:07.000+00:00",
+              "action" : {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              },
+              "actionId" : 9,
+              "id" : 6,
+              "retry" : true,
+              "channelId" : 8
+            }, {
+              "channel" : {
+                "hidden" : true,
+                "channelNumber" : 6,
+                "iodevice" : null,
+                "caption" : "caption",
+                "type" : {
+                  "output" : false,
+                  "name" : "SENSORNO",
+                  "caption" : "Sensor (normal open)",
+                  "id" : 7
+                },
+                "param3" : null,
+                "param1" : { },
+                "param2" : null,
+                "altIcon" : 5,
+                "connected" : true,
+                "functionId" : 60,
+                "supportedFunctions" : [ {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                }, {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                } ],
+                "locationId" : 9,
+                "function" : {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                },
+                "typeId" : 1000,
+                "location" : null,
+                "id" : 1,
+                "inheritedLocation" : true,
+                "iodeviceId" : 9
+              },
+              "caption" : "caption",
+              "dateEnd" : "2000-01-23T04:56:07.000+00:00",
+              "timeExpression" : "*/5 * * * *",
+              "closestExecutions" : [ {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              }, {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              } ],
+              "enabled" : true,
+              "mode" : "minutely",
+              "dateStart" : "2000-01-23T04:56:07.000+00:00",
+              "action" : {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              },
+              "actionId" : 9,
+              "id" : 6,
+              "retry" : true,
+              "channelId" : 8
+            } ],
+            "name" : "name",
+            "comment" : "comment",
+            "location" : null,
+            "id" : 3,
+            "softwareVersion" : "softwareVersion"
+          }, {
+            "originalLocation" : null,
+            "lastIpv4" : 4,
+            "gUIDString" : "gUIDString",
+            "originalLocationId" : 1,
+            "regDate" : "2000-01-23T04:56:07.000+00:00",
+            "channelsIds" : [ 1, 1 ],
+            "enabled" : true,
+            "connected" : true,
+            "channels" : [ {
+              "hidden" : true,
+              "channelNumber" : 6,
+              "iodevice" : null,
+              "caption" : "caption",
+              "type" : {
+                "output" : false,
+                "name" : "SENSORNO",
+                "caption" : "Sensor (normal open)",
+                "id" : 7
+              },
+              "param3" : null,
+              "param1" : { },
+              "param2" : null,
+              "altIcon" : 5,
+              "connected" : true,
+              "functionId" : 60,
+              "supportedFunctions" : [ {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              }, {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              } ],
+              "locationId" : 9,
+              "function" : {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              },
+              "typeId" : 1000,
+              "location" : null,
+              "id" : 1,
+              "inheritedLocation" : true,
+              "iodeviceId" : 9
+            }, {
+              "hidden" : true,
+              "channelNumber" : 6,
+              "iodevice" : null,
+              "caption" : "caption",
+              "type" : {
+                "output" : false,
+                "name" : "SENSORNO",
+                "caption" : "Sensor (normal open)",
+                "id" : 7
+              },
+              "param3" : null,
+              "param1" : { },
+              "param2" : null,
+              "altIcon" : 5,
+              "connected" : true,
+              "functionId" : 60,
+              "supportedFunctions" : [ {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              }, {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              } ],
+              "locationId" : 9,
+              "function" : {
+                "maxAlternativeIconIndex" : 1,
+                "possibleActions" : [ {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                }, {
+                  "name" : { },
+                  "caption" : "caption",
+                  "id" : 4
+                } ],
+                "name" : "OPENINGSENSOR_GATE",
+                "caption" : "Gate opening sensor",
+                "id" : 60
+              },
+              "typeId" : 1000,
+              "location" : null,
+              "id" : 1,
+              "inheritedLocation" : true,
+              "iodeviceId" : 9
+            } ],
+            "lastConnected" : "2000-01-23T04:56:07.000+00:00",
+            "locationId" : 7,
+            "regIpv4" : 2,
+            "schedules" : [ {
+              "channel" : {
+                "hidden" : true,
+                "channelNumber" : 6,
+                "iodevice" : null,
+                "caption" : "caption",
+                "type" : {
+                  "output" : false,
+                  "name" : "SENSORNO",
+                  "caption" : "Sensor (normal open)",
+                  "id" : 7
+                },
+                "param3" : null,
+                "param1" : { },
+                "param2" : null,
+                "altIcon" : 5,
+                "connected" : true,
+                "functionId" : 60,
+                "supportedFunctions" : [ {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                }, {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                } ],
+                "locationId" : 9,
+                "function" : {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                },
+                "typeId" : 1000,
+                "location" : null,
+                "id" : 1,
+                "inheritedLocation" : true,
+                "iodeviceId" : 9
+              },
+              "caption" : "caption",
+              "dateEnd" : "2000-01-23T04:56:07.000+00:00",
+              "timeExpression" : "*/5 * * * *",
+              "closestExecutions" : [ {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              }, {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              } ],
+              "enabled" : true,
+              "mode" : "minutely",
+              "dateStart" : "2000-01-23T04:56:07.000+00:00",
+              "action" : {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              },
+              "actionId" : 9,
+              "id" : 6,
+              "retry" : true,
+              "channelId" : 8
+            }, {
+              "channel" : {
+                "hidden" : true,
+                "channelNumber" : 6,
+                "iodevice" : null,
+                "caption" : "caption",
+                "type" : {
+                  "output" : false,
+                  "name" : "SENSORNO",
+                  "caption" : "Sensor (normal open)",
+                  "id" : 7
+                },
+                "param3" : null,
+                "param1" : { },
+                "param2" : null,
+                "altIcon" : 5,
+                "connected" : true,
+                "functionId" : 60,
+                "supportedFunctions" : [ {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                }, {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                } ],
+                "locationId" : 9,
+                "function" : {
+                  "maxAlternativeIconIndex" : 1,
+                  "possibleActions" : [ {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  }, {
+                    "name" : { },
+                    "caption" : "caption",
+                    "id" : 4
+                  } ],
+                  "name" : "OPENINGSENSOR_GATE",
+                  "caption" : "Gate opening sensor",
+                  "id" : 60
+                },
+                "typeId" : 1000,
+                "location" : null,
+                "id" : 1,
+                "inheritedLocation" : true,
+                "iodeviceId" : 9
+              },
+              "caption" : "caption",
+              "dateEnd" : "2000-01-23T04:56:07.000+00:00",
+              "timeExpression" : "*/5 * * * *",
+              "closestExecutions" : [ {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              }, {
+                "past" : [ {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                }, {
+                  "result" : {
+                    "caption" : "Successful"
+                  },
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "resultTimestamp" : "2000-01-23T04:56:07.000+00:00",
+                  "failed" : false
+                } ],
+                "future" : [ {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                }, {
+                  "plannedTimestamp" : "2000-01-23T04:56:07.000+00:00"
+                } ]
+              } ],
+              "enabled" : true,
+              "mode" : "minutely",
+              "dateStart" : "2000-01-23T04:56:07.000+00:00",
+              "action" : {
+                "name" : { },
+                "caption" : "caption",
+                "id" : 4
+              },
+              "actionId" : 9,
+              "id" : 6,
+              "retry" : true,
+              "channelId" : 8
+            } ],
+            "name" : "name",
+            "comment" : "comment",
+            "location" : null,
+            "id" : 3,
+            "softwareVersion" : "softwareVersion"
+          } ],
+          "channelsIds" : [ 7, 7 ],
+          "enabled" : true
+        } ],
+        "id" : 0,
+        "clientAppsIds" : [ 1, 1 ],
         "enabled" : true,
-        "locationsIds" : [ 8, 8 ]
+        "locationsIds" : [ 6, 6 ]
       }
     },
     "ClientApp" : {
@@ -1349,19 +3262,19 @@
       },
       "example" : {
         "hidden" : true,
-        "channelNumber" : 1,
+        "channelNumber" : 6,
         "iodevice" : null,
         "caption" : "caption",
         "type" : {
           "output" : false,
           "name" : "SENSORNO",
           "caption" : "Sensor (normal open)",
-          "id" : 1
+          "id" : 7
         },
         "param3" : null,
         "param1" : { },
         "param2" : null,
-        "altIcon" : 7,
+        "altIcon" : 5,
         "connected" : true,
         "functionId" : 60,
         "supportedFunctions" : [ {
@@ -1369,11 +3282,11 @@
           "possibleActions" : [ {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           }, {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           } ],
           "name" : "OPENINGSENSOR_GATE",
           "caption" : "Gate opening sensor",
@@ -1383,27 +3296,27 @@
           "possibleActions" : [ {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           }, {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           } ],
           "name" : "OPENINGSENSOR_GATE",
           "caption" : "Gate opening sensor",
           "id" : 60
         } ],
-        "locationId" : 4,
+        "locationId" : 9,
         "function" : {
           "maxAlternativeIconIndex" : 1,
           "possibleActions" : [ {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           }, {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           } ],
           "name" : "OPENINGSENSOR_GATE",
           "caption" : "Gate opening sensor",
@@ -1411,9 +3324,9 @@
         },
         "typeId" : 1000,
         "location" : null,
-        "id" : 7,
+        "id" : 1,
         "inheritedLocation" : true,
-        "iodeviceId" : 1
+        "iodeviceId" : 9
       }
     },
     "ChannelGroup" : {
@@ -1467,19 +3380,19 @@
         "hidden" : true,
         "channels" : [ {
           "hidden" : true,
-          "channelNumber" : 1,
+          "channelNumber" : 6,
           "iodevice" : null,
           "caption" : "caption",
           "type" : {
             "output" : false,
             "name" : "SENSORNO",
             "caption" : "Sensor (normal open)",
-            "id" : 1
+            "id" : 7
           },
           "param3" : null,
           "param1" : { },
           "param2" : null,
-          "altIcon" : 7,
+          "altIcon" : 5,
           "connected" : true,
           "functionId" : 60,
           "supportedFunctions" : [ {
@@ -1487,11 +3400,11 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -1501,27 +3414,27 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
             "id" : 60
           } ],
-          "locationId" : 4,
+          "locationId" : 9,
           "function" : {
             "maxAlternativeIconIndex" : 1,
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -1529,24 +3442,24 @@
           },
           "typeId" : 1000,
           "location" : null,
-          "id" : 7,
+          "id" : 1,
           "inheritedLocation" : true,
-          "iodeviceId" : 1
+          "iodeviceId" : 9
         }, {
           "hidden" : true,
-          "channelNumber" : 1,
+          "channelNumber" : 6,
           "iodevice" : null,
           "caption" : "caption",
           "type" : {
             "output" : false,
             "name" : "SENSORNO",
             "caption" : "Sensor (normal open)",
-            "id" : 1
+            "id" : 7
           },
           "param3" : null,
           "param1" : { },
           "param2" : null,
-          "altIcon" : 7,
+          "altIcon" : 5,
           "connected" : true,
           "functionId" : 60,
           "supportedFunctions" : [ {
@@ -1554,11 +3467,11 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -1568,27 +3481,27 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
             "id" : 60
           } ],
-          "locationId" : 4,
+          "locationId" : 9,
           "function" : {
             "maxAlternativeIconIndex" : 1,
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -1596,9 +3509,9 @@
           },
           "typeId" : 1000,
           "location" : null,
-          "id" : 7,
+          "id" : 1,
           "inheritedLocation" : true,
-          "iodeviceId" : 1
+          "iodeviceId" : 9
         } ],
         "locationId" : 0,
         "function" : {
@@ -1606,11 +3519,11 @@
           "possibleActions" : [ {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           }, {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           } ],
           "name" : "OPENINGSENSOR_GATE",
           "caption" : "Gate opening sensor",
@@ -1618,23 +3531,23 @@
         },
         "caption" : "caption",
         "location" : {
-          "iodevicesIds" : [ 6, 6 ],
+          "iodevicesIds" : [ 5, 5 ],
           "password" : "password",
           "channels" : [ {
             "hidden" : true,
-            "channelNumber" : 1,
+            "channelNumber" : 6,
             "iodevice" : null,
             "caption" : "caption",
             "type" : {
               "output" : false,
               "name" : "SENSORNO",
               "caption" : "Sensor (normal open)",
-              "id" : 1
+              "id" : 7
             },
             "param3" : null,
             "param1" : { },
             "param2" : null,
-            "altIcon" : 7,
+            "altIcon" : 5,
             "connected" : true,
             "functionId" : 60,
             "supportedFunctions" : [ {
@@ -1642,11 +3555,11 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -1656,27 +3569,27 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
               "id" : 60
             } ],
-            "locationId" : 4,
+            "locationId" : 9,
             "function" : {
               "maxAlternativeIconIndex" : 1,
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -1684,24 +3597,24 @@
             },
             "typeId" : 1000,
             "location" : null,
-            "id" : 7,
+            "id" : 1,
             "inheritedLocation" : true,
-            "iodeviceId" : 1
+            "iodeviceId" : 9
           }, {
             "hidden" : true,
-            "channelNumber" : 1,
+            "channelNumber" : 6,
             "iodevice" : null,
             "caption" : "caption",
             "type" : {
               "output" : false,
               "name" : "SENSORNO",
               "caption" : "Sensor (normal open)",
-              "id" : 1
+              "id" : 7
             },
             "param3" : null,
             "param1" : { },
             "param2" : null,
-            "altIcon" : 7,
+            "altIcon" : 5,
             "connected" : true,
             "functionId" : 60,
             "supportedFunctions" : [ {
@@ -1709,11 +3622,11 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -1723,27 +3636,27 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
               "id" : 60
             } ],
-            "locationId" : 4,
+            "locationId" : 9,
             "function" : {
               "maxAlternativeIconIndex" : 1,
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -1751,112 +3664,40 @@
             },
             "typeId" : 1000,
             "location" : null,
-            "id" : 7,
+            "id" : 1,
             "inheritedLocation" : true,
-            "iodeviceId" : 1
+            "iodeviceId" : 9
           } ],
-          "accessIdsIds" : [ 5, 5 ],
+          "accessIdsIds" : [ 9, 9 ],
           "channelGroups" : [ ],
           "caption" : "caption",
-          "channelGroupsIds" : [ 1, 1 ],
-          "accessIds" : [ {
-            "clientApps" : [ {
-              "lastAccessIpv4" : 6,
-              "caption" : "caption",
-              "regDate" : "2000-01-23T04:56:07.000+00:00",
-              "enabled" : true,
-              "connected" : true,
-              "accessId" : null,
-              "accessIdId" : 2,
-              "lastAccessDate" : "2000-01-23T04:56:07.000+00:00",
-              "regIpv4" : 3,
-              "name" : "name",
-              "protocolVersion" : 1,
-              "id" : 6,
-              "softwareVersion" : "softwareVersion"
-            }, {
-              "lastAccessIpv4" : 6,
-              "caption" : "caption",
-              "regDate" : "2000-01-23T04:56:07.000+00:00",
-              "enabled" : true,
-              "connected" : true,
-              "accessId" : null,
-              "accessIdId" : 2,
-              "lastAccessDate" : "2000-01-23T04:56:07.000+00:00",
-              "regIpv4" : 3,
-              "name" : "name",
-              "protocolVersion" : 1,
-              "id" : 6,
-              "softwareVersion" : "softwareVersion"
-            } ],
-            "caption" : "caption",
-            "locations" : [ null, null ],
-            "id" : 6,
-            "clientAppsIds" : [ 9, 9 ],
-            "enabled" : true,
-            "locationsIds" : [ 8, 8 ]
-          }, {
-            "clientApps" : [ {
-              "lastAccessIpv4" : 6,
-              "caption" : "caption",
-              "regDate" : "2000-01-23T04:56:07.000+00:00",
-              "enabled" : true,
-              "connected" : true,
-              "accessId" : null,
-              "accessIdId" : 2,
-              "lastAccessDate" : "2000-01-23T04:56:07.000+00:00",
-              "regIpv4" : 3,
-              "name" : "name",
-              "protocolVersion" : 1,
-              "id" : 6,
-              "softwareVersion" : "softwareVersion"
-            }, {
-              "lastAccessIpv4" : 6,
-              "caption" : "caption",
-              "regDate" : "2000-01-23T04:56:07.000+00:00",
-              "enabled" : true,
-              "connected" : true,
-              "accessId" : null,
-              "accessIdId" : 2,
-              "lastAccessDate" : "2000-01-23T04:56:07.000+00:00",
-              "regIpv4" : 3,
-              "name" : "name",
-              "protocolVersion" : 1,
-              "id" : 6,
-              "softwareVersion" : "softwareVersion"
-            } ],
-            "caption" : "caption",
-            "locations" : [ null, null ],
-            "id" : 6,
-            "clientAppsIds" : [ 9, 9 ],
-            "enabled" : true,
-            "locationsIds" : [ 8, 8 ]
-          } ],
-          "id" : 0,
+          "channelGroupsIds" : [ 2, 2 ],
+          "accessIds" : [ null, null ],
+          "id" : 5,
           "iodevices" : [ {
             "originalLocation" : null,
-            "lastIpv4" : 9,
+            "lastIpv4" : 4,
             "gUIDString" : "gUIDString",
-            "originalLocationId" : 2,
+            "originalLocationId" : 1,
             "regDate" : "2000-01-23T04:56:07.000+00:00",
-            "channelsIds" : [ 4, 4 ],
+            "channelsIds" : [ 1, 1 ],
             "enabled" : true,
             "connected" : true,
             "channels" : [ {
               "hidden" : true,
-              "channelNumber" : 1,
+              "channelNumber" : 6,
               "iodevice" : null,
               "caption" : "caption",
               "type" : {
                 "output" : false,
                 "name" : "SENSORNO",
                 "caption" : "Sensor (normal open)",
-                "id" : 1
+                "id" : 7
               },
               "param3" : null,
               "param1" : { },
               "param2" : null,
-              "altIcon" : 7,
+              "altIcon" : 5,
               "connected" : true,
               "functionId" : 60,
               "supportedFunctions" : [ {
@@ -1864,11 +3705,11 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -1878,27 +3719,27 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
                 "id" : 60
               } ],
-              "locationId" : 4,
+              "locationId" : 9,
               "function" : {
                 "maxAlternativeIconIndex" : 1,
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -1906,24 +3747,24 @@
               },
               "typeId" : 1000,
               "location" : null,
-              "id" : 7,
+              "id" : 1,
               "inheritedLocation" : true,
-              "iodeviceId" : 1
+              "iodeviceId" : 9
             }, {
               "hidden" : true,
-              "channelNumber" : 1,
+              "channelNumber" : 6,
               "iodevice" : null,
               "caption" : "caption",
               "type" : {
                 "output" : false,
                 "name" : "SENSORNO",
                 "caption" : "Sensor (normal open)",
-                "id" : 1
+                "id" : 7
               },
               "param3" : null,
               "param1" : { },
               "param2" : null,
-              "altIcon" : 7,
+              "altIcon" : 5,
               "connected" : true,
               "functionId" : 60,
               "supportedFunctions" : [ {
@@ -1931,11 +3772,11 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -1945,27 +3786,27 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
                 "id" : 60
               } ],
-              "locationId" : 4,
+              "locationId" : 9,
               "function" : {
                 "maxAlternativeIconIndex" : 1,
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -1973,29 +3814,29 @@
               },
               "typeId" : 1000,
               "location" : null,
-              "id" : 7,
+              "id" : 1,
               "inheritedLocation" : true,
-              "iodeviceId" : 1
+              "iodeviceId" : 9
             } ],
             "lastConnected" : "2000-01-23T04:56:07.000+00:00",
-            "locationId" : 3,
-            "regIpv4" : 7,
+            "locationId" : 7,
+            "regIpv4" : 2,
             "schedules" : [ {
               "channel" : {
                 "hidden" : true,
-                "channelNumber" : 1,
+                "channelNumber" : 6,
                 "iodevice" : null,
                 "caption" : "caption",
                 "type" : {
                   "output" : false,
                   "name" : "SENSORNO",
                   "caption" : "Sensor (normal open)",
-                  "id" : 1
+                  "id" : 7
                 },
                 "param3" : null,
                 "param1" : { },
                 "param2" : null,
-                "altIcon" : 7,
+                "altIcon" : 5,
                 "connected" : true,
                 "functionId" : 60,
                 "supportedFunctions" : [ {
@@ -2003,11 +3844,11 @@
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
@@ -2017,27 +3858,27 @@
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
                   "id" : 60
                 } ],
-                "locationId" : 4,
+                "locationId" : 9,
                 "function" : {
                   "maxAlternativeIconIndex" : 1,
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
@@ -2045,9 +3886,9 @@
                 },
                 "typeId" : 1000,
                 "location" : null,
-                "id" : 7,
+                "id" : 1,
                 "inheritedLocation" : true,
-                "iodeviceId" : 1
+                "iodeviceId" : 9
               },
               "caption" : "caption",
               "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -2101,28 +3942,28 @@
               "action" : {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               },
               "actionId" : 9,
-              "id" : 5,
+              "id" : 6,
               "retry" : true,
-              "channelId" : 9
+              "channelId" : 8
             }, {
               "channel" : {
                 "hidden" : true,
-                "channelNumber" : 1,
+                "channelNumber" : 6,
                 "iodevice" : null,
                 "caption" : "caption",
                 "type" : {
                   "output" : false,
                   "name" : "SENSORNO",
                   "caption" : "Sensor (normal open)",
-                  "id" : 1
+                  "id" : 7
                 },
                 "param3" : null,
                 "param1" : { },
                 "param2" : null,
-                "altIcon" : 7,
+                "altIcon" : 5,
                 "connected" : true,
                 "functionId" : 60,
                 "supportedFunctions" : [ {
@@ -2130,11 +3971,11 @@
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
@@ -2144,27 +3985,27 @@
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
                   "id" : 60
                 } ],
-                "locationId" : 4,
+                "locationId" : 9,
                 "function" : {
                   "maxAlternativeIconIndex" : 1,
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
@@ -2172,9 +4013,9 @@
                 },
                 "typeId" : 1000,
                 "location" : null,
-                "id" : 7,
+                "id" : 1,
                 "inheritedLocation" : true,
-                "iodeviceId" : 1
+                "iodeviceId" : 9
               },
               "caption" : "caption",
               "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -2228,42 +4069,42 @@
               "action" : {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               },
               "actionId" : 9,
-              "id" : 5,
+              "id" : 6,
               "retry" : true,
-              "channelId" : 9
+              "channelId" : 8
             } ],
             "name" : "name",
             "comment" : "comment",
             "location" : null,
-            "id" : 2,
+            "id" : 3,
             "softwareVersion" : "softwareVersion"
           }, {
             "originalLocation" : null,
-            "lastIpv4" : 9,
+            "lastIpv4" : 4,
             "gUIDString" : "gUIDString",
-            "originalLocationId" : 2,
+            "originalLocationId" : 1,
             "regDate" : "2000-01-23T04:56:07.000+00:00",
-            "channelsIds" : [ 4, 4 ],
+            "channelsIds" : [ 1, 1 ],
             "enabled" : true,
             "connected" : true,
             "channels" : [ {
               "hidden" : true,
-              "channelNumber" : 1,
+              "channelNumber" : 6,
               "iodevice" : null,
               "caption" : "caption",
               "type" : {
                 "output" : false,
                 "name" : "SENSORNO",
                 "caption" : "Sensor (normal open)",
-                "id" : 1
+                "id" : 7
               },
               "param3" : null,
               "param1" : { },
               "param2" : null,
-              "altIcon" : 7,
+              "altIcon" : 5,
               "connected" : true,
               "functionId" : 60,
               "supportedFunctions" : [ {
@@ -2271,11 +4112,11 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -2285,27 +4126,27 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
                 "id" : 60
               } ],
-              "locationId" : 4,
+              "locationId" : 9,
               "function" : {
                 "maxAlternativeIconIndex" : 1,
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -2313,24 +4154,24 @@
               },
               "typeId" : 1000,
               "location" : null,
-              "id" : 7,
+              "id" : 1,
               "inheritedLocation" : true,
-              "iodeviceId" : 1
+              "iodeviceId" : 9
             }, {
               "hidden" : true,
-              "channelNumber" : 1,
+              "channelNumber" : 6,
               "iodevice" : null,
               "caption" : "caption",
               "type" : {
                 "output" : false,
                 "name" : "SENSORNO",
                 "caption" : "Sensor (normal open)",
-                "id" : 1
+                "id" : 7
               },
               "param3" : null,
               "param1" : { },
               "param2" : null,
-              "altIcon" : 7,
+              "altIcon" : 5,
               "connected" : true,
               "functionId" : 60,
               "supportedFunctions" : [ {
@@ -2338,11 +4179,11 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -2352,27 +4193,27 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
                 "id" : 60
               } ],
-              "locationId" : 4,
+              "locationId" : 9,
               "function" : {
                 "maxAlternativeIconIndex" : 1,
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -2380,29 +4221,29 @@
               },
               "typeId" : 1000,
               "location" : null,
-              "id" : 7,
+              "id" : 1,
               "inheritedLocation" : true,
-              "iodeviceId" : 1
+              "iodeviceId" : 9
             } ],
             "lastConnected" : "2000-01-23T04:56:07.000+00:00",
-            "locationId" : 3,
-            "regIpv4" : 7,
+            "locationId" : 7,
+            "regIpv4" : 2,
             "schedules" : [ {
               "channel" : {
                 "hidden" : true,
-                "channelNumber" : 1,
+                "channelNumber" : 6,
                 "iodevice" : null,
                 "caption" : "caption",
                 "type" : {
                   "output" : false,
                   "name" : "SENSORNO",
                   "caption" : "Sensor (normal open)",
-                  "id" : 1
+                  "id" : 7
                 },
                 "param3" : null,
                 "param1" : { },
                 "param2" : null,
-                "altIcon" : 7,
+                "altIcon" : 5,
                 "connected" : true,
                 "functionId" : 60,
                 "supportedFunctions" : [ {
@@ -2410,11 +4251,11 @@
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
@@ -2424,27 +4265,27 @@
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
                   "id" : 60
                 } ],
-                "locationId" : 4,
+                "locationId" : 9,
                 "function" : {
                   "maxAlternativeIconIndex" : 1,
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
@@ -2452,9 +4293,9 @@
                 },
                 "typeId" : 1000,
                 "location" : null,
-                "id" : 7,
+                "id" : 1,
                 "inheritedLocation" : true,
-                "iodeviceId" : 1
+                "iodeviceId" : 9
               },
               "caption" : "caption",
               "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -2508,28 +4349,28 @@
               "action" : {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               },
               "actionId" : 9,
-              "id" : 5,
+              "id" : 6,
               "retry" : true,
-              "channelId" : 9
+              "channelId" : 8
             }, {
               "channel" : {
                 "hidden" : true,
-                "channelNumber" : 1,
+                "channelNumber" : 6,
                 "iodevice" : null,
                 "caption" : "caption",
                 "type" : {
                   "output" : false,
                   "name" : "SENSORNO",
                   "caption" : "Sensor (normal open)",
-                  "id" : 1
+                  "id" : 7
                 },
                 "param3" : null,
                 "param1" : { },
                 "param2" : null,
-                "altIcon" : 7,
+                "altIcon" : 5,
                 "connected" : true,
                 "functionId" : 60,
                 "supportedFunctions" : [ {
@@ -2537,11 +4378,11 @@
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
@@ -2551,27 +4392,27 @@
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
                   "id" : 60
                 } ],
-                "locationId" : 4,
+                "locationId" : 9,
                 "function" : {
                   "maxAlternativeIconIndex" : 1,
                   "possibleActions" : [ {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   }, {
                     "name" : { },
                     "caption" : "caption",
-                    "id" : 6
+                    "id" : 4
                   } ],
                   "name" : "OPENINGSENSOR_GATE",
                   "caption" : "Gate opening sensor",
@@ -2579,9 +4420,9 @@
                 },
                 "typeId" : 1000,
                 "location" : null,
-                "id" : 7,
+                "id" : 1,
                 "inheritedLocation" : true,
-                "iodeviceId" : 1
+                "iodeviceId" : 9
               },
               "caption" : "caption",
               "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -2635,25 +4476,54 @@
               "action" : {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               },
               "actionId" : 9,
-              "id" : 5,
+              "id" : 6,
               "retry" : true,
-              "channelId" : 9
+              "channelId" : 8
             } ],
             "name" : "name",
             "comment" : "comment",
             "location" : null,
-            "id" : 2,
+            "id" : 3,
             "softwareVersion" : "softwareVersion"
           } ],
-          "channelsIds" : [ 5, 5 ],
+          "channelsIds" : [ 7, 7 ],
           "enabled" : true
         },
         "id" : 1,
         "channelIds" : [ 6, 6 ],
         "altIcon" : 1
+      }
+    },
+    "ChannelGroupRequest" : {
+      "properties" : {
+        "caption" : {
+          "type" : "string"
+        },
+        "altIcon" : {
+          "type" : "integer"
+        },
+        "hidden" : {
+          "type" : "boolean"
+        },
+        "locationId" : {
+          "type" : "integer"
+        },
+        "channelIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "example" : {
+        "hidden" : true,
+        "locationId" : 6,
+        "caption" : "caption",
+        "channelIds" : [ 1, 1 ],
+        "altIcon" : 0
       }
     },
     "ChannelType" : {
@@ -2680,7 +4550,7 @@
         "output" : false,
         "name" : "SENSORNO",
         "caption" : "Sensor (normal open)",
-        "id" : 1
+        "id" : 7
       }
     },
     "ChannelFunction" : {
@@ -2712,11 +4582,11 @@
         "possibleActions" : [ {
           "name" : { },
           "caption" : "caption",
-          "id" : 6
+          "id" : 4
         }, {
           "name" : { },
           "caption" : "caption",
-          "id" : 6
+          "id" : 4
         } ],
         "name" : "OPENINGSENSOR_GATE",
         "caption" : "Gate opening sensor",
@@ -2743,7 +4613,7 @@
       "example" : {
         "name" : { },
         "caption" : "caption",
-        "id" : 6
+        "id" : 4
       }
     },
     "ChannelFunctionActionEnum" : {
@@ -2827,28 +4697,28 @@
       },
       "example" : {
         "originalLocation" : null,
-        "lastIpv4" : 9,
+        "lastIpv4" : 4,
         "gUIDString" : "gUIDString",
-        "originalLocationId" : 2,
+        "originalLocationId" : 1,
         "regDate" : "2000-01-23T04:56:07.000+00:00",
-        "channelsIds" : [ 4, 4 ],
+        "channelsIds" : [ 1, 1 ],
         "enabled" : true,
         "connected" : true,
         "channels" : [ {
           "hidden" : true,
-          "channelNumber" : 1,
+          "channelNumber" : 6,
           "iodevice" : null,
           "caption" : "caption",
           "type" : {
             "output" : false,
             "name" : "SENSORNO",
             "caption" : "Sensor (normal open)",
-            "id" : 1
+            "id" : 7
           },
           "param3" : null,
           "param1" : { },
           "param2" : null,
-          "altIcon" : 7,
+          "altIcon" : 5,
           "connected" : true,
           "functionId" : 60,
           "supportedFunctions" : [ {
@@ -2856,11 +4726,11 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -2870,27 +4740,27 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
             "id" : 60
           } ],
-          "locationId" : 4,
+          "locationId" : 9,
           "function" : {
             "maxAlternativeIconIndex" : 1,
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -2898,24 +4768,24 @@
           },
           "typeId" : 1000,
           "location" : null,
-          "id" : 7,
+          "id" : 1,
           "inheritedLocation" : true,
-          "iodeviceId" : 1
+          "iodeviceId" : 9
         }, {
           "hidden" : true,
-          "channelNumber" : 1,
+          "channelNumber" : 6,
           "iodevice" : null,
           "caption" : "caption",
           "type" : {
             "output" : false,
             "name" : "SENSORNO",
             "caption" : "Sensor (normal open)",
-            "id" : 1
+            "id" : 7
           },
           "param3" : null,
           "param1" : { },
           "param2" : null,
-          "altIcon" : 7,
+          "altIcon" : 5,
           "connected" : true,
           "functionId" : 60,
           "supportedFunctions" : [ {
@@ -2923,11 +4793,11 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -2937,27 +4807,27 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
             "id" : 60
           } ],
-          "locationId" : 4,
+          "locationId" : 9,
           "function" : {
             "maxAlternativeIconIndex" : 1,
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -2965,29 +4835,29 @@
           },
           "typeId" : 1000,
           "location" : null,
-          "id" : 7,
+          "id" : 1,
           "inheritedLocation" : true,
-          "iodeviceId" : 1
+          "iodeviceId" : 9
         } ],
         "lastConnected" : "2000-01-23T04:56:07.000+00:00",
-        "locationId" : 3,
-        "regIpv4" : 7,
+        "locationId" : 7,
+        "regIpv4" : 2,
         "schedules" : [ {
           "channel" : {
             "hidden" : true,
-            "channelNumber" : 1,
+            "channelNumber" : 6,
             "iodevice" : null,
             "caption" : "caption",
             "type" : {
               "output" : false,
               "name" : "SENSORNO",
               "caption" : "Sensor (normal open)",
-              "id" : 1
+              "id" : 7
             },
             "param3" : null,
             "param1" : { },
             "param2" : null,
-            "altIcon" : 7,
+            "altIcon" : 5,
             "connected" : true,
             "functionId" : 60,
             "supportedFunctions" : [ {
@@ -2995,11 +4865,11 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3009,27 +4879,27 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
               "id" : 60
             } ],
-            "locationId" : 4,
+            "locationId" : 9,
             "function" : {
               "maxAlternativeIconIndex" : 1,
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3037,9 +4907,9 @@
             },
             "typeId" : 1000,
             "location" : null,
-            "id" : 7,
+            "id" : 1,
             "inheritedLocation" : true,
-            "iodeviceId" : 1
+            "iodeviceId" : 9
           },
           "caption" : "caption",
           "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -3093,28 +4963,28 @@
           "action" : {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           },
           "actionId" : 9,
-          "id" : 5,
+          "id" : 6,
           "retry" : true,
-          "channelId" : 9
+          "channelId" : 8
         }, {
           "channel" : {
             "hidden" : true,
-            "channelNumber" : 1,
+            "channelNumber" : 6,
             "iodevice" : null,
             "caption" : "caption",
             "type" : {
               "output" : false,
               "name" : "SENSORNO",
               "caption" : "Sensor (normal open)",
-              "id" : 1
+              "id" : 7
             },
             "param3" : null,
             "param1" : { },
             "param2" : null,
-            "altIcon" : 7,
+            "altIcon" : 5,
             "connected" : true,
             "functionId" : 60,
             "supportedFunctions" : [ {
@@ -3122,11 +4992,11 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3136,27 +5006,27 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
               "id" : 60
             } ],
-            "locationId" : 4,
+            "locationId" : 9,
             "function" : {
               "maxAlternativeIconIndex" : 1,
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3164,9 +5034,9 @@
             },
             "typeId" : 1000,
             "location" : null,
-            "id" : 7,
+            "id" : 1,
             "inheritedLocation" : true,
-            "iodeviceId" : 1
+            "iodeviceId" : 9
           },
           "caption" : "caption",
           "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -3220,17 +5090,17 @@
           "action" : {
             "name" : { },
             "caption" : "caption",
-            "id" : 6
+            "id" : 4
           },
           "actionId" : 9,
-          "id" : 5,
+          "id" : 6,
           "retry" : true,
-          "channelId" : 9
+          "channelId" : 8
         } ],
         "name" : "name",
         "comment" : "comment",
         "location" : null,
-        "id" : 2,
+        "id" : 3,
         "softwareVersion" : "softwareVersion"
       }
     },
@@ -3311,23 +5181,23 @@
         }
       },
       "example" : {
-        "iodevicesIds" : [ 6, 6 ],
+        "iodevicesIds" : [ 5, 5 ],
         "password" : "password",
         "channels" : [ {
           "hidden" : true,
-          "channelNumber" : 1,
+          "channelNumber" : 6,
           "iodevice" : null,
           "caption" : "caption",
           "type" : {
             "output" : false,
             "name" : "SENSORNO",
             "caption" : "Sensor (normal open)",
-            "id" : 1
+            "id" : 7
           },
           "param3" : null,
           "param1" : { },
           "param2" : null,
-          "altIcon" : 7,
+          "altIcon" : 5,
           "connected" : true,
           "functionId" : 60,
           "supportedFunctions" : [ {
@@ -3335,11 +5205,11 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -3349,27 +5219,27 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
             "id" : 60
           } ],
-          "locationId" : 4,
+          "locationId" : 9,
           "function" : {
             "maxAlternativeIconIndex" : 1,
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -3377,24 +5247,24 @@
           },
           "typeId" : 1000,
           "location" : null,
-          "id" : 7,
+          "id" : 1,
           "inheritedLocation" : true,
-          "iodeviceId" : 1
+          "iodeviceId" : 9
         }, {
           "hidden" : true,
-          "channelNumber" : 1,
+          "channelNumber" : 6,
           "iodevice" : null,
           "caption" : "caption",
           "type" : {
             "output" : false,
             "name" : "SENSORNO",
             "caption" : "Sensor (normal open)",
-            "id" : 1
+            "id" : 7
           },
           "param3" : null,
           "param1" : { },
           "param2" : null,
-          "altIcon" : 7,
+          "altIcon" : 5,
           "connected" : true,
           "functionId" : 60,
           "supportedFunctions" : [ {
@@ -3402,11 +5272,11 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -3416,27 +5286,27 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
             "id" : 60
           } ],
-          "locationId" : 4,
+          "locationId" : 9,
           "function" : {
             "maxAlternativeIconIndex" : 1,
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -3444,112 +5314,40 @@
           },
           "typeId" : 1000,
           "location" : null,
-          "id" : 7,
+          "id" : 1,
           "inheritedLocation" : true,
-          "iodeviceId" : 1
+          "iodeviceId" : 9
         } ],
-        "accessIdsIds" : [ 5, 5 ],
+        "accessIdsIds" : [ 9, 9 ],
         "channelGroups" : [ ],
         "caption" : "caption",
-        "channelGroupsIds" : [ 1, 1 ],
-        "accessIds" : [ {
-          "clientApps" : [ {
-            "lastAccessIpv4" : 6,
-            "caption" : "caption",
-            "regDate" : "2000-01-23T04:56:07.000+00:00",
-            "enabled" : true,
-            "connected" : true,
-            "accessId" : null,
-            "accessIdId" : 2,
-            "lastAccessDate" : "2000-01-23T04:56:07.000+00:00",
-            "regIpv4" : 3,
-            "name" : "name",
-            "protocolVersion" : 1,
-            "id" : 6,
-            "softwareVersion" : "softwareVersion"
-          }, {
-            "lastAccessIpv4" : 6,
-            "caption" : "caption",
-            "regDate" : "2000-01-23T04:56:07.000+00:00",
-            "enabled" : true,
-            "connected" : true,
-            "accessId" : null,
-            "accessIdId" : 2,
-            "lastAccessDate" : "2000-01-23T04:56:07.000+00:00",
-            "regIpv4" : 3,
-            "name" : "name",
-            "protocolVersion" : 1,
-            "id" : 6,
-            "softwareVersion" : "softwareVersion"
-          } ],
-          "caption" : "caption",
-          "locations" : [ null, null ],
-          "id" : 6,
-          "clientAppsIds" : [ 9, 9 ],
-          "enabled" : true,
-          "locationsIds" : [ 8, 8 ]
-        }, {
-          "clientApps" : [ {
-            "lastAccessIpv4" : 6,
-            "caption" : "caption",
-            "regDate" : "2000-01-23T04:56:07.000+00:00",
-            "enabled" : true,
-            "connected" : true,
-            "accessId" : null,
-            "accessIdId" : 2,
-            "lastAccessDate" : "2000-01-23T04:56:07.000+00:00",
-            "regIpv4" : 3,
-            "name" : "name",
-            "protocolVersion" : 1,
-            "id" : 6,
-            "softwareVersion" : "softwareVersion"
-          }, {
-            "lastAccessIpv4" : 6,
-            "caption" : "caption",
-            "regDate" : "2000-01-23T04:56:07.000+00:00",
-            "enabled" : true,
-            "connected" : true,
-            "accessId" : null,
-            "accessIdId" : 2,
-            "lastAccessDate" : "2000-01-23T04:56:07.000+00:00",
-            "regIpv4" : 3,
-            "name" : "name",
-            "protocolVersion" : 1,
-            "id" : 6,
-            "softwareVersion" : "softwareVersion"
-          } ],
-          "caption" : "caption",
-          "locations" : [ null, null ],
-          "id" : 6,
-          "clientAppsIds" : [ 9, 9 ],
-          "enabled" : true,
-          "locationsIds" : [ 8, 8 ]
-        } ],
-        "id" : 0,
+        "channelGroupsIds" : [ 2, 2 ],
+        "accessIds" : [ null, null ],
+        "id" : 5,
         "iodevices" : [ {
           "originalLocation" : null,
-          "lastIpv4" : 9,
+          "lastIpv4" : 4,
           "gUIDString" : "gUIDString",
-          "originalLocationId" : 2,
+          "originalLocationId" : 1,
           "regDate" : "2000-01-23T04:56:07.000+00:00",
-          "channelsIds" : [ 4, 4 ],
+          "channelsIds" : [ 1, 1 ],
           "enabled" : true,
           "connected" : true,
           "channels" : [ {
             "hidden" : true,
-            "channelNumber" : 1,
+            "channelNumber" : 6,
             "iodevice" : null,
             "caption" : "caption",
             "type" : {
               "output" : false,
               "name" : "SENSORNO",
               "caption" : "Sensor (normal open)",
-              "id" : 1
+              "id" : 7
             },
             "param3" : null,
             "param1" : { },
             "param2" : null,
-            "altIcon" : 7,
+            "altIcon" : 5,
             "connected" : true,
             "functionId" : 60,
             "supportedFunctions" : [ {
@@ -3557,11 +5355,11 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3571,27 +5369,27 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
               "id" : 60
             } ],
-            "locationId" : 4,
+            "locationId" : 9,
             "function" : {
               "maxAlternativeIconIndex" : 1,
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3599,24 +5397,24 @@
             },
             "typeId" : 1000,
             "location" : null,
-            "id" : 7,
+            "id" : 1,
             "inheritedLocation" : true,
-            "iodeviceId" : 1
+            "iodeviceId" : 9
           }, {
             "hidden" : true,
-            "channelNumber" : 1,
+            "channelNumber" : 6,
             "iodevice" : null,
             "caption" : "caption",
             "type" : {
               "output" : false,
               "name" : "SENSORNO",
               "caption" : "Sensor (normal open)",
-              "id" : 1
+              "id" : 7
             },
             "param3" : null,
             "param1" : { },
             "param2" : null,
-            "altIcon" : 7,
+            "altIcon" : 5,
             "connected" : true,
             "functionId" : 60,
             "supportedFunctions" : [ {
@@ -3624,11 +5422,11 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3638,27 +5436,27 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
               "id" : 60
             } ],
-            "locationId" : 4,
+            "locationId" : 9,
             "function" : {
               "maxAlternativeIconIndex" : 1,
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3666,29 +5464,29 @@
             },
             "typeId" : 1000,
             "location" : null,
-            "id" : 7,
+            "id" : 1,
             "inheritedLocation" : true,
-            "iodeviceId" : 1
+            "iodeviceId" : 9
           } ],
           "lastConnected" : "2000-01-23T04:56:07.000+00:00",
-          "locationId" : 3,
-          "regIpv4" : 7,
+          "locationId" : 7,
+          "regIpv4" : 2,
           "schedules" : [ {
             "channel" : {
               "hidden" : true,
-              "channelNumber" : 1,
+              "channelNumber" : 6,
               "iodevice" : null,
               "caption" : "caption",
               "type" : {
                 "output" : false,
                 "name" : "SENSORNO",
                 "caption" : "Sensor (normal open)",
-                "id" : 1
+                "id" : 7
               },
               "param3" : null,
               "param1" : { },
               "param2" : null,
-              "altIcon" : 7,
+              "altIcon" : 5,
               "connected" : true,
               "functionId" : 60,
               "supportedFunctions" : [ {
@@ -3696,11 +5494,11 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -3710,27 +5508,27 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
                 "id" : 60
               } ],
-              "locationId" : 4,
+              "locationId" : 9,
               "function" : {
                 "maxAlternativeIconIndex" : 1,
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -3738,9 +5536,9 @@
               },
               "typeId" : 1000,
               "location" : null,
-              "id" : 7,
+              "id" : 1,
               "inheritedLocation" : true,
-              "iodeviceId" : 1
+              "iodeviceId" : 9
             },
             "caption" : "caption",
             "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -3794,28 +5592,28 @@
             "action" : {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             },
             "actionId" : 9,
-            "id" : 5,
+            "id" : 6,
             "retry" : true,
-            "channelId" : 9
+            "channelId" : 8
           }, {
             "channel" : {
               "hidden" : true,
-              "channelNumber" : 1,
+              "channelNumber" : 6,
               "iodevice" : null,
               "caption" : "caption",
               "type" : {
                 "output" : false,
                 "name" : "SENSORNO",
                 "caption" : "Sensor (normal open)",
-                "id" : 1
+                "id" : 7
               },
               "param3" : null,
               "param1" : { },
               "param2" : null,
-              "altIcon" : 7,
+              "altIcon" : 5,
               "connected" : true,
               "functionId" : 60,
               "supportedFunctions" : [ {
@@ -3823,11 +5621,11 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -3837,27 +5635,27 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
                 "id" : 60
               } ],
-              "locationId" : 4,
+              "locationId" : 9,
               "function" : {
                 "maxAlternativeIconIndex" : 1,
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -3865,9 +5663,9 @@
               },
               "typeId" : 1000,
               "location" : null,
-              "id" : 7,
+              "id" : 1,
               "inheritedLocation" : true,
-              "iodeviceId" : 1
+              "iodeviceId" : 9
             },
             "caption" : "caption",
             "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -3921,42 +5719,42 @@
             "action" : {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             },
             "actionId" : 9,
-            "id" : 5,
+            "id" : 6,
             "retry" : true,
-            "channelId" : 9
+            "channelId" : 8
           } ],
           "name" : "name",
           "comment" : "comment",
           "location" : null,
-          "id" : 2,
+          "id" : 3,
           "softwareVersion" : "softwareVersion"
         }, {
           "originalLocation" : null,
-          "lastIpv4" : 9,
+          "lastIpv4" : 4,
           "gUIDString" : "gUIDString",
-          "originalLocationId" : 2,
+          "originalLocationId" : 1,
           "regDate" : "2000-01-23T04:56:07.000+00:00",
-          "channelsIds" : [ 4, 4 ],
+          "channelsIds" : [ 1, 1 ],
           "enabled" : true,
           "connected" : true,
           "channels" : [ {
             "hidden" : true,
-            "channelNumber" : 1,
+            "channelNumber" : 6,
             "iodevice" : null,
             "caption" : "caption",
             "type" : {
               "output" : false,
               "name" : "SENSORNO",
               "caption" : "Sensor (normal open)",
-              "id" : 1
+              "id" : 7
             },
             "param3" : null,
             "param1" : { },
             "param2" : null,
-            "altIcon" : 7,
+            "altIcon" : 5,
             "connected" : true,
             "functionId" : 60,
             "supportedFunctions" : [ {
@@ -3964,11 +5762,11 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -3978,27 +5776,27 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
               "id" : 60
             } ],
-            "locationId" : 4,
+            "locationId" : 9,
             "function" : {
               "maxAlternativeIconIndex" : 1,
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -4006,24 +5804,24 @@
             },
             "typeId" : 1000,
             "location" : null,
-            "id" : 7,
+            "id" : 1,
             "inheritedLocation" : true,
-            "iodeviceId" : 1
+            "iodeviceId" : 9
           }, {
             "hidden" : true,
-            "channelNumber" : 1,
+            "channelNumber" : 6,
             "iodevice" : null,
             "caption" : "caption",
             "type" : {
               "output" : false,
               "name" : "SENSORNO",
               "caption" : "Sensor (normal open)",
-              "id" : 1
+              "id" : 7
             },
             "param3" : null,
             "param1" : { },
             "param2" : null,
-            "altIcon" : 7,
+            "altIcon" : 5,
             "connected" : true,
             "functionId" : 60,
             "supportedFunctions" : [ {
@@ -4031,11 +5829,11 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -4045,27 +5843,27 @@
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
               "id" : 60
             } ],
-            "locationId" : 4,
+            "locationId" : 9,
             "function" : {
               "maxAlternativeIconIndex" : 1,
               "possibleActions" : [ {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               }, {
                 "name" : { },
                 "caption" : "caption",
-                "id" : 6
+                "id" : 4
               } ],
               "name" : "OPENINGSENSOR_GATE",
               "caption" : "Gate opening sensor",
@@ -4073,29 +5871,29 @@
             },
             "typeId" : 1000,
             "location" : null,
-            "id" : 7,
+            "id" : 1,
             "inheritedLocation" : true,
-            "iodeviceId" : 1
+            "iodeviceId" : 9
           } ],
           "lastConnected" : "2000-01-23T04:56:07.000+00:00",
-          "locationId" : 3,
-          "regIpv4" : 7,
+          "locationId" : 7,
+          "regIpv4" : 2,
           "schedules" : [ {
             "channel" : {
               "hidden" : true,
-              "channelNumber" : 1,
+              "channelNumber" : 6,
               "iodevice" : null,
               "caption" : "caption",
               "type" : {
                 "output" : false,
                 "name" : "SENSORNO",
                 "caption" : "Sensor (normal open)",
-                "id" : 1
+                "id" : 7
               },
               "param3" : null,
               "param1" : { },
               "param2" : null,
-              "altIcon" : 7,
+              "altIcon" : 5,
               "connected" : true,
               "functionId" : 60,
               "supportedFunctions" : [ {
@@ -4103,11 +5901,11 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -4117,27 +5915,27 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
                 "id" : 60
               } ],
-              "locationId" : 4,
+              "locationId" : 9,
               "function" : {
                 "maxAlternativeIconIndex" : 1,
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -4145,9 +5943,9 @@
               },
               "typeId" : 1000,
               "location" : null,
-              "id" : 7,
+              "id" : 1,
               "inheritedLocation" : true,
-              "iodeviceId" : 1
+              "iodeviceId" : 9
             },
             "caption" : "caption",
             "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -4201,28 +5999,28 @@
             "action" : {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             },
             "actionId" : 9,
-            "id" : 5,
+            "id" : 6,
             "retry" : true,
-            "channelId" : 9
+            "channelId" : 8
           }, {
             "channel" : {
               "hidden" : true,
-              "channelNumber" : 1,
+              "channelNumber" : 6,
               "iodevice" : null,
               "caption" : "caption",
               "type" : {
                 "output" : false,
                 "name" : "SENSORNO",
                 "caption" : "Sensor (normal open)",
-                "id" : 1
+                "id" : 7
               },
               "param3" : null,
               "param1" : { },
               "param2" : null,
-              "altIcon" : 7,
+              "altIcon" : 5,
               "connected" : true,
               "functionId" : 60,
               "supportedFunctions" : [ {
@@ -4230,11 +6028,11 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -4244,27 +6042,27 @@
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
                 "id" : 60
               } ],
-              "locationId" : 4,
+              "locationId" : 9,
               "function" : {
                 "maxAlternativeIconIndex" : 1,
                 "possibleActions" : [ {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 }, {
                   "name" : { },
                   "caption" : "caption",
-                  "id" : 6
+                  "id" : 4
                 } ],
                 "name" : "OPENINGSENSOR_GATE",
                 "caption" : "Gate opening sensor",
@@ -4272,9 +6070,9 @@
               },
               "typeId" : 1000,
               "location" : null,
-              "id" : 7,
+              "id" : 1,
               "inheritedLocation" : true,
-              "iodeviceId" : 1
+              "iodeviceId" : 9
             },
             "caption" : "caption",
             "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -4328,20 +6126,20 @@
             "action" : {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             },
             "actionId" : 9,
-            "id" : 5,
+            "id" : 6,
             "retry" : true,
-            "channelId" : 9
+            "channelId" : 8
           } ],
           "name" : "name",
           "comment" : "comment",
           "location" : null,
-          "id" : 2,
+          "id" : 3,
           "softwareVersion" : "softwareVersion"
         } ],
-        "channelsIds" : [ 5, 5 ],
+        "channelsIds" : [ 7, 7 ],
         "enabled" : true
       }
     },
@@ -4400,19 +6198,19 @@
       "example" : {
         "channel" : {
           "hidden" : true,
-          "channelNumber" : 1,
+          "channelNumber" : 6,
           "iodevice" : null,
           "caption" : "caption",
           "type" : {
             "output" : false,
             "name" : "SENSORNO",
             "caption" : "Sensor (normal open)",
-            "id" : 1
+            "id" : 7
           },
           "param3" : null,
           "param1" : { },
           "param2" : null,
-          "altIcon" : 7,
+          "altIcon" : 5,
           "connected" : true,
           "functionId" : 60,
           "supportedFunctions" : [ {
@@ -4420,11 +6218,11 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -4434,27 +6232,27 @@
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
             "id" : 60
           } ],
-          "locationId" : 4,
+          "locationId" : 9,
           "function" : {
             "maxAlternativeIconIndex" : 1,
             "possibleActions" : [ {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             }, {
               "name" : { },
               "caption" : "caption",
-              "id" : 6
+              "id" : 4
             } ],
             "name" : "OPENINGSENSOR_GATE",
             "caption" : "Gate opening sensor",
@@ -4462,9 +6260,9 @@
           },
           "typeId" : 1000,
           "location" : null,
-          "id" : 7,
+          "id" : 1,
           "inheritedLocation" : true,
-          "iodeviceId" : 1
+          "iodeviceId" : 9
         },
         "caption" : "caption",
         "dateEnd" : "2000-01-23T04:56:07.000+00:00",
@@ -4518,12 +6316,12 @@
         "action" : {
           "name" : { },
           "caption" : "caption",
-          "id" : 6
+          "id" : 4
         },
         "actionId" : 9,
-        "id" : 5,
+        "id" : 6,
         "retry" : true,
-        "channelId" : 9
+        "channelId" : 8
       }
     },
     "ScheduleRequest" : {
@@ -4568,7 +6366,250 @@
         "retry" : true
       }
     },
-    "inline_response_200_timezone" : {
+    "Access ID update request" : {
+      "properties" : {
+        "enabled" : {
+          "type" : "boolean"
+        },
+        "caption" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Provide new password if you want to change it."
+        },
+        "locationsIds" : {
+          "type" : "array",
+          "description" : "Locations identifiers to assign to this Access ID.",
+          "items" : {
+            "type" : "integer"
+          }
+        },
+        "clientAppsIds" : {
+          "type" : "array",
+          "description" : "Client Apps identifiers to assign to this Access ID. If client app is connected to any other Client ID, it will be disconnected from the old one before assigning.",
+          "items" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "title" : "Access ID update request",
+      "example" : {
+        "password" : "password",
+        "caption" : "caption",
+        "clientAppsIds" : [ 6, 6 ],
+        "enabled" : true,
+        "locationsIds" : [ 0, 0 ]
+      }
+    },
+    "Channel update request" : {
+      "properties" : {
+        "functionId" : {
+          "type" : "integer"
+        },
+        "param1" : {
+          "type" : "integer"
+        },
+        "param2" : {
+          "type" : "integer"
+        },
+        "param3" : {
+          "type" : "integer"
+        },
+        "caption" : {
+          "type" : "string"
+        },
+        "altIcon" : {
+          "type" : "integer"
+        },
+        "hidden" : {
+          "type" : "boolean"
+        },
+        "locationId" : {
+          "type" : "integer"
+        },
+        "inheritedLocation" : {
+          "type" : "boolean"
+        }
+      },
+      "title" : "Channel update request",
+      "example" : {
+        "functionId" : 0,
+        "hidden" : true,
+        "locationId" : 2,
+        "caption" : "caption",
+        "param3" : 5,
+        "inheritedLocation" : true,
+        "param1" : 6,
+        "param2" : 1,
+        "altIcon" : 5
+      }
+    },
+    "Channel update confirmation response" : {
+      "properties" : {
+        "schedules" : {
+          "type" : "array",
+          "description" : "Schedules that will be deleted after this request.",
+          "items" : {
+            "$ref" : "#/definitions/Schedule"
+          }
+        },
+        "groups" : {
+          "type" : "array",
+          "description" : "Channel groups that this channel will be removed from after this request.",
+          "items" : {
+            "$ref" : "#/definitions/ChannelGroup"
+          }
+        }
+      }
+    },
+    "Channel execute action request" : {
+      "properties" : {
+        "action" : {
+          "$ref" : "#/definitions/ChannelFunctionActionEnum"
+        },
+        "percentage" : {
+          "type" : "integer",
+          "example" : 40
+        }
+      },
+      "title" : "Channel execute action request",
+      "example" : {
+        "percentage" : 40,
+        "action" : { }
+      }
+    },
+    "Channel action execution failed response" : {
+      "properties" : {
+        "status" : {
+          "type" : "integer",
+          "example" : 400
+        },
+        "message" : {
+          "type" : "string",
+          "example" : "Cannot execute requested action on this channel."
+        }
+      }
+    },
+    "Channel unsupported function response" : {
+      "properties" : {
+        "status" : {
+          "type" : "integer",
+          "example" : 400
+        },
+        "message" : {
+          "type" : "string",
+          "example" : "The requested function is not available on this channel"
+        }
+      }
+    },
+    "Channel measurement log" : {
+      "properties" : {
+        "date_timestamp" : {
+          "type" : "integer"
+        },
+        "temperature" : {
+          "type" : "number",
+          "format" : "float",
+          "example" : 21.56,
+          "description" : "Temperature in Celsius"
+        },
+        "humidity" : {
+          "type" : "number",
+          "format" : "float",
+          "example" : 48.8,
+          "description" : "Humidity percent. Available only if channel function is `HUMIDITYANDTEMPERATURE`."
+        }
+      },
+      "example" : {
+        "temperature" : 21.56,
+        "humidity" : 48.8,
+        "date_timestamp" : 0
+      }
+    },
+    "Channel Group execute action request" : {
+      "properties" : {
+        "action" : {
+          "$ref" : "#/definitions/ChannelFunctionActionEnum"
+        },
+        "percentage" : {
+          "type" : "integer",
+          "example" : 40
+        }
+      },
+      "title" : "Channel Group execute action request",
+      "example" : {
+        "percentage" : 40,
+        "action" : { }
+      }
+    },
+    "Client App update request" : {
+      "properties" : {
+        "caption" : {
+          "type" : "string"
+        },
+        "enabled" : {
+          "type" : "boolean"
+        },
+        "accessIdId" : {
+          "type" : "integer"
+        }
+      },
+      "title" : "Client App update request",
+      "example" : {
+        "accessIdId" : 0,
+        "caption" : "caption",
+        "enabled" : true
+      }
+    },
+    "IO Device update request" : {
+      "properties" : {
+        "comment" : {
+          "type" : "string"
+        },
+        "enabled" : {
+          "type" : "boolean"
+        },
+        "locationId" : {
+          "type" : "integer"
+        }
+      },
+      "title" : "IO Device update request",
+      "example" : {
+        "locationId" : 0,
+        "comment" : "comment",
+        "enabled" : true
+      }
+    },
+    "Location update request" : {
+      "properties" : {
+        "enabled" : {
+          "type" : "boolean"
+        },
+        "caption" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Provide new password if you want to change it."
+        },
+        "accessIdsIds" : {
+          "type" : "array",
+          "description" : "Access Identifiers identifiers to assign to this location.",
+          "items" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "title" : "Location update request",
+      "example" : {
+        "password" : "password",
+        "accessIdsIds" : [ 0, 0 ],
+        "caption" : "caption",
+        "enabled" : true
+      }
+    },
+    "Server Info_timezone" : {
       "properties" : {
         "name" : {
           "type" : "string",
@@ -4584,7 +6625,7 @@
         "name" : "UTC"
       }
     },
-    "inline_response_200" : {
+    "Server Info" : {
       "properties" : {
         "address" : {
           "type" : "string",
@@ -4597,7 +6638,7 @@
           "description" : "Current server time"
         },
         "timezone" : {
-          "$ref" : "#/definitions/inline_response_200_timezone"
+          "$ref" : "#/definitions/Server Info_timezone"
         },
         "authenticated" : {
           "type" : "boolean"
@@ -4637,26 +6678,22 @@
         "username" : "supler@supla.org"
       }
     },
-    "inline_response_200_1" : {
+    "Schedules enable request" : {
       "properties" : {
-        "status" : {
-          "type" : "string",
-          "example" : "OK"
+        "enable" : {
+          "type" : "array",
+          "description" : "Array of schedule identifiers to enable",
+          "items" : {
+            "type" : "integer"
+          }
         }
       },
+      "title" : "Schedules enable request",
       "example" : {
-        "status" : "OK"
+        "enable" : [ 0, 0 ]
       }
     },
-    "inline_response_503" : {
-      "properties" : {
-        "status" : {
-          "type" : "string",
-          "example" : "DOWN"
-        }
-      }
-    },
-    "User request" : {
+    "User data" : {
       "properties" : {
         "id" : {
           "type" : "integer"
@@ -4686,272 +6723,17 @@
         "email" : "email"
       }
     },
-    "body" : {
+    "User update request" : {
       "properties" : {
         "action" : {
           "type" : "string",
           "description" : "The `change:userTimezone` requires to provide also a `timezone` value in the request. The `change:password` requires to provide also a `newPassword` and `oldPassword` in the request.",
           "enum" : [ "change:clientsRegistrationEnabled", "change:ioDevicesRegistrationEnabled", "change:userTimezone", "change:password", "agree:rules", "agree:cookies" ]
         }
-      }
-    },
-    "inline_response_200_2" : {
-      "properties" : {
-        "id" : {
-          "type" : "integer"
-        }
       },
+      "title" : "User update request",
       "example" : {
-        "id" : 0
-      }
-    },
-    "body_1" : {
-      "properties" : {
-        "enabled" : {
-          "type" : "boolean"
-        },
-        "caption" : {
-          "type" : "string"
-        },
-        "password" : {
-          "type" : "string",
-          "description" : "Provide new password if you want to change it."
-        },
-        "accessIdsIds" : {
-          "type" : "array",
-          "description" : "Access Identifiers identifiers to assign to this location.",
-          "items" : {
-            "type" : "integer"
-          }
-        }
-      }
-    },
-    "body_2" : {
-      "properties" : {
-        "functionId" : {
-          "type" : "integer"
-        },
-        "param1" : {
-          "type" : "integer"
-        },
-        "param2" : {
-          "type" : "integer"
-        },
-        "param3" : {
-          "type" : "integer"
-        },
-        "caption" : {
-          "type" : "string"
-        },
-        "altIcon" : {
-          "type" : "integer"
-        },
-        "hidden" : {
-          "type" : "boolean"
-        },
-        "locationId" : {
-          "type" : "integer"
-        },
-        "inheritedLocation" : {
-          "type" : "boolean"
-        }
-      }
-    },
-    "inline_response_409" : {
-      "properties" : {
-        "schedules" : {
-          "type" : "array",
-          "description" : "Schedules that will be deleted after this request.",
-          "items" : {
-            "$ref" : "#/definitions/Schedule"
-          }
-        },
-        "groups" : {
-          "type" : "array",
-          "description" : "Channel groups that this channel will be removed from after this request.",
-          "items" : {
-            "$ref" : "#/definitions/ChannelGroup"
-          }
-        }
-      }
-    },
-    "body_3" : {
-      "properties" : {
-        "action" : {
-          "$ref" : "#/definitions/ChannelFunctionActionEnum"
-        },
-        "percentage" : {
-          "type" : "integer",
-          "example" : 40
-        }
-      }
-    },
-    "inline_response_400" : {
-      "properties" : {
-        "status" : {
-          "type" : "integer",
-          "example" : 400
-        },
-        "message" : {
-          "type" : "string",
-          "example" : "Cannot execute requested action on this channel."
-        }
-      }
-    },
-    "inline_response_400_1" : {
-      "properties" : {
-        "status" : {
-          "type" : "integer",
-          "example" : 400
-        },
-        "message" : {
-          "type" : "string",
-          "example" : "The requested function is not available on this channel"
-        }
-      }
-    },
-    "inline_response_200_3" : {
-      "properties" : {
-        "date_timestamp" : {
-          "type" : "integer"
-        },
-        "temperature" : {
-          "type" : "number",
-          "format" : "float",
-          "example" : 21.56,
-          "description" : "Temperature in Celsius"
-        },
-        "humidity" : {
-          "type" : "number",
-          "format" : "float",
-          "example" : 48.8,
-          "description" : "Humidity percent. Available only if channel function is `HUMIDITYANDTEMPERATURE`."
-        }
-      },
-      "example" : {
-        "temperature" : 21.56,
-        "humidity" : 48.8,
-        "date_timestamp" : 0
-      }
-    },
-    "body_4" : {
-      "properties" : {
-        "caption" : {
-          "type" : "string"
-        },
-        "altIcon" : {
-          "type" : "integer"
-        },
-        "hidden" : {
-          "type" : "boolean"
-        },
-        "locationId" : {
-          "type" : "integer"
-        },
-        "channelIds" : {
-          "type" : "array",
-          "items" : {
-            "type" : "integer"
-          }
-        }
-      }
-    },
-    "body_5" : {
-      "properties" : {
-        "caption" : {
-          "type" : "string"
-        },
-        "altIcon" : {
-          "type" : "integer"
-        },
-        "hidden" : {
-          "type" : "boolean"
-        },
-        "locationId" : {
-          "type" : "integer"
-        },
-        "channelIds" : {
-          "type" : "array",
-          "items" : {
-            "type" : "integer"
-          }
-        }
-      }
-    },
-    "body_6" : {
-      "properties" : {
-        "action" : {
-          "$ref" : "#/definitions/ChannelFunctionActionEnum"
-        },
-        "percentage" : {
-          "type" : "integer",
-          "example" : 40
-        }
-      }
-    },
-    "body_7" : {
-      "properties" : {
-        "caption" : {
-          "type" : "string"
-        },
-        "enabled" : {
-          "type" : "boolean"
-        },
-        "accessIdId" : {
-          "type" : "integer"
-        }
-      }
-    },
-    "body_8" : {
-      "properties" : {
-        "comment" : {
-          "type" : "string"
-        },
-        "enabled" : {
-          "type" : "boolean"
-        },
-        "locationId" : {
-          "type" : "integer"
-        }
-      }
-    },
-    "body_9" : {
-      "properties" : {
-        "enable" : {
-          "type" : "array",
-          "description" : "Array of schedule identifiers to enable",
-          "items" : {
-            "type" : "integer"
-          }
-        }
-      }
-    },
-    "body_10" : {
-      "properties" : {
-        "enabled" : {
-          "type" : "boolean"
-        },
-        "caption" : {
-          "type" : "string"
-        },
-        "password" : {
-          "type" : "string",
-          "description" : "Provide new password if you want to change it."
-        },
-        "locationsIds" : {
-          "type" : "array",
-          "description" : "Locations identifiers to assign to this Access ID.",
-          "items" : {
-            "type" : "integer"
-          }
-        },
-        "clientAppsIds" : {
-          "type" : "array",
-          "description" : "Client Apps identifiers to assign to this Access ID. If client app is connected to any other Client ID, it will be disconnected from the old one before assigning.",
-          "items" : {
-            "type" : "integer"
-          }
-        }
+        "action" : "change:clientsRegistrationEnabled"
       }
     },
     "Schedule_result" : {

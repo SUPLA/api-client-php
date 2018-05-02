@@ -16,7 +16,7 @@ Delete IO Device
 ### Example
 ```php
 $id = 56; // int | 
-$result = $client->iODevices()->deleteIoDevice($id);
+$client->iODevices()->deleteIoDevice($id);
 ```
 
 
@@ -111,7 +111,7 @@ Update IO Device
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\Body8(); // \Swagger\Client\Model\Body8 | 
+$body = new \Swagger\Client\Model\IODeviceUpdateRequest(); // \Swagger\Client\Model\IODeviceUpdateRequest | 
 $result = $client->iODevices()->updateIoDevice($id, $body);
 print_r($result);
 ```
@@ -121,7 +121,7 @@ print_r($result);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Body8**](../Model/Body8.md)|  |
+ **body** | [**\Swagger\Client\Model\IODeviceUpdateRequest**](../Model/IODeviceUpdateRequest.md)|  |
 
 ### Return type
 

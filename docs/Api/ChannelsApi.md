@@ -18,8 +18,8 @@ Execute action on the channel
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\Body3(); // \Swagger\Client\Model\Body3 | Defines an action to execute on channel. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
-$result = $client->channels()->executeAction($id, $body);
+$body = new \Swagger\Client\Model\ChannelExecuteActionRequest(); // \Swagger\Client\Model\ChannelExecuteActionRequest | Defines an action to execute on channel. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
+$client->channels()->executeAction($id, $body);
 ```
 
 
@@ -27,7 +27,7 @@ $result = $client->channels()->executeAction($id, $body);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Body3**](../Model/Body3.md)| Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
+ **body** | [**\Swagger\Client\Model\ChannelExecuteActionRequest**](../Model/ChannelExecuteActionRequest.md)| Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
 
 ### Return type
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
+[**\Swagger\Client\Model\ChannelMeasurementLog[]**](../Model/ChannelMeasurementLog.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -175,7 +175,7 @@ Update channel
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\Body2(); // \Swagger\Client\Model\Body2 | 
+$body = new \Swagger\Client\Model\ChannelUpdateRequest(); // \Swagger\Client\Model\ChannelUpdateRequest | 
 $result = $client->channels()->updateChannel($id, $body);
 print_r($result);
 ```
@@ -185,7 +185,7 @@ print_r($result);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Body2**](../Model/Body2.md)|  |
+ **body** | [**\Swagger\Client\Model\ChannelUpdateRequest**](../Model/ChannelUpdateRequest.md)|  |
 
 ### Return type
 

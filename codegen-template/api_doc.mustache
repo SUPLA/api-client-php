@@ -18,7 +18,7 @@ Method | HTTP request | Description
 ```php
 {{#allParams}}${{paramName}} = {{{example}}}; // {{{dataType}}} | {{{description}}}
 {{/allParams}}
-$result = $client->{{classVarName}}()->{{operationId}}({{#allParams}}${{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
+{{#returnType}}$result = {{/returnType}}$client->{{classVarName}}()->{{operationId}}({{#allParams}}${{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
 print_r($result);{{/returnType}}
 ```
 

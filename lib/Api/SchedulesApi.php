@@ -582,7 +582,7 @@ class SchedulesApi
      *
      * Enable schedules
      *
-     * @param  \Swagger\Client\Model\Body9 $body body (required)
+     * @param  \Swagger\Client\Model\SchedulesEnableRequest $body body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -598,7 +598,7 @@ class SchedulesApi
      *
      * Enable schedules
      *
-     * @param  \Swagger\Client\Model\Body9 $body (required)
+     * @param  \Swagger\Client\Model\SchedulesEnableRequest $body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -651,7 +651,7 @@ class SchedulesApi
      *
      * Enable schedules
      *
-     * @param  \Swagger\Client\Model\Body9 $body (required)
+     * @param  \Swagger\Client\Model\SchedulesEnableRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -671,7 +671,7 @@ class SchedulesApi
      *
      * Enable schedules
      *
-     * @param  \Swagger\Client\Model\Body9 $body (required)
+     * @param  \Swagger\Client\Model\SchedulesEnableRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -707,7 +707,7 @@ class SchedulesApi
     /**
      * Create request for operation 'enableSchedules'
      *
-     * @param  \Swagger\Client\Model\Body9 $body (required)
+     * @param  \Swagger\Client\Model\SchedulesEnableRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

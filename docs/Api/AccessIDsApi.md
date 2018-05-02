@@ -6,7 +6,7 @@ Method | HTTP request | Description
 [**deleteAccessID**](AccessIDsApi.md#deleteAccessID) | **DELETE** /accessids/{id} | Delete Access Identifier
 [**getAccessID**](AccessIDsApi.md#getAccessID) | **GET** /accessids | Get Access IDs list
 [**getAccessID_0**](AccessIDsApi.md#getAccessID_0) | **GET** /accessids/{id} | Get Access ID
-[**updateAccessID**](AccessIDsApi.md#updateAccessID) | **PUT** /accessids/{id} | Edit Access ID
+[**updateAccessID**](AccessIDsApi.md#updateAccessID) | **PUT** /accessids/{id} | Update Access ID
 
 
 # **createAccessID**
@@ -34,7 +34,7 @@ Delete Access Identifier
 ### Example
 ```php
 $id = 56; // int | 
-$result = $client->accessIDs()->deleteAccessID($id);
+$client->accessIDs()->deleteAccessID($id);
 ```
 
 
@@ -99,12 +99,12 @@ Name | Type | Description  | Notes
 
 # **updateAccessID**
 
-Edit Access ID
+Update Access ID
 
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\Body10(); // \Swagger\Client\Model\Body10 | 
+$body = new \Swagger\Client\Model\AccessIDUpdateRequest(); // \Swagger\Client\Model\AccessIDUpdateRequest | 
 $result = $client->accessIDs()->updateAccessID($id, $body);
 print_r($result);
 ```
@@ -114,7 +114,7 @@ print_r($result);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Body10**](../Model/Body10.md)|  |
+ **body** | [**\Swagger\Client\Model\AccessIDUpdateRequest**](../Model/AccessIDUpdateRequest.md)|  |
 
 ### Return type
 

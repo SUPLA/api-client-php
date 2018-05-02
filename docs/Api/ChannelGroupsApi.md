@@ -16,7 +16,7 @@ Create a new channel group
 
 ### Example
 ```php
-$body = new \Swagger\Client\Model\Body4(); // \Swagger\Client\Model\Body4 | 
+$body = new \Swagger\Client\Model\ChannelGroupRequest(); // \Swagger\Client\Model\ChannelGroupRequest | 
 $result = $client->channelGroups()->createChannelGroup($body);
 print_r($result);
 ```
@@ -25,7 +25,7 @@ print_r($result);
 ### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body4**](../Model/Body4.md)|  |
+ **body** | [**\Swagger\Client\Model\ChannelGroupRequest**](../Model/ChannelGroupRequest.md)|  |
 
 ### Return type
 
@@ -40,7 +40,7 @@ Delete Channel Group
 ### Example
 ```php
 $id = 56; // int | 
-$result = $client->channelGroups()->deleteChannelGroup($id);
+$client->channelGroups()->deleteChannelGroup($id);
 ```
 
 
@@ -62,8 +62,8 @@ Execute action on the channel group
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\Body6(); // \Swagger\Client\Model\Body6 | Defines an action to execute on channel group. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
-$result = $client->channelGroups()->executeChannelGroupAction($id, $body);
+$body = new \Swagger\Client\Model\ChannelGroupExecuteActionRequest(); // \Swagger\Client\Model\ChannelGroupExecuteActionRequest | Defines an action to execute on channel group. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
+$client->channelGroups()->executeChannelGroupAction($id, $body);
 ```
 
 
@@ -71,7 +71,7 @@ $result = $client->channelGroups()->executeChannelGroupAction($id, $body);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Body6**](../Model/Body6.md)| Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
+ **body** | [**\Swagger\Client\Model\ChannelGroupExecuteActionRequest**](../Model/ChannelGroupExecuteActionRequest.md)| Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
 
 ### Return type
 
@@ -134,7 +134,7 @@ Update channel group
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\Body5(); // \Swagger\Client\Model\Body5 | 
+$body = new \Swagger\Client\Model\ChannelGroupRequest(); // \Swagger\Client\Model\ChannelGroupRequest | 
 $result = $client->channelGroups()->updateChannelGroup($id, $body);
 print_r($result);
 ```
@@ -144,7 +144,7 @@ print_r($result);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Body5**](../Model/Body5.md)|  |
+ **body** | [**\Swagger\Client\Model\ChannelGroupRequest**](../Model/ChannelGroupRequest.md)|  |
 
 ### Return type
 

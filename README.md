@@ -50,7 +50,7 @@ Class | Method | HTTP request | Description
 *AccessIDsApi* | [**deleteAccessID**](docs/Api/AccessIDsApi.md#deleteaccessid) | **DELETE** /accessids/{id} | Delete Access Identifier
 *AccessIDsApi* | [**getAccessID**](docs/Api/AccessIDsApi.md#getaccessid) | **GET** /accessids | Get Access IDs list
 *AccessIDsApi* | [**getAccessID_0**](docs/Api/AccessIDsApi.md#getaccessid_0) | **GET** /accessids/{id} | Get Access ID
-*AccessIDsApi* | [**updateAccessID**](docs/Api/AccessIDsApi.md#updateaccessid) | **PUT** /accessids/{id} | Edit Access ID
+*AccessIDsApi* | [**updateAccessID**](docs/Api/AccessIDsApi.md#updateaccessid) | **PUT** /accessids/{id} | Update Access ID
 *ChannelGroupsApi* | [**createChannelGroup**](docs/Api/ChannelGroupsApi.md#createchannelgroup) | **POST** /channel-groups | Create a new channel group
 *ChannelGroupsApi* | [**deleteChannelGroup**](docs/Api/ChannelGroupsApi.md#deletechannelgroup) | **DELETE** /channel-groups/{id} | Delete Channel Group
 *ChannelGroupsApi* | [**executeChannelGroupAction**](docs/Api/ChannelGroupsApi.md#executechannelgroupaction) | **PATCH** /channel-groups/{id} | Execute action on the channel group
@@ -76,7 +76,7 @@ Class | Method | HTTP request | Description
 *LocationsApi* | [**deleteLocation**](docs/Api/LocationsApi.md#deletelocation) | **DELETE** /locations/{id} | Delete location
 *LocationsApi* | [**getLocation**](docs/Api/LocationsApi.md#getlocation) | **GET** /locations/{id} | Get location by ID
 *LocationsApi* | [**getLocations**](docs/Api/LocationsApi.md#getlocations) | **GET** /locations | Get locations list
-*LocationsApi* | [**updateLocation**](docs/Api/LocationsApi.md#updatelocation) | **PUT** /locations/{id} | Edit location
+*LocationsApi* | [**updateLocation**](docs/Api/LocationsApi.md#updatelocation) | **PUT** /locations/{id} | Update location
 *SchedulesApi* | [**createSchedule**](docs/Api/SchedulesApi.md#createschedule) | **POST** /schedules | Create a new schedule
 *SchedulesApi* | [**deleteSchedule**](docs/Api/SchedulesApi.md#deleteschedule) | **DELETE** /schedules/{id} | Delete Schedule
 *SchedulesApi* | [**enableSchedules**](docs/Api/SchedulesApi.md#enableschedules) | **PATCH** /schedules | Enable schedules
@@ -85,51 +85,47 @@ Class | Method | HTTP request | Description
 *SchedulesApi* | [**updateSchedule**](docs/Api/SchedulesApi.md#updateschedule) | **PUT** /schedules/{id} | Update schedule
 *ServerApi* | [**serverInfoGet**](docs/Api/ServerApi.md#serverinfoget) | **GET** /server-info | Get server status
 *ServerApi* | [**serverStatusGet**](docs/Api/ServerApi.md#serverstatusget) | **GET** /server-status | Get the SUPLA Server status
-*UsersApi* | [**editCurrentUser**](docs/Api/UsersApi.md#editcurrentuser) | **PATCH** /users/current | Edit current user
 *UsersApi* | [**getCurrentUser**](docs/Api/UsersApi.md#getcurrentuser) | **GET** /users/current | Get current user
+*UsersApi* | [**updateCurrentUser**](docs/Api/UsersApi.md#updatecurrentuser) | **PATCH** /users/current | Update current user
 
 
 ## Documentation For Models
 
  - [AccessID](docs/Model/AccessID.md)
- - [Body](docs/Model/Body.md)
- - [Body1](docs/Model/Body1.md)
- - [Body10](docs/Model/Body10.md)
- - [Body2](docs/Model/Body2.md)
- - [Body3](docs/Model/Body3.md)
- - [Body4](docs/Model/Body4.md)
- - [Body5](docs/Model/Body5.md)
- - [Body6](docs/Model/Body6.md)
- - [Body7](docs/Model/Body7.md)
- - [Body8](docs/Model/Body8.md)
- - [Body9](docs/Model/Body9.md)
+ - [AccessIDUpdateRequest](docs/Model/AccessIDUpdateRequest.md)
  - [Channel](docs/Model/Channel.md)
+ - [ChannelActionExecutionFailedResponse](docs/Model/ChannelActionExecutionFailedResponse.md)
+ - [ChannelExecuteActionRequest](docs/Model/ChannelExecuteActionRequest.md)
  - [ChannelFunction](docs/Model/ChannelFunction.md)
  - [ChannelFunctionAction](docs/Model/ChannelFunctionAction.md)
  - [ChannelFunctionActionEnum](docs/Model/ChannelFunctionActionEnum.md)
  - [ChannelFunctionEnumNames](docs/Model/ChannelFunctionEnumNames.md)
  - [ChannelGroup](docs/Model/ChannelGroup.md)
+ - [ChannelGroupExecuteActionRequest](docs/Model/ChannelGroupExecuteActionRequest.md)
+ - [ChannelGroupRequest](docs/Model/ChannelGroupRequest.md)
+ - [ChannelMeasurementLog](docs/Model/ChannelMeasurementLog.md)
  - [ChannelParam](docs/Model/ChannelParam.md)
  - [ChannelType](docs/Model/ChannelType.md)
+ - [ChannelUnsupportedFunctionResponse](docs/Model/ChannelUnsupportedFunctionResponse.md)
+ - [ChannelUpdateConfirmationResponse](docs/Model/ChannelUpdateConfirmationResponse.md)
+ - [ChannelUpdateRequest](docs/Model/ChannelUpdateRequest.md)
  - [ClientApp](docs/Model/ClientApp.md)
+ - [ClientAppUpdateRequest](docs/Model/ClientAppUpdateRequest.md)
  - [Device](docs/Model/Device.md)
- - [InlineResponse200](docs/Model/InlineResponse200.md)
- - [InlineResponse2001](docs/Model/InlineResponse2001.md)
- - [InlineResponse2002](docs/Model/InlineResponse2002.md)
- - [InlineResponse2003](docs/Model/InlineResponse2003.md)
- - [InlineResponse200Timezone](docs/Model/InlineResponse200Timezone.md)
- - [InlineResponse400](docs/Model/InlineResponse400.md)
- - [InlineResponse4001](docs/Model/InlineResponse4001.md)
- - [InlineResponse409](docs/Model/InlineResponse409.md)
- - [InlineResponse503](docs/Model/InlineResponse503.md)
+ - [IODeviceUpdateRequest](docs/Model/IODeviceUpdateRequest.md)
  - [Location](docs/Model/Location.md)
+ - [LocationUpdateRequest](docs/Model/LocationUpdateRequest.md)
  - [Schedule](docs/Model/Schedule.md)
  - [ScheduleClosestExecutions](docs/Model/ScheduleClosestExecutions.md)
  - [ScheduleFuture](docs/Model/ScheduleFuture.md)
  - [SchedulePast](docs/Model/SchedulePast.md)
  - [ScheduleRequest](docs/Model/ScheduleRequest.md)
  - [ScheduleResult](docs/Model/ScheduleResult.md)
- - [UserRequest](docs/Model/UserRequest.md)
+ - [SchedulesEnableRequest](docs/Model/SchedulesEnableRequest.md)
+ - [ServerInfo](docs/Model/ServerInfo.md)
+ - [ServerInfoTimezone](docs/Model/ServerInfoTimezone.md)
+ - [UserData](docs/Model/UserData.md)
+ - [UserUpdateRequest](docs/Model/UserUpdateRequest.md)
 
 
 ## Documentation For Authorization

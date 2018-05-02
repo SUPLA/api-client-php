@@ -14,7 +14,7 @@ Delete Client App
 ### Example
 ```php
 $id = 56; // int | 
-$result = $client->clientApps()->deleteClientApp($id);
+$client->clientApps()->deleteClientApp($id);
 ```
 
 
@@ -59,7 +59,7 @@ Update client app
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\Body7(); // \Swagger\Client\Model\Body7 | 
+$body = new \Swagger\Client\Model\ClientAppUpdateRequest(); // \Swagger\Client\Model\ClientAppUpdateRequest | 
 $result = $client->clientApps()->updateClientApp($id, $body);
 print_r($result);
 ```
@@ -69,7 +69,7 @@ print_r($result);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Body7**](../Model/Body7.md)|  |
+ **body** | [**\Swagger\Client\Model\ClientAppUpdateRequest**](../Model/ClientAppUpdateRequest.md)|  |
 
 ### Return type
 

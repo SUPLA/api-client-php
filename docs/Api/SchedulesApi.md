@@ -40,7 +40,7 @@ Delete Schedule
 ### Example
 ```php
 $id = 56; // int | 
-$result = $client->schedules()->deleteSchedule($id);
+$client->schedules()->deleteSchedule($id);
 ```
 
 
@@ -61,15 +61,15 @@ Enable schedules
 
 ### Example
 ```php
-$body = new \Swagger\Client\Model\Body9(); // \Swagger\Client\Model\Body9 | 
-$result = $client->schedules()->enableSchedules($body);
+$body = new \Swagger\Client\Model\SchedulesEnableRequest(); // \Swagger\Client\Model\SchedulesEnableRequest | 
+$client->schedules()->enableSchedules($body);
 ```
 
 
 ### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body9**](../Model/Body9.md)|  |
+ **body** | [**\Swagger\Client\Model\SchedulesEnableRequest**](../Model/SchedulesEnableRequest.md)|  |
 
 ### Return type
 

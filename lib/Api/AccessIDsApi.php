@@ -1103,10 +1103,10 @@ class AccessIDsApi
     /**
      * Operation updateAccessID
      *
-     * Edit Access ID
+     * Update Access ID
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Body10 $body body (required)
+     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1121,10 +1121,10 @@ class AccessIDsApi
     /**
      * Operation updateAccessIDWithHttpInfo
      *
-     * Edit Access ID
+     * Update Access ID
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body10 $body (required)
+     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1197,10 +1197,10 @@ class AccessIDsApi
     /**
      * Operation updateAccessIDAsync
      *
-     * Edit Access ID
+     * Update Access ID
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body10 $body (required)
+     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1218,10 +1218,10 @@ class AccessIDsApi
     /**
      * Operation updateAccessIDAsyncWithHttpInfo
      *
-     * Edit Access ID
+     * Update Access ID
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body10 $body (required)
+     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1272,7 +1272,7 @@ class AccessIDsApi
      * Create request for operation 'updateAccessID'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body10 $body (required)
+     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -1115,10 +1115,10 @@ class LocationsApi
     /**
      * Operation updateLocation
      *
-     * Edit location
+     * Update location
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Body1 $body body (required)
+     * @param  \Swagger\Client\Model\LocationUpdateRequest $body body (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1134,10 +1134,10 @@ class LocationsApi
     /**
      * Operation updateLocationWithHttpInfo
      *
-     * Edit location
+     * Update location
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body1 $body (required)
+     * @param  \Swagger\Client\Model\LocationUpdateRequest $body (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -1211,10 +1211,10 @@ class LocationsApi
     /**
      * Operation updateLocationAsync
      *
-     * Edit location
+     * Update location
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body1 $body (required)
+     * @param  \Swagger\Client\Model\LocationUpdateRequest $body (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1233,10 +1233,10 @@ class LocationsApi
     /**
      * Operation updateLocationAsyncWithHttpInfo
      *
-     * Edit location
+     * Update location
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body1 $body (required)
+     * @param  \Swagger\Client\Model\LocationUpdateRequest $body (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1288,7 +1288,7 @@ class LocationsApi
      * Create request for operation 'updateLocation'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body1 $body (required)
+     * @param  \Swagger\Client\Model\LocationUpdateRequest $body (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException

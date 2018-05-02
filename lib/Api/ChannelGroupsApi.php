@@ -92,7 +92,7 @@ class ChannelGroupsApi
      *
      * Create a new channel group
      *
-     * @param  \Swagger\Client\Model\Body4 $body body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -109,7 +109,7 @@ class ChannelGroupsApi
      *
      * Create a new channel group
      *
-     * @param  \Swagger\Client\Model\Body4 $body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -184,7 +184,7 @@ class ChannelGroupsApi
      *
      * Create a new channel group
      *
-     * @param  \Swagger\Client\Model\Body4 $body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,7 +204,7 @@ class ChannelGroupsApi
      *
      * Create a new channel group
      *
-     * @param  \Swagger\Client\Model\Body4 $body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -254,7 +254,7 @@ class ChannelGroupsApi
     /**
      * Create request for operation 'createChannelGroup'
      *
-     * @param  \Swagger\Client\Model\Body4 $body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -583,7 +583,7 @@ class ChannelGroupsApi
      * Execute action on the channel group
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelGroupExecuteActionRequest $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -600,7 +600,7 @@ class ChannelGroupsApi
      * Execute action on the channel group
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelGroupExecuteActionRequest $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -646,7 +646,7 @@ class ChannelGroupsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse400',
+                        '\Swagger\Client\Model\ChannelActionExecutionFailedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -662,7 +662,7 @@ class ChannelGroupsApi
      * Execute action on the channel group
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelGroupExecuteActionRequest $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -683,7 +683,7 @@ class ChannelGroupsApi
      * Execute action on the channel group
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelGroupExecuteActionRequest $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -720,7 +720,7 @@ class ChannelGroupsApi
      * Create request for operation 'executeChannelGroupAction'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body6 $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelGroupExecuteActionRequest $body Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1371,7 +1371,7 @@ class ChannelGroupsApi
      * Update channel group
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Body5 $body body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1389,7 +1389,7 @@ class ChannelGroupsApi
      * Update channel group
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body5 $body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1465,7 +1465,7 @@ class ChannelGroupsApi
      * Update channel group
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body5 $body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1486,7 +1486,7 @@ class ChannelGroupsApi
      * Update channel group
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body5 $body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1537,7 +1537,7 @@ class ChannelGroupsApi
      * Create request for operation 'updateChannelGroup'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body5 $body (required)
+     * @param  \Swagger\Client\Model\ChannelGroupRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

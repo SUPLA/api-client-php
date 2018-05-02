@@ -581,7 +581,7 @@ class ClientAppsApi
      * Update client app
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Body7 $body body (required)
+     * @param  \Swagger\Client\Model\ClientAppUpdateRequest $body body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -599,7 +599,7 @@ class ClientAppsApi
      * Update client app
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body7 $body (required)
+     * @param  \Swagger\Client\Model\ClientAppUpdateRequest $body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -675,7 +675,7 @@ class ClientAppsApi
      * Update client app
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body7 $body (required)
+     * @param  \Swagger\Client\Model\ClientAppUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -696,7 +696,7 @@ class ClientAppsApi
      * Update client app
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body7 $body (required)
+     * @param  \Swagger\Client\Model\ClientAppUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -747,7 +747,7 @@ class ClientAppsApi
      * Create request for operation 'updateClientApp'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body7 $body (required)
+     * @param  \Swagger\Client\Model\ClientAppUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

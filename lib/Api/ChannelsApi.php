@@ -93,7 +93,7 @@ class ChannelsApi
      * Execute action on the channel
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelExecuteActionRequest $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -110,7 +110,7 @@ class ChannelsApi
      * Execute action on the channel
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelExecuteActionRequest $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -156,7 +156,7 @@ class ChannelsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse400',
+                        '\Swagger\Client\Model\ChannelActionExecutionFailedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -172,7 +172,7 @@ class ChannelsApi
      * Execute action on the channel
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelExecuteActionRequest $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -193,7 +193,7 @@ class ChannelsApi
      * Execute action on the channel
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelExecuteActionRequest $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -230,7 +230,7 @@ class ChannelsApi
      * Create request for operation 'executeAction'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body3 $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
+     * @param  \Swagger\Client\Model\ChannelExecuteActionRequest $body Defines an action to execute on channel. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -627,7 +627,7 @@ class ChannelsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2003[]
+     * @return \Swagger\Client\Model\ChannelMeasurementLog[]
      */
     public function getChannelMeasurementLogs($id, $limit = '5000', $offset = null)
     {
@@ -646,11 +646,11 @@ class ChannelsApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ChannelMeasurementLog[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getChannelMeasurementLogsWithHttpInfo($id, $limit = '5000', $offset = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2003[]';
+        $returnType = '\Swagger\Client\Model\ChannelMeasurementLog[]';
         $request = $this->getChannelMeasurementLogsRequest($id, $limit, $offset);
 
         try {
@@ -702,7 +702,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2003[]',
+                        '\Swagger\Client\Model\ChannelMeasurementLog[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -710,7 +710,7 @@ class ChannelsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse4001',
+                        '\Swagger\Client\Model\ChannelUnsupportedFunctionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -756,7 +756,7 @@ class ChannelsApi
      */
     public function getChannelMeasurementLogsAsyncWithHttpInfo($id, $limit = '5000', $offset = null)
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2003[]';
+        $returnType = '\Swagger\Client\Model\ChannelMeasurementLog[]';
         $request = $this->getChannelMeasurementLogsRequest($id, $limit, $offset);
 
         return $this->client
@@ -998,7 +998,7 @@ class ChannelsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse4001',
+                        '\Swagger\Client\Model\ChannelUnsupportedFunctionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1755,7 +1755,7 @@ class ChannelsApi
      * Update channel
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Body2 $body body (required)
+     * @param  \Swagger\Client\Model\ChannelUpdateRequest $body body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1773,7 +1773,7 @@ class ChannelsApi
      * Update channel
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body2 $body (required)
+     * @param  \Swagger\Client\Model\ChannelUpdateRequest $body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1841,7 +1841,7 @@ class ChannelsApi
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse409',
+                        '\Swagger\Client\Model\ChannelUpdateConfirmationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1857,7 +1857,7 @@ class ChannelsApi
      * Update channel
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body2 $body (required)
+     * @param  \Swagger\Client\Model\ChannelUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1878,7 +1878,7 @@ class ChannelsApi
      * Update channel
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body2 $body (required)
+     * @param  \Swagger\Client\Model\ChannelUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1929,7 +1929,7 @@ class ChannelsApi
      * Create request for operation 'updateChannel'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body2 $body (required)
+     * @param  \Swagger\Client\Model\ChannelUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

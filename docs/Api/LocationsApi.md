@@ -6,7 +6,7 @@ Method | HTTP request | Description
 [**deleteLocation**](LocationsApi.md#deleteLocation) | **DELETE** /locations/{id} | Delete location
 [**getLocation**](LocationsApi.md#getLocation) | **GET** /locations/{id} | Get location by ID
 [**getLocations**](LocationsApi.md#getLocations) | **GET** /locations | Get locations list
-[**updateLocation**](LocationsApi.md#updateLocation) | **PUT** /locations/{id} | Edit location
+[**updateLocation**](LocationsApi.md#updateLocation) | **PUT** /locations/{id} | Update location
 
 
 # **createLocation**
@@ -35,7 +35,7 @@ Delete location
 ```php
 $id = 56; // int | 
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
-$result = $client->locations()->deleteLocation($id, $include);
+$client->locations()->deleteLocation($id, $include);
 ```
 
 
@@ -101,12 +101,12 @@ Name | Type | Description  | Notes
 
 # **updateLocation**
 
-Edit location
+Update location
 
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\Body1(); // \Swagger\Client\Model\Body1 | 
+$body = new \Swagger\Client\Model\LocationUpdateRequest(); // \Swagger\Client\Model\LocationUpdateRequest | 
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
 $result = $client->locations()->updateLocation($id, $body, $include);
 print_r($result);
@@ -117,7 +117,7 @@ print_r($result);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Body1**](../Model/Body1.md)|  |
+ **body** | [**\Swagger\Client\Model\LocationUpdateRequest**](../Model/LocationUpdateRequest.md)|  |
  **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
 
 ### Return type

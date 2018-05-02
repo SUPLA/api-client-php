@@ -95,7 +95,7 @@ class ServerApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse200
+     * @return \Swagger\Client\Model\ServerInfo
      */
     public function serverInfoGet()
     {
@@ -111,11 +111,11 @@ class ServerApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\ServerInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function serverInfoGetWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse200';
+        $returnType = '\Swagger\Client\Model\ServerInfo';
         $request = $this->serverInfoGetRequest();
 
         try {
@@ -167,7 +167,7 @@ class ServerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse200',
+                        '\Swagger\Client\Model\ServerInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -207,7 +207,7 @@ class ServerApi
      */
     public function serverInfoGetAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse200';
+        $returnType = '\Swagger\Client\Model\ServerInfo';
         $request = $this->serverInfoGetRequest();
 
         return $this->client
@@ -338,12 +338,11 @@ class ServerApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2001
+     * @return void
      */
     public function serverStatusGet()
     {
-        list($response) = $this->serverStatusGetWithHttpInfo();
-        return $response;
+        $this->serverStatusGetWithHttpInfo();
     }
 
     /**
@@ -354,11 +353,11 @@ class ServerApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function serverStatusGetWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2001';
+        $returnType = '';
         $request = $this->serverStatusGetRequest();
 
         try {
@@ -389,40 +388,10 @@ class ServerApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2001',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse503',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
@@ -458,28 +427,14 @@ class ServerApi
      */
     public function serverStatusGetAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2001';
+        $returnType = '';
         $request = $this->serverStatusGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();

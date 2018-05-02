@@ -1137,7 +1137,7 @@ class IODevicesApi
      * Update IO Device
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Body8 $body body (required)
+     * @param  \Swagger\Client\Model\IODeviceUpdateRequest $body body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1155,7 +1155,7 @@ class IODevicesApi
      * Update IO Device
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body8 $body (required)
+     * @param  \Swagger\Client\Model\IODeviceUpdateRequest $body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1231,7 +1231,7 @@ class IODevicesApi
      * Update IO Device
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body8 $body (required)
+     * @param  \Swagger\Client\Model\IODeviceUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1252,7 +1252,7 @@ class IODevicesApi
      * Update IO Device
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body8 $body (required)
+     * @param  \Swagger\Client\Model\IODeviceUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1303,7 +1303,7 @@ class IODevicesApi
      * Create request for operation 'updateIoDevice'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Body8 $body (required)
+     * @param  \Swagger\Client\Model\IODeviceUpdateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

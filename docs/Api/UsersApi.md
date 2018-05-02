@@ -2,32 +2,9 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**editCurrentUser**](UsersApi.md#editCurrentUser) | **PATCH** /users/current | Edit current user
 [**getCurrentUser**](UsersApi.md#getCurrentUser) | **GET** /users/current | Get current user
+[**updateCurrentUser**](UsersApi.md#updateCurrentUser) | **PATCH** /users/current | Update current user
 
-
-# **editCurrentUser**
-
-Edit current user
-
-### Example
-```php
-$body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | 
-$result = $client->users()->editCurrentUser($body);
-print_r($result);
-```
-
-
-### Parameters
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md)|  |
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentUser**
 
@@ -43,7 +20,29 @@ print_r($result);
 
 ### Return type
 
-[**\Swagger\Client\Model\UserRequest**](../Model/UserRequest.md)
+[**\Swagger\Client\Model\UserData**](../Model/UserData.md)
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateCurrentUser**
+
+Update current user
+
+### Example
+```php
+$body = new \Swagger\Client\Model\UserUpdateRequest(); // \Swagger\Client\Model\UserUpdateRequest | 
+$client->users()->updateCurrentUser($body);
+```
+
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\UserUpdateRequest**](../Model/UserUpdateRequest.md)|  |
+
+### Return type
+
+void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

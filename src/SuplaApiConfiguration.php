@@ -20,9 +20,11 @@ namespace Supla\ApiClient;
 use Swagger\Client\Configuration;
 
 class SuplaApiConfiguration extends Configuration {
+    const VERSION = '2.2.0';
+
     public function __construct($server, $token) {
         parent::__construct();
-        $this->host = $server . '/api/v2.2.0';
+        $this->host = $server . '/api/v' . self::VERSION;
         $this->accessToken = $token;
     }
 }

@@ -250,6 +250,15 @@ class ScheduleRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['channelId'] === null) {
+            $invalidProperties[] = "'channelId' can't be null";
+        }
+        if ($this->container['actionId'] === null) {
+            $invalidProperties[] = "'actionId' can't be null";
+        }
+        if ($this->container['mode'] === null) {
+            $invalidProperties[] = "'mode' can't be null";
+        }
         $allowedValues = $this->getModeAllowableValues();
         if (!is_null($this->container['mode']) && !in_array($this->container['mode'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -258,6 +267,9 @@ class ScheduleRequest implements ModelInterface, ArrayAccess
             );
         }
 
+        if ($this->container['timeExpression'] === null) {
+            $invalidProperties[] = "'timeExpression' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -341,7 +353,7 @@ class ScheduleRequest implements ModelInterface, ArrayAccess
     public function setMode($mode)
     {
         $allowedValues = $this->getModeAllowableValues();
-        if (!is_null($mode) && !in_array($mode, $allowedValues, true)) {
+        if (!in_array($mode, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'mode', must be one of '%s'",

@@ -62,7 +62,7 @@ Execute action on the channel group
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\ChannelGroupExecuteActionRequest(); // \Swagger\Client\Model\ChannelGroupExecuteActionRequest | Defines an action to execute on channel group. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
+$body = new \Swagger\Client\Model\ChannelExecuteActionRequest(); // \Swagger\Client\Model\ChannelExecuteActionRequest | Defines an action to execute on channel group. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).
 $client->channelGroups()->executeChannelGroupAction($id, $body);
 ```
 
@@ -71,7 +71,7 @@ $client->channelGroups()->executeChannelGroupAction($id, $body);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\ChannelGroupExecuteActionRequest**](../Model/ChannelGroupExecuteActionRequest.md)| Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
+ **body** | [**\Swagger\Client\Model\ChannelExecuteActionRequest**](../Model/ChannelExecuteActionRequest.md)| Defines an action to execute on channel group. The &#x60;action&#x60; key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions). |
 
 ### Return type
 

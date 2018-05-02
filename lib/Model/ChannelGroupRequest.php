@@ -213,6 +213,9 @@ class ChannelGroupRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['channelIds'] === null) {
+            $invalidProperties[] = "'channelIds' can't be null";
+        }
         return $invalidProperties;
     }
 

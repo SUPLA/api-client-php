@@ -262,7 +262,7 @@
           "description" : "Defines an action to execute on channel. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/Channel execute action request"
+            "$ref" : "#/definitions/ChannelExecuteActionRequest"
           }
         } ],
         "responses" : {
@@ -531,7 +531,7 @@
           "description" : "Defines an action to execute on channel group. The `action` key is always required. The rest of the keys are params depending on the chosen action. Read more on [Github Wiki](https://github.com/SUPLA/supla-cloud/wiki/Channel-Actions).",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/Channel Group execute action request"
+            "$ref" : "#/definitions/ChannelExecuteActionRequest"
           }
         } ],
         "responses" : {
@@ -4500,6 +4500,7 @@
       }
     },
     "ChannelGroupRequest" : {
+      "required" : [ "channelIds" ],
       "properties" : {
         "caption" : {
           "type" : "string"
@@ -4621,6 +4622,35 @@
     "ChannelFunctionActionEnum" : {
       "type" : "string",
       "enum" : [ "OPEN", "CLOSE", "SHUT", "REVEAL", "REVEAL_PARTIALLY", "TURN_ON", "TURN_OFF", "SET_RGBW_PARAMETERS", "OPEN_CLOSE", "STOP" ]
+    },
+    "ChannelExecuteActionRequest" : {
+      "required" : [ "action" ],
+      "properties" : {
+        "action" : {
+          "$ref" : "#/definitions/ChannelFunctionActionEnum"
+        },
+        "percentage" : {
+          "type" : "integer",
+          "example" : 40
+        },
+        "color" : {
+          "type" : "string",
+          "example" : "0x00FF00"
+        },
+        "color_brightness" : {
+          "type" : "integer"
+        },
+        "brightness" : {
+          "type" : "integer"
+        }
+      },
+      "example" : {
+        "brightness" : 6,
+        "color" : "0x00FF00",
+        "color_brightness" : 0,
+        "percentage" : 40,
+        "action" : { }
+      }
     },
     "ChannelParam" : {
       "type" : "integer",
@@ -6327,6 +6357,7 @@
       }
     },
     "ScheduleRequest" : {
+      "required" : [ "actionId", "channelId", "mode", "timeExpression" ],
       "properties" : {
         "channelId" : {
           "type" : "integer"
@@ -6465,22 +6496,6 @@
         }
       }
     },
-    "Channel execute action request" : {
-      "properties" : {
-        "action" : {
-          "$ref" : "#/definitions/ChannelFunctionActionEnum"
-        },
-        "percentage" : {
-          "type" : "integer",
-          "example" : 40
-        }
-      },
-      "title" : "Channel execute action request",
-      "example" : {
-        "percentage" : 40,
-        "action" : { }
-      }
-    },
     "Channel action execution failed response" : {
       "properties" : {
         "status" : {
@@ -6527,22 +6542,6 @@
         "temperature" : 21.56,
         "humidity" : 48.8,
         "date_timestamp" : 0
-      }
-    },
-    "Channel Group execute action request" : {
-      "properties" : {
-        "action" : {
-          "$ref" : "#/definitions/ChannelFunctionActionEnum"
-        },
-        "percentage" : {
-          "type" : "integer",
-          "example" : 40
-        }
-      },
-      "title" : "Channel Group execute action request",
-      "example" : {
-        "percentage" : 40,
-        "action" : { }
       }
     },
     "Client App update request" : {

@@ -49,7 +49,7 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Channel execute action request';
+    protected static $swaggerModelName = 'ChannelExecuteActionRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,10 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'action' => '\Swagger\Client\Model\ChannelFunctionActionEnum',
-        'percentage' => 'int'
+        'percentage' => 'int',
+        'color' => 'string',
+        'colorBrightness' => 'int',
+        'brightness' => 'int'
     ];
 
     /**
@@ -68,7 +71,10 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'action' => null,
-        'percentage' => null
+        'percentage' => null,
+        'color' => null,
+        'colorBrightness' => null,
+        'brightness' => null
     ];
 
     /**
@@ -99,7 +105,10 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'action' => 'action',
-        'percentage' => 'percentage'
+        'percentage' => 'percentage',
+        'color' => 'color',
+        'colorBrightness' => 'color_brightness',
+        'brightness' => 'brightness'
     ];
 
     /**
@@ -109,7 +118,10 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'action' => 'setAction',
-        'percentage' => 'setPercentage'
+        'percentage' => 'setPercentage',
+        'color' => 'setColor',
+        'colorBrightness' => 'setColorBrightness',
+        'brightness' => 'setBrightness'
     ];
 
     /**
@@ -119,7 +131,10 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'action' => 'getAction',
-        'percentage' => 'getPercentage'
+        'percentage' => 'getPercentage',
+        'color' => 'getColor',
+        'colorBrightness' => 'getColorBrightness',
+        'brightness' => 'getBrightness'
     ];
 
     /**
@@ -184,6 +199,9 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
     {
         $this->container['action'] = isset($data['action']) ? $data['action'] : null;
         $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['colorBrightness'] = isset($data['colorBrightness']) ? $data['colorBrightness'] : null;
+        $this->container['brightness'] = isset($data['brightness']) ? $data['brightness'] : null;
     }
 
     /**
@@ -195,6 +213,9 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['action'] === null) {
+            $invalidProperties[] = "'action' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -254,6 +275,78 @@ class ChannelExecuteActionRequest implements ModelInterface, ArrayAccess
     public function setPercentage($percentage)
     {
         $this->container['percentage'] = $percentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets color
+     *
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /**
+     * Sets color
+     *
+     * @param string $color color
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
+
+        return $this;
+    }
+
+    /**
+     * Gets colorBrightness
+     *
+     * @return int
+     */
+    public function getColorBrightness()
+    {
+        return $this->container['colorBrightness'];
+    }
+
+    /**
+     * Sets colorBrightness
+     *
+     * @param int $colorBrightness colorBrightness
+     *
+     * @return $this
+     */
+    public function setColorBrightness($colorBrightness)
+    {
+        $this->container['colorBrightness'] = $colorBrightness;
+
+        return $this;
+    }
+
+    /**
+     * Gets brightness
+     *
+     * @return int
+     */
+    public function getBrightness()
+    {
+        return $this->container['brightness'];
+    }
+
+    /**
+     * Sets brightness
+     *
+     * @param int $brightness brightness
+     *
+     * @return $this
+     */
+    public function setBrightness($brightness)
+    {
+        $this->container['brightness'] = $brightness;
 
         return $this;
     }

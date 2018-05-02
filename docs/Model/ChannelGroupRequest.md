@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **altIcon** | **int** |  | [optional] 
 **hidden** | **bool** |  | [optional] 
 **locationId** | **int** |  | [optional] 
-**channelIds** | **int[]** |  | [optional] 
+**channelIds** | **int[]** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

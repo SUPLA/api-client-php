@@ -101,7 +101,6 @@ Class | Method | HTTP request | Description
  - [ChannelFunctionActionEnum](docs/Model/ChannelFunctionActionEnum.md)
  - [ChannelFunctionEnumNames](docs/Model/ChannelFunctionEnumNames.md)
  - [ChannelGroup](docs/Model/ChannelGroup.md)
- - [ChannelGroupExecuteActionRequest](docs/Model/ChannelGroupExecuteActionRequest.md)
  - [ChannelGroupRequest](docs/Model/ChannelGroupRequest.md)
  - [ChannelMeasurementLog](docs/Model/ChannelMeasurementLog.md)
  - [ChannelParam](docs/Model/ChannelParam.md)

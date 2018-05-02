@@ -15,14 +15,14 @@
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-namespace SuplaApi\Client;
+namespace Supla\ApiClient;
 
 use Swagger\Client\Configuration;
 
 class SuplaApiConfiguration extends Configuration {
     public function __construct($server, $token) {
         parent::__construct();
-        $this->host = $server . '/api';
+        $this->host = $server . '/api/v2.2.0';
         $this->accessToken = $token;
     }
 }

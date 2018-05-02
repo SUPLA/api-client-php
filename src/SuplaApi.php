@@ -1,10 +1,20 @@
 <?php
 
-namespace SuplaApi\Client;
+namespace Supla\ApiClient;
 
 use GuzzleHttp\Client;
-use Swagger\Client\Api\UsersApi;
 
+/**
+ * @method \Swagger\Client\Api\AccessIDsApi accessIds()
+ * @method \Swagger\Client\Api\ChannelGroupsApi channelGroups()
+ * @method \Swagger\Client\Api\ChannelsApi channels()
+ * @method \Swagger\Client\Api\ClientAppsApi clientApps()
+ * @method \Swagger\Client\Api\IODevicesApi iODevices()
+ * @method \Swagger\Client\Api\LocationsApi locations()
+ * @method \Swagger\Client\Api\SchedulesApi schedules()
+ * @method \Swagger\Client\Api\ServerApi server()
+ * @method \Swagger\Client\Api\UsersApi users()
+ */
 class SuplaApi {
     private $server;
     private $tokenRequestData;
@@ -39,8 +49,13 @@ class SuplaApi {
         return $this->token = $response['access_token'];
     }
 
-    /** @return UsersApi */
-    public function users() {
-        return new UsersApi($this->httpClient, new SuplaApiConfiguration($this->server, $this->retrieveToken()));
+    public function __call($name, $arguments) {
+        $apiName = ucfirst($name);
+        $apiClass = "Swagger\\Client\\Api\\${apiName}Api";
+        if (class_exists($apiClass)) {
+            return new $apiClass($this->httpClient, new SuplaApiConfiguration($this->server, $this->retrieveToken()));
+        } else {
+            throw new \BadMethodCallException($name);
+        }
     }
 }

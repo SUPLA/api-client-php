@@ -1,7 +1,5 @@
 # Swagger\Client\UsersApi
 
-All URIs are relative to *https://cloud.supla.org/api*
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**editCurrentUser**](UsersApi.md#editCurrentUser) | **PATCH** /users/current | Edit current user
@@ -9,34 +7,13 @@ Method | HTTP request | Description
 
 
 # **editCurrentUser**
-> \Swagger\Client\Model\InlineResponse2002 editCurrentUser($body, $xAcceptVersion)
 
 Edit current user
 
 ### Example
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: password
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$apiInstance = new Swagger\Client\Api\UsersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | 
-$xAcceptVersion = "\"2.2.0\""; // string | API Version
-
-try {
-    $result = $apiInstance->editCurrentUser($body, $xAcceptVersion);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->editCurrentUser: ', $e->getMessage(), PHP_EOL;
-}
-?>
+$result = $client->users()->editCurrentUser($body, $xAcceptVersion);
+print_r($result);
 ```
 
 ### Parameters
@@ -50,45 +27,16 @@ Name | Type | Description  | Notes
 
 [**\Swagger\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
-### Authorization
-
-[password](../../README.md#password)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentUser**
-> \Swagger\Client\Model\UserRequest getCurrentUser($xAcceptVersion)
 
 Get current user
 
 ### Example
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure OAuth2 access token for authorization: password
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$apiInstance = new Swagger\Client\Api\UsersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$xAcceptVersion = "\"2.2.0\""; // string | API Version
-
-try {
-    $result = $apiInstance->getCurrentUser($xAcceptVersion);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->getCurrentUser: ', $e->getMessage(), PHP_EOL;
-}
-?>
+$result = $client->users()->getCurrentUser($xAcceptVersion);
+print_r($result);
 ```
 
 ### Parameters
@@ -100,15 +48,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\UserRequest**](../Model/UserRequest.md)
-
-### Authorization
-
-[password](../../README.md#password)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

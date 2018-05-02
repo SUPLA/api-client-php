@@ -27,13 +27,13 @@ Then create an instance of a client in your code.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$client = new \Supla\ApiClient\SuplaApiClient([
-    'server' => 'svrX.supla.org',
-    'clientId' => 'YOUR_CLIENT_ID',
-    'secret' => 'YOUR_SECRET',
-    'username' => 'YOUR_USERNAME',
-    'password' => 'YOUR_PASSWORD',
-]);
+$client = new SuplaApi(
+    'https://svr4.supla.org', // address of the SUPLA Cloud
+    '1_6cabrio4xdcsw8sk4socc04k00os4ssw88wc0kkws0g4ogkwgg', // Client ID
+    '54etn7d5ops0cooww80s0c8o88ssgkgsw4c4o8ks4wswgc0ww4', // Client Secret
+    'api_1', // Username
+    'pass' // Password
+);
 ```
 
 ## Requirements
@@ -125,16 +125,4 @@ Class | Method | HTTP request | Description
  - [ServerInfoTimezone](docs/Model/ServerInfoTimezone.md)
  - [UserData](docs/Model/UserData.md)
  - [UserUpdateRequest](docs/Model/UserUpdateRequest.md)
-
-
-## Documentation For Authorization
-
-
-## password
-
-- **Type**: OAuth
-- **Flow**: password
-- **Authorization URL**: 
-- **Scopes**: 
- - **restapi**: full API access
 

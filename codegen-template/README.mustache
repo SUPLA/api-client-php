@@ -27,13 +27,13 @@ Then create an instance of a client in your code.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$client = new \Supla\ApiClient\SuplaApiClient([
-    'server' => 'svrX.supla.org',
-    'clientId' => 'YOUR_CLIENT_ID',
-    'secret' => 'YOUR_SECRET',
-    'username' => 'YOUR_USERNAME',
-    'password' => 'YOUR_PASSWORD',
-]);
+$client = new SuplaApi(
+    'https://svr4.supla.org', // address of the SUPLA Cloud
+    '1_6cabrio4xdcsw8sk4socc04k00os4ssw88wc0kkws0g4ogkwgg', // Client ID
+    '54etn7d5ops0cooww80s0c8o88ssgkgsw4c4o8ks4wswgc0ww4', // Client Secret
+    'api_1', // Username
+    'pass' // Password
+);
 ```
 
 ## Requirements
@@ -53,25 +53,3 @@ Class | Method | HTTP request | Description
 
 {{#models}}{{#model}} - [{{{classname}}}]({{modelDocPath}}/{{{classname}}}.md)
 {{/model}}{{/models}}
-
-## Documentation For Authorization
-
-{{^authMethods}} All endpoints do not require authorization.
-{{/authMethods}}{{#authMethods}}{{#last}} Authentication schemes defined for the API:{{/last}}{{/authMethods}}
-{{#authMethods}}## {{{name}}}
-
-{{#isApiKey}}- **Type**: API key
-- **API key parameter name**: {{{keyParamName}}}
-- **Location**: {{#isKeyInQuery}}URL query string{{/isKeyInQuery}}{{#isKeyInHeader}}HTTP header{{/isKeyInHeader}}
-{{/isApiKey}}
-{{#isBasic}}- **Type**: HTTP basic authentication
-{{/isBasic}}
-{{#isOAuth}}- **Type**: OAuth
-- **Flow**: {{{flow}}}
-- **Authorization URL**: {{{authorizationUrl}}}
-- **Scopes**: {{^scopes}}N/A{{/scopes}}
-{{#scopes}} - **{{{scope}}}**: {{{description}}}
-{{/scopes}}
-{{/isOAuth}}
-
-{{/authMethods}}

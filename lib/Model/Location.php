@@ -67,7 +67,7 @@ class Location implements ModelInterface, ArrayAccess
         'password' => 'string',
         'iodevices' => '\Swagger\Client\Model\Device[]',
         'channelGroups' => '\Swagger\Client\Model\ChannelGroup[]',
-        'accessIds' => '\Swagger\Client\Model\AccessID[]',
+        'accessIds' => '\Swagger\Client\Model\AccessIdentifier[]',
         'channels' => '\Swagger\Client\Model\Channel[]'
     ];
 
@@ -513,7 +513,7 @@ class Location implements ModelInterface, ArrayAccess
     /**
      * Gets accessIds
      *
-     * @return \Swagger\Client\Model\AccessID[]
+     * @return \Swagger\Client\Model\AccessIdentifier[]
      */
     public function getAccessIds()
     {
@@ -523,7 +523,7 @@ class Location implements ModelInterface, ArrayAccess
     /**
      * Sets accessIds
      *
-     * @param \Swagger\Client\Model\AccessID[] $accessIds Returned only if requested by the `include` parameter.
+     * @param \Swagger\Client\Model\AccessIdentifier[] $accessIds Returned only if requested by the `include` parameter.
      *
      * @return $this
      */

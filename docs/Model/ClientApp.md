@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **protocolVersion** | **int** |  | [optional] 
 **accessIdId** | **int** |  | [optional] 
 **connected** | **bool** |  | [optional] 
-**accessId** | [**\Swagger\Client\Model\AccessID**](AccessID.md) |  | [optional] 
+**accessId** | [**\Swagger\Client\Model\AccessIdentifier**](AccessIdentifier.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

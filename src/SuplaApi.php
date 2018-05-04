@@ -20,7 +20,7 @@ namespace Supla\ApiClient;
 use GuzzleHttp\Client;
 
 /**
- * @method \Swagger\Client\Api\AccessIDsApi accessIds()
+ * @method \Swagger\Client\Api\AccessIdentifiersApi accessIdentifiers()
  * @method \Swagger\Client\Api\ChannelGroupsApi channelGroups()
  * @method \Swagger\Client\Api\ChannelsApi channels()
  * @method \Swagger\Client\Api\ClientAppsApi clientApps()

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **password** | **string** | Location password (plain text). Returned only if requested by the &#x60;include&#x60; parameter. | [optional] 
 **iodevices** | [**\Swagger\Client\Model\Device[]**](Device.md) | Returned only if requested by the &#x60;include&#x60; parameter. | [optional] 
 **channelGroups** | [**\Swagger\Client\Model\ChannelGroup[]**](ChannelGroup.md) | Returned only if requested by the &#x60;include&#x60; parameter. | [optional] 
-**accessIds** | [**\Swagger\Client\Model\AccessID[]**](AccessID.md) | Returned only if requested by the &#x60;include&#x60; parameter. | [optional] 
+**accessIds** | [**\Swagger\Client\Model\AccessIdentifier[]**](AccessIdentifier.md) | Returned only if requested by the &#x60;include&#x60; parameter. | [optional] 
 **channels** | [**\Swagger\Client\Model\Channel[]**](Channel.md) | Returned only if requested by the &#x60;include&#x60; parameter. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

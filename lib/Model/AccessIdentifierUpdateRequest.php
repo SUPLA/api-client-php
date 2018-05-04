@@ -1,6 +1,6 @@
 <?php
 /**
- * AccessIDUpdateRequest
+ * AccessIdentifierUpdateRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AccessIDUpdateRequest Class Doc Comment
+ * AccessIdentifierUpdateRequest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AccessIDUpdateRequest implements ModelInterface, ArrayAccess
+class AccessIdentifierUpdateRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AccessIDUpdateRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Access ID update request';
+    protected static $swaggerModelName = 'Access Identifier update request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -313,7 +313,7 @@ class AccessIDUpdateRequest implements ModelInterface, ArrayAccess
     /**
      * Sets locationsIds
      *
-     * @param int[] $locationsIds Locations identifiers to assign to this Access ID.
+     * @param int[] $locationsIds Locations identifiers to assign to this Access Identifier.
      *
      * @return $this
      */
@@ -337,7 +337,7 @@ class AccessIDUpdateRequest implements ModelInterface, ArrayAccess
     /**
      * Sets clientAppsIds
      *
-     * @param int[] $clientAppsIds Client Apps identifiers to assign to this Access ID. If client app is connected to any other Client ID, it will be disconnected from the old one before assigning.
+     * @param int[] $clientAppsIds Client Apps identifiers to assign to this Access Identifier. If client app is connected to any other Client ID, it will be disconnected from the old one before assigning.
      *
      * @return $this
      */

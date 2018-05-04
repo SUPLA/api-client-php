@@ -1,6 +1,6 @@
 <?php
 /**
- * AccessIDsApi
+ * AccessIdentifiersApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * AccessIDsApi Class Doc Comment
+ * AccessIdentifiersApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AccessIDsApi
+class AccessIdentifiersApi
 {
     /**
      * @var ClientInterface
@@ -88,35 +88,35 @@ class AccessIDsApi
     }
 
     /**
-     * Operation createAccessID
+     * Operation createAccessIdentifier
      *
-     * Create a new Access ID
+     * Create a new Access Identifier
      *
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AccessID
+     * @return \Swagger\Client\Model\AccessIdentifier
      */
-    public function createAccessID()
+    public function createAccessIdentifier()
     {
-        list($response) = $this->createAccessIDWithHttpInfo();
+        list($response) = $this->createAccessIdentifierWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation createAccessIDWithHttpInfo
+     * Operation createAccessIdentifierWithHttpInfo
      *
-     * Create a new Access ID
+     * Create a new Access Identifier
      *
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AccessID, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\AccessIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAccessIDWithHttpInfo()
+    public function createAccessIdentifierWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\AccessID';
-        $request = $this->createAccessIDRequest();
+        $returnType = '\Swagger\Client\Model\AccessIdentifier';
+        $request = $this->createAccessIdentifierRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -167,7 +167,7 @@ class AccessIDsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\AccessID',
+                        '\Swagger\Client\Model\AccessIdentifier',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,17 +178,17 @@ class AccessIDsApi
     }
 
     /**
-     * Operation createAccessIDAsync
+     * Operation createAccessIdentifierAsync
      *
-     * Create a new Access ID
+     * Create a new Access Identifier
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAccessIDAsync()
+    public function createAccessIdentifierAsync()
     {
-        return $this->createAccessIDAsyncWithHttpInfo()
+        return $this->createAccessIdentifierAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -197,18 +197,18 @@ class AccessIDsApi
     }
 
     /**
-     * Operation createAccessIDAsyncWithHttpInfo
+     * Operation createAccessIdentifierAsyncWithHttpInfo
      *
-     * Create a new Access ID
+     * Create a new Access Identifier
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAccessIDAsyncWithHttpInfo()
+    public function createAccessIdentifierAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\AccessID';
-        $request = $this->createAccessIDRequest();
+        $returnType = '\Swagger\Client\Model\AccessIdentifier';
+        $request = $this->createAccessIdentifierRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -248,13 +248,13 @@ class AccessIDsApi
     }
 
     /**
-     * Create request for operation 'createAccessID'
+     * Create request for operation 'createAccessIdentifier'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createAccessIDRequest()
+    protected function createAccessIdentifierRequest()
     {
 
         $resourcePath = '/accessids';
@@ -335,7 +335,7 @@ class AccessIDsApi
     }
 
     /**
-     * Operation deleteAccessID
+     * Operation deleteAccessIdentifier
      *
      * Delete Access Identifier
      *
@@ -345,13 +345,13 @@ class AccessIDsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteAccessID($id)
+    public function deleteAccessIdentifier($id)
     {
-        $this->deleteAccessIDWithHttpInfo($id);
+        $this->deleteAccessIdentifierWithHttpInfo($id);
     }
 
     /**
-     * Operation deleteAccessIDWithHttpInfo
+     * Operation deleteAccessIdentifierWithHttpInfo
      *
      * Delete Access Identifier
      *
@@ -361,10 +361,10 @@ class AccessIDsApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAccessIDWithHttpInfo($id)
+    public function deleteAccessIdentifierWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteAccessIDRequest($id);
+        $request = $this->deleteAccessIdentifierRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -404,7 +404,7 @@ class AccessIDsApi
     }
 
     /**
-     * Operation deleteAccessIDAsync
+     * Operation deleteAccessIdentifierAsync
      *
      * Delete Access Identifier
      *
@@ -413,9 +413,9 @@ class AccessIDsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccessIDAsync($id)
+    public function deleteAccessIdentifierAsync($id)
     {
-        return $this->deleteAccessIDAsyncWithHttpInfo($id)
+        return $this->deleteAccessIdentifierAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -424,7 +424,7 @@ class AccessIDsApi
     }
 
     /**
-     * Operation deleteAccessIDAsyncWithHttpInfo
+     * Operation deleteAccessIdentifierAsyncWithHttpInfo
      *
      * Delete Access Identifier
      *
@@ -433,10 +433,10 @@ class AccessIDsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAccessIDAsyncWithHttpInfo($id)
+    public function deleteAccessIdentifierAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteAccessIDRequest($id);
+        $request = $this->deleteAccessIdentifierRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -462,19 +462,19 @@ class AccessIDsApi
     }
 
     /**
-     * Create request for operation 'deleteAccessID'
+     * Create request for operation 'deleteAccessIdentifier'
      *
      * @param  int $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteAccessIDRequest($id)
+    protected function deleteAccessIdentifierRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling deleteAccessID'
+                'Missing the required parameter $id when calling deleteAccessIdentifier'
             );
         }
 
@@ -564,298 +564,39 @@ class AccessIDsApi
     }
 
     /**
-     * Operation getAccessID
+     * Operation getAccessIdentifier
      *
-     * Get Access IDs list
-     *
-     * @param  string[] $include Specify what extra fields to include in the response. (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AccessID[]
-     */
-    public function getAccessID($include = null)
-    {
-        list($response) = $this->getAccessIDWithHttpInfo($include);
-        return $response;
-    }
-
-    /**
-     * Operation getAccessIDWithHttpInfo
-     *
-     * Get Access IDs list
-     *
-     * @param  string[] $include Specify what extra fields to include in the response. (optional)
-     *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AccessID[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getAccessIDWithHttpInfo($include = null)
-    {
-        $returnType = '\Swagger\Client\Model\AccessID[]';
-        $request = $this->getAccessIDRequest($include);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Swagger\Client\Model\AccessID[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getAccessIDAsync
-     *
-     * Get Access IDs list
-     *
-     * @param  string[] $include Specify what extra fields to include in the response. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAccessIDAsync($include = null)
-    {
-        return $this->getAccessIDAsyncWithHttpInfo($include)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getAccessIDAsyncWithHttpInfo
-     *
-     * Get Access IDs list
-     *
-     * @param  string[] $include Specify what extra fields to include in the response. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAccessIDAsyncWithHttpInfo($include = null)
-    {
-        $returnType = '\Swagger\Client\Model\AccessID[]';
-        $request = $this->getAccessIDRequest($include);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getAccessID'
-     *
-     * @param  string[] $include Specify what extra fields to include in the response. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function getAccessIDRequest($include = null)
-    {
-
-        $resourcePath = '/accessids';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($include)) {
-            $include = ObjectSerializer::serializeCollection($include, 'csv', true);
-        }
-        if ($include !== null) {
-            $queryParams['include'] = ObjectSerializer::toQueryValue($include);
-        }
-
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getAccessID_0
-     *
-     * Get Access ID
+     * Get Access Identifier
      *
      * @param  int $id id (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AccessID
+     * @return \Swagger\Client\Model\AccessIdentifier
      */
-    public function getAccessID_0($id, $include = null)
+    public function getAccessIdentifier($id, $include = null)
     {
-        list($response) = $this->getAccessID_0WithHttpInfo($id, $include);
+        list($response) = $this->getAccessIdentifierWithHttpInfo($id, $include);
         return $response;
     }
 
     /**
-     * Operation getAccessID_0WithHttpInfo
+     * Operation getAccessIdentifierWithHttpInfo
      *
-     * Get Access ID
+     * Get Access Identifier
      *
      * @param  int $id (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AccessID, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\AccessIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAccessID_0WithHttpInfo($id, $include = null)
+    public function getAccessIdentifierWithHttpInfo($id, $include = null)
     {
-        $returnType = '\Swagger\Client\Model\AccessID';
-        $request = $this->getAccessID_0Request($id, $include);
+        $returnType = '\Swagger\Client\Model\AccessIdentifier';
+        $request = $this->getAccessIdentifierRequest($id, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -906,7 +647,7 @@ class AccessIDsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\AccessID',
+                        '\Swagger\Client\Model\AccessIdentifier',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -917,9 +658,9 @@ class AccessIDsApi
     }
 
     /**
-     * Operation getAccessID_0Async
+     * Operation getAccessIdentifierAsync
      *
-     * Get Access ID
+     * Get Access Identifier
      *
      * @param  int $id (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
@@ -927,9 +668,9 @@ class AccessIDsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccessID_0Async($id, $include = null)
+    public function getAccessIdentifierAsync($id, $include = null)
     {
-        return $this->getAccessID_0AsyncWithHttpInfo($id, $include)
+        return $this->getAccessIdentifierAsyncWithHttpInfo($id, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -938,9 +679,9 @@ class AccessIDsApi
     }
 
     /**
-     * Operation getAccessID_0AsyncWithHttpInfo
+     * Operation getAccessIdentifierAsyncWithHttpInfo
      *
-     * Get Access ID
+     * Get Access Identifier
      *
      * @param  int $id (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
@@ -948,10 +689,10 @@ class AccessIDsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccessID_0AsyncWithHttpInfo($id, $include = null)
+    public function getAccessIdentifierAsyncWithHttpInfo($id, $include = null)
     {
-        $returnType = '\Swagger\Client\Model\AccessID';
-        $request = $this->getAccessID_0Request($id, $include);
+        $returnType = '\Swagger\Client\Model\AccessIdentifier';
+        $request = $this->getAccessIdentifierRequest($id, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -991,7 +732,7 @@ class AccessIDsApi
     }
 
     /**
-     * Create request for operation 'getAccessID_0'
+     * Create request for operation 'getAccessIdentifier'
      *
      * @param  int $id (required)
      * @param  string[] $include Specify what extra fields to include in the response. (optional)
@@ -999,12 +740,12 @@ class AccessIDsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAccessID_0Request($id, $include = null)
+    protected function getAccessIdentifierRequest($id, $include = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getAccessID_0'
+                'Missing the required parameter $id when calling getAccessIdentifier'
             );
         }
 
@@ -1101,39 +842,37 @@ class AccessIDsApi
     }
 
     /**
-     * Operation updateAccessID
+     * Operation getAccessIdentifiers
      *
-     * Update Access ID
+     * Get Access Identifiers list
      *
-     * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body body (required)
+     * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AccessID
+     * @return \Swagger\Client\Model\AccessIdentifier[]
      */
-    public function updateAccessID($id, $body)
+    public function getAccessIdentifiers($include = null)
     {
-        list($response) = $this->updateAccessIDWithHttpInfo($id, $body);
+        list($response) = $this->getAccessIdentifiersWithHttpInfo($include);
         return $response;
     }
 
     /**
-     * Operation updateAccessIDWithHttpInfo
+     * Operation getAccessIdentifiersWithHttpInfo
      *
-     * Update Access ID
+     * Get Access Identifiers list
      *
-     * @param  int $id (required)
-     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body (required)
+     * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AccessID, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\AccessIdentifier[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAccessIDWithHttpInfo($id, $body)
+    public function getAccessIdentifiersWithHttpInfo($include = null)
     {
-        $returnType = '\Swagger\Client\Model\AccessID';
-        $request = $this->updateAccessIDRequest($id, $body);
+        $returnType = '\Swagger\Client\Model\AccessIdentifier[]';
+        $request = $this->getAccessIdentifiersRequest($include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1184,7 +923,7 @@ class AccessIDsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\AccessID',
+                        '\Swagger\Client\Model\AccessIdentifier[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1195,19 +934,18 @@ class AccessIDsApi
     }
 
     /**
-     * Operation updateAccessIDAsync
+     * Operation getAccessIdentifiersAsync
      *
-     * Update Access ID
+     * Get Access Identifiers list
      *
-     * @param  int $id (required)
-     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body (required)
+     * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAccessIDAsync($id, $body)
+    public function getAccessIdentifiersAsync($include = null)
     {
-        return $this->updateAccessIDAsyncWithHttpInfo($id, $body)
+        return $this->getAccessIdentifiersAsyncWithHttpInfo($include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1216,20 +954,19 @@ class AccessIDsApi
     }
 
     /**
-     * Operation updateAccessIDAsyncWithHttpInfo
+     * Operation getAccessIdentifiersAsyncWithHttpInfo
      *
-     * Update Access ID
+     * Get Access Identifiers list
      *
-     * @param  int $id (required)
-     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body (required)
+     * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAccessIDAsyncWithHttpInfo($id, $body)
+    public function getAccessIdentifiersAsyncWithHttpInfo($include = null)
     {
-        $returnType = '\Swagger\Client\Model\AccessID';
-        $request = $this->updateAccessIDRequest($id, $body);
+        $returnType = '\Swagger\Client\Model\AccessIdentifier[]';
+        $request = $this->getAccessIdentifiersRequest($include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1269,26 +1006,289 @@ class AccessIDsApi
     }
 
     /**
-     * Create request for operation 'updateAccessID'
+     * Create request for operation 'getAccessIdentifiers'
      *
-     * @param  int $id (required)
-     * @param  \Swagger\Client\Model\AccessIDUpdateRequest $body (required)
+     * @param  string[] $include Specify what extra fields to include in the response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateAccessIDRequest($id, $body)
+    protected function getAccessIdentifiersRequest($include = null)
+    {
+
+        $resourcePath = '/accessids';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($include)) {
+            $include = ObjectSerializer::serializeCollection($include, 'csv', true);
+        }
+        if ($include !== null) {
+            $queryParams['include'] = ObjectSerializer::toQueryValue($include);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAccessIdentifier
+     *
+     * Update Access Identifier
+     *
+     * @param  int $id id (required)
+     * @param  \Swagger\Client\Model\AccessIdentifierUpdateRequest $body body (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\AccessIdentifier
+     */
+    public function updateAccessIdentifier($id, $body)
+    {
+        list($response) = $this->updateAccessIdentifierWithHttpInfo($id, $body);
+        return $response;
+    }
+
+    /**
+     * Operation updateAccessIdentifierWithHttpInfo
+     *
+     * Update Access Identifier
+     *
+     * @param  int $id (required)
+     * @param  \Swagger\Client\Model\AccessIdentifierUpdateRequest $body (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\AccessIdentifier, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAccessIdentifierWithHttpInfo($id, $body)
+    {
+        $returnType = '\Swagger\Client\Model\AccessIdentifier';
+        $request = $this->updateAccessIdentifierRequest($id, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\AccessIdentifier',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAccessIdentifierAsync
+     *
+     * Update Access Identifier
+     *
+     * @param  int $id (required)
+     * @param  \Swagger\Client\Model\AccessIdentifierUpdateRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAccessIdentifierAsync($id, $body)
+    {
+        return $this->updateAccessIdentifierAsyncWithHttpInfo($id, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateAccessIdentifierAsyncWithHttpInfo
+     *
+     * Update Access Identifier
+     *
+     * @param  int $id (required)
+     * @param  \Swagger\Client\Model\AccessIdentifierUpdateRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAccessIdentifierAsyncWithHttpInfo($id, $body)
+    {
+        $returnType = '\Swagger\Client\Model\AccessIdentifier';
+        $request = $this->updateAccessIdentifierRequest($id, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateAccessIdentifier'
+     *
+     * @param  int $id (required)
+     * @param  \Swagger\Client\Model\AccessIdentifierUpdateRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateAccessIdentifierRequest($id, $body)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling updateAccessID'
+                'Missing the required parameter $id when calling updateAccessIdentifier'
             );
         }
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling updateAccessID'
+                'Missing the required parameter $body when calling updateAccessIdentifier'
             );
         }
 

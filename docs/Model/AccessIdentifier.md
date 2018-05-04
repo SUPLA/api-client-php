@@ -1,9 +1,9 @@
-# AccessID
+# AccessIdentifier
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | Access ID identifier | [optional] 
+**id** | **int** | Access Identifier identifier | [optional] 
 **caption** | **string** | Location caption | [optional] 
 **enabled** | **bool** | &#x60;true&#x60; if the location is enabled, &#x60;false&#x60; otherwise | [optional] 
 **locationsIds** | **int[]** | array containing the location idenfifiers assigned to this access ID | [optional] 

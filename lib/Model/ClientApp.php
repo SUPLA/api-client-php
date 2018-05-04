@@ -69,7 +69,7 @@ class ClientApp implements ModelInterface, ArrayAccess
         'protocolVersion' => 'int',
         'accessIdId' => 'int',
         'connected' => 'bool',
-        'accessId' => '\Swagger\Client\Model\AccessID'
+        'accessId' => '\Swagger\Client\Model\AccessIdentifier'
     ];
 
     /**
@@ -567,7 +567,7 @@ class ClientApp implements ModelInterface, ArrayAccess
     /**
      * Gets accessId
      *
-     * @return \Swagger\Client\Model\AccessID
+     * @return \Swagger\Client\Model\AccessIdentifier
      */
     public function getAccessId()
     {
@@ -577,7 +577,7 @@ class ClientApp implements ModelInterface, ArrayAccess
     /**
      * Sets accessId
      *
-     * @param \Swagger\Client\Model\AccessID $accessId accessId
+     * @param \Swagger\Client\Model\AccessIdentifier $accessId accessId
      *
      * @return $this
      */

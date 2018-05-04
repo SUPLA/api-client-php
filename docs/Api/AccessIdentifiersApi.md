@@ -1,21 +1,21 @@
-# Swagger\Client\AccessIDsApi
+# Swagger\Client\AccessIdentifiersApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccessID**](AccessIDsApi.md#createAccessID) | **POST** /accessids | Create a new Access ID
-[**deleteAccessID**](AccessIDsApi.md#deleteAccessID) | **DELETE** /accessids/{id} | Delete Access Identifier
-[**getAccessID**](AccessIDsApi.md#getAccessID) | **GET** /accessids | Get Access IDs list
-[**getAccessID_0**](AccessIDsApi.md#getAccessID_0) | **GET** /accessids/{id} | Get Access ID
-[**updateAccessID**](AccessIDsApi.md#updateAccessID) | **PUT** /accessids/{id} | Update Access ID
+[**createAccessIdentifier**](AccessIdentifiersApi.md#createAccessIdentifier) | **POST** /accessids | Create a new Access Identifier
+[**deleteAccessIdentifier**](AccessIdentifiersApi.md#deleteAccessIdentifier) | **DELETE** /accessids/{id} | Delete Access Identifier
+[**getAccessIdentifier**](AccessIdentifiersApi.md#getAccessIdentifier) | **GET** /accessids/{id} | Get Access Identifier
+[**getAccessIdentifiers**](AccessIdentifiersApi.md#getAccessIdentifiers) | **GET** /accessids | Get Access Identifiers list
+[**updateAccessIdentifier**](AccessIdentifiersApi.md#updateAccessIdentifier) | **PUT** /accessids/{id} | Update Access Identifier
 
 
-# **createAccessID**
+# **createAccessIdentifier**
 
-Create a new Access ID
+Create a new Access Identifier
 
 ### Example
 ```php
-$result = $client->accessIDs()->createAccessID();
+$result = $client->accessIdentifiers()->createAccessIdentifier();
 print_r($result);
 ```
 
@@ -23,18 +23,18 @@ print_r($result);
 
 ### Return type
 
-[**\Swagger\Client\Model\AccessID**](../Model/AccessID.md)
+[**\Swagger\Client\Model\AccessIdentifier**](../Model/AccessIdentifier.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **deleteAccessID**
+# **deleteAccessIdentifier**
 
 Delete Access Identifier
 
 ### Example
 ```php
 $id = 56; // int | 
-$client->accessIDs()->deleteAccessID($id);
+$client->accessIdentifiers()->deleteAccessIdentifier($id);
 ```
 
 
@@ -49,38 +49,15 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getAccessID**
+# **getAccessIdentifier**
 
-Get Access IDs list
-
-### Example
-```php
-$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
-$result = $client->accessIDs()->getAccessID($include);
-print_r($result);
-```
-
-
-### Parameters
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\AccessID[]**](../Model/AccessID.md)
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getAccessID_0**
-
-Get Access ID
+Get Access Identifier
 
 ### Example
 ```php
 $id = 56; // int | 
 $include = array("include_example"); // string[] | Specify what extra fields to include in the response.
-$result = $client->accessIDs()->getAccessID_0($id, $include);
+$result = $client->accessIdentifiers()->getAccessIdentifier($id, $include);
 print_r($result);
 ```
 
@@ -93,19 +70,42 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AccessID**](../Model/AccessID.md)
+[**\Swagger\Client\Model\AccessIdentifier**](../Model/AccessIdentifier.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **updateAccessID**
+# **getAccessIdentifiers**
 
-Update Access ID
+Get Access Identifiers list
+
+### Example
+```php
+$include = array("include_example"); // string[] | Specify what extra fields to include in the response.
+$result = $client->accessIdentifiers()->getAccessIdentifiers($include);
+print_r($result);
+```
+
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **include** | [**string[]**](../Model/string.md)| Specify what extra fields to include in the response. | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\AccessIdentifier[]**](../Model/AccessIdentifier.md)
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateAccessIdentifier**
+
+Update Access Identifier
 
 ### Example
 ```php
 $id = 56; // int | 
-$body = new \Swagger\Client\Model\AccessIDUpdateRequest(); // \Swagger\Client\Model\AccessIDUpdateRequest | 
-$result = $client->accessIDs()->updateAccessID($id, $body);
+$body = new \Swagger\Client\Model\AccessIdentifierUpdateRequest(); // \Swagger\Client\Model\AccessIdentifierUpdateRequest | 
+$result = $client->accessIdentifiers()->updateAccessIdentifier($id, $body);
 print_r($result);
 ```
 
@@ -114,11 +114,11 @@ print_r($result);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\AccessIDUpdateRequest**](../Model/AccessIDUpdateRequest.md)|  |
+ **body** | [**\Swagger\Client\Model\AccessIdentifierUpdateRequest**](../Model/AccessIdentifierUpdateRequest.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\AccessID**](../Model/AccessID.md)
+[**\Swagger\Client\Model\AccessIdentifier**](../Model/AccessIdentifier.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

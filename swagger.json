@@ -15,9 +15,9 @@
   "paths" : {
     "/accessids" : {
       "get" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Get Access IDs list",
-        "operationId" : "getAccessID",
+        "tags" : [ "Access Identifiers" ],
+        "summary" : "Get Access Identifiers list",
+        "operationId" : "getAccessIdentifiers",
         "parameters" : [ {
           "name" : "include",
           "in" : "query",
@@ -32,26 +32,26 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "List of Access IDs owned by the current user.",
+            "description" : "List of Access Identifiers owned by the current user.",
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/AccessID"
+                "$ref" : "#/definitions/AccessIdentifier"
               }
             }
           }
         }
       },
       "post" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Create a new Access ID",
-        "operationId" : "createAccessID",
+        "tags" : [ "Access Identifiers" ],
+        "summary" : "Create a new Access Identifier",
+        "operationId" : "createAccessIdentifier",
         "parameters" : [ ],
         "responses" : {
           "201" : {
-            "description" : "Newely created AccessID with automatic name",
+            "description" : "Newely created AccessIdentifier with automatic name",
             "schema" : {
-              "$ref" : "#/definitions/AccessID"
+              "$ref" : "#/definitions/AccessIdentifier"
             }
           }
         }
@@ -59,9 +59,9 @@
     },
     "/accessids/{id}" : {
       "get" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Get Access ID",
-        "operationId" : "getAccessID",
+        "tags" : [ "Access Identifiers" ],
+        "summary" : "Get Access Identifier",
+        "operationId" : "getAccessIdentifier",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -81,17 +81,17 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "Get Access ID",
+            "description" : "Get Access Identifier",
             "schema" : {
-              "$ref" : "#/definitions/AccessID"
+              "$ref" : "#/definitions/AccessIdentifier"
             }
           }
         }
       },
       "put" : {
-        "tags" : [ "Access IDs" ],
-        "summary" : "Update Access ID",
-        "operationId" : "updateAccessID",
+        "tags" : [ "Access Identifiers" ],
+        "summary" : "Update Access Identifier",
+        "operationId" : "updateAccessIdentifier",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -102,22 +102,22 @@
           "name" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/Access ID update request"
+            "$ref" : "#/definitions/Access Identifier update request"
           }
         } ],
         "responses" : {
           "200" : {
             "description" : "Definition generated from Swagger Inspector",
             "schema" : {
-              "$ref" : "#/definitions/AccessID"
+              "$ref" : "#/definitions/AccessIdentifier"
             }
           }
         }
       },
       "delete" : {
-        "tags" : [ "Access IDs" ],
+        "tags" : [ "Access Identifiers" ],
         "summary" : "Delete Access Identifier",
-        "operationId" : "deleteAccessID",
+        "operationId" : "deleteAccessIdentifier",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -1127,11 +1127,11 @@
     }
   },
   "definitions" : {
-    "AccessID" : {
+    "AccessIdentifier" : {
       "properties" : {
         "id" : {
           "type" : "integer",
-          "description" : "Access ID identifier"
+          "description" : "Access Identifier identifier"
         },
         "caption" : {
           "type" : "string",
@@ -3172,7 +3172,7 @@
           "type" : "boolean"
         },
         "accessId" : {
-          "$ref" : "#/definitions/AccessID"
+          "$ref" : "#/definitions/AccessIdentifier"
         }
       },
       "example" : {
@@ -5201,7 +5201,7 @@
           "type" : "array",
           "description" : "Returned only if requested by the `include` parameter.",
           "items" : {
-            "$ref" : "#/definitions/AccessID"
+            "$ref" : "#/definitions/AccessIdentifier"
           }
         },
         "channels" : {
@@ -6399,7 +6399,7 @@
         "retry" : true
       }
     },
-    "Access ID update request" : {
+    "Access Identifier update request" : {
       "properties" : {
         "enabled" : {
           "type" : "boolean"
@@ -6413,20 +6413,20 @@
         },
         "locationsIds" : {
           "type" : "array",
-          "description" : "Locations identifiers to assign to this Access ID.",
+          "description" : "Locations identifiers to assign to this Access Identifier.",
           "items" : {
             "type" : "integer"
           }
         },
         "clientAppsIds" : {
           "type" : "array",
-          "description" : "Client Apps identifiers to assign to this Access ID. If client app is connected to any other Client ID, it will be disconnected from the old one before assigning.",
+          "description" : "Client Apps identifiers to assign to this Access Identifier. If client app is connected to any other Client ID, it will be disconnected from the old one before assigning.",
           "items" : {
             "type" : "integer"
           }
         }
       },
-      "title" : "Access ID update request",
+      "title" : "Access Identifier update request",
       "example" : {
         "password" : "password",
         "caption" : "caption",

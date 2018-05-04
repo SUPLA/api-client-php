@@ -1,6 +1,6 @@
 <?php
 /**
- * AccessID
+ * AccessIdentifier
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AccessID Class Doc Comment
+ * AccessIdentifier Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AccessID implements ModelInterface, ArrayAccess
+class AccessIdentifier implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AccessID implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AccessID';
+    protected static $swaggerModelName = 'AccessIdentifier';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -253,7 +253,7 @@ class AccessID implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id Access ID identifier
+     * @param int $id Access Identifier identifier
      *
      * @return $this
      */

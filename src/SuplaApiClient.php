@@ -28,7 +28,7 @@ class SuplaApiClient {
     protected $token;
     protected $auto_logout;
     protected $last_error;
-    private $sslVerify;
+    protected $sslVerify;
 
     public function __construct($server_params, $auto_logout = true, $debug = false, $sslVerify = true) {
         $this->server = $server_params['server'];
@@ -43,11 +43,11 @@ class SuplaApiClient {
         $this->auto_logout = $auto_logout;
     }
 
-    private function setLastError($error) {
+    protected function setLastError($error) {
         $this->last_error = $error;
     }
 
-    private function remoteRequest($data, $path, $method = 'POST', $bearer = false) {
+    protected function remoteRequest($data, $path, $method = 'POST', $bearer = false) {
 
         $data_string = '';
         $result = false;
@@ -115,7 +115,7 @@ class SuplaApiClient {
         return $result;
     }
 
-    private function tokenRequest() {
+    protected function tokenRequest() {
         $params = ["client_id" => $this->clientId,
             "client_secret" => $this->secret,
             "grant_type" => 'password',
@@ -133,24 +133,24 @@ class SuplaApiClient {
         return false;
     }
 
-    private function accessTokenExists() {
+    protected function accessTokenExists() {
         return $this->token !== null && $this->token->expires_in > time() + 5 && $this->token->access_token != '';
     }
 
-    private function getAccessToken() {
+    protected function getAccessToken() {
         if ($this->accessTokenExists() == false) {
             $this->tokenRequest();
         }
         return @$this->token->access_token;
     }
 
-    private function autoLogout() {
+    protected function autoLogout() {
         if ($this->auto_logout === true) {
             $this->logout();
         }
     }
 
-    private function apiGET($path, $data = null) {
+    protected function apiGET($path, $data = null) {
         if (is_array($data)) {
             foreach ($data as $value) {
                 $path .= '/' . urlencode($value);
@@ -160,7 +160,7 @@ class SuplaApiClient {
         return $result;
     }
 
-    private function apiP($path, $method, $data = null) {
+    protected function apiP($path, $method, $data = null) {
         $result = $this->remoteRequest($data, $path, $method, true);
         if ($result !== false) {
             return @$result->data;

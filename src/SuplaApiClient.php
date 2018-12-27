@@ -96,8 +96,8 @@ class SuplaApiClient {
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         if (curl_errno($ch) == 0) {
-            if ($code === 200) {
-                $result = json_decode($cresult);
+            if ($code >= 200 && $code <= 299) {
+                $result = $cresult ? json_decode($cresult) : true;
             } else {
                 $this->setLastError("HTTP: " . $code);
             }

@@ -14,6 +14,7 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
+
 namespace Supla\ApiClient;
 
 class SuplaApiClient {
@@ -32,6 +33,9 @@ class SuplaApiClient {
 
     public function __construct($server_params, $auto_logout = true, $debug = false, $sslVerify = true) {
         $this->server = $server_params['server'];
+        if (strpos($this->server, 'http') !== 0) {
+            $this->server = 'https://' . $this->server;
+        }
         $this->clientId = $server_params['clientId'];
         $this->secret = $server_params['secret'];
         $this->username = $server_params['username'];
@@ -68,7 +72,7 @@ class SuplaApiClient {
             $data_string = json_encode($data);
         }
 
-        $ch = curl_init('https://' . $this->server . $path);
+        $ch = curl_init($this->server . $path);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
 
         if ($method != 'GET') {

@@ -79,14 +79,16 @@ class SuplaApiClient {
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
         }
 
+        $headers = [];
         if ($bearer) {
-            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $access_token]);
-        } else {
-            if (strlen(@$data_string) > 0) {
-                curl_setopt($ch, CURLOPT_HTTPHEADER, [
-                    'Content-Type: application/json',
-                    'Content-Length: ' . strlen($data_string)]);
-            }
+            $headers[] = 'Authorization: Bearer ' . $access_token;
+        }
+        if (strlen(@$data_string) > 0) {
+            $headers[] = 'Content-Type: application/json';
+            $headers[] = 'Content-Length: ' . strlen($data_string);
+        }
+        if ($headers) {
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         }
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

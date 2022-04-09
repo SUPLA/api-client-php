@@ -1,0 +1,7 @@
+templateDir: templates
+additionalProperties:
+  artifactId: supla/api-client
+  artifactVersion: 3.0.0-beta.1
+  invokerPackage: Supla\ApiClient
+  variableNamingConvention: camelCase
+  gitUserId: supla

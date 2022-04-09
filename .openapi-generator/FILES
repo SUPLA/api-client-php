@@ -8,6 +8,7 @@ docs/Api/ChannelsApi.md
 docs/Api/LocationsApi.md
 docs/Api/OAuthApi.md
 docs/Api/ServerApi.md
+docs/Api/UsersApi.md
 docs/Model/AccessIdentifier.md
 docs/Model/AccessIdentifierActiveHoursDef.md
 docs/Model/AccessIdentifierRelationsCount.md
@@ -74,12 +75,16 @@ docs/Model/InlineResponse409.md
 docs/Model/InlineResponse503.md
 docs/Model/Location.md
 docs/Model/LocationRelationsCount.md
+docs/Model/User.md
+docs/Model/UserAgreements.md
+docs/Model/UserLimits.md
 git_push.sh
 lib/Api/AccessIdentifiersApi.php
 lib/Api/ChannelsApi.php
 lib/Api/LocationsApi.php
 lib/Api/OAuthApi.php
 lib/Api/ServerApi.php
+lib/Api/UsersApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
@@ -150,5 +155,12 @@ lib/Model/InlineResponse503.php
 lib/Model/Location.php
 lib/Model/LocationRelationsCount.php
 lib/Model/ModelInterface.php
+lib/Model/User.php
+lib/Model/UserAgreements.php
+lib/Model/UserLimits.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/UsersApiTest.php
+test/Model/UserAgreementsTest.php
+test/Model/UserLimitsTest.php
+test/Model/UserTest.php

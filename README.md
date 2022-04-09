@@ -62,6 +62,7 @@ Class | Method | HTTP request | Description
 *ServerApi* | [**getServerInfo**](docs/Api/ServerApi.md#getserverinfo) | **GET** /server-info | Get the server info
 *ServerApi* | [**getSuplaServerStatus**](docs/Api/ServerApi.md#getsuplaserverstatus) | **GET** /server-status | Get the SUPLA Server status
 *ServerApi* | [**getTokenInfo**](docs/Api/ServerApi.md#gettokeninfo) | **GET** /token-info | Returns information about used access token
+*UsersApi* | [**getCurrentUser**](docs/Api/UsersApi.md#getcurrentuser) | **GET** /users/current | Get info about user for the token.
 
 ## Models
 
@@ -131,6 +132,9 @@ Class | Method | HTTP request | Description
 - [InlineResponse503](docs/Model/InlineResponse503.md)
 - [Location](docs/Model/Location.md)
 - [LocationRelationsCount](docs/Model/LocationRelationsCount.md)
+- [User](docs/Model/User.md)
+- [UserAgreements](docs/Model/UserAgreements.md)
+- [UserLimits](docs/Model/UserLimits.md)
 
 ## Authorization
 

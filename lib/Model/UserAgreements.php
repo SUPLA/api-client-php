@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2003
+ * UserAgreements
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * InlineResponse2003 Class Doc Comment
+ * UserAgreements Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -42,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializable
+class UserAgreements implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_3';
+    protected static $openAPIModelName = 'User_agreements';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'accessToken' => 'string',
-        'expiresIn' => 'int',
-        'tokenType' => 'string',
-        'scope' => 'string',
-        'refreshToken' => 'string',
-        'targetUrl' => 'string'
+        'rules' => 'bool',
+        'cookies' => 'bool'
     ];
 
     /**
@@ -75,12 +71,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'accessToken' => null,
-        'expiresIn' => null,
-        'tokenType' => null,
-        'scope' => null,
-        'refreshToken' => null,
-        'targetUrl' => null
+        'rules' => null,
+        'cookies' => null
     ];
 
     /**
@@ -110,12 +102,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'accessToken' => 'access_token',
-        'expiresIn' => 'expires_in',
-        'tokenType' => 'token_type',
-        'scope' => 'scope',
-        'refreshToken' => 'refresh_token',
-        'targetUrl' => 'target_url'
+        'rules' => 'rules',
+        'cookies' => 'cookies'
     ];
 
     /**
@@ -124,12 +112,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'accessToken' => 'setAccessToken',
-        'expiresIn' => 'setExpiresIn',
-        'tokenType' => 'setTokenType',
-        'scope' => 'setScope',
-        'refreshToken' => 'setRefreshToken',
-        'targetUrl' => 'setTargetUrl'
+        'rules' => 'setRules',
+        'cookies' => 'setCookies'
     ];
 
     /**
@@ -138,12 +122,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'accessToken' => 'getAccessToken',
-        'expiresIn' => 'getExpiresIn',
-        'tokenType' => 'getTokenType',
-        'scope' => 'getScope',
-        'refreshToken' => 'getRefreshToken',
-        'targetUrl' => 'getTargetUrl'
+        'rules' => 'getRules',
+        'cookies' => 'getCookies'
     ];
 
     /**
@@ -187,19 +167,6 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    const TOKEN_TYPE_BEARER = 'bearer';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTokenTypeAllowableValues()
-    {
-        return [
-            self::TOKEN_TYPE_BEARER,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -216,12 +183,8 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['accessToken'] = $data['accessToken'] ?? null;
-        $this->container['expiresIn'] = $data['expiresIn'] ?? null;
-        $this->container['tokenType'] = $data['tokenType'] ?? null;
-        $this->container['scope'] = $data['scope'] ?? null;
-        $this->container['refreshToken'] = $data['refreshToken'] ?? null;
-        $this->container['targetUrl'] = $data['targetUrl'] ?? null;
+        $this->container['rules'] = $data['rules'] ?? null;
+        $this->container['cookies'] = $data['cookies'] ?? null;
     }
 
     /**
@@ -232,15 +195,6 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getTokenTypeAllowableValues();
-        if (!is_null($this->container['tokenType']) && !in_array($this->container['tokenType'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'tokenType', must be one of '%s'",
-                $this->container['tokenType'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -258,155 +212,49 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets accessToken
+     * Gets rules
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getAccessToken()
+    public function getRules()
     {
-        return $this->container['accessToken'];
+        return $this->container['rules'];
     }
 
     /**
-     * Sets accessToken
+     * Sets rules
      *
-     * @param string|null $accessToken accessToken
+     * @param bool|null $rules rules
      *
      * @return self
      */
-    public function setAccessToken($accessToken)
+    public function setRules($rules)
     {
-        $this->container['accessToken'] = $accessToken;
+        $this->container['rules'] = $rules;
 
         return $this;
     }
 
     /**
-     * Gets expiresIn
+     * Gets cookies
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getExpiresIn()
+    public function getCookies()
     {
-        return $this->container['expiresIn'];
+        return $this->container['cookies'];
     }
 
     /**
-     * Sets expiresIn
+     * Sets cookies
      *
-     * @param int|null $expiresIn expiresIn
+     * @param bool|null $cookies cookies
      *
      * @return self
      */
-    public function setExpiresIn($expiresIn)
+    public function setCookies($cookies)
     {
-        $this->container['expiresIn'] = $expiresIn;
-
-        return $this;
-    }
-
-    /**
-     * Gets tokenType
-     *
-     * @return string|null
-     */
-    public function getTokenType()
-    {
-        return $this->container['tokenType'];
-    }
-
-    /**
-     * Sets tokenType
-     *
-     * @param string|null $tokenType tokenType
-     *
-     * @return self
-     */
-    public function setTokenType($tokenType)
-    {
-        $allowedValues = $this->getTokenTypeAllowableValues();
-        if (!is_null($tokenType) && !in_array($tokenType, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'tokenType', must be one of '%s'",
-                    $tokenType,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['tokenType'] = $tokenType;
-
-        return $this;
-    }
-
-    /**
-     * Gets scope
-     *
-     * @return string|null
-     */
-    public function getScope()
-    {
-        return $this->container['scope'];
-    }
-
-    /**
-     * Sets scope
-     *
-     * @param string|null $scope scope
-     *
-     * @return self
-     */
-    public function setScope($scope)
-    {
-        $this->container['scope'] = $scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets refreshToken
-     *
-     * @return string|null
-     */
-    public function getRefreshToken()
-    {
-        return $this->container['refreshToken'];
-    }
-
-    /**
-     * Sets refreshToken
-     *
-     * @param string|null $refreshToken refreshToken
-     *
-     * @return self
-     */
-    public function setRefreshToken($refreshToken)
-    {
-        $this->container['refreshToken'] = $refreshToken;
-
-        return $this;
-    }
-
-    /**
-     * Gets targetUrl
-     *
-     * @return string|null
-     */
-    public function getTargetUrl()
-    {
-        return $this->container['targetUrl'];
-    }
-
-    /**
-     * Sets targetUrl
-     *
-     * @param string|null $targetUrl targetUrl
-     *
-     * @return self
-     */
-    public function setTargetUrl($targetUrl)
-    {
-        $this->container['targetUrl'] = $targetUrl;
+        $this->container['cookies'] = $cookies;
 
         return $this;
     }

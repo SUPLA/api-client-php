@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2003
+ * UserLimits
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * InlineResponse2003 Class Doc Comment
+ * UserLimits Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -42,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializable
+class UserLimits implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_3';
+    protected static $openAPIModelName = 'User_limits';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,17 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'accessToken' => 'string',
-        'expiresIn' => 'int',
-        'tokenType' => 'string',
-        'scope' => 'string',
-        'refreshToken' => 'string',
-        'targetUrl' => 'string'
+        'clientApp' => 'int',
+        'channelGroup' => 'int',
+        'channelPerGroup' => 'int',
+        'directLink' => 'int',
+        'scene' => 'int',
+        'schedule' => 'int',
+        'actionsPerSchedule' => 'int',
+        'accessId' => 'int',
+        'ioDevice' => 'int',
+        'location' => 'int',
+        'oauthClient' => 'int'
     ];
 
     /**
@@ -75,12 +80,17 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'accessToken' => null,
-        'expiresIn' => null,
-        'tokenType' => null,
-        'scope' => null,
-        'refreshToken' => null,
-        'targetUrl' => null
+        'clientApp' => null,
+        'channelGroup' => null,
+        'channelPerGroup' => null,
+        'directLink' => null,
+        'scene' => null,
+        'schedule' => null,
+        'actionsPerSchedule' => null,
+        'accessId' => null,
+        'ioDevice' => null,
+        'location' => null,
+        'oauthClient' => null
     ];
 
     /**
@@ -110,12 +120,17 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'accessToken' => 'access_token',
-        'expiresIn' => 'expires_in',
-        'tokenType' => 'token_type',
-        'scope' => 'scope',
-        'refreshToken' => 'refresh_token',
-        'targetUrl' => 'target_url'
+        'clientApp' => 'clientApp',
+        'channelGroup' => 'channelGroup',
+        'channelPerGroup' => 'channelPerGroup',
+        'directLink' => 'directLink',
+        'scene' => 'scene',
+        'schedule' => 'schedule',
+        'actionsPerSchedule' => 'actionsPerSchedule',
+        'accessId' => 'accessId',
+        'ioDevice' => 'ioDevice',
+        'location' => 'location',
+        'oauthClient' => 'oauthClient'
     ];
 
     /**
@@ -124,12 +139,17 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'accessToken' => 'setAccessToken',
-        'expiresIn' => 'setExpiresIn',
-        'tokenType' => 'setTokenType',
-        'scope' => 'setScope',
-        'refreshToken' => 'setRefreshToken',
-        'targetUrl' => 'setTargetUrl'
+        'clientApp' => 'setClientApp',
+        'channelGroup' => 'setChannelGroup',
+        'channelPerGroup' => 'setChannelPerGroup',
+        'directLink' => 'setDirectLink',
+        'scene' => 'setScene',
+        'schedule' => 'setSchedule',
+        'actionsPerSchedule' => 'setActionsPerSchedule',
+        'accessId' => 'setAccessId',
+        'ioDevice' => 'setIoDevice',
+        'location' => 'setLocation',
+        'oauthClient' => 'setOauthClient'
     ];
 
     /**
@@ -138,12 +158,17 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'accessToken' => 'getAccessToken',
-        'expiresIn' => 'getExpiresIn',
-        'tokenType' => 'getTokenType',
-        'scope' => 'getScope',
-        'refreshToken' => 'getRefreshToken',
-        'targetUrl' => 'getTargetUrl'
+        'clientApp' => 'getClientApp',
+        'channelGroup' => 'getChannelGroup',
+        'channelPerGroup' => 'getChannelPerGroup',
+        'directLink' => 'getDirectLink',
+        'scene' => 'getScene',
+        'schedule' => 'getSchedule',
+        'actionsPerSchedule' => 'getActionsPerSchedule',
+        'accessId' => 'getAccessId',
+        'ioDevice' => 'getIoDevice',
+        'location' => 'getLocation',
+        'oauthClient' => 'getOauthClient'
     ];
 
     /**
@@ -187,19 +212,6 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    const TOKEN_TYPE_BEARER = 'bearer';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTokenTypeAllowableValues()
-    {
-        return [
-            self::TOKEN_TYPE_BEARER,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -216,12 +228,17 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['accessToken'] = $data['accessToken'] ?? null;
-        $this->container['expiresIn'] = $data['expiresIn'] ?? null;
-        $this->container['tokenType'] = $data['tokenType'] ?? null;
-        $this->container['scope'] = $data['scope'] ?? null;
-        $this->container['refreshToken'] = $data['refreshToken'] ?? null;
-        $this->container['targetUrl'] = $data['targetUrl'] ?? null;
+        $this->container['clientApp'] = $data['clientApp'] ?? null;
+        $this->container['channelGroup'] = $data['channelGroup'] ?? null;
+        $this->container['channelPerGroup'] = $data['channelPerGroup'] ?? null;
+        $this->container['directLink'] = $data['directLink'] ?? null;
+        $this->container['scene'] = $data['scene'] ?? null;
+        $this->container['schedule'] = $data['schedule'] ?? null;
+        $this->container['actionsPerSchedule'] = $data['actionsPerSchedule'] ?? null;
+        $this->container['accessId'] = $data['accessId'] ?? null;
+        $this->container['ioDevice'] = $data['ioDevice'] ?? null;
+        $this->container['location'] = $data['location'] ?? null;
+        $this->container['oauthClient'] = $data['oauthClient'] ?? null;
     }
 
     /**
@@ -232,15 +249,6 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getTokenTypeAllowableValues();
-        if (!is_null($this->container['tokenType']) && !in_array($this->container['tokenType'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'tokenType', must be one of '%s'",
-                $this->container['tokenType'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -258,155 +266,265 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets accessToken
-     *
-     * @return string|null
-     */
-    public function getAccessToken()
-    {
-        return $this->container['accessToken'];
-    }
-
-    /**
-     * Sets accessToken
-     *
-     * @param string|null $accessToken accessToken
-     *
-     * @return self
-     */
-    public function setAccessToken($accessToken)
-    {
-        $this->container['accessToken'] = $accessToken;
-
-        return $this;
-    }
-
-    /**
-     * Gets expiresIn
+     * Gets clientApp
      *
      * @return int|null
      */
-    public function getExpiresIn()
+    public function getClientApp()
     {
-        return $this->container['expiresIn'];
+        return $this->container['clientApp'];
     }
 
     /**
-     * Sets expiresIn
+     * Sets clientApp
      *
-     * @param int|null $expiresIn expiresIn
+     * @param int|null $clientApp clientApp
      *
      * @return self
      */
-    public function setExpiresIn($expiresIn)
+    public function setClientApp($clientApp)
     {
-        $this->container['expiresIn'] = $expiresIn;
+        $this->container['clientApp'] = $clientApp;
 
         return $this;
     }
 
     /**
-     * Gets tokenType
+     * Gets channelGroup
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getTokenType()
+    public function getChannelGroup()
     {
-        return $this->container['tokenType'];
+        return $this->container['channelGroup'];
     }
 
     /**
-     * Sets tokenType
+     * Sets channelGroup
      *
-     * @param string|null $tokenType tokenType
+     * @param int|null $channelGroup channelGroup
      *
      * @return self
      */
-    public function setTokenType($tokenType)
+    public function setChannelGroup($channelGroup)
     {
-        $allowedValues = $this->getTokenTypeAllowableValues();
-        if (!is_null($tokenType) && !in_array($tokenType, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'tokenType', must be one of '%s'",
-                    $tokenType,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['tokenType'] = $tokenType;
+        $this->container['channelGroup'] = $channelGroup;
 
         return $this;
     }
 
     /**
-     * Gets scope
+     * Gets channelPerGroup
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getScope()
+    public function getChannelPerGroup()
     {
-        return $this->container['scope'];
+        return $this->container['channelPerGroup'];
     }
 
     /**
-     * Sets scope
+     * Sets channelPerGroup
      *
-     * @param string|null $scope scope
+     * @param int|null $channelPerGroup channelPerGroup
      *
      * @return self
      */
-    public function setScope($scope)
+    public function setChannelPerGroup($channelPerGroup)
     {
-        $this->container['scope'] = $scope;
+        $this->container['channelPerGroup'] = $channelPerGroup;
 
         return $this;
     }
 
     /**
-     * Gets refreshToken
+     * Gets directLink
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getRefreshToken()
+    public function getDirectLink()
     {
-        return $this->container['refreshToken'];
+        return $this->container['directLink'];
     }
 
     /**
-     * Sets refreshToken
+     * Sets directLink
      *
-     * @param string|null $refreshToken refreshToken
+     * @param int|null $directLink directLink
      *
      * @return self
      */
-    public function setRefreshToken($refreshToken)
+    public function setDirectLink($directLink)
     {
-        $this->container['refreshToken'] = $refreshToken;
+        $this->container['directLink'] = $directLink;
 
         return $this;
     }
 
     /**
-     * Gets targetUrl
+     * Gets scene
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getTargetUrl()
+    public function getScene()
     {
-        return $this->container['targetUrl'];
+        return $this->container['scene'];
     }
 
     /**
-     * Sets targetUrl
+     * Sets scene
      *
-     * @param string|null $targetUrl targetUrl
+     * @param int|null $scene scene
      *
      * @return self
      */
-    public function setTargetUrl($targetUrl)
+    public function setScene($scene)
     {
-        $this->container['targetUrl'] = $targetUrl;
+        $this->container['scene'] = $scene;
+
+        return $this;
+    }
+
+    /**
+     * Gets schedule
+     *
+     * @return int|null
+     */
+    public function getSchedule()
+    {
+        return $this->container['schedule'];
+    }
+
+    /**
+     * Sets schedule
+     *
+     * @param int|null $schedule schedule
+     *
+     * @return self
+     */
+    public function setSchedule($schedule)
+    {
+        $this->container['schedule'] = $schedule;
+
+        return $this;
+    }
+
+    /**
+     * Gets actionsPerSchedule
+     *
+     * @return int|null
+     */
+    public function getActionsPerSchedule()
+    {
+        return $this->container['actionsPerSchedule'];
+    }
+
+    /**
+     * Sets actionsPerSchedule
+     *
+     * @param int|null $actionsPerSchedule actionsPerSchedule
+     *
+     * @return self
+     */
+    public function setActionsPerSchedule($actionsPerSchedule)
+    {
+        $this->container['actionsPerSchedule'] = $actionsPerSchedule;
+
+        return $this;
+    }
+
+    /**
+     * Gets accessId
+     *
+     * @return int|null
+     */
+    public function getAccessId()
+    {
+        return $this->container['accessId'];
+    }
+
+    /**
+     * Sets accessId
+     *
+     * @param int|null $accessId accessId
+     *
+     * @return self
+     */
+    public function setAccessId($accessId)
+    {
+        $this->container['accessId'] = $accessId;
+
+        return $this;
+    }
+
+    /**
+     * Gets ioDevice
+     *
+     * @return int|null
+     */
+    public function getIoDevice()
+    {
+        return $this->container['ioDevice'];
+    }
+
+    /**
+     * Sets ioDevice
+     *
+     * @param int|null $ioDevice ioDevice
+     *
+     * @return self
+     */
+    public function setIoDevice($ioDevice)
+    {
+        $this->container['ioDevice'] = $ioDevice;
+
+        return $this;
+    }
+
+    /**
+     * Gets location
+     *
+     * @return int|null
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /**
+     * Sets location
+     *
+     * @param int|null $location location
+     *
+     * @return self
+     */
+    public function setLocation($location)
+    {
+        $this->container['location'] = $location;
+
+        return $this;
+    }
+
+    /**
+     * Gets oauthClient
+     *
+     * @return int|null
+     */
+    public function getOauthClient()
+    {
+        return $this->container['oauthClient'];
+    }
+
+    /**
+     * Sets oauthClient
+     *
+     * @param int|null $oauthClient oauthClient
+     *
+     * @return self
+     */
+    public function setOauthClient($oauthClient)
+    {
+        $this->container['oauthClient'] = $oauthClient;
 
         return $this;
     }

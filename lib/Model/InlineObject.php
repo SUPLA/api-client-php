@@ -62,6 +62,9 @@ class InlineObject implements ModelInterface, ArrayAccess, \JsonSerializable
         'enabled' => 'bool',
         'caption' => 'string',
         'password' => 'string',
+        'activeFrom' => 'string',
+        'activeTo' => 'string',
+        'activeHours' => '\Supla\ApiClient\Model\AccessIdentifierActiveHoursDef',
         'locationsIds' => 'int[]',
         'clientAppsIds' => 'int[]'
     ];
@@ -77,6 +80,9 @@ class InlineObject implements ModelInterface, ArrayAccess, \JsonSerializable
         'enabled' => null,
         'caption' => null,
         'password' => null,
+        'activeFrom' => 'datetime',
+        'activeTo' => 'datetime',
+        'activeHours' => null,
         'locationsIds' => null,
         'clientAppsIds' => null
     ];
@@ -111,6 +117,9 @@ class InlineObject implements ModelInterface, ArrayAccess, \JsonSerializable
         'enabled' => 'enabled',
         'caption' => 'caption',
         'password' => 'password',
+        'activeFrom' => 'activeFrom',
+        'activeTo' => 'activeTo',
+        'activeHours' => 'activeHours',
         'locationsIds' => 'locationsIds',
         'clientAppsIds' => 'clientAppsIds'
     ];
@@ -124,6 +133,9 @@ class InlineObject implements ModelInterface, ArrayAccess, \JsonSerializable
         'enabled' => 'setEnabled',
         'caption' => 'setCaption',
         'password' => 'setPassword',
+        'activeFrom' => 'setActiveFrom',
+        'activeTo' => 'setActiveTo',
+        'activeHours' => 'setActiveHours',
         'locationsIds' => 'setLocationsIds',
         'clientAppsIds' => 'setClientAppsIds'
     ];
@@ -137,6 +149,9 @@ class InlineObject implements ModelInterface, ArrayAccess, \JsonSerializable
         'enabled' => 'getEnabled',
         'caption' => 'getCaption',
         'password' => 'getPassword',
+        'activeFrom' => 'getActiveFrom',
+        'activeTo' => 'getActiveTo',
+        'activeHours' => 'getActiveHours',
         'locationsIds' => 'getLocationsIds',
         'clientAppsIds' => 'getClientAppsIds'
     ];
@@ -201,6 +216,9 @@ class InlineObject implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['caption'] = $data['caption'] ?? null;
         $this->container['password'] = $data['password'] ?? null;
+        $this->container['activeFrom'] = $data['activeFrom'] ?? null;
+        $this->container['activeTo'] = $data['activeTo'] ?? null;
+        $this->container['activeHours'] = $data['activeHours'] ?? null;
         $this->container['locationsIds'] = $data['locationsIds'] ?? null;
         $this->container['clientAppsIds'] = $data['clientAppsIds'] ?? null;
     }
@@ -297,6 +315,78 @@ class InlineObject implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets activeFrom
+     *
+     * @return string|null
+     */
+    public function getActiveFrom()
+    {
+        return $this->container['activeFrom'];
+    }
+
+    /**
+     * Sets activeFrom
+     *
+     * @param string|null $activeFrom activeFrom
+     *
+     * @return self
+     */
+    public function setActiveFrom($activeFrom)
+    {
+        $this->container['activeFrom'] = $activeFrom;
+
+        return $this;
+    }
+
+    /**
+     * Gets activeTo
+     *
+     * @return string|null
+     */
+    public function getActiveTo()
+    {
+        return $this->container['activeTo'];
+    }
+
+    /**
+     * Sets activeTo
+     *
+     * @param string|null $activeTo activeTo
+     *
+     * @return self
+     */
+    public function setActiveTo($activeTo)
+    {
+        $this->container['activeTo'] = $activeTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets activeHours
+     *
+     * @return \Supla\ApiClient\Model\AccessIdentifierActiveHoursDef|null
+     */
+    public function getActiveHours()
+    {
+        return $this->container['activeHours'];
+    }
+
+    /**
+     * Sets activeHours
+     *
+     * @param \Supla\ApiClient\Model\AccessIdentifierActiveHoursDef|null $activeHours activeHours
+     *
+     * @return self
+     */
+    public function setActiveHours($activeHours)
+    {
+        $this->container['activeHours'] = $activeHours;
 
         return $this;
     }

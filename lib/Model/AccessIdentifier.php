@@ -63,6 +63,10 @@ class AccessIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'caption' => 'string',
         'enabled' => 'bool',
+        'activeFrom' => 'string',
+        'activeTo' => 'string',
+        'activeHours' => '\Supla\ApiClient\Model\AccessIdentifierActiveHoursDef',
+        'activeNow' => 'bool',
         'relationsCount' => '\Supla\ApiClient\Model\AccessIdentifierRelationsCount',
         'password' => 'string',
         'locations' => '\Supla\ApiClient\Model\Location[]'
@@ -79,6 +83,10 @@ class AccessIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'caption' => null,
         'enabled' => null,
+        'activeFrom' => 'datetime',
+        'activeTo' => 'datetime',
+        'activeHours' => null,
+        'activeNow' => null,
         'relationsCount' => null,
         'password' => null,
         'locations' => null
@@ -114,6 +122,10 @@ class AccessIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'caption' => 'caption',
         'enabled' => 'enabled',
+        'activeFrom' => 'activeFrom',
+        'activeTo' => 'activeTo',
+        'activeHours' => 'activeHours',
+        'activeNow' => 'activeNow',
         'relationsCount' => 'relationsCount',
         'password' => 'password',
         'locations' => 'locations'
@@ -128,6 +140,10 @@ class AccessIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'caption' => 'setCaption',
         'enabled' => 'setEnabled',
+        'activeFrom' => 'setActiveFrom',
+        'activeTo' => 'setActiveTo',
+        'activeHours' => 'setActiveHours',
+        'activeNow' => 'setActiveNow',
         'relationsCount' => 'setRelationsCount',
         'password' => 'setPassword',
         'locations' => 'setLocations'
@@ -142,6 +158,10 @@ class AccessIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'caption' => 'getCaption',
         'enabled' => 'getEnabled',
+        'activeFrom' => 'getActiveFrom',
+        'activeTo' => 'getActiveTo',
+        'activeHours' => 'getActiveHours',
+        'activeNow' => 'getActiveNow',
         'relationsCount' => 'getRelationsCount',
         'password' => 'getPassword',
         'locations' => 'getLocations'
@@ -207,6 +227,10 @@ class AccessIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['id'] = $data['id'] ?? null;
         $this->container['caption'] = $data['caption'] ?? null;
         $this->container['enabled'] = $data['enabled'] ?? null;
+        $this->container['activeFrom'] = $data['activeFrom'] ?? null;
+        $this->container['activeTo'] = $data['activeTo'] ?? null;
+        $this->container['activeHours'] = $data['activeHours'] ?? null;
+        $this->container['activeNow'] = $data['activeNow'] ?? null;
         $this->container['relationsCount'] = $data['relationsCount'] ?? null;
         $this->container['password'] = $data['password'] ?? null;
         $this->container['locations'] = $data['locations'] ?? null;
@@ -304,6 +328,102 @@ class AccessIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEnabled($enabled)
     {
         $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets activeFrom
+     *
+     * @return string|null
+     */
+    public function getActiveFrom()
+    {
+        return $this->container['activeFrom'];
+    }
+
+    /**
+     * Sets activeFrom
+     *
+     * @param string|null $activeFrom activeFrom
+     *
+     * @return self
+     */
+    public function setActiveFrom($activeFrom)
+    {
+        $this->container['activeFrom'] = $activeFrom;
+
+        return $this;
+    }
+
+    /**
+     * Gets activeTo
+     *
+     * @return string|null
+     */
+    public function getActiveTo()
+    {
+        return $this->container['activeTo'];
+    }
+
+    /**
+     * Sets activeTo
+     *
+     * @param string|null $activeTo activeTo
+     *
+     * @return self
+     */
+    public function setActiveTo($activeTo)
+    {
+        $this->container['activeTo'] = $activeTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets activeHours
+     *
+     * @return \Supla\ApiClient\Model\AccessIdentifierActiveHoursDef|null
+     */
+    public function getActiveHours()
+    {
+        return $this->container['activeHours'];
+    }
+
+    /**
+     * Sets activeHours
+     *
+     * @param \Supla\ApiClient\Model\AccessIdentifierActiveHoursDef|null $activeHours activeHours
+     *
+     * @return self
+     */
+    public function setActiveHours($activeHours)
+    {
+        $this->container['activeHours'] = $activeHours;
+
+        return $this;
+    }
+
+    /**
+     * Gets activeNow
+     *
+     * @return bool|null
+     */
+    public function getActiveNow()
+    {
+        return $this->container['activeNow'];
+    }
+
+    /**
+     * Sets activeNow
+     *
+     * @param bool|null $activeNow `true` if active now. Returned only if requested by the `include` parameter.
+     *
+     * @return self
+     */
+    public function setActiveNow($activeNow)
+    {
+        $this->container['activeNow'] = $activeNow;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ChannelConfigActionTrigger
+ * AccessIdentifierActiveHoursDef
  *
  * PHP version 7.3
  *
@@ -32,10 +32,9 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * ChannelConfigActionTrigger Class Doc Comment
+ * AccessIdentifierActiveHoursDef Class Doc Comment
  *
  * @category Class
- * @description Config for &#x60;ACTION_TRIGGER&#x60;
  * @package  Supla\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccessIdentifierActiveHoursDef implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ChannelConfigActionTrigger';
+    protected static $openAPIModelName = 'AccessIdentifierActiveHoursDef';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,11 +59,13 @@ class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'actionTriggerCapabilities' => 'string[]',
-        'disablesLocalOperation' => 'bool',
-        'relatedChannelId' => 'int',
-        'hideInChannelsList' => 'int',
-        'actions' => 'object'
+        '_1' => 'int[]',
+        '_2' => 'int[]',
+        '_3' => 'int[]',
+        '_4' => 'int[]',
+        '_5' => 'int[]',
+        '_6' => 'int[]',
+        '_7' => 'int[]'
     ];
 
     /**
@@ -75,11 +76,13 @@ class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'actionTriggerCapabilities' => null,
-        'disablesLocalOperation' => null,
-        'relatedChannelId' => null,
-        'hideInChannelsList' => null,
-        'actions' => null
+        '_1' => null,
+        '_2' => null,
+        '_3' => null,
+        '_4' => null,
+        '_5' => null,
+        '_6' => null,
+        '_7' => null
     ];
 
     /**
@@ -109,11 +112,13 @@ class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'actionTriggerCapabilities' => 'actionTriggerCapabilities',
-        'disablesLocalOperation' => 'disablesLocalOperation',
-        'relatedChannelId' => 'relatedChannelId',
-        'hideInChannelsList' => 'hideInChannelsList',
-        'actions' => 'actions'
+        '_1' => '1',
+        '_2' => '2',
+        '_3' => '3',
+        '_4' => '4',
+        '_5' => '5',
+        '_6' => '6',
+        '_7' => '7'
     ];
 
     /**
@@ -122,11 +127,13 @@ class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'actionTriggerCapabilities' => 'setActionTriggerCapabilities',
-        'disablesLocalOperation' => 'setDisablesLocalOperation',
-        'relatedChannelId' => 'setRelatedChannelId',
-        'hideInChannelsList' => 'setHideInChannelsList',
-        'actions' => 'setActions'
+        '_1' => 'set1',
+        '_2' => 'set2',
+        '_3' => 'set3',
+        '_4' => 'set4',
+        '_5' => 'set5',
+        '_6' => 'set6',
+        '_7' => 'set7'
     ];
 
     /**
@@ -135,11 +142,13 @@ class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'actionTriggerCapabilities' => 'getActionTriggerCapabilities',
-        'disablesLocalOperation' => 'getDisablesLocalOperation',
-        'relatedChannelId' => 'getRelatedChannelId',
-        'hideInChannelsList' => 'getHideInChannelsList',
-        'actions' => 'getActions'
+        '_1' => 'get1',
+        '_2' => 'get2',
+        '_3' => 'get3',
+        '_4' => 'get4',
+        '_5' => 'get5',
+        '_6' => 'get6',
+        '_7' => 'get7'
     ];
 
     /**
@@ -199,11 +208,13 @@ class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->container['actionTriggerCapabilities'] = $data['actionTriggerCapabilities'] ?? null;
-        $this->container['disablesLocalOperation'] = $data['disablesLocalOperation'] ?? null;
-        $this->container['relatedChannelId'] = $data['relatedChannelId'] ?? null;
-        $this->container['hideInChannelsList'] = $data['hideInChannelsList'] ?? null;
-        $this->container['actions'] = $data['actions'] ?? null;
+        $this->container['_1'] = $data['_1'] ?? null;
+        $this->container['_2'] = $data['_2'] ?? null;
+        $this->container['_3'] = $data['_3'] ?? null;
+        $this->container['_4'] = $data['_4'] ?? null;
+        $this->container['_5'] = $data['_5'] ?? null;
+        $this->container['_6'] = $data['_6'] ?? null;
+        $this->container['_7'] = $data['_7'] ?? null;
     }
 
     /**
@@ -231,121 +242,169 @@ class ChannelConfigActionTrigger implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets actionTriggerCapabilities
+     * Gets _1
      *
-     * @return string[]|null
+     * @return int[]|null
      */
-    public function getActionTriggerCapabilities()
+    public function get1()
     {
-        return $this->container['actionTriggerCapabilities'];
+        return $this->container['_1'];
     }
 
     /**
-     * Sets actionTriggerCapabilities
+     * Sets _1
      *
-     * @param string[]|null $actionTriggerCapabilities List of supported triggers. Set only by the device.
+     * @param int[]|null $_1 _1
      *
      * @return self
      */
-    public function setActionTriggerCapabilities($actionTriggerCapabilities)
+    public function set1($_1)
     {
-        $this->container['actionTriggerCapabilities'] = $actionTriggerCapabilities;
+        $this->container['_1'] = $_1;
 
         return $this;
     }
 
     /**
-     * Gets disablesLocalOperation
+     * Gets _2
      *
-     * @return bool|null
+     * @return int[]|null
      */
-    public function getDisablesLocalOperation()
+    public function get2()
     {
-        return $this->container['disablesLocalOperation'];
+        return $this->container['_2'];
     }
 
     /**
-     * Sets disablesLocalOperation
+     * Sets _2
      *
-     * @param bool|null $disablesLocalOperation Tells if enabling the AT disables local function.
+     * @param int[]|null $_2 _2
      *
      * @return self
      */
-    public function setDisablesLocalOperation($disablesLocalOperation)
+    public function set2($_2)
     {
-        $this->container['disablesLocalOperation'] = $disablesLocalOperation;
+        $this->container['_2'] = $_2;
 
         return $this;
     }
 
     /**
-     * Gets relatedChannelId
+     * Gets _3
      *
-     * @return int|null
+     * @return int[]|null
      */
-    public function getRelatedChannelId()
+    public function get3()
     {
-        return $this->container['relatedChannelId'];
+        return $this->container['_3'];
     }
 
     /**
-     * Sets relatedChannelId
+     * Sets _3
      *
-     * @param int|null $relatedChannelId Paired channel set by the device.
+     * @param int[]|null $_3 _3
      *
      * @return self
      */
-    public function setRelatedChannelId($relatedChannelId)
+    public function set3($_3)
     {
-        $this->container['relatedChannelId'] = $relatedChannelId;
+        $this->container['_3'] = $_3;
 
         return $this;
     }
 
     /**
-     * Gets hideInChannelsList
+     * Gets _4
      *
-     * @return int|null
+     * @return int[]|null
      */
-    public function getHideInChannelsList()
+    public function get4()
     {
-        return $this->container['hideInChannelsList'];
+        return $this->container['_4'];
     }
 
     /**
-     * Sets hideInChannelsList
+     * Sets _4
      *
-     * @param int|null $hideInChannelsList Whether to display the channel in the main channels list (it's false for ATs with paired channel).
+     * @param int[]|null $_4 _4
      *
      * @return self
      */
-    public function setHideInChannelsList($hideInChannelsList)
+    public function set4($_4)
     {
-        $this->container['hideInChannelsList'] = $hideInChannelsList;
+        $this->container['_4'] = $_4;
 
         return $this;
     }
 
     /**
-     * Gets actions
+     * Gets _5
      *
-     * @return object|null
+     * @return int[]|null
      */
-    public function getActions()
+    public function get5()
     {
-        return $this->container['actions'];
+        return $this->container['_5'];
     }
 
     /**
-     * Sets actions
+     * Sets _5
      *
-     * @param object|null $actions List of configured AT actions.
+     * @param int[]|null $_5 _5
      *
      * @return self
      */
-    public function setActions($actions)
+    public function set5($_5)
     {
-        $this->container['actions'] = $actions;
+        $this->container['_5'] = $_5;
+
+        return $this;
+    }
+
+    /**
+     * Gets _6
+     *
+     * @return int[]|null
+     */
+    public function get6()
+    {
+        return $this->container['_6'];
+    }
+
+    /**
+     * Sets _6
+     *
+     * @param int[]|null $_6 _6
+     *
+     * @return self
+     */
+    public function set6($_6)
+    {
+        $this->container['_6'] = $_6;
+
+        return $this;
+    }
+
+    /**
+     * Gets _7
+     *
+     * @return int[]|null
+     */
+    public function get7()
+    {
+        return $this->container['_7'];
+    }
+
+    /**
+     * Sets _7
+     *
+     * @param int[]|null $_7 _7
+     *
+     * @return self
+     */
+    public function set7($_7)
+    {
+        $this->container['_7'] = $_7;
 
         return $this;
     }

@@ -68,6 +68,7 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [AccessIdentifier](docs/Model/AccessIdentifier.md)
+- [AccessIdentifierActiveHoursDef](docs/Model/AccessIdentifierActiveHoursDef.md)
 - [AccessIdentifierRelationsCount](docs/Model/AccessIdentifierRelationsCount.md)
 - [ActionableSubjectTypeNames](docs/Model/ActionableSubjectTypeNames.md)
 - [Channel](docs/Model/Channel.md)
@@ -83,8 +84,6 @@ Class | Method | HTTP request | Description
 - [ChannelActionParamsRgbwOneOf3Rgb](docs/Model/ChannelActionParamsRgbwOneOf3Rgb.md)
 - [ChannelConfig](docs/Model/ChannelConfig.md)
 - [ChannelConfigActionTrigger](docs/Model/ChannelConfigActionTrigger.md)
-- [ChannelConfigActionTriggerAction](docs/Model/ChannelConfigActionTriggerAction.md)
-- [ChannelConfigActionTriggerActions](docs/Model/ChannelConfigActionTriggerActions.md)
 - [ChannelConfigControllingTheGate](docs/Model/ChannelConfigControllingTheGate.md)
 - [ChannelConfigElectricityMeter](docs/Model/ChannelConfigElectricityMeter.md)
 - [ChannelConfigHumidity](docs/Model/ChannelConfigHumidity.md)

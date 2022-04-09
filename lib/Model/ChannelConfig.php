@@ -64,7 +64,7 @@ class ChannelConfig implements ModelInterface, ArrayAccess, \JsonSerializable
         'disablesLocalOperation' => 'bool',
         'relatedChannelId' => 'int',
         'hideInChannelsList' => 'int',
-        'actions' => '\Supla\ApiClient\Model\ChannelConfigActionTriggerActions[]',
+        'actions' => 'object',
         'countersAvailable' => 'string[]',
         'resetCountersAvailable' => 'bool',
         'pricePerUnit' => 'float',
@@ -477,7 +477,7 @@ class ChannelConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets actions
      *
-     * @return \Supla\ApiClient\Model\ChannelConfigActionTriggerActions[]|null
+     * @return object|null
      */
     public function getActions()
     {
@@ -487,7 +487,7 @@ class ChannelConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets actions
      *
-     * @param \Supla\ApiClient\Model\ChannelConfigActionTriggerActions[]|null $actions List of configured AT actions.
+     * @param object|null $actions List of configured AT actions.
      *
      * @return self
      */

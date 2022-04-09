@@ -16,9 +16,9 @@
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": { "Supla\\ApiClient\\" : "lib/" }
+        "psr-4": { "{{escapedInvokerPackage}}\\" : "{{srcBasePath}}/" }
     },
     "autoload-dev": {
-        "psr-4": { "Supla\\ApiClient\\Test\\" : "test/" }
+        "psr-4": { "{{escapedInvokerPackage}}\\Test\\" : "{{testBasePath}}/" }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ChannelConfigActionTriggerAction
+ * AccessTokenRequestBody
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * ChannelConfigActionTriggerAction Class Doc Comment
+ * AccessTokenRequestBody Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -42,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccessTokenRequestBody implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ChannelConfigActionTrigger_action';
+    protected static $openAPIModelName = 'AccessTokenRequestBody';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,12 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => '\Supla\ApiClient\Model\ChannelFunctionActionEnumNames',
-        'param' => '\Supla\ApiClient\Model\ChannelActionParams'
+        'grantType' => 'string',
+        'clientId' => 'string',
+        'clientSecret' => 'string',
+        'redirectUri' => 'string',
+        'code' => 'string',
+        'refreshToken' => 'string'
     ];
 
     /**
@@ -71,8 +75,12 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'param' => null
+        'grantType' => null,
+        'clientId' => null,
+        'clientSecret' => null,
+        'redirectUri' => null,
+        'code' => null,
+        'refreshToken' => null
     ];
 
     /**
@@ -102,8 +110,12 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'param' => 'param'
+        'grantType' => 'grant_type',
+        'clientId' => 'client_id',
+        'clientSecret' => 'client_secret',
+        'redirectUri' => 'redirect_uri',
+        'code' => 'code',
+        'refreshToken' => 'refresh_token'
     ];
 
     /**
@@ -112,8 +124,12 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'param' => 'setParam'
+        'grantType' => 'setGrantType',
+        'clientId' => 'setClientId',
+        'clientSecret' => 'setClientSecret',
+        'redirectUri' => 'setRedirectUri',
+        'code' => 'setCode',
+        'refreshToken' => 'setRefreshToken'
     ];
 
     /**
@@ -122,8 +138,12 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'param' => 'getParam'
+        'grantType' => 'getGrantType',
+        'clientId' => 'getClientId',
+        'clientSecret' => 'getClientSecret',
+        'redirectUri' => 'getRedirectUri',
+        'code' => 'getCode',
+        'refreshToken' => 'getRefreshToken'
     ];
 
     /**
@@ -167,6 +187,21 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
         return self::$openAPIModelName;
     }
 
+    const GRANT_TYPE_AUTHORIZATION_CODE = 'authorization_code';
+    const GRANT_TYPE_REFRESH_TOKEN = 'refresh_token';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getGrantTypeAllowableValues()
+    {
+        return [
+            self::GRANT_TYPE_AUTHORIZATION_CODE,
+            self::GRANT_TYPE_REFRESH_TOKEN,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -183,8 +218,12 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['param'] = $data['param'] ?? null;
+        $this->container['grantType'] = $data['grantType'] ?? null;
+        $this->container['clientId'] = $data['clientId'] ?? null;
+        $this->container['clientSecret'] = $data['clientSecret'] ?? null;
+        $this->container['redirectUri'] = $data['redirectUri'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['refreshToken'] = $data['refreshToken'] ?? null;
     }
 
     /**
@@ -196,6 +235,24 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
+        if ($this->container['grantType'] === null) {
+            $invalidProperties[] = "'grantType' can't be null";
+        }
+        $allowedValues = $this->getGrantTypeAllowableValues();
+        if (!is_null($this->container['grantType']) && !in_array($this->container['grantType'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'grantType', must be one of '%s'",
+                $this->container['grantType'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['clientId'] === null) {
+            $invalidProperties[] = "'clientId' can't be null";
+        }
+        if ($this->container['clientSecret'] === null) {
+            $invalidProperties[] = "'clientSecret' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -212,49 +269,155 @@ class ChannelConfigActionTriggerAction implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets id
+     * Gets grantType
      *
-     * @return \Supla\ApiClient\Model\ChannelFunctionActionEnumNames|null
+     * @return string
      */
-    public function getId()
+    public function getGrantType()
     {
-        return $this->container['id'];
+        return $this->container['grantType'];
     }
 
     /**
-     * Sets id
+     * Sets grantType
      *
-     * @param \Supla\ApiClient\Model\ChannelFunctionActionEnumNames|null $id id
+     * @param string $grantType grantType
      *
      * @return self
      */
-    public function setId($id)
+    public function setGrantType($grantType)
     {
-        $this->container['id'] = $id;
+        $allowedValues = $this->getGrantTypeAllowableValues();
+        if (!in_array($grantType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'grantType', must be one of '%s'",
+                    $grantType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['grantType'] = $grantType;
 
         return $this;
     }
 
     /**
-     * Gets param
+     * Gets clientId
      *
-     * @return \Supla\ApiClient\Model\ChannelActionParams|null
+     * @return string
      */
-    public function getParam()
+    public function getClientId()
     {
-        return $this->container['param'];
+        return $this->container['clientId'];
     }
 
     /**
-     * Sets param
+     * Sets clientId
      *
-     * @param \Supla\ApiClient\Model\ChannelActionParams|null $param param
+     * @param string $clientId clientId
      *
      * @return self
      */
-    public function setParam($param)
+    public function setClientId($clientId)
     {
-        $this->container['param'] = $param;
+        $this->container['clientId'] = $clientId;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientSecret
+     *
+     * @return string
+     */
+    public function getClientSecret()
+    {
+        return $this->container['clientSecret'];
+    }
+
+    /**
+     * Sets clientSecret
+     *
+     * @param string $clientSecret clientSecret
+     *
+     * @return self
+     */
+    public function setClientSecret($clientSecret)
+    {
+        $this->container['clientSecret'] = $clientSecret;
+
+        return $this;
+    }
+
+    /**
+     * Gets redirectUri
+     *
+     * @return string|null
+     */
+    public function getRedirectUri()
+    {
+        return $this->container['redirectUri'];
+    }
+
+    /**
+     * Sets redirectUri
+     *
+     * @param string|null $redirectUri redirectUri
+     *
+     * @return self
+     */
+    public function setRedirectUri($redirectUri)
+    {
+        $this->container['redirectUri'] = $redirectUri;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     *
+     * @return string|null
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param string|null $code code
+     *
+     * @return self
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets refreshToken
+     *
+     * @return string|null
+     */
+    public function getRefreshToken()
+    {
+        return $this->container['refreshToken'];
+    }
+
+    /**
+     * Sets refreshToken
+     *
+     * @param string|null $refreshToken refreshToken
+     *
+     * @return self
+     */
+    public function setRefreshToken($refreshToken)
+    {
+        $this->container['refreshToken'] = $refreshToken;
 
         return $this;
     }

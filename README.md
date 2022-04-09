@@ -58,6 +58,7 @@ Class | Method | HTTP request | Description
 *LocationsApi* | [**getLocation**](docs/Api/LocationsApi.md#getlocation) | **GET** /locations/{id} | Get location by ID
 *LocationsApi* | [**getLocations**](docs/Api/LocationsApi.md#getlocations) | **GET** /locations | Get locations
 *LocationsApi* | [**updateLocation**](docs/Api/LocationsApi.md#updatelocation) | **PUT** /locations/{id} | Update the location
+*OAuthApi* | [**issueAccessToken**](docs/Api/OAuthApi.md#issueaccesstoken) | **POST** /oauth/v2/token | Issues an access token based on authorization_code or refresh_token.
 *ServerApi* | [**getServerInfo**](docs/Api/ServerApi.md#getserverinfo) | **GET** /server-info | Get the server info
 *ServerApi* | [**getSuplaServerStatus**](docs/Api/ServerApi.md#getsuplaserverstatus) | **GET** /server-status | Get the SUPLA Server status
 *ServerApi* | [**getTokenInfo**](docs/Api/ServerApi.md#gettokeninfo) | **GET** /token-info | Returns information about used access token
@@ -67,6 +68,7 @@ Class | Method | HTTP request | Description
 - [AccessIdentifier](docs/Model/AccessIdentifier.md)
 - [AccessIdentifierActiveHoursDef](docs/Model/AccessIdentifierActiveHoursDef.md)
 - [AccessIdentifierRelationsCount](docs/Model/AccessIdentifierRelationsCount.md)
+- [AccessTokenRequestBody](docs/Model/AccessTokenRequestBody.md)
 - [ActionableSubjectTypeNames](docs/Model/ActionableSubjectTypeNames.md)
 - [Channel](docs/Model/Channel.md)
 - [ChannelActionParams](docs/Model/ChannelActionParams.md)
@@ -122,6 +124,7 @@ Class | Method | HTTP request | Description
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InlineResponse2001](docs/Model/InlineResponse2001.md)
 - [InlineResponse2002](docs/Model/InlineResponse2002.md)
+- [InlineResponse2003](docs/Model/InlineResponse2003.md)
 - [InlineResponse200Timezone](docs/Model/InlineResponse200Timezone.md)
 - [InlineResponse400](docs/Model/InlineResponse400.md)
 - [InlineResponse409](docs/Model/InlineResponse409.md)

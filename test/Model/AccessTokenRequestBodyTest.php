@@ -1,6 +1,6 @@
 <?php
 /**
- * ChannelConfigActionTriggerActionTest
+ * AccessTokenRequestBodyTest
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Supla\ApiClient\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ChannelConfigActionTriggerActionTest Class Doc Comment
+ * AccessTokenRequestBodyTest Class Doc Comment
  *
  * @category    Class
- * @description ChannelConfigActionTriggerAction
+ * @description AccessTokenRequestBody
  * @package     Supla\ApiClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ChannelConfigActionTriggerActionTest extends TestCase
+class AccessTokenRequestBodyTest extends TestCase
 {
 
     /**
@@ -71,27 +71,63 @@ class ChannelConfigActionTriggerActionTest extends TestCase
     }
 
     /**
-     * Test "ChannelConfigActionTriggerAction"
+     * Test "AccessTokenRequestBody"
      */
-    public function testChannelConfigActionTriggerAction()
+    public function testAccessTokenRequestBody()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "grantType"
      */
-    public function testPropertyId()
+    public function testPropertyGrantType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "param"
+     * Test attribute "clientId"
      */
-    public function testPropertyParam()
+    public function testPropertyClientId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "clientSecret"
+     */
+    public function testPropertyClientSecret()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "redirectUri"
+     */
+    public function testPropertyRedirectUri()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "code"
+     */
+    public function testPropertyCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "refreshToken"
+     */
+    public function testPropertyRefreshToken()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

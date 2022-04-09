@@ -1,6 +1,6 @@
 <?php
 /**
- * ChannelConfigActionTriggerActions
+ * InlineResponse2003
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * ChannelConfigActionTriggerActions Class Doc Comment
+ * InlineResponse2003 Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -42,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineResponse2003 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ChannelConfigActionTrigger_actions';
+    protected static $openAPIModelName = 'inline_response_200_3';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,9 @@ class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'action' => '\Supla\ApiClient\Model\ChannelConfigActionTriggerAction',
-        'subjectType' => '\Supla\ApiClient\Model\ActionableSubjectTypeNames',
-        'subjectId' => 'int'
+        'accessToken' => 'string',
+        'refreshToken' => 'string',
+        'scope' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'action' => null,
-        'subjectType' => null,
-        'subjectId' => null
+        'accessToken' => null,
+        'refreshToken' => null,
+        'scope' => null
     ];
 
     /**
@@ -104,9 +104,9 @@ class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'action' => 'action',
-        'subjectType' => 'subjectType',
-        'subjectId' => 'subjectId'
+        'accessToken' => 'access_token',
+        'refreshToken' => 'refresh_token',
+        'scope' => 'scope'
     ];
 
     /**
@@ -115,9 +115,9 @@ class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'action' => 'setAction',
-        'subjectType' => 'setSubjectType',
-        'subjectId' => 'setSubjectId'
+        'accessToken' => 'setAccessToken',
+        'refreshToken' => 'setRefreshToken',
+        'scope' => 'setScope'
     ];
 
     /**
@@ -126,9 +126,9 @@ class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'action' => 'getAction',
-        'subjectType' => 'getSubjectType',
-        'subjectId' => 'getSubjectId'
+        'accessToken' => 'getAccessToken',
+        'refreshToken' => 'getRefreshToken',
+        'scope' => 'getScope'
     ];
 
     /**
@@ -188,9 +188,9 @@ class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['action'] = $data['action'] ?? null;
-        $this->container['subjectType'] = $data['subjectType'] ?? null;
-        $this->container['subjectId'] = $data['subjectId'] ?? null;
+        $this->container['accessToken'] = $data['accessToken'] ?? null;
+        $this->container['refreshToken'] = $data['refreshToken'] ?? null;
+        $this->container['scope'] = $data['scope'] ?? null;
     }
 
     /**
@@ -218,73 +218,73 @@ class ChannelConfigActionTriggerActions implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets action
+     * Gets accessToken
      *
-     * @return \Supla\ApiClient\Model\ChannelConfigActionTriggerAction|null
+     * @return string|null
      */
-    public function getAction()
+    public function getAccessToken()
     {
-        return $this->container['action'];
+        return $this->container['accessToken'];
     }
 
     /**
-     * Sets action
+     * Sets accessToken
      *
-     * @param \Supla\ApiClient\Model\ChannelConfigActionTriggerAction|null $action action
+     * @param string|null $accessToken accessToken
      *
      * @return self
      */
-    public function setAction($action)
+    public function setAccessToken($accessToken)
     {
-        $this->container['action'] = $action;
+        $this->container['accessToken'] = $accessToken;
 
         return $this;
     }
 
     /**
-     * Gets subjectType
+     * Gets refreshToken
      *
-     * @return \Supla\ApiClient\Model\ActionableSubjectTypeNames|null
+     * @return string|null
      */
-    public function getSubjectType()
+    public function getRefreshToken()
     {
-        return $this->container['subjectType'];
+        return $this->container['refreshToken'];
     }
 
     /**
-     * Sets subjectType
+     * Sets refreshToken
      *
-     * @param \Supla\ApiClient\Model\ActionableSubjectTypeNames|null $subjectType subjectType
+     * @param string|null $refreshToken refreshToken
      *
      * @return self
      */
-    public function setSubjectType($subjectType)
+    public function setRefreshToken($refreshToken)
     {
-        $this->container['subjectType'] = $subjectType;
+        $this->container['refreshToken'] = $refreshToken;
 
         return $this;
     }
 
     /**
-     * Gets subjectId
+     * Gets scope
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getSubjectId()
+    public function getScope()
     {
-        return $this->container['subjectId'];
+        return $this->container['scope'];
     }
 
     /**
-     * Sets subjectId
+     * Sets scope
      *
-     * @param int|null $subjectId subjectId
+     * @param string|null $scope scope
      *
      * @return self
      */
-    public function setSubjectId($subjectId)
+    public function setScope($scope)
     {
-        $this->container['subjectId'] = $subjectId;
+        $this->container['scope'] = $scope;
 
         return $this;
     }

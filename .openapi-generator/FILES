@@ -6,10 +6,12 @@ composer.json
 docs/Api/AccessIdentifiersApi.md
 docs/Api/ChannelsApi.md
 docs/Api/LocationsApi.md
+docs/Api/OAuthApi.md
 docs/Api/ServerApi.md
 docs/Model/AccessIdentifier.md
 docs/Model/AccessIdentifierActiveHoursDef.md
 docs/Model/AccessIdentifierRelationsCount.md
+docs/Model/AccessTokenRequestBody.md
 docs/Model/ActionableSubjectTypeNames.md
 docs/Model/Channel.md
 docs/Model/ChannelActionParams.md
@@ -65,6 +67,7 @@ docs/Model/InlineObject3.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/InlineResponse2002.md
+docs/Model/InlineResponse2003.md
 docs/Model/InlineResponse200Timezone.md
 docs/Model/InlineResponse400.md
 docs/Model/InlineResponse409.md
@@ -75,6 +78,7 @@ git_push.sh
 lib/Api/AccessIdentifiersApi.php
 lib/Api/ChannelsApi.php
 lib/Api/LocationsApi.php
+lib/Api/OAuthApi.php
 lib/Api/ServerApi.php
 lib/ApiException.php
 lib/Configuration.php
@@ -82,6 +86,7 @@ lib/HeaderSelector.php
 lib/Model/AccessIdentifier.php
 lib/Model/AccessIdentifierActiveHoursDef.php
 lib/Model/AccessIdentifierRelationsCount.php
+lib/Model/AccessTokenRequestBody.php
 lib/Model/ActionableSubjectTypeNames.php
 lib/Model/Channel.php
 lib/Model/ChannelActionParams.php
@@ -137,6 +142,7 @@ lib/Model/InlineObject3.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/InlineResponse2002.php
+lib/Model/InlineResponse2003.php
 lib/Model/InlineResponse200Timezone.php
 lib/Model/InlineResponse400.php
 lib/Model/InlineResponse409.php

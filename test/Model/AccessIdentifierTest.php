@@ -107,6 +107,42 @@ class AccessIdentifierTest extends TestCase
     }
 
     /**
+     * Test attribute "activeFrom"
+     */
+    public function testPropertyActiveFrom()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "activeTo"
+     */
+    public function testPropertyActiveTo()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "activeHours"
+     */
+    public function testPropertyActiveHours()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "activeNow"
+     */
+    public function testPropertyActiveNow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "relationsCount"
      */
     public function testPropertyRelationsCount()

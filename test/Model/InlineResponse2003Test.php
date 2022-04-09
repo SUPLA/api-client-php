@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineObjectTest
+ * InlineResponse2003Test
  *
  * PHP version 7.3
  *
@@ -31,15 +31,15 @@ namespace Supla\ApiClient\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * InlineObjectTest Class Doc Comment
+ * InlineResponse2003Test Class Doc Comment
  *
  * @category    Class
- * @description InlineObject
+ * @description InlineResponse2003
  * @package     Supla\ApiClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class InlineObjectTest extends TestCase
+class InlineResponse2003Test extends TestCase
 {
 
     /**
@@ -71,81 +71,36 @@ class InlineObjectTest extends TestCase
     }
 
     /**
-     * Test "InlineObject"
+     * Test "InlineResponse2003"
      */
-    public function testInlineObject()
+    public function testInlineResponse2003()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "enabled"
+     * Test attribute "accessToken"
      */
-    public function testPropertyEnabled()
+    public function testPropertyAccessToken()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "caption"
+     * Test attribute "refreshToken"
      */
-    public function testPropertyCaption()
+    public function testPropertyRefreshToken()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "scope"
      */
-    public function testPropertyPassword()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "activeFrom"
-     */
-    public function testPropertyActiveFrom()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "activeTo"
-     */
-    public function testPropertyActiveTo()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "activeHours"
-     */
-    public function testPropertyActiveHours()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "locationsIds"
-     */
-    public function testPropertyLocationsIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "clientAppsIds"
-     */
-    public function testPropertyClientAppsIds()
+    public function testPropertyScope()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

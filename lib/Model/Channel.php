@@ -71,6 +71,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'function' => '\Supla\ApiClient\Model\ChannelFunction',
         'typeId' => 'int',
         'type' => '\Supla\ApiClient\Model\ChannelType',
+        'subjectType' => 'string',
         'state' => '\Supla\ApiClient\Model\ChannelState',
         'config' => '\Supla\ApiClient\Model\ChannelConfig',
         'userIconId' => 'int',
@@ -100,6 +101,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'function' => null,
         'typeId' => null,
         'type' => null,
+        'subjectType' => null,
         'state' => null,
         'config' => null,
         'userIconId' => null,
@@ -148,6 +150,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'function' => 'function',
         'typeId' => 'typeId',
         'type' => 'type',
+        'subjectType' => 'subjectType',
         'state' => 'state',
         'config' => 'config',
         'userIconId' => 'userIconId',
@@ -175,6 +178,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'function' => 'setFunction',
         'typeId' => 'setTypeId',
         'type' => 'setType',
+        'subjectType' => 'setSubjectType',
         'state' => 'setState',
         'config' => 'setConfig',
         'userIconId' => 'setUserIconId',
@@ -202,6 +206,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'function' => 'getFunction',
         'typeId' => 'getTypeId',
         'type' => 'getType',
+        'subjectType' => 'getSubjectType',
         'state' => 'getState',
         'config' => 'getConfig',
         'userIconId' => 'getUserIconId',
@@ -252,6 +257,19 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const SUBJECT_TYPE_CHANNEL = 'channel';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSubjectTypeAllowableValues()
+    {
+        return [
+            self::SUBJECT_TYPE_CHANNEL,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -280,6 +298,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['function'] = $data['function'] ?? null;
         $this->container['typeId'] = $data['typeId'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
+        $this->container['subjectType'] = $data['subjectType'] ?? null;
         $this->container['state'] = $data['state'] ?? null;
         $this->container['config'] = $data['config'] ?? null;
         $this->container['userIconId'] = $data['userIconId'] ?? null;
@@ -297,6 +316,15 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getSubjectTypeAllowableValues();
+        if (!is_null($this->container['subjectType']) && !in_array($this->container['subjectType'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'subjectType', must be one of '%s'",
+                $this->container['subjectType'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -597,6 +625,40 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets subjectType
+     *
+     * @return string|null
+     */
+    public function getSubjectType()
+    {
+        return $this->container['subjectType'];
+    }
+
+    /**
+     * Sets subjectType
+     *
+     * @param string|null $subjectType subjectType
+     *
+     * @return self
+     */
+    public function setSubjectType($subjectType)
+    {
+        $allowedValues = $this->getSubjectTypeAllowableValues();
+        if (!is_null($subjectType) && !in_array($subjectType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'subjectType', must be one of '%s'",
+                    $subjectType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['subjectType'] = $subjectType;
 
         return $this;
     }

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **function** | [**\Supla\ApiClient\Model\ChannelFunction**](ChannelFunction.md) |  | [optional]
 **typeId** | **int** |  | [optional]
 **type** | [**\Supla\ApiClient\Model\ChannelType**](ChannelType.md) |  | [optional]
+**subjectType** | **string** |  | [optional]
 **state** | [**\Supla\ApiClient\Model\ChannelState**](ChannelState.md) |  | [optional]
 **config** | [**\Supla\ApiClient\Model\ChannelConfig**](ChannelConfig.md) |  | [optional]
 **userIconId** | **int** |  | [optional]

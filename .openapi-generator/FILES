@@ -160,7 +160,3 @@ lib/Model/UserAgreements.php
 lib/Model/UserLimits.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/UsersApiTest.php
-test/Model/UserAgreementsTest.php
-test/Model/UserLimitsTest.php
-test/Model/UserTest.php

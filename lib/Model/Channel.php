@@ -69,6 +69,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'locationId' => 'int',
         'functionId' => 'int',
         'function' => '\Supla\ApiClient\Model\ChannelFunction',
+        'possibleActions' => '\Supla\ApiClient\Model\ChannelFunctionAction[]',
         'typeId' => 'int',
         'type' => '\Supla\ApiClient\Model\ChannelType',
         'subjectType' => 'string',
@@ -99,6 +100,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'locationId' => null,
         'functionId' => null,
         'function' => null,
+        'possibleActions' => null,
         'typeId' => null,
         'type' => null,
         'subjectType' => null,
@@ -148,6 +150,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'locationId' => 'locationId',
         'functionId' => 'functionId',
         'function' => 'function',
+        'possibleActions' => 'possibleActions',
         'typeId' => 'typeId',
         'type' => 'type',
         'subjectType' => 'subjectType',
@@ -176,6 +179,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'locationId' => 'setLocationId',
         'functionId' => 'setFunctionId',
         'function' => 'setFunction',
+        'possibleActions' => 'setPossibleActions',
         'typeId' => 'setTypeId',
         'type' => 'setType',
         'subjectType' => 'setSubjectType',
@@ -204,6 +208,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'locationId' => 'getLocationId',
         'functionId' => 'getFunctionId',
         'function' => 'getFunction',
+        'possibleActions' => 'getPossibleActions',
         'typeId' => 'getTypeId',
         'type' => 'getType',
         'subjectType' => 'getSubjectType',
@@ -296,6 +301,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['locationId'] = $data['locationId'] ?? null;
         $this->container['functionId'] = $data['functionId'] ?? null;
         $this->container['function'] = $data['function'] ?? null;
+        $this->container['possibleActions'] = $data['possibleActions'] ?? null;
         $this->container['typeId'] = $data['typeId'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
         $this->container['subjectType'] = $data['subjectType'] ?? null;
@@ -577,6 +583,30 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFunction($function)
     {
         $this->container['function'] = $function;
+
+        return $this;
+    }
+
+    /**
+     * Gets possibleActions
+     *
+     * @return \Supla\ApiClient\Model\ChannelFunctionAction[]|null
+     */
+    public function getPossibleActions()
+    {
+        return $this->container['possibleActions'];
+    }
+
+    /**
+     * Sets possibleActions
+     *
+     * @param \Supla\ApiClient\Model\ChannelFunctionAction[]|null $possibleActions What action can you execute on this subject?
+     *
+     * @return self
+     */
+    public function setPossibleActions($possibleActions)
+    {
+        $this->container['possibleActions'] = $possibleActions;
 
         return $this;
     }

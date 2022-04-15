@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **locationId** | **int** |  | [optional]
 **functionId** | **int** |  | [optional]
 **function** | [**\Supla\ApiClient\Model\ChannelFunction**](ChannelFunction.md) |  | [optional]
+**possibleActions** | [**\Supla\ApiClient\Model\ChannelFunctionAction[]**](ChannelFunctionAction.md) | What action can you execute on this subject? | [optional]
 **typeId** | **int** |  | [optional]
 **type** | [**\Supla\ApiClient\Model\ChannelType**](ChannelType.md) |  | [optional]
 **subjectType** | **string** |  | [optional]

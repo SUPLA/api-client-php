@@ -63,7 +63,6 @@ class ChannelFunction implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => '\Supla\ApiClient\Model\ChannelFunctionEnumNames',
         'caption' => 'string',
         'maxAlternativeIconIndex' => 'int',
-        'possibleActions' => '\Supla\ApiClient\Model\ChannelFunctionAction[]',
         'possibleVisualStates' => 'string[]'
     ];
 
@@ -79,7 +78,6 @@ class ChannelFunction implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'caption' => null,
         'maxAlternativeIconIndex' => null,
-        'possibleActions' => null,
         'possibleVisualStates' => null
     ];
 
@@ -114,7 +112,6 @@ class ChannelFunction implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'caption' => 'caption',
         'maxAlternativeIconIndex' => 'maxAlternativeIconIndex',
-        'possibleActions' => 'possibleActions',
         'possibleVisualStates' => 'possibleVisualStates'
     ];
 
@@ -128,7 +125,6 @@ class ChannelFunction implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'caption' => 'setCaption',
         'maxAlternativeIconIndex' => 'setMaxAlternativeIconIndex',
-        'possibleActions' => 'setPossibleActions',
         'possibleVisualStates' => 'setPossibleVisualStates'
     ];
 
@@ -142,7 +138,6 @@ class ChannelFunction implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'caption' => 'getCaption',
         'maxAlternativeIconIndex' => 'getMaxAlternativeIconIndex',
-        'possibleActions' => 'getPossibleActions',
         'possibleVisualStates' => 'getPossibleVisualStates'
     ];
 
@@ -355,7 +350,6 @@ class ChannelFunction implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['name'] = $data['name'] ?? null;
         $this->container['caption'] = $data['caption'] ?? null;
         $this->container['maxAlternativeIconIndex'] = $data['maxAlternativeIconIndex'] ?? null;
-        $this->container['possibleActions'] = $data['possibleActions'] ?? null;
         $this->container['possibleVisualStates'] = $data['possibleVisualStates'] ?? null;
     }
 
@@ -494,30 +488,6 @@ class ChannelFunction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMaxAlternativeIconIndex($maxAlternativeIconIndex)
     {
         $this->container['maxAlternativeIconIndex'] = $maxAlternativeIconIndex;
-
-        return $this;
-    }
-
-    /**
-     * Gets possibleActions
-     *
-     * @return \Supla\ApiClient\Model\ChannelFunctionAction[]|null
-     */
-    public function getPossibleActions()
-    {
-        return $this->container['possibleActions'];
-    }
-
-    /**
-     * Sets possibleActions
-     *
-     * @param \Supla\ApiClient\Model\ChannelFunctionAction[]|null $possibleActions What action can you execute on this function?
-     *
-     * @return self
-     */
-    public function setPossibleActions($possibleActions)
-    {
-        $this->container['possibleActions'] = $possibleActions;
 
         return $this;
     }

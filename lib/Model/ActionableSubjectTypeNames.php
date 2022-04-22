@@ -42,13 +42,13 @@ class ActionableSubjectTypeNames
     /**
      * Possible values of this enum
      */
-    const CHANNEL = 'CHANNEL';
+    const CHANNEL = 'channel';
 
-    const CHANNEL_GROUP = 'CHANNEL_GROUP';
+    const CHANNEL_GROUP = 'channelGroup';
 
-    const SCENE = 'SCENE';
+    const SCENE = 'scene';
 
-    const OTHER = 'OTHER';
+    const OTHER = 'other';
 
     /**
      * Gets allowable values of the enum

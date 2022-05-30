@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineObject3
+ * ChannelGroupRelationsCount
  *
  * PHP version 7.3
  *
@@ -32,9 +32,10 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * InlineObject3 Class Doc Comment
+ * ChannelGroupRelationsCount Class Doc Comment
  *
  * @category Class
+ * @description Counts of related entities.
  * @package  Supla\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -42,7 +43,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ChannelGroupRelationsCount implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_object_3';
+    protected static $openAPIModelName = 'ChannelGroup_relationsCount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +60,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'channelsIds' => 'int[]',
-        'locationId' => 'int',
-        'userIconId' => 'int',
-        'caption' => 'string',
-        'altIcon' => 'int',
-        'hidden' => 'bool'
+        'channels' => 'int',
+        'directLinks' => 'int',
+        'schedules' => 'int',
+        'sceneOperations' => 'int'
     ];
 
     /**
@@ -75,12 +74,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'channelsIds' => null,
-        'locationId' => null,
-        'userIconId' => null,
-        'caption' => null,
-        'altIcon' => null,
-        'hidden' => null
+        'channels' => null,
+        'directLinks' => null,
+        'schedules' => null,
+        'sceneOperations' => null
     ];
 
     /**
@@ -110,12 +107,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'channelsIds' => 'channelsIds',
-        'locationId' => 'locationId',
-        'userIconId' => 'userIconId',
-        'caption' => 'caption',
-        'altIcon' => 'altIcon',
-        'hidden' => 'hidden'
+        'channels' => 'channels',
+        'directLinks' => 'directLinks',
+        'schedules' => 'schedules',
+        'sceneOperations' => 'sceneOperations'
     ];
 
     /**
@@ -124,12 +119,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'channelsIds' => 'setChannelsIds',
-        'locationId' => 'setLocationId',
-        'userIconId' => 'setUserIconId',
-        'caption' => 'setCaption',
-        'altIcon' => 'setAltIcon',
-        'hidden' => 'setHidden'
+        'channels' => 'setChannels',
+        'directLinks' => 'setDirectLinks',
+        'schedules' => 'setSchedules',
+        'sceneOperations' => 'setSceneOperations'
     ];
 
     /**
@@ -138,12 +131,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'channelsIds' => 'getChannelsIds',
-        'locationId' => 'getLocationId',
-        'userIconId' => 'getUserIconId',
-        'caption' => 'getCaption',
-        'altIcon' => 'getAltIcon',
-        'hidden' => 'getHidden'
+        'channels' => 'getChannels',
+        'directLinks' => 'getDirectLinks',
+        'schedules' => 'getSchedules',
+        'sceneOperations' => 'getSceneOperations'
     ];
 
     /**
@@ -203,12 +194,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['channelsIds'] = $data['channelsIds'] ?? null;
-        $this->container['locationId'] = $data['locationId'] ?? null;
-        $this->container['userIconId'] = $data['userIconId'] ?? null;
-        $this->container['caption'] = $data['caption'] ?? null;
-        $this->container['altIcon'] = $data['altIcon'] ?? null;
-        $this->container['hidden'] = $data['hidden'] ?? null;
+        $this->container['channels'] = $data['channels'] ?? null;
+        $this->container['directLinks'] = $data['directLinks'] ?? null;
+        $this->container['schedules'] = $data['schedules'] ?? null;
+        $this->container['sceneOperations'] = $data['sceneOperations'] ?? null;
     }
 
     /**
@@ -236,145 +225,97 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets channelsIds
-     *
-     * @return int[]|null
-     */
-    public function getChannelsIds()
-    {
-        return $this->container['channelsIds'];
-    }
-
-    /**
-     * Sets channelsIds
-     *
-     * @param int[]|null $channelsIds Channels identifiers that share the same function.
-     *
-     * @return self
-     */
-    public function setChannelsIds($channelsIds)
-    {
-        $this->container['channelsIds'] = $channelsIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets locationId
+     * Gets channels
      *
      * @return int|null
      */
-    public function getLocationId()
+    public function getChannels()
     {
-        return $this->container['locationId'];
+        return $this->container['channels'];
     }
 
     /**
-     * Sets locationId
+     * Sets channels
      *
-     * @param int|null $locationId locationId
+     * @param int|null $channels channels
      *
      * @return self
      */
-    public function setLocationId($locationId)
+    public function setChannels($channels)
     {
-        $this->container['locationId'] = $locationId;
+        $this->container['channels'] = $channels;
 
         return $this;
     }
 
     /**
-     * Gets userIconId
+     * Gets directLinks
      *
      * @return int|null
      */
-    public function getUserIconId()
+    public function getDirectLinks()
     {
-        return $this->container['userIconId'];
+        return $this->container['directLinks'];
     }
 
     /**
-     * Sets userIconId
+     * Sets directLinks
      *
-     * @param int|null $userIconId userIconId
+     * @param int|null $directLinks directLinks
      *
      * @return self
      */
-    public function setUserIconId($userIconId)
+    public function setDirectLinks($directLinks)
     {
-        $this->container['userIconId'] = $userIconId;
+        $this->container['directLinks'] = $directLinks;
 
         return $this;
     }
 
     /**
-     * Gets caption
-     *
-     * @return string|null
-     */
-    public function getCaption()
-    {
-        return $this->container['caption'];
-    }
-
-    /**
-     * Sets caption
-     *
-     * @param string|null $caption caption
-     *
-     * @return self
-     */
-    public function setCaption($caption)
-    {
-        $this->container['caption'] = $caption;
-
-        return $this;
-    }
-
-    /**
-     * Gets altIcon
+     * Gets schedules
      *
      * @return int|null
      */
-    public function getAltIcon()
+    public function getSchedules()
     {
-        return $this->container['altIcon'];
+        return $this->container['schedules'];
     }
 
     /**
-     * Sets altIcon
+     * Sets schedules
      *
-     * @param int|null $altIcon altIcon
+     * @param int|null $schedules schedules
      *
      * @return self
      */
-    public function setAltIcon($altIcon)
+    public function setSchedules($schedules)
     {
-        $this->container['altIcon'] = $altIcon;
+        $this->container['schedules'] = $schedules;
 
         return $this;
     }
 
     /**
-     * Gets hidden
+     * Gets sceneOperations
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getHidden()
+    public function getSceneOperations()
     {
-        return $this->container['hidden'];
+        return $this->container['sceneOperations'];
     }
 
     /**
-     * Sets hidden
+     * Sets sceneOperations
      *
-     * @param bool|null $hidden hidden
+     * @param int|null $sceneOperations sceneOperations
      *
      * @return self
      */
-    public function setHidden($hidden)
+    public function setSceneOperations($sceneOperations)
     {
-        $this->container['hidden'] = $hidden;
+        $this->container['sceneOperations'] = $sceneOperations;
 
         return $this;
     }

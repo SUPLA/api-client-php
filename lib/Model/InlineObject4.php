@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineObject3
+ * InlineObject4
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * InlineObject3 Class Doc Comment
+ * InlineObject4 Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -42,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineObject4 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_object_3';
+    protected static $openAPIModelName = 'inline_object_4';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

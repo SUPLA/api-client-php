@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineObject3
+ * InlineResponse4001
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * InlineObject3 Class Doc Comment
+ * InlineResponse4001 Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -42,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineResponse4001 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_object_3';
+    protected static $openAPIModelName = 'inline_response_400_1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'channelsIds' => 'int[]',
-        'locationId' => 'int',
-        'userIconId' => 'int',
-        'caption' => 'string',
-        'altIcon' => 'int',
-        'hidden' => 'bool'
+        'status' => 'int',
+        'message' => 'string'
     ];
 
     /**
@@ -75,12 +71,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'channelsIds' => null,
-        'locationId' => null,
-        'userIconId' => null,
-        'caption' => null,
-        'altIcon' => null,
-        'hidden' => null
+        'status' => null,
+        'message' => null
     ];
 
     /**
@@ -110,12 +102,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'channelsIds' => 'channelsIds',
-        'locationId' => 'locationId',
-        'userIconId' => 'userIconId',
-        'caption' => 'caption',
-        'altIcon' => 'altIcon',
-        'hidden' => 'hidden'
+        'status' => 'status',
+        'message' => 'message'
     ];
 
     /**
@@ -124,12 +112,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'channelsIds' => 'setChannelsIds',
-        'locationId' => 'setLocationId',
-        'userIconId' => 'setUserIconId',
-        'caption' => 'setCaption',
-        'altIcon' => 'setAltIcon',
-        'hidden' => 'setHidden'
+        'status' => 'setStatus',
+        'message' => 'setMessage'
     ];
 
     /**
@@ -138,12 +122,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'channelsIds' => 'getChannelsIds',
-        'locationId' => 'getLocationId',
-        'userIconId' => 'getUserIconId',
-        'caption' => 'getCaption',
-        'altIcon' => 'getAltIcon',
-        'hidden' => 'getHidden'
+        'status' => 'getStatus',
+        'message' => 'getMessage'
     ];
 
     /**
@@ -203,12 +183,8 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['channelsIds'] = $data['channelsIds'] ?? null;
-        $this->container['locationId'] = $data['locationId'] ?? null;
-        $this->container['userIconId'] = $data['userIconId'] ?? null;
-        $this->container['caption'] = $data['caption'] ?? null;
-        $this->container['altIcon'] = $data['altIcon'] ?? null;
-        $this->container['hidden'] = $data['hidden'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
     }
 
     /**
@@ -236,145 +212,49 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets channelsIds
-     *
-     * @return int[]|null
-     */
-    public function getChannelsIds()
-    {
-        return $this->container['channelsIds'];
-    }
-
-    /**
-     * Sets channelsIds
-     *
-     * @param int[]|null $channelsIds Channels identifiers that share the same function.
-     *
-     * @return self
-     */
-    public function setChannelsIds($channelsIds)
-    {
-        $this->container['channelsIds'] = $channelsIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets locationId
+     * Gets status
      *
      * @return int|null
      */
-    public function getLocationId()
+    public function getStatus()
     {
-        return $this->container['locationId'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets locationId
+     * Sets status
      *
-     * @param int|null $locationId locationId
+     * @param int|null $status status
      *
      * @return self
      */
-    public function setLocationId($locationId)
+    public function setStatus($status)
     {
-        $this->container['locationId'] = $locationId;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets userIconId
-     *
-     * @return int|null
-     */
-    public function getUserIconId()
-    {
-        return $this->container['userIconId'];
-    }
-
-    /**
-     * Sets userIconId
-     *
-     * @param int|null $userIconId userIconId
-     *
-     * @return self
-     */
-    public function setUserIconId($userIconId)
-    {
-        $this->container['userIconId'] = $userIconId;
-
-        return $this;
-    }
-
-    /**
-     * Gets caption
+     * Gets message
      *
      * @return string|null
      */
-    public function getCaption()
+    public function getMessage()
     {
-        return $this->container['caption'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets caption
+     * Sets message
      *
-     * @param string|null $caption caption
+     * @param string|null $message message
      *
      * @return self
      */
-    public function setCaption($caption)
+    public function setMessage($message)
     {
-        $this->container['caption'] = $caption;
-
-        return $this;
-    }
-
-    /**
-     * Gets altIcon
-     *
-     * @return int|null
-     */
-    public function getAltIcon()
-    {
-        return $this->container['altIcon'];
-    }
-
-    /**
-     * Sets altIcon
-     *
-     * @param int|null $altIcon altIcon
-     *
-     * @return self
-     */
-    public function setAltIcon($altIcon)
-    {
-        $this->container['altIcon'] = $altIcon;
-
-        return $this;
-    }
-
-    /**
-     * Gets hidden
-     *
-     * @return bool|null
-     */
-    public function getHidden()
-    {
-        return $this->container['hidden'];
-    }
-
-    /**
-     * Sets hidden
-     *
-     * @param bool|null $hidden hidden
-     *
-     * @return self
-     */
-    public function setHidden($hidden)
-    {
-        $this->container['hidden'] = $hidden;
+        $this->container['message'] = $message;
 
         return $this;
     }

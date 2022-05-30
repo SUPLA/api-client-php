@@ -4,6 +4,7 @@
 README.md
 composer.json
 docs/Api/AccessIdentifiersApi.md
+docs/Api/ChannelGroupsApi.md
 docs/Api/ChannelsApi.md
 docs/Api/LocationsApi.md
 docs/Api/OAuthApi.md
@@ -39,6 +40,8 @@ docs/Model/ChannelFunction.md
 docs/Model/ChannelFunctionAction.md
 docs/Model/ChannelFunctionActionEnumNames.md
 docs/Model/ChannelFunctionEnumNames.md
+docs/Model/ChannelGroup.md
+docs/Model/ChannelGroupRelationsCount.md
 docs/Model/ChannelRelationsCount.md
 docs/Model/ChannelState.md
 docs/Model/ChannelStateBrightness.md
@@ -65,12 +68,15 @@ docs/Model/InlineObject.md
 docs/Model/InlineObject1.md
 docs/Model/InlineObject2.md
 docs/Model/InlineObject3.md
+docs/Model/InlineObject4.md
+docs/Model/InlineObject5.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/InlineResponse2002.md
 docs/Model/InlineResponse2003.md
 docs/Model/InlineResponse200Timezone.md
 docs/Model/InlineResponse400.md
+docs/Model/InlineResponse4001.md
 docs/Model/InlineResponse409.md
 docs/Model/InlineResponse503.md
 docs/Model/Location.md
@@ -80,6 +86,7 @@ docs/Model/UserAgreements.md
 docs/Model/UserLimits.md
 git_push.sh
 lib/Api/AccessIdentifiersApi.php
+lib/Api/ChannelGroupsApi.php
 lib/Api/ChannelsApi.php
 lib/Api/LocationsApi.php
 lib/Api/OAuthApi.php
@@ -118,6 +125,8 @@ lib/Model/ChannelFunction.php
 lib/Model/ChannelFunctionAction.php
 lib/Model/ChannelFunctionActionEnumNames.php
 lib/Model/ChannelFunctionEnumNames.php
+lib/Model/ChannelGroup.php
+lib/Model/ChannelGroupRelationsCount.php
 lib/Model/ChannelRelationsCount.php
 lib/Model/ChannelState.php
 lib/Model/ChannelStateBrightness.php
@@ -144,12 +153,15 @@ lib/Model/InlineObject.php
 lib/Model/InlineObject1.php
 lib/Model/InlineObject2.php
 lib/Model/InlineObject3.php
+lib/Model/InlineObject4.php
+lib/Model/InlineObject5.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
 lib/Model/InlineResponse2002.php
 lib/Model/InlineResponse2003.php
 lib/Model/InlineResponse200Timezone.php
 lib/Model/InlineResponse400.php
+lib/Model/InlineResponse4001.php
 lib/Model/InlineResponse409.php
 lib/Model/InlineResponse503.php
 lib/Model/Location.php

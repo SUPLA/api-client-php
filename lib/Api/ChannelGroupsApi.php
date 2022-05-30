@@ -1,6 +1,6 @@
 <?php
 /**
- * LocationsApi
+ * ChannelGroupsApi
  * PHP version 7.3
  *
  * @category Class
@@ -40,14 +40,14 @@ use Supla\ApiClient\HeaderSelector;
 use Supla\ApiClient\ObjectSerializer;
 
 /**
- * LocationsApi Class Doc Comment
+ * ChannelGroupsApi Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class LocationsApi
+class ChannelGroupsApi
 {
     /**
      * @var ClientInterface
@@ -116,34 +116,36 @@ class LocationsApi
     }
 
     /**
-     * Operation createLocation
+     * Operation createChannelGroup
      *
-     * Create a new location
+     * Create a new channel group
      *
+     * @param  \Supla\ApiClient\Model\InlineObject3 $inlineObject3 inlineObject3 (required)
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Supla\ApiClient\Model\Location
+     * @return \Supla\ApiClient\Model\ChannelGroup
      */
-    public function createLocation()
+    public function createChannelGroup($inlineObject3)
     {
-        list($response) = $this->createLocationWithHttpInfo();
+        list($response) = $this->createChannelGroupWithHttpInfo($inlineObject3);
         return $response;
     }
 
     /**
-     * Operation createLocationWithHttpInfo
+     * Operation createChannelGroupWithHttpInfo
      *
-     * Create a new location
+     * Create a new channel group
      *
+     * @param  \Supla\ApiClient\Model\InlineObject3 $inlineObject3 (required)
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Supla\ApiClient\Model\Location, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Supla\ApiClient\Model\ChannelGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createLocationWithHttpInfo()
+    public function createChannelGroupWithHttpInfo($inlineObject3)
     {
-        $request = $this->createLocationRequest();
+        $request = $this->createChannelGroupRequest($inlineObject3);
 
         try {
             $options = $this->createHttpClientOption();
@@ -182,20 +184,20 @@ class LocationsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Supla\ApiClient\Model\Location' === '\SplFileObject') {
+                    if ('\Supla\ApiClient\Model\ChannelGroup' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\Location', []),
+                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\ChannelGroup', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Supla\ApiClient\Model\Location';
+            $returnType = '\Supla\ApiClient\Model\ChannelGroup';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -213,7 +215,7 @@ class LocationsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Supla\ApiClient\Model\Location',
+                        '\Supla\ApiClient\Model\ChannelGroup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -224,17 +226,18 @@ class LocationsApi
     }
 
     /**
-     * Operation createLocationAsync
+     * Operation createChannelGroupAsync
      *
-     * Create a new location
+     * Create a new channel group
      *
+     * @param  \Supla\ApiClient\Model\InlineObject3 $inlineObject3 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createLocationAsync()
+    public function createChannelGroupAsync($inlineObject3)
     {
-        return $this->createLocationAsyncWithHttpInfo()
+        return $this->createChannelGroupAsyncWithHttpInfo($inlineObject3)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -243,18 +246,19 @@ class LocationsApi
     }
 
     /**
-     * Operation createLocationAsyncWithHttpInfo
+     * Operation createChannelGroupAsyncWithHttpInfo
      *
-     * Create a new location
+     * Create a new channel group
      *
+     * @param  \Supla\ApiClient\Model\InlineObject3 $inlineObject3 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createLocationAsyncWithHttpInfo()
+    public function createChannelGroupAsyncWithHttpInfo($inlineObject3)
     {
-        $returnType = '\Supla\ApiClient\Model\Location';
-        $request = $this->createLocationRequest();
+        $returnType = '\Supla\ApiClient\Model\ChannelGroup';
+        $request = $this->createChannelGroupRequest($inlineObject3);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -290,16 +294,23 @@ class LocationsApi
     }
 
     /**
-     * Create request for operation 'createLocation'
+     * Create request for operation 'createChannelGroup'
      *
+     * @param  \Supla\ApiClient\Model\InlineObject3 $inlineObject3 (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createLocationRequest()
+    public function createChannelGroupRequest($inlineObject3)
     {
+        // verify the required parameter 'inlineObject3' is set
+        if ($inlineObject3 === null || (is_array($inlineObject3) && count($inlineObject3) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $inlineObject3 when calling createChannelGroup'
+            );
+        }
 
-        $resourcePath = '/locations';
+        $resourcePath = '/channel-groups';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -317,12 +328,18 @@ class LocationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                []
+                ['application/json']
             );
         }
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($inlineObject3)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inlineObject3));
+            } else {
+                $httpBody = $inlineObject3;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -376,9 +393,9 @@ class LocationsApi
     }
 
     /**
-     * Operation deleteLocation
+     * Operation deleteChannelGroup
      *
-     * Delete the location
+     * Delete the channel group
      *
      * @param  int $id ID (required)
      *
@@ -386,15 +403,15 @@ class LocationsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteLocation($id)
+    public function deleteChannelGroup($id)
     {
-        $this->deleteLocationWithHttpInfo($id);
+        $this->deleteChannelGroupWithHttpInfo($id);
     }
 
     /**
-     * Operation deleteLocationWithHttpInfo
+     * Operation deleteChannelGroupWithHttpInfo
      *
-     * Delete the location
+     * Delete the channel group
      *
      * @param  int $id ID (required)
      *
@@ -402,9 +419,9 @@ class LocationsApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteLocationWithHttpInfo($id)
+    public function deleteChannelGroupWithHttpInfo($id)
     {
-        $request = $this->deleteLocationRequest($id);
+        $request = $this->deleteChannelGroupRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -451,18 +468,18 @@ class LocationsApi
     }
 
     /**
-     * Operation deleteLocationAsync
+     * Operation deleteChannelGroupAsync
      *
-     * Delete the location
+     * Delete the channel group
      *
      * @param  int $id ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteLocationAsync($id)
+    public function deleteChannelGroupAsync($id)
     {
-        return $this->deleteLocationAsyncWithHttpInfo($id)
+        return $this->deleteChannelGroupAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -471,19 +488,19 @@ class LocationsApi
     }
 
     /**
-     * Operation deleteLocationAsyncWithHttpInfo
+     * Operation deleteChannelGroupAsyncWithHttpInfo
      *
-     * Delete the location
+     * Delete the channel group
      *
      * @param  int $id ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteLocationAsyncWithHttpInfo($id)
+    public function deleteChannelGroupAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->deleteLocationRequest($id);
+        $request = $this->deleteChannelGroupRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -509,23 +526,23 @@ class LocationsApi
     }
 
     /**
-     * Create request for operation 'deleteLocation'
+     * Create request for operation 'deleteChannelGroup'
      *
      * @param  int $id ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteLocationRequest($id)
+    public function deleteChannelGroupRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling deleteLocation'
+                'Missing the required parameter $id when calling deleteChannelGroup'
             );
         }
 
-        $resourcePath = '/locations/{id}';
+        $resourcePath = '/channel-groups/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -610,38 +627,33 @@ class LocationsApi
     }
 
     /**
-     * Operation getLocation
-     *
-     * Get location by ID
+     * Operation executeActionOnChannelGroup
      *
      * @param  int $id ID (required)
-     * @param  string[] $include List of extra fields to include in the response. (optional)
+     * @param  \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE uNKNOWNBASETYPE (required)
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Supla\ApiClient\Model\Location
+     * @return void
      */
-    public function getLocation($id, $include = null)
+    public function executeActionOnChannelGroup($id, $uNKNOWNBASETYPE)
     {
-        list($response) = $this->getLocationWithHttpInfo($id, $include);
-        return $response;
+        $this->executeActionOnChannelGroupWithHttpInfo($id, $uNKNOWNBASETYPE);
     }
 
     /**
-     * Operation getLocationWithHttpInfo
-     *
-     * Get location by ID
+     * Operation executeActionOnChannelGroupWithHttpInfo
      *
      * @param  int $id ID (required)
-     * @param  string[] $include List of extra fields to include in the response. (optional)
+     * @param  \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (required)
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Supla\ApiClient\Model\Location, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLocationWithHttpInfo($id, $include = null)
+    public function executeActionOnChannelGroupWithHttpInfo($id, $uNKNOWNBASETYPE)
     {
-        $request = $this->getLocationRequest($id, $include);
+        $request = $this->executeActionOnChannelGroupRequest($id, $uNKNOWNBASETYPE);
 
         try {
             $options = $this->createHttpClientOption();
@@ -678,40 +690,14 @@ class LocationsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Supla\ApiClient\Model\Location' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\Location', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Supla\ApiClient\Model\Location';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Supla\ApiClient\Model\Location',
+                        '\Supla\ApiClient\Model\InlineResponse4001',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -722,19 +708,17 @@ class LocationsApi
     }
 
     /**
-     * Operation getLocationAsync
-     *
-     * Get location by ID
+     * Operation executeActionOnChannelGroupAsync
      *
      * @param  int $id ID (required)
-     * @param  string[] $include List of extra fields to include in the response. (optional)
+     * @param  \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocationAsync($id, $include = null)
+    public function executeActionOnChannelGroupAsync($id, $uNKNOWNBASETYPE)
     {
-        return $this->getLocationAsyncWithHttpInfo($id, $include)
+        return $this->executeActionOnChannelGroupAsyncWithHttpInfo($id, $uNKNOWNBASETYPE)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -743,36 +727,24 @@ class LocationsApi
     }
 
     /**
-     * Operation getLocationAsyncWithHttpInfo
-     *
-     * Get location by ID
+     * Operation executeActionOnChannelGroupAsyncWithHttpInfo
      *
      * @param  int $id ID (required)
-     * @param  string[] $include List of extra fields to include in the response. (optional)
+     * @param  \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocationAsyncWithHttpInfo($id, $include = null)
+    public function executeActionOnChannelGroupAsyncWithHttpInfo($id, $uNKNOWNBASETYPE)
     {
-        $returnType = '\Supla\ApiClient\Model\Location';
-        $request = $this->getLocationRequest($id, $include);
+        $returnType = '';
+        $request = $this->executeActionOnChannelGroupRequest($id, $uNKNOWNBASETYPE);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -792,593 +764,30 @@ class LocationsApi
     }
 
     /**
-     * Create request for operation 'getLocation'
+     * Create request for operation 'executeActionOnChannelGroup'
      *
      * @param  int $id ID (required)
-     * @param  string[] $include List of extra fields to include in the response. (optional)
+     * @param  \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLocationRequest($id, $include = null)
+    public function executeActionOnChannelGroupRequest($id, $uNKNOWNBASETYPE)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getLocation'
+                'Missing the required parameter $id when calling executeActionOnChannelGroup'
             );
         }
-
-        $resourcePath = '/locations/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($include)) {
-            $include = ObjectSerializer::serializeCollection($include, 'form', true);
-        }
-        if ($include !== null) {
-            $queryParams['include'] = $include;
-        }
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getLocations
-     *
-     * Get locations
-     *
-     * @param  string[] $include List of extra fields to include in the response. (optional)
-     *
-     * @throws \Supla\ApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Supla\ApiClient\Model\Location[]
-     */
-    public function getLocations($include = null)
-    {
-        list($response) = $this->getLocationsWithHttpInfo($include);
-        return $response;
-    }
-
-    /**
-     * Operation getLocationsWithHttpInfo
-     *
-     * Get locations
-     *
-     * @param  string[] $include List of extra fields to include in the response. (optional)
-     *
-     * @throws \Supla\ApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Supla\ApiClient\Model\Location[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getLocationsWithHttpInfo($include = null)
-    {
-        $request = $this->getLocationsRequest($include);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Supla\ApiClient\Model\Location[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\Location[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Supla\ApiClient\Model\Location[]';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Supla\ApiClient\Model\Location[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getLocationsAsync
-     *
-     * Get locations
-     *
-     * @param  string[] $include List of extra fields to include in the response. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getLocationsAsync($include = null)
-    {
-        return $this->getLocationsAsyncWithHttpInfo($include)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getLocationsAsyncWithHttpInfo
-     *
-     * Get locations
-     *
-     * @param  string[] $include List of extra fields to include in the response. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getLocationsAsyncWithHttpInfo($include = null)
-    {
-        $returnType = '\Supla\ApiClient\Model\Location[]';
-        $request = $this->getLocationsRequest($include);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getLocations'
-     *
-     * @param  string[] $include List of extra fields to include in the response. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getLocationsRequest($include = null)
-    {
-
-        $resourcePath = '/locations';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($include)) {
-            $include = ObjectSerializer::serializeCollection($include, 'form', true);
-        }
-        if ($include !== null) {
-            $queryParams['include'] = $include;
-        }
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer authentication (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires OAuth (access token)
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation updateLocation
-     *
-     * Update the location
-     *
-     * @param  int $id ID (required)
-     * @param  \Supla\ApiClient\Model\InlineObject5 $inlineObject5 inlineObject5 (required)
-     *
-     * @throws \Supla\ApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Supla\ApiClient\Model\Location
-     */
-    public function updateLocation($id, $inlineObject5)
-    {
-        list($response) = $this->updateLocationWithHttpInfo($id, $inlineObject5);
-        return $response;
-    }
-
-    /**
-     * Operation updateLocationWithHttpInfo
-     *
-     * Update the location
-     *
-     * @param  int $id ID (required)
-     * @param  \Supla\ApiClient\Model\InlineObject5 $inlineObject5 (required)
-     *
-     * @throws \Supla\ApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Supla\ApiClient\Model\Location, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateLocationWithHttpInfo($id, $inlineObject5)
-    {
-        $request = $this->updateLocationRequest($id, $inlineObject5);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Supla\ApiClient\Model\Location' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\Location', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Supla\ApiClient\Model\Location';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Supla\ApiClient\Model\Location',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateLocationAsync
-     *
-     * Update the location
-     *
-     * @param  int $id ID (required)
-     * @param  \Supla\ApiClient\Model\InlineObject5 $inlineObject5 (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateLocationAsync($id, $inlineObject5)
-    {
-        return $this->updateLocationAsyncWithHttpInfo($id, $inlineObject5)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation updateLocationAsyncWithHttpInfo
-     *
-     * Update the location
-     *
-     * @param  int $id ID (required)
-     * @param  \Supla\ApiClient\Model\InlineObject5 $inlineObject5 (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateLocationAsyncWithHttpInfo($id, $inlineObject5)
-    {
-        $returnType = '\Supla\ApiClient\Model\Location';
-        $request = $this->updateLocationRequest($id, $inlineObject5);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'updateLocation'
-     *
-     * @param  int $id ID (required)
-     * @param  \Supla\ApiClient\Model\InlineObject5 $inlineObject5 (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function updateLocationRequest($id, $inlineObject5)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'uNKNOWNBASETYPE' is set
+        if ($uNKNOWNBASETYPE === null || (is_array($uNKNOWNBASETYPE) && count($uNKNOWNBASETYPE) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling updateLocation'
-            );
-        }
-        // verify the required parameter 'inlineObject5' is set
-        if ($inlineObject5 === null || (is_array($inlineObject5) && count($inlineObject5) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $inlineObject5 when calling updateLocation'
+                'Missing the required parameter $uNKNOWNBASETYPE when calling executeActionOnChannelGroup'
             );
         }
 
-        $resourcePath = '/locations/{id}';
+        $resourcePath = '/channel-groups/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1409,11 +818,882 @@ class LocationsApi
         }
 
         // for model (json/xml)
-        if (isset($inlineObject5)) {
+        if (isset($uNKNOWNBASETYPE)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inlineObject5));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($uNKNOWNBASETYPE));
             } else {
-                $httpBody = $inlineObject5;
+                $httpBody = $uNKNOWNBASETYPE;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PATCH',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getChannelGroup
+     *
+     * Get Channel Group
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \Supla\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Supla\ApiClient\Model\ChannelGroup
+     */
+    public function getChannelGroup($id, $include = null)
+    {
+        list($response) = $this->getChannelGroupWithHttpInfo($id, $include);
+        return $response;
+    }
+
+    /**
+     * Operation getChannelGroupWithHttpInfo
+     *
+     * Get Channel Group
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \Supla\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Supla\ApiClient\Model\ChannelGroup, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getChannelGroupWithHttpInfo($id, $include = null)
+    {
+        $request = $this->getChannelGroupRequest($id, $include);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Supla\ApiClient\Model\ChannelGroup' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\ChannelGroup', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Supla\ApiClient\Model\ChannelGroup';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Supla\ApiClient\Model\ChannelGroup',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getChannelGroupAsync
+     *
+     * Get Channel Group
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getChannelGroupAsync($id, $include = null)
+    {
+        return $this->getChannelGroupAsyncWithHttpInfo($id, $include)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getChannelGroupAsyncWithHttpInfo
+     *
+     * Get Channel Group
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getChannelGroupAsyncWithHttpInfo($id, $include = null)
+    {
+        $returnType = '\Supla\ApiClient\Model\ChannelGroup';
+        $request = $this->getChannelGroupRequest($id, $include);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getChannelGroup'
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getChannelGroupRequest($id, $include = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling getChannelGroup'
+            );
+        }
+
+        $resourcePath = '/channel-groups/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($include)) {
+            $include = ObjectSerializer::serializeCollection($include, 'form', true);
+        }
+        if ($include !== null) {
+            $queryParams['include'] = $include;
+        }
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getChannelGroups
+     *
+     * Get Channel Groups
+     *
+     * @param  \Supla\ApiClient\Model\ChannelFunctionEnumNames[] $function function (optional)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \Supla\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Supla\ApiClient\Model\ChannelGroup[]
+     */
+    public function getChannelGroups($function = null, $include = null)
+    {
+        list($response) = $this->getChannelGroupsWithHttpInfo($function, $include);
+        return $response;
+    }
+
+    /**
+     * Operation getChannelGroupsWithHttpInfo
+     *
+     * Get Channel Groups
+     *
+     * @param  \Supla\ApiClient\Model\ChannelFunctionEnumNames[] $function (optional)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \Supla\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Supla\ApiClient\Model\ChannelGroup[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getChannelGroupsWithHttpInfo($function = null, $include = null)
+    {
+        $request = $this->getChannelGroupsRequest($function, $include);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Supla\ApiClient\Model\ChannelGroup[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\ChannelGroup[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Supla\ApiClient\Model\ChannelGroup[]';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Supla\ApiClient\Model\ChannelGroup[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getChannelGroupsAsync
+     *
+     * Get Channel Groups
+     *
+     * @param  \Supla\ApiClient\Model\ChannelFunctionEnumNames[] $function (optional)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getChannelGroupsAsync($function = null, $include = null)
+    {
+        return $this->getChannelGroupsAsyncWithHttpInfo($function, $include)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getChannelGroupsAsyncWithHttpInfo
+     *
+     * Get Channel Groups
+     *
+     * @param  \Supla\ApiClient\Model\ChannelFunctionEnumNames[] $function (optional)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getChannelGroupsAsyncWithHttpInfo($function = null, $include = null)
+    {
+        $returnType = '\Supla\ApiClient\Model\ChannelGroup[]';
+        $request = $this->getChannelGroupsRequest($function, $include);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getChannelGroups'
+     *
+     * @param  \Supla\ApiClient\Model\ChannelFunctionEnumNames[] $function (optional)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getChannelGroupsRequest($function = null, $include = null)
+    {
+
+        $resourcePath = '/channel-groups';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($function)) {
+            $function = ObjectSerializer::serializeCollection($function, 'form', true);
+        }
+        if ($function !== null) {
+            $queryParams['function'] = $function;
+        }
+        // query params
+        if (is_array($include)) {
+            $include = ObjectSerializer::serializeCollection($include, 'form', true);
+        }
+        if ($include !== null) {
+            $queryParams['include'] = $include;
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateChannelGroup
+     *
+     * Update the channel group
+     *
+     * @param  int $id ID (required)
+     * @param  \Supla\ApiClient\Model\InlineObject4 $inlineObject4 inlineObject4 (required)
+     *
+     * @throws \Supla\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Supla\ApiClient\Model\ChannelGroup
+     */
+    public function updateChannelGroup($id, $inlineObject4)
+    {
+        list($response) = $this->updateChannelGroupWithHttpInfo($id, $inlineObject4);
+        return $response;
+    }
+
+    /**
+     * Operation updateChannelGroupWithHttpInfo
+     *
+     * Update the channel group
+     *
+     * @param  int $id ID (required)
+     * @param  \Supla\ApiClient\Model\InlineObject4 $inlineObject4 (required)
+     *
+     * @throws \Supla\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Supla\ApiClient\Model\ChannelGroup, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateChannelGroupWithHttpInfo($id, $inlineObject4)
+    {
+        $request = $this->updateChannelGroupRequest($id, $inlineObject4);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 201:
+                    if ('\Supla\ApiClient\Model\ChannelGroup' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\ChannelGroup', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Supla\ApiClient\Model\ChannelGroup';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Supla\ApiClient\Model\ChannelGroup',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateChannelGroupAsync
+     *
+     * Update the channel group
+     *
+     * @param  int $id ID (required)
+     * @param  \Supla\ApiClient\Model\InlineObject4 $inlineObject4 (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateChannelGroupAsync($id, $inlineObject4)
+    {
+        return $this->updateChannelGroupAsyncWithHttpInfo($id, $inlineObject4)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateChannelGroupAsyncWithHttpInfo
+     *
+     * Update the channel group
+     *
+     * @param  int $id ID (required)
+     * @param  \Supla\ApiClient\Model\InlineObject4 $inlineObject4 (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateChannelGroupAsyncWithHttpInfo($id, $inlineObject4)
+    {
+        $returnType = '\Supla\ApiClient\Model\ChannelGroup';
+        $request = $this->updateChannelGroupRequest($id, $inlineObject4);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateChannelGroup'
+     *
+     * @param  int $id ID (required)
+     * @param  \Supla\ApiClient\Model\InlineObject4 $inlineObject4 (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateChannelGroupRequest($id, $inlineObject4)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling updateChannelGroup'
+            );
+        }
+        // verify the required parameter 'inlineObject4' is set
+        if ($inlineObject4 === null || (is_array($inlineObject4) && count($inlineObject4) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $inlineObject4 when calling updateChannelGroup'
+            );
+        }
+
+        $resourcePath = '/channel-groups/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($inlineObject4)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($inlineObject4));
+            } else {
+                $httpBody = $inlineObject4;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

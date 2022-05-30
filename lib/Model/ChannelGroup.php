@@ -1,6 +1,6 @@
 <?php
 /**
- * Channel
+ * ChannelGroup
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * Channel Class Doc Comment
+ * ChannelGroup Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -42,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
+class ChannelGroup implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Channel';
+    protected static $openAPIModelName = 'ChannelGroup';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,26 +60,19 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'channelNumber' => 'int',
         'caption' => 'string',
         'altIcon' => 'int',
         'hidden' => 'bool',
-        'inheritedLocation' => 'bool',
-        'iodeviceId' => 'int',
-        'locationId' => 'int',
+        'subjectType' => 'string',
         'functionId' => 'int',
         'function' => '\Supla\ApiClient\Model\ChannelFunction',
-        'possibleActions' => '\Supla\ApiClient\Model\ChannelFunctionAction[]',
-        'typeId' => 'int',
-        'type' => '\Supla\ApiClient\Model\ChannelType',
-        'subjectType' => 'string',
-        'state' => '\Supla\ApiClient\Model\ChannelState',
-        'config' => '\Supla\ApiClient\Model\ChannelConfig',
-        'userIconId' => 'int',
-        'connected' => 'bool',
-        'relationsCount' => '\Supla\ApiClient\Model\ChannelRelationsCount',
+        'locationId' => 'int',
         'location' => '\Supla\ApiClient\Model\Location',
-        'supportedFunctions' => '\Supla\ApiClient\Model\ChannelFunction[]'
+        'channels' => '\Supla\ApiClient\Model\Channel[]',
+        'userIconId' => 'int',
+        'possibleActions' => '\Supla\ApiClient\Model\ChannelFunctionAction[]',
+        'state' => 'array<string,\Supla\ApiClient\Model\ChannelState>',
+        'relationsCount' => '\Supla\ApiClient\Model\ChannelGroupRelationsCount'
     ];
 
     /**
@@ -91,26 +84,19 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'channelNumber' => null,
         'caption' => null,
         'altIcon' => null,
         'hidden' => null,
-        'inheritedLocation' => null,
-        'iodeviceId' => null,
-        'locationId' => null,
+        'subjectType' => null,
         'functionId' => null,
         'function' => null,
-        'possibleActions' => null,
-        'typeId' => null,
-        'type' => null,
-        'subjectType' => null,
-        'state' => null,
-        'config' => null,
-        'userIconId' => null,
-        'connected' => null,
-        'relationsCount' => null,
+        'locationId' => null,
         'location' => null,
-        'supportedFunctions' => null
+        'channels' => null,
+        'userIconId' => null,
+        'possibleActions' => null,
+        'state' => null,
+        'relationsCount' => null
     ];
 
     /**
@@ -141,26 +127,19 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'channelNumber' => 'channelNumber',
         'caption' => 'caption',
         'altIcon' => 'altIcon',
         'hidden' => 'hidden',
-        'inheritedLocation' => 'inheritedLocation',
-        'iodeviceId' => 'iodeviceId',
-        'locationId' => 'locationId',
+        'subjectType' => 'subjectType',
         'functionId' => 'functionId',
         'function' => 'function',
-        'possibleActions' => 'possibleActions',
-        'typeId' => 'typeId',
-        'type' => 'type',
-        'subjectType' => 'subjectType',
-        'state' => 'state',
-        'config' => 'config',
-        'userIconId' => 'userIconId',
-        'connected' => 'connected',
-        'relationsCount' => 'relationsCount',
+        'locationId' => 'locationId',
         'location' => 'location',
-        'supportedFunctions' => 'supportedFunctions'
+        'channels' => 'channels',
+        'userIconId' => 'userIconId',
+        'possibleActions' => 'possibleActions',
+        'state' => 'state',
+        'relationsCount' => 'relationsCount'
     ];
 
     /**
@@ -170,26 +149,19 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'channelNumber' => 'setChannelNumber',
         'caption' => 'setCaption',
         'altIcon' => 'setAltIcon',
         'hidden' => 'setHidden',
-        'inheritedLocation' => 'setInheritedLocation',
-        'iodeviceId' => 'setIodeviceId',
-        'locationId' => 'setLocationId',
+        'subjectType' => 'setSubjectType',
         'functionId' => 'setFunctionId',
         'function' => 'setFunction',
-        'possibleActions' => 'setPossibleActions',
-        'typeId' => 'setTypeId',
-        'type' => 'setType',
-        'subjectType' => 'setSubjectType',
-        'state' => 'setState',
-        'config' => 'setConfig',
-        'userIconId' => 'setUserIconId',
-        'connected' => 'setConnected',
-        'relationsCount' => 'setRelationsCount',
+        'locationId' => 'setLocationId',
         'location' => 'setLocation',
-        'supportedFunctions' => 'setSupportedFunctions'
+        'channels' => 'setChannels',
+        'userIconId' => 'setUserIconId',
+        'possibleActions' => 'setPossibleActions',
+        'state' => 'setState',
+        'relationsCount' => 'setRelationsCount'
     ];
 
     /**
@@ -199,26 +171,19 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'channelNumber' => 'getChannelNumber',
         'caption' => 'getCaption',
         'altIcon' => 'getAltIcon',
         'hidden' => 'getHidden',
-        'inheritedLocation' => 'getInheritedLocation',
-        'iodeviceId' => 'getIodeviceId',
-        'locationId' => 'getLocationId',
+        'subjectType' => 'getSubjectType',
         'functionId' => 'getFunctionId',
         'function' => 'getFunction',
-        'possibleActions' => 'getPossibleActions',
-        'typeId' => 'getTypeId',
-        'type' => 'getType',
-        'subjectType' => 'getSubjectType',
-        'state' => 'getState',
-        'config' => 'getConfig',
-        'userIconId' => 'getUserIconId',
-        'connected' => 'getConnected',
-        'relationsCount' => 'getRelationsCount',
+        'locationId' => 'getLocationId',
         'location' => 'getLocation',
-        'supportedFunctions' => 'getSupportedFunctions'
+        'channels' => 'getChannels',
+        'userIconId' => 'getUserIconId',
+        'possibleActions' => 'getPossibleActions',
+        'state' => 'getState',
+        'relationsCount' => 'getRelationsCount'
     ];
 
     /**
@@ -262,7 +227,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const SUBJECT_TYPE_CHANNEL = 'channel';
+    const SUBJECT_TYPE_CHANNEL_GROUP = 'channelGroup';
 
     /**
      * Gets allowable values of the enum
@@ -272,7 +237,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getSubjectTypeAllowableValues()
     {
         return [
-            self::SUBJECT_TYPE_CHANNEL,
+            self::SUBJECT_TYPE_CHANNEL_GROUP,
         ];
     }
 
@@ -292,26 +257,19 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['id'] = $data['id'] ?? null;
-        $this->container['channelNumber'] = $data['channelNumber'] ?? null;
         $this->container['caption'] = $data['caption'] ?? null;
         $this->container['altIcon'] = $data['altIcon'] ?? null;
         $this->container['hidden'] = $data['hidden'] ?? null;
-        $this->container['inheritedLocation'] = $data['inheritedLocation'] ?? null;
-        $this->container['iodeviceId'] = $data['iodeviceId'] ?? null;
-        $this->container['locationId'] = $data['locationId'] ?? null;
+        $this->container['subjectType'] = $data['subjectType'] ?? null;
         $this->container['functionId'] = $data['functionId'] ?? null;
         $this->container['function'] = $data['function'] ?? null;
-        $this->container['possibleActions'] = $data['possibleActions'] ?? null;
-        $this->container['typeId'] = $data['typeId'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['subjectType'] = $data['subjectType'] ?? null;
-        $this->container['state'] = $data['state'] ?? null;
-        $this->container['config'] = $data['config'] ?? null;
-        $this->container['userIconId'] = $data['userIconId'] ?? null;
-        $this->container['connected'] = $data['connected'] ?? null;
-        $this->container['relationsCount'] = $data['relationsCount'] ?? null;
+        $this->container['locationId'] = $data['locationId'] ?? null;
         $this->container['location'] = $data['location'] ?? null;
-        $this->container['supportedFunctions'] = $data['supportedFunctions'] ?? null;
+        $this->container['channels'] = $data['channels'] ?? null;
+        $this->container['userIconId'] = $data['userIconId'] ?? null;
+        $this->container['possibleActions'] = $data['possibleActions'] ?? null;
+        $this->container['state'] = $data['state'] ?? null;
+        $this->container['relationsCount'] = $data['relationsCount'] ?? null;
     }
 
     /**
@@ -367,30 +325,6 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets channelNumber
-     *
-     * @return int|null
-     */
-    public function getChannelNumber()
-    {
-        return $this->container['channelNumber'];
-    }
-
-    /**
-     * Sets channelNumber
-     *
-     * @param int|null $channelNumber Channel ordinal number in its IO Device
-     *
-     * @return self
-     */
-    public function setChannelNumber($channelNumber)
-    {
-        $this->container['channelNumber'] = $channelNumber;
 
         return $this;
     }
@@ -456,7 +390,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hidden
      *
-     * @param bool|null $hidden Whether this channel is shown on client apps or not
+     * @param bool|null $hidden Whether this channel group is shown on client apps or not
      *
      * @return self
      */
@@ -468,73 +402,35 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets inheritedLocation
+     * Gets subjectType
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getInheritedLocation()
+    public function getSubjectType()
     {
-        return $this->container['inheritedLocation'];
+        return $this->container['subjectType'];
     }
 
     /**
-     * Sets inheritedLocation
+     * Sets subjectType
      *
-     * @param bool|null $inheritedLocation Whether this channel inherits its IO Device's location (`true`) or not (`false`)
+     * @param string|null $subjectType subjectType
      *
      * @return self
      */
-    public function setInheritedLocation($inheritedLocation)
+    public function setSubjectType($subjectType)
     {
-        $this->container['inheritedLocation'] = $inheritedLocation;
-
-        return $this;
-    }
-
-    /**
-     * Gets iodeviceId
-     *
-     * @return int|null
-     */
-    public function getIodeviceId()
-    {
-        return $this->container['iodeviceId'];
-    }
-
-    /**
-     * Sets iodeviceId
-     *
-     * @param int|null $iodeviceId iodeviceId
-     *
-     * @return self
-     */
-    public function setIodeviceId($iodeviceId)
-    {
-        $this->container['iodeviceId'] = $iodeviceId;
-
-        return $this;
-    }
-
-    /**
-     * Gets locationId
-     *
-     * @return int|null
-     */
-    public function getLocationId()
-    {
-        return $this->container['locationId'];
-    }
-
-    /**
-     * Sets locationId
-     *
-     * @param int|null $locationId locationId
-     *
-     * @return self
-     */
-    public function setLocationId($locationId)
-    {
-        $this->container['locationId'] = $locationId;
+        $allowedValues = $this->getSubjectTypeAllowableValues();
+        if (!is_null($subjectType) && !in_array($subjectType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'subjectType', must be one of '%s'",
+                    $subjectType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['subjectType'] = $subjectType;
 
         return $this;
     }
@@ -588,227 +484,25 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets possibleActions
-     *
-     * @return \Supla\ApiClient\Model\ChannelFunctionAction[]|null
-     */
-    public function getPossibleActions()
-    {
-        return $this->container['possibleActions'];
-    }
-
-    /**
-     * Sets possibleActions
-     *
-     * @param \Supla\ApiClient\Model\ChannelFunctionAction[]|null $possibleActions What action can you execute on this subject?
-     *
-     * @return self
-     */
-    public function setPossibleActions($possibleActions)
-    {
-        $this->container['possibleActions'] = $possibleActions;
-
-        return $this;
-    }
-
-    /**
-     * Gets typeId
+     * Gets locationId
      *
      * @return int|null
      */
-    public function getTypeId()
+    public function getLocationId()
     {
-        return $this->container['typeId'];
+        return $this->container['locationId'];
     }
 
     /**
-     * Sets typeId
+     * Sets locationId
      *
-     * @param int|null $typeId typeId
+     * @param int|null $locationId locationId
      *
      * @return self
      */
-    public function setTypeId($typeId)
+    public function setLocationId($locationId)
     {
-        $this->container['typeId'] = $typeId;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return \Supla\ApiClient\Model\ChannelType|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param \Supla\ApiClient\Model\ChannelType|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets subjectType
-     *
-     * @return string|null
-     */
-    public function getSubjectType()
-    {
-        return $this->container['subjectType'];
-    }
-
-    /**
-     * Sets subjectType
-     *
-     * @param string|null $subjectType subjectType
-     *
-     * @return self
-     */
-    public function setSubjectType($subjectType)
-    {
-        $allowedValues = $this->getSubjectTypeAllowableValues();
-        if (!is_null($subjectType) && !in_array($subjectType, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'subjectType', must be one of '%s'",
-                    $subjectType,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['subjectType'] = $subjectType;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return \Supla\ApiClient\Model\ChannelState|null
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param \Supla\ApiClient\Model\ChannelState|null $state state
-     *
-     * @return self
-     */
-    public function setState($state)
-    {
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets config
-     *
-     * @return \Supla\ApiClient\Model\ChannelConfig|null
-     */
-    public function getConfig()
-    {
-        return $this->container['config'];
-    }
-
-    /**
-     * Sets config
-     *
-     * @param \Supla\ApiClient\Model\ChannelConfig|null $config config
-     *
-     * @return self
-     */
-    public function setConfig($config)
-    {
-        $this->container['config'] = $config;
-
-        return $this;
-    }
-
-    /**
-     * Gets userIconId
-     *
-     * @return int|null
-     */
-    public function getUserIconId()
-    {
-        return $this->container['userIconId'];
-    }
-
-    /**
-     * Sets userIconId
-     *
-     * @param int|null $userIconId userIconId
-     *
-     * @return self
-     */
-    public function setUserIconId($userIconId)
-    {
-        $this->container['userIconId'] = $userIconId;
-
-        return $this;
-    }
-
-    /**
-     * Gets connected
-     *
-     * @return bool|null
-     */
-    public function getConnected()
-    {
-        return $this->container['connected'];
-    }
-
-    /**
-     * Sets connected
-     *
-     * @param bool|null $connected connected
-     *
-     * @return self
-     */
-    public function setConnected($connected)
-    {
-        $this->container['connected'] = $connected;
-
-        return $this;
-    }
-
-    /**
-     * Gets relationsCount
-     *
-     * @return \Supla\ApiClient\Model\ChannelRelationsCount|null
-     */
-    public function getRelationsCount()
-    {
-        return $this->container['relationsCount'];
-    }
-
-    /**
-     * Sets relationsCount
-     *
-     * @param \Supla\ApiClient\Model\ChannelRelationsCount|null $relationsCount relationsCount
-     *
-     * @return self
-     */
-    public function setRelationsCount($relationsCount)
-    {
-        $this->container['relationsCount'] = $relationsCount;
+        $this->container['locationId'] = $locationId;
 
         return $this;
     }
@@ -838,25 +532,121 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets supportedFunctions
+     * Gets channels
      *
-     * @return \Supla\ApiClient\Model\ChannelFunction[]|null
+     * @return \Supla\ApiClient\Model\Channel[]|null
      */
-    public function getSupportedFunctions()
+    public function getChannels()
     {
-        return $this->container['supportedFunctions'];
+        return $this->container['channels'];
     }
 
     /**
-     * Sets supportedFunctions
+     * Sets channels
      *
-     * @param \Supla\ApiClient\Model\ChannelFunction[]|null $supportedFunctions supportedFunctions
+     * @param \Supla\ApiClient\Model\Channel[]|null $channels Channel group channels, if requested by the `include` param
      *
      * @return self
      */
-    public function setSupportedFunctions($supportedFunctions)
+    public function setChannels($channels)
     {
-        $this->container['supportedFunctions'] = $supportedFunctions;
+        $this->container['channels'] = $channels;
+
+        return $this;
+    }
+
+    /**
+     * Gets userIconId
+     *
+     * @return int|null
+     */
+    public function getUserIconId()
+    {
+        return $this->container['userIconId'];
+    }
+
+    /**
+     * Sets userIconId
+     *
+     * @param int|null $userIconId userIconId
+     *
+     * @return self
+     */
+    public function setUserIconId($userIconId)
+    {
+        $this->container['userIconId'] = $userIconId;
+
+        return $this;
+    }
+
+    /**
+     * Gets possibleActions
+     *
+     * @return \Supla\ApiClient\Model\ChannelFunctionAction[]|null
+     */
+    public function getPossibleActions()
+    {
+        return $this->container['possibleActions'];
+    }
+
+    /**
+     * Sets possibleActions
+     *
+     * @param \Supla\ApiClient\Model\ChannelFunctionAction[]|null $possibleActions What action can you execute on this subject?
+     *
+     * @return self
+     */
+    public function setPossibleActions($possibleActions)
+    {
+        $this->container['possibleActions'] = $possibleActions;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return array<string,\Supla\ApiClient\Model\ChannelState>|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param array<string,\Supla\ApiClient\Model\ChannelState>|null $state state
+     *
+     * @return self
+     */
+    public function setState($state)
+    {
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets relationsCount
+     *
+     * @return \Supla\ApiClient\Model\ChannelGroupRelationsCount|null
+     */
+    public function getRelationsCount()
+    {
+        return $this->container['relationsCount'];
+    }
+
+    /**
+     * Sets relationsCount
+     *
+     * @param \Supla\ApiClient\Model\ChannelGroupRelationsCount|null $relationsCount relationsCount
+     *
+     * @return self
+     */
+    public function setRelationsCount($relationsCount)
+    {
+        $this->container['relationsCount'] = $relationsCount;
 
         return $this;
     }

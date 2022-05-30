@@ -1,14 +1,12 @@
-# # InlineObject3
+# # InlineObject5
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**channelsIds** | **int[]** | Channels identifiers that share the same function. | [optional]
-**locationId** | **int** |  | [optional]
-**userIconId** | **int** |  | [optional]
+**enabled** | **bool** |  | [optional]
 **caption** | **string** |  | [optional]
-**altIcon** | **int** |  | [optional]
-**hidden** | **bool** |  | [optional]
+**password** | **string** | Provide new password if you want to change it. | [optional]
+**accessIdsIds** | **int[]** | Access Identifiers identifiers to assign to this location. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

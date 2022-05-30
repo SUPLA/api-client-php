@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineObject3
+ * InlineObject5
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Supla\ApiClient\ObjectSerializer;
 
 /**
- * InlineObject3 Class Doc Comment
+ * InlineObject5 Class Doc Comment
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -42,7 +42,7 @@ use \Supla\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
+class InlineObject5 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_object_3';
+    protected static $openAPIModelName = 'inline_object_5';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'channelsIds' => 'int[]',
-        'locationId' => 'int',
-        'userIconId' => 'int',
+        'enabled' => 'bool',
         'caption' => 'string',
-        'altIcon' => 'int',
-        'hidden' => 'bool'
+        'password' => 'string',
+        'accessIdsIds' => 'int[]'
     ];
 
     /**
@@ -75,12 +73,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'channelsIds' => null,
-        'locationId' => null,
-        'userIconId' => null,
+        'enabled' => null,
         'caption' => null,
-        'altIcon' => null,
-        'hidden' => null
+        'password' => null,
+        'accessIdsIds' => null
     ];
 
     /**
@@ -110,12 +106,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'channelsIds' => 'channelsIds',
-        'locationId' => 'locationId',
-        'userIconId' => 'userIconId',
+        'enabled' => 'enabled',
         'caption' => 'caption',
-        'altIcon' => 'altIcon',
-        'hidden' => 'hidden'
+        'password' => 'password',
+        'accessIdsIds' => 'accessIdsIds'
     ];
 
     /**
@@ -124,12 +118,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'channelsIds' => 'setChannelsIds',
-        'locationId' => 'setLocationId',
-        'userIconId' => 'setUserIconId',
+        'enabled' => 'setEnabled',
         'caption' => 'setCaption',
-        'altIcon' => 'setAltIcon',
-        'hidden' => 'setHidden'
+        'password' => 'setPassword',
+        'accessIdsIds' => 'setAccessIdsIds'
     ];
 
     /**
@@ -138,12 +130,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'channelsIds' => 'getChannelsIds',
-        'locationId' => 'getLocationId',
-        'userIconId' => 'getUserIconId',
+        'enabled' => 'getEnabled',
         'caption' => 'getCaption',
-        'altIcon' => 'getAltIcon',
-        'hidden' => 'getHidden'
+        'password' => 'getPassword',
+        'accessIdsIds' => 'getAccessIdsIds'
     ];
 
     /**
@@ -203,12 +193,10 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['channelsIds'] = $data['channelsIds'] ?? null;
-        $this->container['locationId'] = $data['locationId'] ?? null;
-        $this->container['userIconId'] = $data['userIconId'] ?? null;
+        $this->container['enabled'] = $data['enabled'] ?? null;
         $this->container['caption'] = $data['caption'] ?? null;
-        $this->container['altIcon'] = $data['altIcon'] ?? null;
-        $this->container['hidden'] = $data['hidden'] ?? null;
+        $this->container['password'] = $data['password'] ?? null;
+        $this->container['accessIdsIds'] = $data['accessIdsIds'] ?? null;
     }
 
     /**
@@ -236,73 +224,25 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets channelsIds
+     * Gets enabled
      *
-     * @return int[]|null
+     * @return bool|null
      */
-    public function getChannelsIds()
+    public function getEnabled()
     {
-        return $this->container['channelsIds'];
+        return $this->container['enabled'];
     }
 
     /**
-     * Sets channelsIds
+     * Sets enabled
      *
-     * @param int[]|null $channelsIds Channels identifiers that share the same function.
+     * @param bool|null $enabled enabled
      *
      * @return self
      */
-    public function setChannelsIds($channelsIds)
+    public function setEnabled($enabled)
     {
-        $this->container['channelsIds'] = $channelsIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets locationId
-     *
-     * @return int|null
-     */
-    public function getLocationId()
-    {
-        return $this->container['locationId'];
-    }
-
-    /**
-     * Sets locationId
-     *
-     * @param int|null $locationId locationId
-     *
-     * @return self
-     */
-    public function setLocationId($locationId)
-    {
-        $this->container['locationId'] = $locationId;
-
-        return $this;
-    }
-
-    /**
-     * Gets userIconId
-     *
-     * @return int|null
-     */
-    public function getUserIconId()
-    {
-        return $this->container['userIconId'];
-    }
-
-    /**
-     * Sets userIconId
-     *
-     * @param int|null $userIconId userIconId
-     *
-     * @return self
-     */
-    public function setUserIconId($userIconId)
-    {
-        $this->container['userIconId'] = $userIconId;
+        $this->container['enabled'] = $enabled;
 
         return $this;
     }
@@ -332,49 +272,49 @@ class InlineObject3 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets altIcon
+     * Gets password
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getAltIcon()
+    public function getPassword()
     {
-        return $this->container['altIcon'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets altIcon
+     * Sets password
      *
-     * @param int|null $altIcon altIcon
+     * @param string|null $password Provide new password if you want to change it.
      *
      * @return self
      */
-    public function setAltIcon($altIcon)
+    public function setPassword($password)
     {
-        $this->container['altIcon'] = $altIcon;
+        $this->container['password'] = $password;
 
         return $this;
     }
 
     /**
-     * Gets hidden
+     * Gets accessIdsIds
      *
-     * @return bool|null
+     * @return int[]|null
      */
-    public function getHidden()
+    public function getAccessIdsIds()
     {
-        return $this->container['hidden'];
+        return $this->container['accessIdsIds'];
     }
 
     /**
-     * Sets hidden
+     * Sets accessIdsIds
      *
-     * @param bool|null $hidden hidden
+     * @param int[]|null $accessIdsIds Access Identifiers identifiers to assign to this location.
      *
      * @return self
      */
-    public function setHidden($hidden)
+    public function setAccessIdsIds($accessIdsIds)
     {
-        $this->container['hidden'] = $hidden;
+        $this->container['accessIdsIds'] = $accessIdsIds;
 
         return $this;
     }

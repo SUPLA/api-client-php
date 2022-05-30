@@ -48,9 +48,16 @@ Class | Method | HTTP request | Description
 *AccessIdentifiersApi* | [**getAccessIdentifier**](docs/Api/AccessIdentifiersApi.md#getaccessidentifier) | **GET** /accessids/{id} | Get AID by ID
 *AccessIdentifiersApi* | [**getAccessIdentifiers**](docs/Api/AccessIdentifiersApi.md#getaccessidentifiers) | **GET** /accessids | Get Access Identifiers
 *AccessIdentifiersApi* | [**updateAccessIdentifier**](docs/Api/AccessIdentifiersApi.md#updateaccessidentifier) | **PUT** /accessids/{id} | Update the access identifier
+*ChannelGroupsApi* | [**createChannelGroup**](docs/Api/ChannelGroupsApi.md#createchannelgroup) | **POST** /channel-groups | Create a new channel group
+*ChannelGroupsApi* | [**deleteChannelGroup**](docs/Api/ChannelGroupsApi.md#deletechannelgroup) | **DELETE** /channel-groups/{id} | Delete the channel group
+*ChannelGroupsApi* | [**executeActionOnChannelGroup**](docs/Api/ChannelGroupsApi.md#executeactiononchannelgroup) | **PATCH** /channel-groups/{id} | 
+*ChannelGroupsApi* | [**getChannelGroup**](docs/Api/ChannelGroupsApi.md#getchannelgroup) | **GET** /channel-groups/{id} | Get Channel Group
+*ChannelGroupsApi* | [**getChannelGroups**](docs/Api/ChannelGroupsApi.md#getchannelgroups) | **GET** /channel-groups | Get Channel Groups
+*ChannelGroupsApi* | [**updateChannelGroup**](docs/Api/ChannelGroupsApi.md#updatechannelgroup) | **PUT** /channel-groups/{id} | Update the channel group
 *ChannelsApi* | [**configureChannel**](docs/Api/ChannelsApi.md#configurechannel) | **PATCH** /channels/{id}/settings | 
 *ChannelsApi* | [**executeAction**](docs/Api/ChannelsApi.md#executeaction) | **PATCH** /channels/{id} | 
 *ChannelsApi* | [**getChannel**](docs/Api/ChannelsApi.md#getchannel) | **GET** /channels/{id} | Get Channel
+*ChannelsApi* | [**getChannelChannelGroups**](docs/Api/ChannelsApi.md#getchannelchannelgroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to
 *ChannelsApi* | [**getChannels**](docs/Api/ChannelsApi.md#getchannels) | **GET** /channels | Get Channels
 *ChannelsApi* | [**updateChannel**](docs/Api/ChannelsApi.md#updatechannel) | **PUT** /channels/{id} | 
 *LocationsApi* | [**createLocation**](docs/Api/LocationsApi.md#createlocation) | **POST** /locations | Create a new location
@@ -96,6 +103,8 @@ Class | Method | HTTP request | Description
 - [ChannelFunctionAction](docs/Model/ChannelFunctionAction.md)
 - [ChannelFunctionActionEnumNames](docs/Model/ChannelFunctionActionEnumNames.md)
 - [ChannelFunctionEnumNames](docs/Model/ChannelFunctionEnumNames.md)
+- [ChannelGroup](docs/Model/ChannelGroup.md)
+- [ChannelGroupRelationsCount](docs/Model/ChannelGroupRelationsCount.md)
 - [ChannelRelationsCount](docs/Model/ChannelRelationsCount.md)
 - [ChannelState](docs/Model/ChannelState.md)
 - [ChannelStateBrightness](docs/Model/ChannelStateBrightness.md)
@@ -122,12 +131,15 @@ Class | Method | HTTP request | Description
 - [InlineObject1](docs/Model/InlineObject1.md)
 - [InlineObject2](docs/Model/InlineObject2.md)
 - [InlineObject3](docs/Model/InlineObject3.md)
+- [InlineObject4](docs/Model/InlineObject4.md)
+- [InlineObject5](docs/Model/InlineObject5.md)
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InlineResponse2001](docs/Model/InlineResponse2001.md)
 - [InlineResponse2002](docs/Model/InlineResponse2002.md)
 - [InlineResponse2003](docs/Model/InlineResponse2003.md)
 - [InlineResponse200Timezone](docs/Model/InlineResponse200Timezone.md)
 - [InlineResponse400](docs/Model/InlineResponse400.md)
+- [InlineResponse4001](docs/Model/InlineResponse4001.md)
 - [InlineResponse409](docs/Model/InlineResponse409.md)
 - [InlineResponse503](docs/Model/InlineResponse503.md)
 - [Location](docs/Model/Location.md)

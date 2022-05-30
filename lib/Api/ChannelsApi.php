@@ -946,6 +946,297 @@ class ChannelsApi
     }
 
     /**
+     * Operation getChannelChannelGroups
+     *
+     * Get Channel Groups that the given channel belongs to
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \Supla\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Supla\ApiClient\Model\ChannelGroup[]
+     */
+    public function getChannelChannelGroups($id, $include = null)
+    {
+        list($response) = $this->getChannelChannelGroupsWithHttpInfo($id, $include);
+        return $response;
+    }
+
+    /**
+     * Operation getChannelChannelGroupsWithHttpInfo
+     *
+     * Get Channel Groups that the given channel belongs to
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \Supla\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Supla\ApiClient\Model\ChannelGroup[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getChannelChannelGroupsWithHttpInfo($id, $include = null)
+    {
+        $request = $this->getChannelChannelGroupsRequest($id, $include);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Supla\ApiClient\Model\ChannelGroup[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Supla\ApiClient\Model\ChannelGroup[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Supla\ApiClient\Model\ChannelGroup[]';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Supla\ApiClient\Model\ChannelGroup[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getChannelChannelGroupsAsync
+     *
+     * Get Channel Groups that the given channel belongs to
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getChannelChannelGroupsAsync($id, $include = null)
+    {
+        return $this->getChannelChannelGroupsAsyncWithHttpInfo($id, $include)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getChannelChannelGroupsAsyncWithHttpInfo
+     *
+     * Get Channel Groups that the given channel belongs to
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getChannelChannelGroupsAsyncWithHttpInfo($id, $include = null)
+    {
+        $returnType = '\Supla\ApiClient\Model\ChannelGroup[]';
+        $request = $this->getChannelChannelGroupsRequest($id, $include);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getChannelChannelGroups'
+     *
+     * @param  int $id ID (required)
+     * @param  string[] $include List of extra fields to include in the response. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getChannelChannelGroupsRequest($id, $include = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling getChannelChannelGroups'
+            );
+        }
+
+        $resourcePath = '/channels/{id}/channel-groups';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($include)) {
+            $include = ObjectSerializer::serializeCollection($include, 'form', true);
+        }
+        if ($include !== null) {
+            $queryParams['include'] = $include;
+        }
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getChannels
      *
      * Get Channels

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional]
+**id** | [**\Supla\ApiClient\Model\ChannelFunctionActionIds**](ChannelFunctionActionIds.md) |  | [optional]
 **name** | [**\Supla\ApiClient\Model\ChannelFunctionActionEnumNames**](ChannelFunctionActionEnumNames.md) |  | [optional]
 **caption** | **string** |  | [optional]
 

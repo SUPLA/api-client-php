@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **channelGroups** | **int** |  | [optional]
 **directLinks** | **int** |  | [optional]
 **schedules** | **int** |  | [optional]
+**scenes** | **int** |  | [optional]
 **sceneOperations** | **int** |  | [optional]
 **actionTriggers** | **int** |  | [optional]
 

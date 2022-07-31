@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **state** | [**\Supla\ApiClient\Model\ChannelState**](ChannelState.md) |  | [optional]
 **config** | [**\Supla\ApiClient\Model\ChannelConfig**](ChannelConfig.md) |  | [optional]
 **userIconId** | **int** |  | [optional]
+**userIcon** | [**\Supla\ApiClient\Model\UserIcon**](UserIcon.md) |  | [optional]
 **connected** | **bool** |  | [optional]
 **relationsCount** | [**\Supla\ApiClient\Model\ChannelRelationsCount**](ChannelRelationsCount.md) |  | [optional]
 **location** | [**\Supla\ApiClient\Model\Location**](Location.md) |  | [optional]

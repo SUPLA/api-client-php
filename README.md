@@ -52,12 +52,17 @@ Class | Method | HTTP request | Description
 *ChannelGroupsApi* | [**deleteChannelGroup**](docs/Api/ChannelGroupsApi.md#deletechannelgroup) | **DELETE** /channel-groups/{id} | Delete the channel group
 *ChannelGroupsApi* | [**executeActionOnChannelGroup**](docs/Api/ChannelGroupsApi.md#executeactiononchannelgroup) | **PATCH** /channel-groups/{id} | 
 *ChannelGroupsApi* | [**getChannelGroup**](docs/Api/ChannelGroupsApi.md#getchannelgroup) | **GET** /channel-groups/{id} | Get Channel Group
+*ChannelGroupsApi* | [**getChannelGroupScenes**](docs/Api/ChannelGroupsApi.md#getchannelgroupscenes) | **GET** /channel-groups/{channelGroup}/scenes | Get channel group scenes
 *ChannelGroupsApi* | [**getChannelGroups**](docs/Api/ChannelGroupsApi.md#getchannelgroups) | **GET** /channel-groups | Get Channel Groups
 *ChannelGroupsApi* | [**updateChannelGroup**](docs/Api/ChannelGroupsApi.md#updatechannelgroup) | **PUT** /channel-groups/{id} | Update the channel group
 *ChannelsApi* | [**configureChannel**](docs/Api/ChannelsApi.md#configurechannel) | **PATCH** /channels/{id}/settings | 
+*ChannelsApi* | [**deleteChannelMeasurementLogs**](docs/Api/ChannelsApi.md#deletechannelmeasurementlogs) | **DELETE** /channels/{channel}/measurement-logs | Delete channel measurement logs.
 *ChannelsApi* | [**executeAction**](docs/Api/ChannelsApi.md#executeaction) | **PATCH** /channels/{id} | 
 *ChannelsApi* | [**getChannel**](docs/Api/ChannelsApi.md#getchannel) | **GET** /channels/{id} | Get Channel
 *ChannelsApi* | [**getChannelChannelGroups**](docs/Api/ChannelsApi.md#getchannelchannelgroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to
+*ChannelsApi* | [**getChannelMeasurementLogs**](docs/Api/ChannelsApi.md#getchannelmeasurementlogs) | **GET** /channels/{channel}/measurement-logs | Get channel measurement logs.
+*ChannelsApi* | [**getChannelMeasurementLogsCsvFile**](docs/Api/ChannelsApi.md#getchannelmeasurementlogscsvfile) | **GET** /channels/{channel}/measurement-logs-csv | Get measurement logs as zipped CSV file.
+*ChannelsApi* | [**getChannelScenes**](docs/Api/ChannelsApi.md#getchannelscenes) | **GET** /channels/{channel}/scenes | Get channel scenes
 *ChannelsApi* | [**getChannels**](docs/Api/ChannelsApi.md#getchannels) | **GET** /channels | Get Channels
 *ChannelsApi* | [**updateChannel**](docs/Api/ChannelsApi.md#updatechannel) | **PUT** /channels/{id} | 
 *LocationsApi* | [**createLocation**](docs/Api/LocationsApi.md#createlocation) | **POST** /locations | Create a new location
@@ -66,9 +71,22 @@ Class | Method | HTTP request | Description
 *LocationsApi* | [**getLocations**](docs/Api/LocationsApi.md#getlocations) | **GET** /locations | Get locations
 *LocationsApi* | [**updateLocation**](docs/Api/LocationsApi.md#updatelocation) | **PUT** /locations/{id} | Update the location
 *OAuthApi* | [**issueAccessToken**](docs/Api/OAuthApi.md#issueaccesstoken) | **POST** /oauth/v2/token | Issues an access token based on authorization_code or refresh_token.
+*ScenesApi* | [**createScene**](docs/Api/ScenesApi.md#createscene) | **POST** /scenes | Create a scene
+*ScenesApi* | [**deleteScene**](docs/Api/ScenesApi.md#deletescene) | **DELETE** /scenes/{scene} | Delete the scene
+*ScenesApi* | [**executeScene**](docs/Api/ScenesApi.md#executescene) | **PATCH** /scenes/{scene} | 
+*ScenesApi* | [**getScene**](docs/Api/ScenesApi.md#getscene) | **GET** /scenes/{scene} | Get Scene
+*ScenesApi* | [**getSceneScenes**](docs/Api/ScenesApi.md#getscenescenes) | **GET** /scenes/{scene}/scenes | Get scene scenes
+*ScenesApi* | [**getScenes**](docs/Api/ScenesApi.md#getscenes) | **GET** /scenes | Get Scenes
+*ScenesApi* | [**updateScene**](docs/Api/ScenesApi.md#updatescene) | **PUT** /scenes/{scene} | Update the scene
 *ServerApi* | [**getServerInfo**](docs/Api/ServerApi.md#getserverinfo) | **GET** /server-info | Get the server info
 *ServerApi* | [**getSuplaServerStatus**](docs/Api/ServerApi.md#getsuplaserverstatus) | **GET** /server-status | Get the SUPLA Server status
 *ServerApi* | [**getTokenInfo**](docs/Api/ServerApi.md#gettokeninfo) | **GET** /token-info | Returns information about used access token
+*UserIconsApi* | [**createUserIcon**](docs/Api/UserIconsApi.md#createusericon) | **POST** /user-icons | Create a new User Icon
+*UserIconsApi* | [**createUserIconBase64**](docs/Api/UserIconsApi.md#createusericonbase64) | **POST** /user-icons.base64 | Create a new User Icon sent in Base64 format.
+*UserIconsApi* | [**deleteUserIcon**](docs/Api/UserIconsApi.md#deleteusericon) | **DELETE** /user-icons/{id} | Delete the User Icon
+*UserIconsApi* | [**getUserIcon**](docs/Api/UserIconsApi.md#getusericon) | **GET** /user-icons/{id} | Get User Icon
+*UserIconsApi* | [**getUserIconImage**](docs/Api/UserIconsApi.md#getusericonimage) | **GET** /user-icons/{id}/{imageIndex} | Get User Icon image at specified index
+*UserIconsApi* | [**getUserIcons**](docs/Api/UserIconsApi.md#getusericons) | **GET** /user-icons | List User Icons
 *UsersApi* | [**getCurrentUser**](docs/Api/UsersApi.md#getcurrentuser) | **GET** /users/current | Get info about user for the token.
 
 ## Models
@@ -77,9 +95,11 @@ Class | Method | HTTP request | Description
 - [AccessIdentifierActiveHoursDef](docs/Model/AccessIdentifierActiveHoursDef.md)
 - [AccessIdentifierRelationsCount](docs/Model/AccessIdentifierRelationsCount.md)
 - [AccessTokenRequestBody](docs/Model/AccessTokenRequestBody.md)
+- [ActionableSubject](docs/Model/ActionableSubject.md)
 - [ActionableSubjectTypeNames](docs/Model/ActionableSubjectTypeNames.md)
 - [Channel](docs/Model/Channel.md)
 - [ChannelActionParams](docs/Model/ChannelActionParams.md)
+- [ChannelActionParamsCopy](docs/Model/ChannelActionParamsCopy.md)
 - [ChannelActionParamsDimmer](docs/Model/ChannelActionParamsDimmer.md)
 - [ChannelActionParamsPercentage](docs/Model/ChannelActionParamsPercentage.md)
 - [ChannelActionParamsRgbw](docs/Model/ChannelActionParamsRgbw.md)
@@ -102,6 +122,7 @@ Class | Method | HTTP request | Description
 - [ChannelFunction](docs/Model/ChannelFunction.md)
 - [ChannelFunctionAction](docs/Model/ChannelFunctionAction.md)
 - [ChannelFunctionActionEnumNames](docs/Model/ChannelFunctionActionEnumNames.md)
+- [ChannelFunctionActionIds](docs/Model/ChannelFunctionActionIds.md)
 - [ChannelFunctionEnumNames](docs/Model/ChannelFunctionEnumNames.md)
 - [ChannelGroup](docs/Model/ChannelGroup.md)
 - [ChannelGroupRelationsCount](docs/Model/ChannelGroupRelationsCount.md)
@@ -127,12 +148,16 @@ Class | Method | HTTP request | Description
 - [ChannelStateTemperature](docs/Model/ChannelStateTemperature.md)
 - [ChannelStateValve](docs/Model/ChannelStateValve.md)
 - [ChannelType](docs/Model/ChannelType.md)
+- [ErrorResponse](docs/Model/ErrorResponse.md)
 - [InlineObject](docs/Model/InlineObject.md)
 - [InlineObject1](docs/Model/InlineObject1.md)
 - [InlineObject2](docs/Model/InlineObject2.md)
 - [InlineObject3](docs/Model/InlineObject3.md)
 - [InlineObject4](docs/Model/InlineObject4.md)
 - [InlineObject5](docs/Model/InlineObject5.md)
+- [InlineObject6](docs/Model/InlineObject6.md)
+- [InlineObject7](docs/Model/InlineObject7.md)
+- [InlineObject9](docs/Model/InlineObject9.md)
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InlineResponse2001](docs/Model/InlineResponse2001.md)
 - [InlineResponse2002](docs/Model/InlineResponse2002.md)
@@ -140,12 +165,19 @@ Class | Method | HTTP request | Description
 - [InlineResponse200Timezone](docs/Model/InlineResponse200Timezone.md)
 - [InlineResponse400](docs/Model/InlineResponse400.md)
 - [InlineResponse4001](docs/Model/InlineResponse4001.md)
+- [InlineResponse4002](docs/Model/InlineResponse4002.md)
 - [InlineResponse409](docs/Model/InlineResponse409.md)
 - [InlineResponse503](docs/Model/InlineResponse503.md)
 - [Location](docs/Model/Location.md)
 - [LocationRelationsCount](docs/Model/LocationRelationsCount.md)
+- [Scene](docs/Model/Scene.md)
+- [SceneOperation](docs/Model/SceneOperation.md)
+- [SceneRelationsCount](docs/Model/SceneRelationsCount.md)
+- [SceneState](docs/Model/SceneState.md)
+- [ScenesOperations](docs/Model/ScenesOperations.md)
 - [User](docs/Model/User.md)
 - [UserAgreements](docs/Model/UserAgreements.md)
+- [UserIcon](docs/Model/UserIcon.md)
 - [UserLimits](docs/Model/UserLimits.md)
 
 ## Authorization
@@ -159,8 +191,33 @@ or your server instance.
 - **Flow**: `authorizationCode`
 - **Authorization URL**: `https://cloud.supla.org/oauth/v2/auth` if the app is public or `https://YOUR_SUPLA_SERVER/oauth/v2/auth` otherwise
 - **Scopes**:
-    - `accessids_r`: Access Identifiers (Read)
-    - `locations_r`: Locations (Read)
+    - `accessids_r`: Access Identifiers (read)
+    - `accessids_rw`: Access Identifiers (read and modify)
+    - `account_r`: User account and e-mail address (read)
+    - `account_rw`: User account (read and modify)
+    - `channels_r`: Channels (read)
+    - `channels_rw`: Channels (read and modify)
+    - `channels_ea`: Channels (execute actions)
+    - `channels_files`: Download files from API (measurements history, user icons)
+    - `channelgroups_r`: Channel groups (read)
+    - `channelgroups_rw`: Channel groups (read and modify)
+    - `channelgroups_ea`: Channel groups (execute actions)
+    - `clientapps_r`: Client apps (read)
+    - `clientapps_rw`: Client apps (read and modify)
+    - `directlinks_r`: Direct links (read)
+    - `directlinks_rw`: Direct links (read and modify)
+    - `iodevices_r`: IO Devices (read)
+    - `iodevices_rw`: IO Devices (read and modify)
+    - `locations_r`: Locations (read)
+    - `locations_rw`: Locations (read and modify)
+    - `scenes_r`: Scenes (read)
+    - `scenes_rw`: Scenes (read and modify)
+    - `scenes_ea`: Scenes (execute actions)
+    - `schedules_r`: Schedules (read)
+    - `schedules_rw`: Schedules (read and modify)
+    - `state_webhook`: Access to state webhooks
+    - `mqtt_broker`: MQTT Broker settings
+    - `offline_access`: Issue refresh token
 - **Example Auth URL**: `/oauth/v2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=account_r%20channels_r&state=example-state`
 
 
@@ -169,5 +226,5 @@ or your server instance.
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- Targeted Cloud version: `2.3.37`
+- Targeted Cloud version: `22.07`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

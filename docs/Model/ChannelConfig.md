@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **pricePerUnit** | **float** |  | [optional]
 **currency** | **string** |  | [optional]
 **electricityMeterInitialValues** | **object** |  | [optional]
+**addToHistory** | **bool** |  | [optional]
+**lowerVoltageThreshold** | **float** |  | [optional]
+**upperVoltageThreshold** | **float** |  | [optional]
 **temperatureAdjustment** | **float** |  | [optional]
 **humidityAdjustment** | **float** |  | [optional]
 **impulsesPerUnit** | **int** |  | [optional]
@@ -27,5 +30,7 @@ Name | Type | Description | Notes
 **openingSensorSecondaryChannelId** | **int** |  | [optional]
 **numberOfAttemptsToOpen** | **int** |  | [optional]
 **numberOfAttemptsToClose** | **int** |  | [optional]
+**stateVerificationMethodActive** | **bool** |  | [optional]
+**closingRule** | [**\Supla\ApiClient\Model\ChannelConfigControllingTheGateClosingRule**](ChannelConfigControllingTheGateClosingRule.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

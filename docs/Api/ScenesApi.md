@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteScene()**](ScenesApi.md#deleteScene) | **DELETE** /scenes/{scene} | Delete the scene
 [**executeScene()**](ScenesApi.md#executeScene) | **PATCH** /scenes/{scene} | 
 [**getScene()**](ScenesApi.md#getScene) | **GET** /scenes/{scene} | Get Scene
+[**getSceneDirectLinks()**](ScenesApi.md#getSceneDirectLinks) | **GET** /scenes/{scene}/direct-links | Get scene direct links
 [**getSceneScenes()**](ScenesApi.md#getSceneScenes) | **GET** /scenes/{scene}/scenes | Get scene scenes
 [**getScenes()**](ScenesApi.md#getScenes) | **GET** /scenes | Get Scenes
 [**updateScene()**](ScenesApi.md#updateScene) | **PUT** /scenes/{scene} | Update the scene
@@ -16,7 +17,7 @@ Method | HTTP request | Description
 ## `createScene()`
 
 ```php
-createScene($inlineObject6): \Supla\ApiClient\Model\Scene
+createScene($inlineObject9): \Supla\ApiClient\Model\Scene
 ```
 
 Create a scene
@@ -41,10 +42,10 @@ $apiInstance = new Supla\ApiClient\Api\ScenesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inlineObject6 = new \Supla\ApiClient\Model\InlineObject6(); // \Supla\ApiClient\Model\InlineObject6
+$inlineObject9 = new \Supla\ApiClient\Model\InlineObject9(); // \Supla\ApiClient\Model\InlineObject9
 
 try {
-    $result = $apiInstance->createScene($inlineObject6);
+    $result = $apiInstance->createScene($inlineObject9);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScenesApi->createScene: ', $e->getMessage(), PHP_EOL;
@@ -55,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject6** | [**\Supla\ApiClient\Model\InlineObject6**](../Model/InlineObject6.md)|  |
+ **inlineObject9** | [**\Supla\ApiClient\Model\InlineObject9**](../Model/InlineObject9.md)|  |
 
 ### Return type
 
@@ -259,6 +260,69 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSceneDirectLinks()`
+
+```php
+getSceneDirectLinks($scene, $include): \Supla\ApiClient\Model\DirectLink[]
+```
+
+Get scene direct links
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: BearerAuth
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Supla\ApiClient\Api\ScenesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$scene = 56; // int | ID
+$include = array('include_example'); // string[] | List of extra fields to include in the response.
+
+try {
+    $result = $apiInstance->getSceneDirectLinks($scene, $include);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ScenesApi->getSceneDirectLinks: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scene** | **int**| ID |
+ **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+
+### Return type
+
+[**\Supla\ApiClient\Model\DirectLink[]**](../Model/DirectLink.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getSceneScenes()`
 
 ```php
@@ -325,7 +389,7 @@ Name | Type | Description  | Notes
 ## `getScenes()`
 
 ```php
-getScenes($include): \Supla\ApiClient\Model\Scene[]
+getScenes($include, $forIntegration): \Supla\ApiClient\Model\Scene[]
 ```
 
 Get Scenes
@@ -351,9 +415,10 @@ $apiInstance = new Supla\ApiClient\Api\ScenesApi(
     $config
 );
 $include = array('include_example'); // string[] | List of extra fields to include in the response.
+$forIntegration = 'forIntegration_example'; // string | Select an integration that the scenes should be returned for.
 
 try {
-    $result = $apiInstance->getScenes($include);
+    $result = $apiInstance->getScenes($include, $forIntegration);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScenesApi->getScenes: ', $e->getMessage(), PHP_EOL;
@@ -365,6 +430,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+ **forIntegration** | **string**| Select an integration that the scenes should be returned for. | [optional]
 
 ### Return type
 
@@ -386,7 +452,7 @@ Name | Type | Description  | Notes
 ## `updateScene()`
 
 ```php
-updateScene($scene, $inlineObject7): \Supla\ApiClient\Model\Scene
+updateScene($scene, $inlineObject10): \Supla\ApiClient\Model\Scene
 ```
 
 Update the scene
@@ -412,10 +478,10 @@ $apiInstance = new Supla\ApiClient\Api\ScenesApi(
     $config
 );
 $scene = 56; // int | ID
-$inlineObject7 = new \Supla\ApiClient\Model\InlineObject7(); // \Supla\ApiClient\Model\InlineObject7
+$inlineObject10 = new \Supla\ApiClient\Model\InlineObject10(); // \Supla\ApiClient\Model\InlineObject10
 
 try {
-    $result = $apiInstance->updateScene($scene, $inlineObject7);
+    $result = $apiInstance->updateScene($scene, $inlineObject10);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScenesApi->updateScene: ', $e->getMessage(), PHP_EOL;
@@ -427,7 +493,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scene** | **int**| ID |
- **inlineObject7** | [**\Supla\ApiClient\Model\InlineObject7**](../Model/InlineObject7.md)|  |
+ **inlineObject10** | [**\Supla\ApiClient\Model\InlineObject10**](../Model/InlineObject10.md)|  |
 
 ### Return type
 

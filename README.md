@@ -52,19 +52,31 @@ Class | Method | HTTP request | Description
 *ChannelGroupsApi* | [**deleteChannelGroup**](docs/Api/ChannelGroupsApi.md#deletechannelgroup) | **DELETE** /channel-groups/{id} | Delete the channel group
 *ChannelGroupsApi* | [**executeActionOnChannelGroup**](docs/Api/ChannelGroupsApi.md#executeactiononchannelgroup) | **PATCH** /channel-groups/{id} | 
 *ChannelGroupsApi* | [**getChannelGroup**](docs/Api/ChannelGroupsApi.md#getchannelgroup) | **GET** /channel-groups/{id} | Get Channel Group
+*ChannelGroupsApi* | [**getChannelGroupDirectLinks**](docs/Api/ChannelGroupsApi.md#getchannelgroupdirectlinks) | **GET** /channel-groups/{channelGroup}/direct-links | Get channel group direct links
 *ChannelGroupsApi* | [**getChannelGroupScenes**](docs/Api/ChannelGroupsApi.md#getchannelgroupscenes) | **GET** /channel-groups/{channelGroup}/scenes | Get channel group scenes
 *ChannelGroupsApi* | [**getChannelGroups**](docs/Api/ChannelGroupsApi.md#getchannelgroups) | **GET** /channel-groups | Get Channel Groups
 *ChannelGroupsApi* | [**updateChannelGroup**](docs/Api/ChannelGroupsApi.md#updatechannelgroup) | **PUT** /channel-groups/{id} | Update the channel group
 *ChannelsApi* | [**configureChannel**](docs/Api/ChannelsApi.md#configurechannel) | **PATCH** /channels/{id}/settings | 
 *ChannelsApi* | [**deleteChannelMeasurementLogs**](docs/Api/ChannelsApi.md#deletechannelmeasurementlogs) | **DELETE** /channels/{channel}/measurement-logs | Delete channel measurement logs.
+*ChannelsApi* | [**downloadChannelMeasurementLogs**](docs/Api/ChannelsApi.md#downloadchannelmeasurementlogs) | **GET** /channels/{channel}/measurement-logs-download | Get measurement logs as a zipped CSV file.
 *ChannelsApi* | [**executeAction**](docs/Api/ChannelsApi.md#executeaction) | **PATCH** /channels/{id} | 
 *ChannelsApi* | [**getChannel**](docs/Api/ChannelsApi.md#getchannel) | **GET** /channels/{id} | Get Channel
 *ChannelsApi* | [**getChannelChannelGroups**](docs/Api/ChannelsApi.md#getchannelchannelgroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to
+*ChannelsApi* | [**getChannelDirectLinks**](docs/Api/ChannelsApi.md#getchanneldirectlinks) | **GET** /channels/{channel}/direct-links | Get channel direct links
 *ChannelsApi* | [**getChannelMeasurementLogs**](docs/Api/ChannelsApi.md#getchannelmeasurementlogs) | **GET** /channels/{channel}/measurement-logs | Get channel measurement logs.
-*ChannelsApi* | [**getChannelMeasurementLogsCsvFile**](docs/Api/ChannelsApi.md#getchannelmeasurementlogscsvfile) | **GET** /channels/{channel}/measurement-logs-csv | Get measurement logs as zipped CSV file.
 *ChannelsApi* | [**getChannelScenes**](docs/Api/ChannelsApi.md#getchannelscenes) | **GET** /channels/{channel}/scenes | Get channel scenes
 *ChannelsApi* | [**getChannels**](docs/Api/ChannelsApi.md#getchannels) | **GET** /channels | Get Channels
 *ChannelsApi* | [**updateChannel**](docs/Api/ChannelsApi.md#updatechannel) | **PUT** /channels/{id} | 
+*ClientAppsApi* | [**deleteClientApp**](docs/Api/ClientAppsApi.md#deleteclientapp) | **DELETE** /client-apps/{id} | Delete the client app
+*ClientAppsApi* | [**getClientApps**](docs/Api/ClientAppsApi.md#getclientapps) | **GET** /client-apps | Get Client Apps
+*ClientAppsApi* | [**updateClientApp**](docs/Api/ClientAppsApi.md#updateclientapp) | **PUT** /client-apps/{id} | Update the client app
+*DevicesApi* | [**deleteDevice**](docs/Api/DevicesApi.md#deletedevice) | **DELETE** /iodevices/{id} | Delete the device
+*DevicesApi* | [**executeDeviceAction**](docs/Api/DevicesApi.md#executedeviceaction) | **PATCH** /iodevices/{id} | 
+*DevicesApi* | [**getIoDevice**](docs/Api/DevicesApi.md#getiodevice) | **GET** /iodevices/{id} | Get Device
+*DevicesApi* | [**getIoDevices**](docs/Api/DevicesApi.md#getiodevices) | **GET** /iodevices | Get Devices
+*DevicesApi* | [**updateDevice**](docs/Api/DevicesApi.md#updatedevice) | **PUT** /iodevices/{id} | 
+*DirectLinksApi* | [**getDirectLink**](docs/Api/DirectLinksApi.md#getdirectlink) | **GET** /direct-links/{directLink} | Get direct link
+*DirectLinksApi* | [**getDirectLinks**](docs/Api/DirectLinksApi.md#getdirectlinks) | **GET** /direct-links | Get Direct Links
 *LocationsApi* | [**createLocation**](docs/Api/LocationsApi.md#createlocation) | **POST** /locations | Create a new location
 *LocationsApi* | [**deleteLocation**](docs/Api/LocationsApi.md#deletelocation) | **DELETE** /locations/{id} | Delete the location
 *LocationsApi* | [**getLocation**](docs/Api/LocationsApi.md#getlocation) | **GET** /locations/{id} | Get location by ID
@@ -75,9 +87,11 @@ Class | Method | HTTP request | Description
 *ScenesApi* | [**deleteScene**](docs/Api/ScenesApi.md#deletescene) | **DELETE** /scenes/{scene} | Delete the scene
 *ScenesApi* | [**executeScene**](docs/Api/ScenesApi.md#executescene) | **PATCH** /scenes/{scene} | 
 *ScenesApi* | [**getScene**](docs/Api/ScenesApi.md#getscene) | **GET** /scenes/{scene} | Get Scene
+*ScenesApi* | [**getSceneDirectLinks**](docs/Api/ScenesApi.md#getscenedirectlinks) | **GET** /scenes/{scene}/direct-links | Get scene direct links
 *ScenesApi* | [**getSceneScenes**](docs/Api/ScenesApi.md#getscenescenes) | **GET** /scenes/{scene}/scenes | Get scene scenes
 *ScenesApi* | [**getScenes**](docs/Api/ScenesApi.md#getscenes) | **GET** /scenes | Get Scenes
 *ScenesApi* | [**updateScene**](docs/Api/ScenesApi.md#updatescene) | **PUT** /scenes/{scene} | Update the scene
+*SchedulesApi* | [**getSchedules**](docs/Api/SchedulesApi.md#getschedules) | **GET** /schedules | Get Schedules
 *ServerApi* | [**getServerInfo**](docs/Api/ServerApi.md#getserverinfo) | **GET** /server-info | Get the server info
 *ServerApi* | [**getSuplaServerStatus**](docs/Api/ServerApi.md#getsuplaserverstatus) | **GET** /server-status | Get the SUPLA Server status
 *ServerApi* | [**getTokenInfo**](docs/Api/ServerApi.md#gettokeninfo) | **GET** /token-info | Returns information about used access token
@@ -92,11 +106,11 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [AccessIdentifier](docs/Model/AccessIdentifier.md)
-- [AccessIdentifierActiveHoursDef](docs/Model/AccessIdentifierActiveHoursDef.md)
 - [AccessIdentifierRelationsCount](docs/Model/AccessIdentifierRelationsCount.md)
 - [AccessTokenRequestBody](docs/Model/AccessTokenRequestBody.md)
 - [ActionableSubject](docs/Model/ActionableSubject.md)
 - [ActionableSubjectTypeNames](docs/Model/ActionableSubjectTypeNames.md)
+- [ActiveHoursDef](docs/Model/ActiveHoursDef.md)
 - [Channel](docs/Model/Channel.md)
 - [ChannelActionParams](docs/Model/ChannelActionParams.md)
 - [ChannelActionParamsCopy](docs/Model/ChannelActionParamsCopy.md)
@@ -111,8 +125,13 @@ Class | Method | HTTP request | Description
 - [ChannelActionParamsRgbwOneOf3Rgb](docs/Model/ChannelActionParamsRgbwOneOf3Rgb.md)
 - [ChannelConfig](docs/Model/ChannelConfig.md)
 - [ChannelConfigActionTrigger](docs/Model/ChannelConfigActionTrigger.md)
+- [ChannelConfigAlexaSettings](docs/Model/ChannelConfigAlexaSettings.md)
+- [ChannelConfigAlexaSettingsAlexa](docs/Model/ChannelConfigAlexaSettingsAlexa.md)
 - [ChannelConfigControllingTheGate](docs/Model/ChannelConfigControllingTheGate.md)
+- [ChannelConfigControllingTheGateClosingRule](docs/Model/ChannelConfigControllingTheGateClosingRule.md)
 - [ChannelConfigElectricityMeter](docs/Model/ChannelConfigElectricityMeter.md)
+- [ChannelConfigGoogleHomeSettings](docs/Model/ChannelConfigGoogleHomeSettings.md)
+- [ChannelConfigGoogleHomeSettingsGoogleHome](docs/Model/ChannelConfigGoogleHomeSettingsGoogleHome.md)
 - [ChannelConfigHumidity](docs/Model/ChannelConfigHumidity.md)
 - [ChannelConfigHumidityAndThermometer](docs/Model/ChannelConfigHumidityAndThermometer.md)
 - [ChannelConfigImpulseCounter](docs/Model/ChannelConfigImpulseCounter.md)
@@ -148,15 +167,24 @@ Class | Method | HTTP request | Description
 - [ChannelStateTemperature](docs/Model/ChannelStateTemperature.md)
 - [ChannelStateValve](docs/Model/ChannelStateValve.md)
 - [ChannelType](docs/Model/ChannelType.md)
+- [ClientApp](docs/Model/ClientApp.md)
+- [Device](docs/Model/Device.md)
+- [DeviceManufacturer](docs/Model/DeviceManufacturer.md)
+- [DeviceRelationsCount](docs/Model/DeviceRelationsCount.md)
+- [DirectLink](docs/Model/DirectLink.md)
+- [DirectLinkActiveDateRange](docs/Model/DirectLinkActiveDateRange.md)
 - [ErrorResponse](docs/Model/ErrorResponse.md)
 - [InlineObject](docs/Model/InlineObject.md)
 - [InlineObject1](docs/Model/InlineObject1.md)
+- [InlineObject10](docs/Model/InlineObject10.md)
+- [InlineObject12](docs/Model/InlineObject12.md)
 - [InlineObject2](docs/Model/InlineObject2.md)
 - [InlineObject3](docs/Model/InlineObject3.md)
 - [InlineObject4](docs/Model/InlineObject4.md)
 - [InlineObject5](docs/Model/InlineObject5.md)
 - [InlineObject6](docs/Model/InlineObject6.md)
 - [InlineObject7](docs/Model/InlineObject7.md)
+- [InlineObject8](docs/Model/InlineObject8.md)
 - [InlineObject9](docs/Model/InlineObject9.md)
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InlineResponse2001](docs/Model/InlineResponse2001.md)
@@ -175,6 +203,13 @@ Class | Method | HTTP request | Description
 - [SceneRelationsCount](docs/Model/SceneRelationsCount.md)
 - [SceneState](docs/Model/SceneState.md)
 - [ScenesOperations](docs/Model/ScenesOperations.md)
+- [Schedule](docs/Model/Schedule.md)
+- [ScheduleClosestExecutions](docs/Model/ScheduleClosestExecutions.md)
+- [ScheduleConfigEntry](docs/Model/ScheduleConfigEntry.md)
+- [ScheduleConfigEntryAction](docs/Model/ScheduleConfigEntryAction.md)
+- [ScheduleScheduledExecution](docs/Model/ScheduleScheduledExecution.md)
+- [ScheduleScheduledExecutionResult](docs/Model/ScheduleScheduledExecutionResult.md)
+- [ScheduleState](docs/Model/ScheduleState.md)
 - [User](docs/Model/User.md)
 - [UserAgreements](docs/Model/UserAgreements.md)
 - [UserIcon](docs/Model/UserIcon.md)
@@ -226,5 +261,5 @@ or your server instance.
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- Targeted Cloud version: `22.07`
+- Targeted Cloud version: `23.05`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

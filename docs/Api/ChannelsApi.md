@@ -6,11 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**configureChannel()**](ChannelsApi.md#configureChannel) | **PATCH** /channels/{id}/settings | 
 [**deleteChannelMeasurementLogs()**](ChannelsApi.md#deleteChannelMeasurementLogs) | **DELETE** /channels/{channel}/measurement-logs | Delete channel measurement logs.
+[**downloadChannelMeasurementLogs()**](ChannelsApi.md#downloadChannelMeasurementLogs) | **GET** /channels/{channel}/measurement-logs-download | Get measurement logs as a zipped CSV file.
 [**executeAction()**](ChannelsApi.md#executeAction) | **PATCH** /channels/{id} | 
 [**getChannel()**](ChannelsApi.md#getChannel) | **GET** /channels/{id} | Get Channel
 [**getChannelChannelGroups()**](ChannelsApi.md#getChannelChannelGroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to
+[**getChannelDirectLinks()**](ChannelsApi.md#getChannelDirectLinks) | **GET** /channels/{channel}/direct-links | Get channel direct links
 [**getChannelMeasurementLogs()**](ChannelsApi.md#getChannelMeasurementLogs) | **GET** /channels/{channel}/measurement-logs | Get channel measurement logs.
-[**getChannelMeasurementLogsCsvFile()**](ChannelsApi.md#getChannelMeasurementLogsCsvFile) | **GET** /channels/{channel}/measurement-logs-csv | Get measurement logs as zipped CSV file.
 [**getChannelScenes()**](ChannelsApi.md#getChannelScenes) | **GET** /channels/{channel}/scenes | Get channel scenes
 [**getChannels()**](ChannelsApi.md#getChannels) | **GET** /channels | Get Channels
 [**updateChannel()**](ChannelsApi.md#updateChannel) | **PUT** /channels/{id} | 
@@ -82,7 +83,7 @@ Name | Type | Description  | Notes
 ## `deleteChannelMeasurementLogs()`
 
 ```php
-deleteChannelMeasurementLogs($channel)
+deleteChannelMeasurementLogs($channel, $logsType)
 ```
 
 Delete channel measurement logs.
@@ -108,9 +109,10 @@ $apiInstance = new Supla\ApiClient\Api\ChannelsApi(
     $config
 );
 $channel = 56; // int | ID
+$logsType = 'logsType_example'; // string | Type of the logs to delete. Some devices may gather multiple log types.
 
 try {
-    $apiInstance->deleteChannelMeasurementLogs($channel);
+    $apiInstance->deleteChannelMeasurementLogs($channel, $logsType);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->deleteChannelMeasurementLogs: ', $e->getMessage(), PHP_EOL;
 }
@@ -121,6 +123,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel** | **int**| ID |
+ **logsType** | **string**| Type of the logs to delete. Some devices may gather multiple log types. | [optional]
 
 ### Return type
 
@@ -134,6 +137,68 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `downloadChannelMeasurementLogs()`
+
+```php
+downloadChannelMeasurementLogs($channel, $logsType)
+```
+
+Get measurement logs as a zipped CSV file.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: BearerAuth
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Supla\ApiClient\Api\ChannelsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$channel = 56; // int | ID
+$logsType = 'logsType_example'; // string | Type of the logs to delete. Some devices may gather multiple log types.
+
+try {
+    $apiInstance->downloadChannelMeasurementLogs($channel, $logsType);
+} catch (Exception $e) {
+    echo 'Exception when calling ChannelsApi->downloadChannelMeasurementLogs: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel** | **int**| ID |
+ **logsType** | **string**| Type of the logs to delete. Some devices may gather multiple log types. | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/zip`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -327,10 +392,73 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getChannelDirectLinks()`
+
+```php
+getChannelDirectLinks($channel, $include): \Supla\ApiClient\Model\DirectLink[]
+```
+
+Get channel direct links
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: BearerAuth
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Supla\ApiClient\Api\ChannelsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$channel = 56; // int | ID
+$include = array('include_example'); // string[] | List of extra fields to include in the response.
+
+try {
+    $result = $apiInstance->getChannelDirectLinks($channel, $include);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ChannelsApi->getChannelDirectLinks: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel** | **int**| ID |
+ **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+
+### Return type
+
+[**\Supla\ApiClient\Model\DirectLink[]**](../Model/DirectLink.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getChannelMeasurementLogs()`
 
 ```php
-getChannelMeasurementLogs($channel, $afterTimestamp, $beforeTimestamp, $order, $sparse, $limit, $offset): OneOfArrayArrayArrayArrayArrayArray
+getChannelMeasurementLogs($channel, $afterTimestamp, $beforeTimestamp, $order, $sparse, $logsType, $limit, $offset): OneOfArrayArrayArrayArrayArrayArrayArray
 ```
 
 Get channel measurement logs.
@@ -360,11 +488,12 @@ $afterTimestamp = 56; // int | Fetch log items created after this timestamp.
 $beforeTimestamp = 56; // int | Fetch log items created before this timestamp.
 $order = 'DESC'; // string | Whether to order items ascending or descending by creation date.
 $sparse = 56; // int | Set the maximum items to return from the given period. If specified, the `limit` and `offset` params are ignored. For example, if you fetches the logs from the whole year and set the `sparse` param to `12`, the API will try to return up to 12 log items, equally distributed throug the whole year. Min: 1, Max: 1000.
+$logsType = 'logsType_example'; // string | Type of the logs to return. Some devices may gather multiple log types.
 $limit = 5000; // int | Maximum items count in response, from 1 to 5000.
 $offset = 0; // int | Pagination offset.
 
 try {
-    $result = $apiInstance->getChannelMeasurementLogs($channel, $afterTimestamp, $beforeTimestamp, $order, $sparse, $limit, $offset);
+    $result = $apiInstance->getChannelMeasurementLogs($channel, $afterTimestamp, $beforeTimestamp, $order, $sparse, $logsType, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->getChannelMeasurementLogs: ', $e->getMessage(), PHP_EOL;
@@ -380,12 +509,13 @@ Name | Type | Description  | Notes
  **beforeTimestamp** | **int**| Fetch log items created before this timestamp. | [optional]
  **order** | **string**| Whether to order items ascending or descending by creation date. | [optional] [default to &#39;DESC&#39;]
  **sparse** | **int**| Set the maximum items to return from the given period. If specified, the &#x60;limit&#x60; and &#x60;offset&#x60; params are ignored. For example, if you fetches the logs from the whole year and set the &#x60;sparse&#x60; param to &#x60;12&#x60;, the API will try to return up to 12 log items, equally distributed throug the whole year. Min: 1, Max: 1000. | [optional]
+ **logsType** | **string**| Type of the logs to return. Some devices may gather multiple log types. | [optional]
  **limit** | **int**| Maximum items count in response, from 1 to 5000. | [optional] [default to 5000]
  **offset** | **int**| Pagination offset. | [optional] [default to 0]
 
 ### Return type
 
-[**OneOfArrayArrayArrayArrayArrayArray**](../Model/OneOfArrayArrayArrayArrayArrayArray.md)
+[**OneOfArrayArrayArrayArrayArrayArrayArray**](../Model/OneOfArrayArrayArrayArrayArrayArrayArray.md)
 
 ### Authorization
 
@@ -395,66 +525,6 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getChannelMeasurementLogsCsvFile()`
-
-```php
-getChannelMeasurementLogsCsvFile($channel)
-```
-
-Get measurement logs as zipped CSV file.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer authorization: BearerAuth
-$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure OAuth2 access token for authorization: OAuth2
-$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Supla\ApiClient\Api\ChannelsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$channel = 56; // int | ID
-
-try {
-    $apiInstance->getChannelMeasurementLogsCsvFile($channel);
-} catch (Exception $e) {
-    echo 'Exception when calling ChannelsApi->getChannelMeasurementLogsCsvFile: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| ID |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/zip`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -526,7 +596,7 @@ Name | Type | Description  | Notes
 ## `getChannels()`
 
 ```php
-getChannels($function, $io, $hasFunction, $skipIds, $include): \Supla\ApiClient\Model\Channel[]
+getChannels($function, $io, $hasFunction, $skipIds, $include, $forIntegration): \Supla\ApiClient\Model\Channel[]
 ```
 
 Get Channels
@@ -556,9 +626,10 @@ $io = 'io_example'; // string | Return only `input` or `output` channels.
 $hasFunction = True; // bool | Return only channels with (`true`) or without (`false`) chosen functions.
 $skipIds = array(56); // int[]
 $include = array('include_example'); // string[] | List of extra fields to include in the response.
+$forIntegration = 'forIntegration_example'; // string | Select an integration that the channels should be returned for.
 
 try {
-    $result = $apiInstance->getChannels($function, $io, $hasFunction, $skipIds, $include);
+    $result = $apiInstance->getChannels($function, $io, $hasFunction, $skipIds, $include, $forIntegration);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->getChannels: ', $e->getMessage(), PHP_EOL;
@@ -574,6 +645,7 @@ Name | Type | Description  | Notes
  **hasFunction** | **bool**| Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. | [optional]
  **skipIds** | [**int[]**](../Model/int.md)|  | [optional]
  **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+ **forIntegration** | **string**| Select an integration that the channels should be returned for. | [optional]
 
 ### Return type
 

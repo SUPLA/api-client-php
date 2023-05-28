@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **caption** | **string** | Caption | [optional]
 **altIcon** | **int** | Chosen alternative icon idenifier. Should not be greater than the &#x60;function.maxAlternativeIconIndex&#x60;. | [optional]
 **hidden** | **bool** | Whether this channel group is shown on client apps or not | [optional]
-**subjectType** | **string** |  | [optional]
+**ownSubjectType** | **string** |  | [optional]
 **functionId** | **int** |  | [optional]
 **function** | [**\Supla\ApiClient\Model\ChannelFunction**](ChannelFunction.md) |  | [optional]
 **locationId** | **int** |  | [optional]

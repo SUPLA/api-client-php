@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 ## `createUserIconBase64()`
 
 ```php
-createUserIconBase64($inlineObject9): \Supla\ApiClient\Model\UserIcon
+createUserIconBase64($inlineObject12): \Supla\ApiClient\Model\UserIcon
 ```
 
 Create a new User Icon sent in Base64 format.
@@ -111,10 +111,10 @@ $apiInstance = new Supla\ApiClient\Api\UserIconsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inlineObject9 = new \Supla\ApiClient\Model\InlineObject9(); // \Supla\ApiClient\Model\InlineObject9
+$inlineObject12 = new \Supla\ApiClient\Model\InlineObject12(); // \Supla\ApiClient\Model\InlineObject12
 
 try {
-    $result = $apiInstance->createUserIconBase64($inlineObject9);
+    $result = $apiInstance->createUserIconBase64($inlineObject12);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserIconsApi->createUserIconBase64: ', $e->getMessage(), PHP_EOL;
@@ -125,7 +125,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject9** | [**\Supla\ApiClient\Model\InlineObject9**](../Model/InlineObject9.md)|  |
+ **inlineObject12** | [**\Supla\ApiClient\Model\InlineObject12**](../Model/InlineObject12.md)|  |
 
 ### Return type
 

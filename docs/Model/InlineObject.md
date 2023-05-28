@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | [optional]
 **caption** | **string** |  | [optional]
 **password** | **string** | Provide new password if you want to change it. | [optional]
-**activeFrom** | **string** |  | [optional]
-**activeTo** | **string** |  | [optional]
-**activeHours** | [**\Supla\ApiClient\Model\AccessIdentifierActiveHoursDef**](AccessIdentifierActiveHoursDef.md) |  | [optional]
+**activeFrom** | **\DateTime** |  | [optional]
+**activeTo** | **\DateTime** |  | [optional]
+**activeHours** | [**\Supla\ApiClient\Model\ActiveHoursDef**](ActiveHoursDef.md) |  | [optional]
 **locationsIds** | **int[]** | Location identifiers to assign to this AID. | [optional]
 **clientAppsIds** | **int[]** | Client Apps identifiers to assign to this Access Identifier. If client app is connected to any other AID, it will be disconnected from the old one before assigning. | [optional]
 

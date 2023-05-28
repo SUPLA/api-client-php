@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **string** | SUPLA Server address (to be used in smartphones) | [optional]
-**time** | **string** | Current server time | [optional]
+**time** | **\DateTime** | Current server time | [optional]
 **timezone** | [**\Supla\ApiClient\Model\InlineResponse200Timezone**](InlineResponse200Timezone.md) |  | [optional]
 **authenticated** | **bool** |  | [optional]
 **cloudVersion** | **string** |  | [optional]

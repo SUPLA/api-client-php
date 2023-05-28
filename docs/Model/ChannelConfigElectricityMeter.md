@@ -10,5 +10,8 @@ Name | Type | Description | Notes
 **currency** | **string** |  | [optional]
 **electricityMeterInitialValues** | **object** |  | [optional]
 **relatedChannelId** | **int** |  | [optional]
+**addToHistory** | **bool** |  | [optional]
+**lowerVoltageThreshold** | **float** |  | [optional]
+**upperVoltageThreshold** | **float** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

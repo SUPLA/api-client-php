@@ -219,7 +219,7 @@ Class | Method | HTTP request | Description
 
 ### Personal Access Token
 
-Generate a Personal Access Token for you in the **Integrations** section on [https://cloud.supla.org](https://cloud.supla.org)
+Generate a Personal Access Token for yourself in the **Security** section on [https://cloud.supla.org](https://cloud.supla.org)
 or your server instance.
 
 ### OAuth2

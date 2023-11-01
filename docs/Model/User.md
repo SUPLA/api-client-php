@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **clientsRegistrationEnabled** | **\DateTime** |  | [optional]
 **ioDevicesRegistrationEnabled** | **\DateTime** |  | [optional]
 **limits** | [**\Supla\ApiClient\Model\UserLimits**](UserLimits.md) |  | [optional]
+**apiRateLimit** | [**\Supla\ApiClient\Model\UserApiRateLimit**](UserApiRateLimit.md) |  | [optional]
 **agreements** | [**\Supla\ApiClient\Model\UserAgreements**](UserAgreements.md) |  | [optional]
 **locale** | **string** |  | [optional]
 **preferences** | **object** |  | [optional]

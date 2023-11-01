@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actionId** | [**\Supla\ApiClient\Model\ChannelFunctionActionIds**](ChannelFunctionActionIds.md) |  | [optional]
+**actionId** | **int** |  | [optional]
 **actionParam** | [**\Supla\ApiClient\Model\ChannelActionParams**](ChannelActionParams.md) |  | [optional]
 **delayMs** | **int** | Delay before this operation in scene, in milliseconds. | [optional]
 **waitForCompletion** | **bool** | Whether to wait before proceeding with the scene until this operation completes. | [optional]

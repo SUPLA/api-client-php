@@ -414,7 +414,7 @@ $apiInstance = new Supla\ApiClient\Api\ChannelGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$function = array(new \Supla\ApiClient\Model\\Supla\ApiClient\Model\ChannelFunctionEnumNames()); // \Supla\ApiClient\Model\ChannelFunctionEnumNames[]
+$function = array('function_example'); // string[]
 $include = array('include_example'); // string[] | List of extra fields to include in the response.
 
 try {
@@ -429,7 +429,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **function** | [**\Supla\ApiClient\Model\ChannelFunctionEnumNames[]**](../Model/\Supla\ApiClient\Model\ChannelFunctionEnumNames.md)|  | [optional]
+ **function** | [**string[]**](../Model/string.md)|  | [optional]
  **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
 
 ### Return type

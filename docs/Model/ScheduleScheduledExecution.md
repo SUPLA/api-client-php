@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actionId** | [**\Supla\ApiClient\Model\ChannelFunctionActionIds**](ChannelFunctionActionIds.md) |  | [optional]
+**actionId** | **int** |  | [optional]
 **actionParam** | [**\Supla\ApiClient\Model\ChannelActionParams**](ChannelActionParams.md) |  | [optional]
 **plannedTimestamp** | **\DateTime** |  | [optional]
 **resultTimestamp** | **\DateTime** |  | [optional]

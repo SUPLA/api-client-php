@@ -57,22 +57,29 @@ Class | Method | HTTP request | Description
 *ChannelGroupsApi* | [**getChannelGroups**](docs/Api/ChannelGroupsApi.md#getchannelgroups) | **GET** /channel-groups | Get Channel Groups
 *ChannelGroupsApi* | [**updateChannelGroup**](docs/Api/ChannelGroupsApi.md#updatechannelgroup) | **PUT** /channel-groups/{id} | Update the channel group
 *ChannelsApi* | [**configureChannel**](docs/Api/ChannelsApi.md#configurechannel) | **PATCH** /channels/{id}/settings | 
+*ChannelsApi* | [**createChannelReaction**](docs/Api/ChannelsApi.md#createchannelreaction) | **POST** /channels/{channel}/reactions | Create channel reaction
 *ChannelsApi* | [**deleteChannelMeasurementLogs**](docs/Api/ChannelsApi.md#deletechannelmeasurementlogs) | **DELETE** /channels/{channel}/measurement-logs | Delete channel measurement logs.
+*ChannelsApi* | [**deleteChannelReaction**](docs/Api/ChannelsApi.md#deletechannelreaction) | **DELETE** /channels/{channel}/reactions/{reaction} | Delete channel reaction
 *ChannelsApi* | [**downloadChannelMeasurementLogs**](docs/Api/ChannelsApi.md#downloadchannelmeasurementlogs) | **GET** /channels/{channel}/measurement-logs-download | Get measurement logs as a zipped CSV file.
 *ChannelsApi* | [**executeAction**](docs/Api/ChannelsApi.md#executeaction) | **PATCH** /channels/{id} | 
 *ChannelsApi* | [**getChannel**](docs/Api/ChannelsApi.md#getchannel) | **GET** /channels/{id} | Get Channel
 *ChannelsApi* | [**getChannelChannelGroups**](docs/Api/ChannelsApi.md#getchannelchannelgroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to
 *ChannelsApi* | [**getChannelDirectLinks**](docs/Api/ChannelsApi.md#getchanneldirectlinks) | **GET** /channels/{channel}/direct-links | Get channel direct links
 *ChannelsApi* | [**getChannelMeasurementLogs**](docs/Api/ChannelsApi.md#getchannelmeasurementlogs) | **GET** /channels/{channel}/measurement-logs | Get channel measurement logs.
+*ChannelsApi* | [**getChannelNotifications**](docs/Api/ChannelsApi.md#getchannelnotifications) | **GET** /channels/{channel}/notifications | 
+*ChannelsApi* | [**getChannelReaction**](docs/Api/ChannelsApi.md#getchannelreaction) | **GET** /channels/{channel}/reactions/{reaction} | Get channel reaction
+*ChannelsApi* | [**getChannelReactions**](docs/Api/ChannelsApi.md#getchannelreactions) | **GET** /channels/{channel}/reactions | Get channel reactions
 *ChannelsApi* | [**getChannelScenes**](docs/Api/ChannelsApi.md#getchannelscenes) | **GET** /channels/{channel}/scenes | Get channel scenes
 *ChannelsApi* | [**getChannels**](docs/Api/ChannelsApi.md#getchannels) | **GET** /channels | Get Channels
 *ChannelsApi* | [**updateChannel**](docs/Api/ChannelsApi.md#updatechannel) | **PUT** /channels/{id} | 
+*ChannelsApi* | [**updateChannelReaction**](docs/Api/ChannelsApi.md#updatechannelreaction) | **PUT** /channels/{channel}/reactions/{reaction} | Update channel reaction
 *ClientAppsApi* | [**deleteClientApp**](docs/Api/ClientAppsApi.md#deleteclientapp) | **DELETE** /client-apps/{id} | Delete the client app
 *ClientAppsApi* | [**getClientApps**](docs/Api/ClientAppsApi.md#getclientapps) | **GET** /client-apps | Get Client Apps
 *ClientAppsApi* | [**updateClientApp**](docs/Api/ClientAppsApi.md#updateclientapp) | **PUT** /client-apps/{id} | Update the client app
 *DevicesApi* | [**deleteDevice**](docs/Api/DevicesApi.md#deletedevice) | **DELETE** /iodevices/{id} | Delete the device
 *DevicesApi* | [**executeDeviceAction**](docs/Api/DevicesApi.md#executedeviceaction) | **PATCH** /iodevices/{id} | 
 *DevicesApi* | [**getIoDevice**](docs/Api/DevicesApi.md#getiodevice) | **GET** /iodevices/{id} | Get Device
+*DevicesApi* | [**getIoDeviceNotifications**](docs/Api/DevicesApi.md#getiodevicenotifications) | **GET** /iodevices/{device}/notifications | 
 *DevicesApi* | [**getIoDevices**](docs/Api/DevicesApi.md#getiodevices) | **GET** /iodevices | Get Devices
 *DevicesApi* | [**updateDevice**](docs/Api/DevicesApi.md#updatedevice) | **PUT** /iodevices/{id} | 
 *DirectLinksApi* | [**getDirectLink**](docs/Api/DirectLinksApi.md#getdirectlink) | **GET** /direct-links/{directLink} | Get direct link
@@ -82,6 +89,9 @@ Class | Method | HTTP request | Description
 *LocationsApi* | [**getLocation**](docs/Api/LocationsApi.md#getlocation) | **GET** /locations/{id} | Get location by ID
 *LocationsApi* | [**getLocations**](docs/Api/LocationsApi.md#getlocations) | **GET** /locations | Get locations
 *LocationsApi* | [**updateLocation**](docs/Api/LocationsApi.md#updatelocation) | **PUT** /locations/{id} | Update the location
+*NotificationsApi* | [**getNotification**](docs/Api/NotificationsApi.md#getnotification) | **GET** /notifications/{id} | Get Notification
+*NotificationsApi* | [**sendNotification**](docs/Api/NotificationsApi.md#sendnotification) | **PATCH** /notifications | Send a notification.
+*NotificationsApi* | [**updateNotification**](docs/Api/NotificationsApi.md#updatenotification) | **PUT** /notifications/{notification} | 
 *OAuthApi* | [**issueAccessToken**](docs/Api/OAuthApi.md#issueaccesstoken) | **POST** /oauth/v2/token | Issues an access token based on authorization_code or refresh_token.
 *ScenesApi* | [**createScene**](docs/Api/ScenesApi.md#createscene) | **POST** /scenes | Create a scene
 *ScenesApi* | [**deleteScene**](docs/Api/ScenesApi.md#deletescene) | **DELETE** /scenes/{scene} | Delete the scene
@@ -115,6 +125,7 @@ Class | Method | HTTP request | Description
 - [ChannelActionParams](docs/Model/ChannelActionParams.md)
 - [ChannelActionParamsCopy](docs/Model/ChannelActionParamsCopy.md)
 - [ChannelActionParamsDimmer](docs/Model/ChannelActionParamsDimmer.md)
+- [ChannelActionParamsDuration](docs/Model/ChannelActionParamsDuration.md)
 - [ChannelActionParamsPercentage](docs/Model/ChannelActionParamsPercentage.md)
 - [ChannelActionParamsRgbw](docs/Model/ChannelActionParamsRgbw.md)
 - [ChannelActionParamsRgbwOneOf](docs/Model/ChannelActionParamsRgbwOneOf.md)
@@ -123,6 +134,7 @@ Class | Method | HTTP request | Description
 - [ChannelActionParamsRgbwOneOf2Hsv](docs/Model/ChannelActionParamsRgbwOneOf2Hsv.md)
 - [ChannelActionParamsRgbwOneOf3](docs/Model/ChannelActionParamsRgbwOneOf3.md)
 - [ChannelActionParamsRgbwOneOf3Rgb](docs/Model/ChannelActionParamsRgbwOneOf3Rgb.md)
+- [ChannelActionParamsSend](docs/Model/ChannelActionParamsSend.md)
 - [ChannelConfig](docs/Model/ChannelConfig.md)
 - [ChannelConfigActionTrigger](docs/Model/ChannelConfigActionTrigger.md)
 - [ChannelConfigAlexaSettings](docs/Model/ChannelConfigAlexaSettings.md)
@@ -134,15 +146,17 @@ Class | Method | HTTP request | Description
 - [ChannelConfigGoogleHomeSettingsGoogleHome](docs/Model/ChannelConfigGoogleHomeSettingsGoogleHome.md)
 - [ChannelConfigHumidity](docs/Model/ChannelConfigHumidity.md)
 - [ChannelConfigHumidityAndThermometer](docs/Model/ChannelConfigHumidityAndThermometer.md)
+- [ChannelConfigHvacThermostat](docs/Model/ChannelConfigHvacThermostat.md)
+- [ChannelConfigHvacThermostatSchedule](docs/Model/ChannelConfigHvacThermostatSchedule.md)
+- [ChannelConfigHvacThermostatScheduleProgramSettings](docs/Model/ChannelConfigHvacThermostatScheduleProgramSettings.md)
+- [ChannelConfigHvacThermostatTemperatureConstraints](docs/Model/ChannelConfigHvacThermostatTemperatureConstraints.md)
+- [ChannelConfigHvacThermostatTemperatures](docs/Model/ChannelConfigHvacThermostatTemperatures.md)
 - [ChannelConfigImpulseCounter](docs/Model/ChannelConfigImpulseCounter.md)
 - [ChannelConfigInvertedLogic](docs/Model/ChannelConfigInvertedLogic.md)
 - [ChannelConfigStaircaseTimer](docs/Model/ChannelConfigStaircaseTimer.md)
 - [ChannelConfigThermometer](docs/Model/ChannelConfigThermometer.md)
 - [ChannelFunction](docs/Model/ChannelFunction.md)
 - [ChannelFunctionAction](docs/Model/ChannelFunctionAction.md)
-- [ChannelFunctionActionEnumNames](docs/Model/ChannelFunctionActionEnumNames.md)
-- [ChannelFunctionActionIds](docs/Model/ChannelFunctionActionIds.md)
-- [ChannelFunctionEnumNames](docs/Model/ChannelFunctionEnumNames.md)
 - [ChannelGroup](docs/Model/ChannelGroup.md)
 - [ChannelGroupRelationsCount](docs/Model/ChannelGroupRelationsCount.md)
 - [ChannelRelationsCount](docs/Model/ChannelRelationsCount.md)
@@ -169,6 +183,8 @@ Class | Method | HTTP request | Description
 - [ChannelType](docs/Model/ChannelType.md)
 - [ClientApp](docs/Model/ClientApp.md)
 - [Device](docs/Model/Device.md)
+- [DeviceConfig](docs/Model/DeviceConfig.md)
+- [DeviceConfigHomeScreen](docs/Model/DeviceConfigHomeScreen.md)
 - [DeviceManufacturer](docs/Model/DeviceManufacturer.md)
 - [DeviceRelationsCount](docs/Model/DeviceRelationsCount.md)
 - [DirectLink](docs/Model/DirectLink.md)
@@ -177,7 +193,9 @@ Class | Method | HTTP request | Description
 - [InlineObject](docs/Model/InlineObject.md)
 - [InlineObject1](docs/Model/InlineObject1.md)
 - [InlineObject10](docs/Model/InlineObject10.md)
+- [InlineObject11](docs/Model/InlineObject11.md)
 - [InlineObject12](docs/Model/InlineObject12.md)
+- [InlineObject14](docs/Model/InlineObject14.md)
 - [InlineObject2](docs/Model/InlineObject2.md)
 - [InlineObject3](docs/Model/InlineObject3.md)
 - [InlineObject4](docs/Model/InlineObject4.md)
@@ -194,10 +212,33 @@ Class | Method | HTTP request | Description
 - [InlineResponse400](docs/Model/InlineResponse400.md)
 - [InlineResponse4001](docs/Model/InlineResponse4001.md)
 - [InlineResponse4002](docs/Model/InlineResponse4002.md)
+- [InlineResponse4003](docs/Model/InlineResponse4003.md)
 - [InlineResponse409](docs/Model/InlineResponse409.md)
 - [InlineResponse503](docs/Model/InlineResponse503.md)
 - [Location](docs/Model/Location.md)
 - [LocationRelationsCount](docs/Model/LocationRelationsCount.md)
+- [Notification](docs/Model/Notification.md)
+- [Reaction](docs/Model/Reaction.md)
+- [ReactionTrigger](docs/Model/ReactionTrigger.md)
+- [ReactionTriggerChange](docs/Model/ReactionTriggerChange.md)
+- [ReactionTriggerChangeOnChange](docs/Model/ReactionTriggerChangeOnChange.md)
+- [ReactionTriggerEq](docs/Model/ReactionTriggerEq.md)
+- [ReactionTriggerEqOnChangeTo](docs/Model/ReactionTriggerEqOnChangeTo.md)
+- [ReactionTriggerFieldNames](docs/Model/ReactionTriggerFieldNames.md)
+- [ReactionTriggerGe](docs/Model/ReactionTriggerGe.md)
+- [ReactionTriggerGeOnChangeTo](docs/Model/ReactionTriggerGeOnChangeTo.md)
+- [ReactionTriggerGeOnChangeToResume](docs/Model/ReactionTriggerGeOnChangeToResume.md)
+- [ReactionTriggerGt](docs/Model/ReactionTriggerGt.md)
+- [ReactionTriggerGtOnChangeTo](docs/Model/ReactionTriggerGtOnChangeTo.md)
+- [ReactionTriggerGtOnChangeToResume](docs/Model/ReactionTriggerGtOnChangeToResume.md)
+- [ReactionTriggerLe](docs/Model/ReactionTriggerLe.md)
+- [ReactionTriggerLeOnChangeTo](docs/Model/ReactionTriggerLeOnChangeTo.md)
+- [ReactionTriggerLeOnChangeToResume](docs/Model/ReactionTriggerLeOnChangeToResume.md)
+- [ReactionTriggerLt](docs/Model/ReactionTriggerLt.md)
+- [ReactionTriggerLtOnChangeTo](docs/Model/ReactionTriggerLtOnChangeTo.md)
+- [ReactionTriggerLtOnChangeToResume](docs/Model/ReactionTriggerLtOnChangeToResume.md)
+- [ReactionTriggerNe](docs/Model/ReactionTriggerNe.md)
+- [ReactionTriggerNeOnChangeTo](docs/Model/ReactionTriggerNeOnChangeTo.md)
 - [Scene](docs/Model/Scene.md)
 - [SceneOperation](docs/Model/SceneOperation.md)
 - [SceneRelationsCount](docs/Model/SceneRelationsCount.md)
@@ -212,8 +253,12 @@ Class | Method | HTTP request | Description
 - [ScheduleState](docs/Model/ScheduleState.md)
 - [User](docs/Model/User.md)
 - [UserAgreements](docs/Model/UserAgreements.md)
+- [UserApiRateLimit](docs/Model/UserApiRateLimit.md)
+- [UserApiRateLimitRule](docs/Model/UserApiRateLimitRule.md)
+- [UserApiRateLimitStatus](docs/Model/UserApiRateLimitStatus.md)
 - [UserIcon](docs/Model/UserIcon.md)
 - [UserLimits](docs/Model/UserLimits.md)
+- [UserLimitsPushNotificationsPerHour](docs/Model/UserLimitsPushNotificationsPerHour.md)
 
 ## Authorization
 
@@ -261,5 +306,5 @@ or your server instance.
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- Targeted Cloud version: `23.05`
+- Targeted Cloud version: `23.09.02-69-g0347cdcf`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

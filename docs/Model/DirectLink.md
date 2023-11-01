@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **lastIpv4** | **string** |  | [optional]
 **userId** | **int** |  | [optional]
 **executionsLimit** | **int** |  | [optional]
-**allowedActions** | [**\Supla\ApiClient\Model\ChannelFunctionActionEnumNames[]**](ChannelFunctionActionEnumNames.md) |  | [optional]
+**allowedActions** | **string[]** |  | [optional]
 **activeDateRange** | [**\Supla\ApiClient\Model\DirectLinkActiveDateRange**](DirectLinkActiveDateRange.md) |  | [optional]
 **subject** | [**\Supla\ApiClient\Model\ActionableSubject**](ActionableSubject.md) |  | [optional]
 

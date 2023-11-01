@@ -40,7 +40,7 @@ $apiInstance = new Supla\ApiClient\Api\UserIconsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$function = new \Supla\ApiClient\Model\ChannelFunctionEnumNames(); // \Supla\ApiClient\Model\ChannelFunctionEnumNames
+$function = 'function_example'; // string
 $sourceIcon = 56; // int | ID of an existing user icon to replace with these new files. Optional.
 $image1 = "/path/to/file.txt"; // \SplFileObject
 $image2 = "/path/to/file.txt"; // \SplFileObject
@@ -59,7 +59,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **function** | [**\Supla\ApiClient\Model\ChannelFunctionEnumNames**](../Model/ChannelFunctionEnumNames.md)|  | [optional]
+ **function** | **string**|  | [optional]
  **sourceIcon** | **int**| ID of an existing user icon to replace with these new files. Optional. | [optional]
  **image1** | **\SplFileObject****\SplFileObject**|  | [optional]
  **image2** | **\SplFileObject****\SplFileObject**|  | [optional]
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 ## `createUserIconBase64()`
 
 ```php
-createUserIconBase64($inlineObject12): \Supla\ApiClient\Model\UserIcon
+createUserIconBase64($inlineObject14): \Supla\ApiClient\Model\UserIcon
 ```
 
 Create a new User Icon sent in Base64 format.
@@ -111,10 +111,10 @@ $apiInstance = new Supla\ApiClient\Api\UserIconsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inlineObject12 = new \Supla\ApiClient\Model\InlineObject12(); // \Supla\ApiClient\Model\InlineObject12
+$inlineObject14 = new \Supla\ApiClient\Model\InlineObject14(); // \Supla\ApiClient\Model\InlineObject14
 
 try {
-    $result = $apiInstance->createUserIconBase64($inlineObject12);
+    $result = $apiInstance->createUserIconBase64($inlineObject14);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserIconsApi->createUserIconBase64: ', $e->getMessage(), PHP_EOL;
@@ -125,7 +125,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject12** | [**\Supla\ApiClient\Model\InlineObject12**](../Model/InlineObject12.md)|  |
+ **inlineObject14** | [**\Supla\ApiClient\Model\InlineObject14**](../Model/InlineObject14.md)|  |
 
 ### Return type
 
@@ -358,7 +358,7 @@ $apiInstance = new Supla\ApiClient\Api\UserIconsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$function = array(new \Supla\ApiClient\Model\\Supla\ApiClient\Model\ChannelFunctionEnumNames()); // \Supla\ApiClient\Model\ChannelFunctionEnumNames[]
+$function = array('function_example'); // string[]
 $ids = array(56); // int[]
 $include = array('include_example'); // string[] | List of extra fields to include in the response.
 
@@ -374,7 +374,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **function** | [**\Supla\ApiClient\Model\ChannelFunctionEnumNames[]**](../Model/\Supla\ApiClient\Model\ChannelFunctionEnumNames.md)|  | [optional]
+ **function** | [**string[]**](../Model/string.md)|  | [optional]
  **ids** | [**int[]**](../Model/int.md)|  | [optional]
  **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
 

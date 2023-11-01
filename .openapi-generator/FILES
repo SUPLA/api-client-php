@@ -50,7 +50,6 @@ docs/Model/ChannelConfigHumidity.md
 docs/Model/ChannelConfigHumidityAndThermometer.md
 docs/Model/ChannelConfigHvacThermostat.md
 docs/Model/ChannelConfigHvacThermostatSchedule.md
-docs/Model/ChannelConfigHvacThermostatScheduleProgramSettings.md
 docs/Model/ChannelConfigHvacThermostatTemperatureConstraints.md
 docs/Model/ChannelConfigHvacThermostatTemperatures.md
 docs/Model/ChannelConfigImpulseCounter.md
@@ -212,7 +211,6 @@ lib/Model/ChannelConfigHumidity.php
 lib/Model/ChannelConfigHumidityAndThermometer.php
 lib/Model/ChannelConfigHvacThermostat.php
 lib/Model/ChannelConfigHvacThermostatSchedule.php
-lib/Model/ChannelConfigHvacThermostatScheduleProgramSettings.php
 lib/Model/ChannelConfigHvacThermostatTemperatureConstraints.php
 lib/Model/ChannelConfigHvacThermostatTemperatures.php
 lib/Model/ChannelConfigImpulseCounter.php

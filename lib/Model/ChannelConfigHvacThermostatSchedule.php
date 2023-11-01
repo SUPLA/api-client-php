@@ -60,7 +60,7 @@ class ChannelConfigHvacThermostatSchedule implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'programSettings' => '\Supla\ApiClient\Model\ChannelConfigHvacThermostatScheduleProgramSettings[]',
+        'programSettings' => 'object',
         'quarters' => 'int[]'
     ];
 
@@ -168,27 +168,6 @@ class ChannelConfigHvacThermostatSchedule implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const QUARTERS_0 = 0;
-    const QUARTERS_1 = 1;
-    const QUARTERS_2 = 2;
-    const QUARTERS_3 = 3;
-    const QUARTERS_4 = 4;
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getQuartersAllowableValues()
-    {
-        return [
-            self::QUARTERS_0,
-            self::QUARTERS_1,
-            self::QUARTERS_2,
-            self::QUARTERS_3,
-            self::QUARTERS_4,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -236,7 +215,7 @@ class ChannelConfigHvacThermostatSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets programSettings
      *
-     * @return \Supla\ApiClient\Model\ChannelConfigHvacThermostatScheduleProgramSettings[]|null
+     * @return object|null
      */
     public function getProgramSettings()
     {
@@ -246,7 +225,7 @@ class ChannelConfigHvacThermostatSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets programSettings
      *
-     * @param \Supla\ApiClient\Model\ChannelConfigHvacThermostatScheduleProgramSettings[]|null $programSettings programSettings
+     * @param object|null $programSettings programSettings
      *
      * @return self
      */
@@ -276,15 +255,6 @@ class ChannelConfigHvacThermostatSchedule implements ModelInterface, ArrayAccess
      */
     public function setQuarters($quarters)
     {
-        $allowedValues = $this->getQuartersAllowableValues();
-        if (!is_null($quarters) && array_diff($quarters, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'quarters', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
 
 
         $this->container['quarters'] = $quarters;

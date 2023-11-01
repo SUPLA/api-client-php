@@ -148,7 +148,6 @@ Class | Method | HTTP request | Description
 - [ChannelConfigHumidityAndThermometer](docs/Model/ChannelConfigHumidityAndThermometer.md)
 - [ChannelConfigHvacThermostat](docs/Model/ChannelConfigHvacThermostat.md)
 - [ChannelConfigHvacThermostatSchedule](docs/Model/ChannelConfigHvacThermostatSchedule.md)
-- [ChannelConfigHvacThermostatScheduleProgramSettings](docs/Model/ChannelConfigHvacThermostatScheduleProgramSettings.md)
 - [ChannelConfigHvacThermostatTemperatureConstraints](docs/Model/ChannelConfigHvacThermostatTemperatureConstraints.md)
 - [ChannelConfigHvacThermostatTemperatures](docs/Model/ChannelConfigHvacThermostatTemperatures.md)
 - [ChannelConfigImpulseCounter](docs/Model/ChannelConfigImpulseCounter.md)

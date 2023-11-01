@@ -243,74 +243,6 @@ class ChannelConfigHvacThermostat implements ModelInterface, ArrayAccess, \JsonS
         return self::$openAPIModelName;
     }
 
-    const SUBFUNCTION_COOL = 'COOL';
-    const SUBFUNCTION_HEAT = 'HEAT';
-    const AUX_THERMOMETER_TYPE_NOT_SET = 'NOT_SET';
-    const AUX_THERMOMETER_TYPE_DISABLED = 'DISABLED';
-    const AUX_THERMOMETER_TYPE_FLOOR = 'FLOOR';
-    const AUX_THERMOMETER_TYPE_WATER = 'WATER';
-    const AUX_THERMOMETER_TYPE_GENERIC_HEATER = 'GENERIC_HEATER';
-    const AUX_THERMOMETER_TYPE_GENERIC_COOLER = 'GENERIC_COOLER';
-    const AVAILABLE_ALGORITHMS_MIDDLE = 'ON_OFF_SETPOINT_MIDDLE';
-    const AVAILABLE_ALGORITHMS_AT_MOST = 'ON_OFF_SETPOINT_AT_MOST';
-    const USED_ALGORITHM_MIDDLE = 'ON_OFF_SETPOINT_MIDDLE';
-    const USED_ALGORITHM_AT_MOST = 'ON_OFF_SETPOINT_AT_MOST';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getSubfunctionAllowableValues()
-    {
-        return [
-            self::SUBFUNCTION_COOL,
-            self::SUBFUNCTION_HEAT,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAuxThermometerTypeAllowableValues()
-    {
-        return [
-            self::AUX_THERMOMETER_TYPE_NOT_SET,
-            self::AUX_THERMOMETER_TYPE_DISABLED,
-            self::AUX_THERMOMETER_TYPE_FLOOR,
-            self::AUX_THERMOMETER_TYPE_WATER,
-            self::AUX_THERMOMETER_TYPE_GENERIC_HEATER,
-            self::AUX_THERMOMETER_TYPE_GENERIC_COOLER,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAvailableAlgorithmsAllowableValues()
-    {
-        return [
-            self::AVAILABLE_ALGORITHMS_MIDDLE,
-            self::AVAILABLE_ALGORITHMS_AT_MOST,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getUsedAlgorithmAllowableValues()
-    {
-        return [
-            self::USED_ALGORITHM_MIDDLE,
-            self::USED_ALGORITHM_AT_MOST,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -354,33 +286,6 @@ class ChannelConfigHvacThermostat implements ModelInterface, ArrayAccess, \JsonS
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getSubfunctionAllowableValues();
-        if (!is_null($this->container['subfunction']) && !in_array($this->container['subfunction'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'subfunction', must be one of '%s'",
-                $this->container['subfunction'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getAuxThermometerTypeAllowableValues();
-        if (!is_null($this->container['auxThermometerType']) && !in_array($this->container['auxThermometerType'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'auxThermometerType', must be one of '%s'",
-                $this->container['auxThermometerType'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getUsedAlgorithmAllowableValues();
-        if (!is_null($this->container['usedAlgorithm']) && !in_array($this->container['usedAlgorithm'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'usedAlgorithm', must be one of '%s'",
-                $this->container['usedAlgorithm'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         if (!is_null($this->container['minOnTimeS']) && ($this->container['minOnTimeS'] > 600)) {
             $invalidProperties[] = "invalid value for 'minOnTimeS', must be smaller than or equal to 600.";
@@ -440,16 +345,6 @@ class ChannelConfigHvacThermostat implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setSubfunction($subfunction)
     {
-        $allowedValues = $this->getSubfunctionAllowableValues();
-        if (!is_null($subfunction) && !in_array($subfunction, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'subfunction', must be one of '%s'",
-                    $subfunction,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['subfunction'] = $subfunction;
 
         return $this;
@@ -522,16 +417,6 @@ class ChannelConfigHvacThermostat implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setAuxThermometerType($auxThermometerType)
     {
-        $allowedValues = $this->getAuxThermometerTypeAllowableValues();
-        if (!is_null($auxThermometerType) && !in_array($auxThermometerType, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'auxThermometerType', must be one of '%s'",
-                    $auxThermometerType,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['auxThermometerType'] = $auxThermometerType;
 
         return $this;
@@ -652,15 +537,6 @@ class ChannelConfigHvacThermostat implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setAvailableAlgorithms($availableAlgorithms)
     {
-        $allowedValues = $this->getAvailableAlgorithmsAllowableValues();
-        if (!is_null($availableAlgorithms) && array_diff($availableAlgorithms, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'availableAlgorithms', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['availableAlgorithms'] = $availableAlgorithms;
 
         return $this;
@@ -685,16 +561,6 @@ class ChannelConfigHvacThermostat implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setUsedAlgorithm($usedAlgorithm)
     {
-        $allowedValues = $this->getUsedAlgorithmAllowableValues();
-        if (!is_null($usedAlgorithm) && !in_array($usedAlgorithm, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'usedAlgorithm', must be one of '%s'",
-                    $usedAlgorithm,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['usedAlgorithm'] = $usedAlgorithm;
 
         return $this;

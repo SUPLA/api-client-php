@@ -922,7 +922,7 @@ Name | Type | Description  | Notes
 ## `getChannels()`
 
 ```php
-getChannels($function, $type, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration): \Supla\ApiClient\Model\Channel[]
+getChannels($function, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration, $type): \Supla\ApiClient\Model\Channel[]
 ```
 
 Get Channels
@@ -948,16 +948,16 @@ $apiInstance = new Supla\ApiClient\Api\ChannelsApi(
     $config
 );
 $function = array('function_example'); // string[]
-$type = array('type_example'); // string[]
 $io = 'io_example'; // string | Return only `input` or `output` channels.
 $hasFunction = True; // bool | Return only channels with (`true`) or without (`false`) chosen functions.
 $skipIds = array(56); // int[]
 $deviceIds = array(56); // int[]
 $include = array('include_example'); // string[] | List of extra fields to include in the response.
 $forIntegration = 'forIntegration_example'; // string | Select an integration that the channels should be returned for.
+$type = array('type_example'); // string[]
 
 try {
-    $result = $apiInstance->getChannels($function, $type, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration);
+    $result = $apiInstance->getChannels($function, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration, $type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->getChannels: ', $e->getMessage(), PHP_EOL;
@@ -969,13 +969,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **function** | [**string[]**](../Model/string.md)|  | [optional]
- **type** | [**string[]**](../Model/string.md)|  | [optional]
  **io** | **string**| Return only &#x60;input&#x60; or &#x60;output&#x60; channels. | [optional]
  **hasFunction** | **bool**| Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. | [optional]
  **skipIds** | [**int[]**](../Model/int.md)|  | [optional]
  **deviceIds** | [**int[]**](../Model/int.md)|  | [optional]
  **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
  **forIntegration** | **string**| Select an integration that the channels should be returned for. | [optional]
+ **type** | [**string[]**](../Model/string.md)|  | [optional]
 
 ### Return type
 

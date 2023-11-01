@@ -4226,21 +4226,21 @@ class ChannelsApi
      * Get Channels
      *
      * @param  string[] $function function (optional)
-     * @param  string[] $type type (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
      * @param  bool $hasFunction Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. (optional)
      * @param  int[] $skipIds skipIds (optional)
      * @param  int[] $deviceIds deviceIds (optional)
      * @param  string[] $include List of extra fields to include in the response. (optional)
      * @param  string $forIntegration Select an integration that the channels should be returned for. (optional)
+     * @param  string[] $type type (optional)
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Supla\ApiClient\Model\Channel[]
      */
-    public function getChannels($function = null, $type = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null)
+    public function getChannels($function = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null, $type = null)
     {
-        list($response) = $this->getChannelsWithHttpInfo($function, $type, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration);
+        list($response) = $this->getChannelsWithHttpInfo($function, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration, $type);
         return $response;
     }
 
@@ -4250,21 +4250,21 @@ class ChannelsApi
      * Get Channels
      *
      * @param  string[] $function (optional)
-     * @param  string[] $type (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
      * @param  bool $hasFunction Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. (optional)
      * @param  int[] $skipIds (optional)
      * @param  int[] $deviceIds (optional)
      * @param  string[] $include List of extra fields to include in the response. (optional)
      * @param  string $forIntegration Select an integration that the channels should be returned for. (optional)
+     * @param  string[] $type (optional)
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Supla\ApiClient\Model\Channel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChannelsWithHttpInfo($function = null, $type = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null)
+    public function getChannelsWithHttpInfo($function = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null, $type = null)
     {
-        $request = $this->getChannelsRequest($function, $type, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration);
+        $request = $this->getChannelsRequest($function, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration, $type);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4350,20 +4350,20 @@ class ChannelsApi
      * Get Channels
      *
      * @param  string[] $function (optional)
-     * @param  string[] $type (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
      * @param  bool $hasFunction Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. (optional)
      * @param  int[] $skipIds (optional)
      * @param  int[] $deviceIds (optional)
      * @param  string[] $include List of extra fields to include in the response. (optional)
      * @param  string $forIntegration Select an integration that the channels should be returned for. (optional)
+     * @param  string[] $type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelsAsync($function = null, $type = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null)
+    public function getChannelsAsync($function = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null, $type = null)
     {
-        return $this->getChannelsAsyncWithHttpInfo($function, $type, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration)
+        return $this->getChannelsAsyncWithHttpInfo($function, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration, $type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4377,21 +4377,21 @@ class ChannelsApi
      * Get Channels
      *
      * @param  string[] $function (optional)
-     * @param  string[] $type (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
      * @param  bool $hasFunction Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. (optional)
      * @param  int[] $skipIds (optional)
      * @param  int[] $deviceIds (optional)
      * @param  string[] $include List of extra fields to include in the response. (optional)
      * @param  string $forIntegration Select an integration that the channels should be returned for. (optional)
+     * @param  string[] $type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getChannelsAsyncWithHttpInfo($function = null, $type = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null)
+    public function getChannelsAsyncWithHttpInfo($function = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null, $type = null)
     {
         $returnType = '\Supla\ApiClient\Model\Channel[]';
-        $request = $this->getChannelsRequest($function, $type, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration);
+        $request = $this->getChannelsRequest($function, $io, $hasFunction, $skipIds, $deviceIds, $include, $forIntegration, $type);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4430,18 +4430,18 @@ class ChannelsApi
      * Create request for operation 'getChannels'
      *
      * @param  string[] $function (optional)
-     * @param  string[] $type (optional)
      * @param  string $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
      * @param  bool $hasFunction Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. (optional)
      * @param  int[] $skipIds (optional)
      * @param  int[] $deviceIds (optional)
      * @param  string[] $include List of extra fields to include in the response. (optional)
      * @param  string $forIntegration Select an integration that the channels should be returned for. (optional)
+     * @param  string[] $type (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getChannelsRequest($function = null, $type = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null)
+    public function getChannelsRequest($function = null, $io = null, $hasFunction = null, $skipIds = null, $deviceIds = null, $include = null, $forIntegration = null, $type = null)
     {
 
         $resourcePath = '/channels';
@@ -4457,13 +4457,6 @@ class ChannelsApi
         }
         if ($function !== null) {
             $queryParams['function'] = $function;
-        }
-        // query params
-        if (is_array($type)) {
-            $type = ObjectSerializer::serializeCollection($type, 'form', true);
-        }
-        if ($type !== null) {
-            $queryParams['type'] = $type;
         }
         // query params
         if ($io !== null) {
@@ -4518,6 +4511,13 @@ class ChannelsApi
             else {
                 $queryParams['forIntegration'] = $forIntegration;
             }
+        }
+        // query params
+        if (is_array($type)) {
+            $type = ObjectSerializer::serializeCollection($type, 'form', true);
+        }
+        if ($type !== null) {
+            $queryParams['type'] = $type;
         }
 
 

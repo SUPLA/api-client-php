@@ -68,7 +68,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
         'iodeviceId' => 'int',
         'iodevice' => '\Supla\ApiClient\Model\Device',
         'locationId' => 'int',
-        'location' => 'OneOfLocation',
+        'location' => '\Supla\ApiClient\Model\Location',
         'functionId' => 'int',
         'function' => '\Supla\ApiClient\Model\ChannelFunction',
         'possibleActions' => '\Supla\ApiClient\Model\ChannelFunctionAction[]',
@@ -578,7 +578,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets location
      *
-     * @return OneOfLocation|null
+     * @return \Supla\ApiClient\Model\Location|null
      */
     public function getLocation()
     {
@@ -588,7 +588,7 @@ class Channel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets location
      *
-     * @param OneOfLocation|null $location Channel location, if requested by the `include` param
+     * @param \Supla\ApiClient\Model\Location|null $location location
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 # Supla\ApiClient\AccessIdentifiersApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v2.4.0`.
+All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

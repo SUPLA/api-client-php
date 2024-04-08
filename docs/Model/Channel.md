@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **iodeviceId** | **int** |  | [optional]
 **iodevice** | [**\Supla\ApiClient\Model\Device**](Device.md) |  | [optional]
 **locationId** | **int** |  | [optional]
-**location** | [**\Supla\ApiClient\Model\Location**](Location.md) |  | [optional]
+**location** | [**OneOfLocation**](OneOfLocation.md) | Channel location, if requested by the &#x60;include&#x60; param | [optional]
 **functionId** | **int** |  | [optional]
 **function** | [**\Supla\ApiClient\Model\ChannelFunction**](ChannelFunction.md) |  | [optional]
 **possibleActions** | [**\Supla\ApiClient\Model\ChannelFunctionAction[]**](ChannelFunctionAction.md) | What action can you execute on this subject? | [optional]

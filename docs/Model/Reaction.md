@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Identifier | [optional]
 **actionId** | **int** |  | [optional]
-**actionParam** | [**\Supla\ApiClient\Model\ChannelActionParams**](ChannelActionParams.md) |  | [optional]
+**actionParam** | [**OneOfChannelActionParams**](OneOfChannelActionParams.md) |  | [optional]
 **subjectType** | [**\Supla\ApiClient\Model\ActionableSubjectTypeNames**](ActionableSubjectTypeNames.md) |  | [optional]
 **subjectId** | **int** |  | [optional]
 **owningChannelId** | **int** | ID of the channel that this reaction belongs to. | [optional]

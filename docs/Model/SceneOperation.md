@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actionId** | **int** |  | [optional]
-**actionParam** | [**\Supla\ApiClient\Model\ChannelActionParams**](ChannelActionParams.md) |  | [optional]
+**actionParam** | [**OneOfChannelActionParams**](OneOfChannelActionParams.md) |  | [optional]
 **delayMs** | **int** | Delay before this operation in scene, in milliseconds. | [optional]
 **waitForCompletion** | **bool** | Whether to wait before proceeding with the scene until this operation completes. | [optional]
 **subjectType** | [**\Supla\ApiClient\Model\ActionableSubjectTypeNames**](ActionableSubjectTypeNames.md) |  | [optional]

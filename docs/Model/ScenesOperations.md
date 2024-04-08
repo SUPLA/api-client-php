@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **delayMs** | **int** |  | [optional]
 **waitForCompletion** | **bool** |  | [optional]
 **actionId** | **int** |  | [optional]
-**actionParam** | [**\Supla\ApiClient\Model\ChannelActionParams**](ChannelActionParams.md) |  | [optional]
+**actionParam** | [**OneOfChannelActionParams**](OneOfChannelActionParams.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

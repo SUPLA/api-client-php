@@ -1,6 +1,6 @@
 # Supla\ApiClient\UserIconsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v2.4.0`.
+All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `createUserIcon()`
 
 ```php
-createUserIcon($function, $sourceIcon, $image1, $image2, $image3, $image4): \Supla\ApiClient\Model\UserIcon
+createUserIcon($function, $sourceIcon, $image1, $image2, $image3, $image4, $imageDark1, $imageDark2, $imageDark3, $imageDark4): \Supla\ApiClient\Model\UserIcon
 ```
 
 Create a new User Icon
@@ -46,9 +46,13 @@ $image1 = "/path/to/file.txt"; // \SplFileObject
 $image2 = "/path/to/file.txt"; // \SplFileObject
 $image3 = "/path/to/file.txt"; // \SplFileObject
 $image4 = "/path/to/file.txt"; // \SplFileObject
+$imageDark1 = "/path/to/file.txt"; // \SplFileObject
+$imageDark2 = "/path/to/file.txt"; // \SplFileObject
+$imageDark3 = "/path/to/file.txt"; // \SplFileObject
+$imageDark4 = "/path/to/file.txt"; // \SplFileObject
 
 try {
-    $result = $apiInstance->createUserIcon($function, $sourceIcon, $image1, $image2, $image3, $image4);
+    $result = $apiInstance->createUserIcon($function, $sourceIcon, $image1, $image2, $image3, $image4, $imageDark1, $imageDark2, $imageDark3, $imageDark4);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserIconsApi->createUserIcon: ', $e->getMessage(), PHP_EOL;
@@ -65,6 +69,10 @@ Name | Type | Description  | Notes
  **image2** | **\SplFileObject****\SplFileObject**|  | [optional]
  **image3** | **\SplFileObject****\SplFileObject**|  | [optional]
  **image4** | **\SplFileObject****\SplFileObject**|  | [optional]
+ **imageDark1** | **\SplFileObject****\SplFileObject**|  | [optional]
+ **imageDark2** | **\SplFileObject****\SplFileObject**|  | [optional]
+ **imageDark3** | **\SplFileObject****\SplFileObject**|  | [optional]
+ **imageDark4** | **\SplFileObject****\SplFileObject**|  | [optional]
 
 ### Return type
 
@@ -270,7 +278,7 @@ Name | Type | Description  | Notes
 ## `getUserIconImage()`
 
 ```php
-getUserIconImage($id, $imageIndex): \SplFileObject
+getUserIconImage($id, $imageIndex, $dark): \SplFileObject
 ```
 
 Get User Icon image at specified index
@@ -297,9 +305,10 @@ $apiInstance = new Supla\ApiClient\Api\UserIconsApi(
 );
 $id = 56; // int
 $imageIndex = 56; // int
+$dark = True; // bool
 
 try {
-    $result = $apiInstance->getUserIconImage($id, $imageIndex);
+    $result = $apiInstance->getUserIconImage($id, $imageIndex, $dark);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserIconsApi->getUserIconImage: ', $e->getMessage(), PHP_EOL;
@@ -312,6 +321,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **imageIndex** | **int**|  |
+ **dark** | **bool**|  | [optional]
 
 ### Return type
 

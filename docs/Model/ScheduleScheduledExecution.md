@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actionId** | **int** |  | [optional]
-**actionParam** | [**\Supla\ApiClient\Model\ChannelActionParams**](ChannelActionParams.md) |  | [optional]
+**actionParam** | [**OneOfChannelActionParams**](OneOfChannelActionParams.md) |  | [optional]
 **plannedTimestamp** | **\DateTime** |  | [optional]
 **resultTimestamp** | **\DateTime** |  | [optional]
 **failed** | **bool** |  | [optional]

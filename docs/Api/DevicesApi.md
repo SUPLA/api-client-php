@@ -1,6 +1,6 @@
 # Supla\ApiClient\DevicesApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v2.4.0`.
+All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

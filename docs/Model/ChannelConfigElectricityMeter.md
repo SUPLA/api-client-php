@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **electricityMeterInitialValues** | **object** |  | [optional]
 **relatedChannelId** | **int** |  | [optional]
 **addToHistory** | **bool** |  | [optional]
+**voltageLoggerEnabled** | **bool** |  | [optional]
+**currentLoggerEnabled** | **bool** |  | [optional]
+**powerActiveLoggerEnabled** | **bool** |  | [optional]
 **lowerVoltageThreshold** | **float** |  | [optional]
 **upperVoltageThreshold** | **float** |  | [optional]
 

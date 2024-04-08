@@ -9,6 +9,7 @@ docs/Api/ChannelsApi.md
 docs/Api/ClientAppsApi.md
 docs/Api/DevicesApi.md
 docs/Api/DirectLinksApi.md
+docs/Api/EnumsApi.md
 docs/Api/LocationsApi.md
 docs/Api/NotificationsApi.md
 docs/Api/OAuthApi.md
@@ -44,6 +45,10 @@ docs/Model/ChannelConfigAlexaSettingsAlexa.md
 docs/Model/ChannelConfigControllingTheGate.md
 docs/Model/ChannelConfigControllingTheGateClosingRule.md
 docs/Model/ChannelConfigElectricityMeter.md
+docs/Model/ChannelConfigGeneralPurposeMeasurement.md
+docs/Model/ChannelConfigGeneralPurposeMeasurementDefaults.md
+docs/Model/ChannelConfigGeneralPurposeMeter.md
+docs/Model/ChannelConfigGeneralPurposeMeterAllOf.md
 docs/Model/ChannelConfigGoogleHomeSettings.md
 docs/Model/ChannelConfigGoogleHomeSettingsGoogleHome.md
 docs/Model/ChannelConfigHumidity.md
@@ -73,6 +78,7 @@ docs/Model/ChannelStateElectricityMeter.md
 docs/Model/ChannelStateElectricityMeterPhase.md
 docs/Model/ChannelStateHumidity.md
 docs/Model/ChannelStateHumidityAndTemperature.md
+docs/Model/ChannelStateHvac.md
 docs/Model/ChannelStateImpulseCounter.md
 docs/Model/ChannelStateOnOff.md
 docs/Model/ChannelStateRelay.md
@@ -86,6 +92,9 @@ docs/Model/ClientApp.md
 docs/Model/Device.md
 docs/Model/DeviceConfig.md
 docs/Model/DeviceConfigHomeScreen.md
+docs/Model/DeviceConfigScreenBrightness.md
+docs/Model/DeviceConfigUserInterface.md
+docs/Model/DeviceConfigUserInterfaceConstraints.md
 docs/Model/DeviceManufacturer.md
 docs/Model/DeviceRelationsCount.md
 docs/Model/DirectLink.md
@@ -114,7 +123,6 @@ docs/Model/InlineResponse400.md
 docs/Model/InlineResponse4001.md
 docs/Model/InlineResponse4002.md
 docs/Model/InlineResponse4003.md
-docs/Model/InlineResponse409.md
 docs/Model/InlineResponse503.md
 docs/Model/Location.md
 docs/Model/LocationRelationsCount.md
@@ -167,6 +175,7 @@ lib/Api/ChannelsApi.php
 lib/Api/ClientAppsApi.php
 lib/Api/DevicesApi.php
 lib/Api/DirectLinksApi.php
+lib/Api/EnumsApi.php
 lib/Api/LocationsApi.php
 lib/Api/NotificationsApi.php
 lib/Api/OAuthApi.php
@@ -205,6 +214,10 @@ lib/Model/ChannelConfigAlexaSettingsAlexa.php
 lib/Model/ChannelConfigControllingTheGate.php
 lib/Model/ChannelConfigControllingTheGateClosingRule.php
 lib/Model/ChannelConfigElectricityMeter.php
+lib/Model/ChannelConfigGeneralPurposeMeasurement.php
+lib/Model/ChannelConfigGeneralPurposeMeasurementDefaults.php
+lib/Model/ChannelConfigGeneralPurposeMeter.php
+lib/Model/ChannelConfigGeneralPurposeMeterAllOf.php
 lib/Model/ChannelConfigGoogleHomeSettings.php
 lib/Model/ChannelConfigGoogleHomeSettingsGoogleHome.php
 lib/Model/ChannelConfigHumidity.php
@@ -234,6 +247,7 @@ lib/Model/ChannelStateElectricityMeter.php
 lib/Model/ChannelStateElectricityMeterPhase.php
 lib/Model/ChannelStateHumidity.php
 lib/Model/ChannelStateHumidityAndTemperature.php
+lib/Model/ChannelStateHvac.php
 lib/Model/ChannelStateImpulseCounter.php
 lib/Model/ChannelStateOnOff.php
 lib/Model/ChannelStateRelay.php
@@ -247,6 +261,9 @@ lib/Model/ClientApp.php
 lib/Model/Device.php
 lib/Model/DeviceConfig.php
 lib/Model/DeviceConfigHomeScreen.php
+lib/Model/DeviceConfigScreenBrightness.php
+lib/Model/DeviceConfigUserInterface.php
+lib/Model/DeviceConfigUserInterfaceConstraints.php
 lib/Model/DeviceManufacturer.php
 lib/Model/DeviceRelationsCount.php
 lib/Model/DirectLink.php
@@ -275,7 +292,6 @@ lib/Model/InlineResponse400.php
 lib/Model/InlineResponse4001.php
 lib/Model/InlineResponse4002.php
 lib/Model/InlineResponse4003.php
-lib/Model/InlineResponse409.php
 lib/Model/InlineResponse503.php
 lib/Model/Location.php
 lib/Model/LocationRelationsCount.php

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de3428d4625268b766f9ac827599cd56",
+    "content-hash": "2f88a3e7149fe9a48d688735508779c3",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -537,16 +537,16 @@
         },
         {
             "name": "supla/api-client",
-            "version": "24.04.02",
+            "version": "v25.01",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SUPLA/api-client-php.git",
-                "reference": "c1874ec24928913ee0706abd1ea3500f881e9e5e"
+                "reference": "af57763764d57cbe446cb30f514c3fa61010ce22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SUPLA/api-client-php/zipball/c1874ec24928913ee0706abd1ea3500f881e9e5e",
-                "reference": "c1874ec24928913ee0706abd1ea3500f881e9e5e",
+                "url": "https://api.github.com/repos/SUPLA/api-client-php/zipball/af57763764d57cbe446cb30f514c3fa61010ce22",
+                "reference": "af57763764d57cbe446cb30f514c3fa61010ce22",
                 "shasum": ""
             },
             "require": {
@@ -577,9 +577,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SUPLA/api-client-php/issues",
-                "source": "https://github.com/SUPLA/api-client-php/tree/24.04.02"
+                "source": "https://github.com/SUPLA/api-client-php/tree/v25.01"
             },
-            "time": "2024-04-08T17:47:47+00:00"
+            "time": "2025-01-30T15:43:13+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

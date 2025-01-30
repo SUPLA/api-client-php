@@ -1,0 +1,7 @@
+{
+  "name": "supla/supla-api-client-examples",
+  "require": {
+    "php": "^7.3 || ^8.0",
+    "supla/api-client": "^24.04.02"
+  }
+}

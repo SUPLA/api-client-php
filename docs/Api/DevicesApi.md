@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getIoDevice()**](DevicesApi.md#getIoDevice) | **GET** /iodevices/{id} | Get Device
 [**getIoDeviceNotifications()**](DevicesApi.md#getIoDeviceNotifications) | **GET** /iodevices/{device}/notifications | 
 [**getIoDevices()**](DevicesApi.md#getIoDevices) | **GET** /iodevices | Get Devices
+[**getSubDevices()**](DevicesApi.md#getSubDevices) | **GET** /subdevices | 
 [**updateDevice()**](DevicesApi.md#updateDevice) | **PUT** /iodevices/{id} | 
 
 
@@ -77,7 +78,7 @@ void (empty response body)
 ## `executeDeviceAction()`
 
 ```php
-executeDeviceAction($id, $inlineObject7): \Supla\ApiClient\Model\Device
+executeDeviceAction($id, $inlineObject8): \Supla\ApiClient\Model\Device
 ```
 
 
@@ -103,10 +104,10 @@ $apiInstance = new Supla\ApiClient\Api\DevicesApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject7 = new \Supla\ApiClient\Model\InlineObject7(); // \Supla\ApiClient\Model\InlineObject7
+$inlineObject8 = new \Supla\ApiClient\Model\InlineObject8(); // \Supla\ApiClient\Model\InlineObject8
 
 try {
-    $result = $apiInstance->executeDeviceAction($id, $inlineObject7);
+    $result = $apiInstance->executeDeviceAction($id, $inlineObject8);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DevicesApi->executeDeviceAction: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +119,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject7** | [**\Supla\ApiClient\Model\InlineObject7**](../Model/InlineObject7.md)|  |
+ **inlineObject8** | [**\Supla\ApiClient\Model\InlineObject8**](../Model/InlineObject8.md)|  |
 
 ### Return type
 
@@ -324,10 +325,68 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSubDevices()`
+
+```php
+getSubDevices(): object[]
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: BearerAuth
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Supla\ApiClient\Api\DevicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getSubDevices();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DevicesApi->getSubDevices: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**object[]**
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `updateDevice()`
 
 ```php
-updateDevice($id, $inlineObject6, $safe): \Supla\ApiClient\Model\Device
+updateDevice($id, $inlineObject7, $safe): \Supla\ApiClient\Model\Device
 ```
 
 
@@ -353,11 +412,11 @@ $apiInstance = new Supla\ApiClient\Api\DevicesApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject6 = new \Supla\ApiClient\Model\InlineObject6(); // \Supla\ApiClient\Model\InlineObject6
+$inlineObject7 = new \Supla\ApiClient\Model\InlineObject7(); // \Supla\ApiClient\Model\InlineObject7
 $safe = True; // bool | Whether to perform actions that require data loss (e.g. disable schedules when disabling the device)
 
 try {
-    $result = $apiInstance->updateDevice($id, $inlineObject6, $safe);
+    $result = $apiInstance->updateDevice($id, $inlineObject7, $safe);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DevicesApi->updateDevice: ', $e->getMessage(), PHP_EOL;
@@ -369,7 +428,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject6** | [**\Supla\ApiClient\Model\InlineObject6**](../Model/InlineObject6.md)|  |
+ **inlineObject7** | [**\Supla\ApiClient\Model\InlineObject7**](../Model/InlineObject7.md)|  |
  **safe** | **bool**| Whether to perform actions that require data loss (e.g. disable schedules when disabling the device) | [optional]
 
 ### Return type

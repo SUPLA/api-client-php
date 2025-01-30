@@ -4,12 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**subjectId** | **int** |  | [optional]
+**subjectType** | [**\Supla\ApiClient\Model\ActionableSubjectTypeNames**](ActionableSubjectTypeNames.md) |  | [optional]
+**actionId** | **int** |  | [optional]
+**actionParam** | [**OneOfChannelActionParams**](OneOfChannelActionParams.md) |  | [optional]
+**trigger** | [**\Supla\ApiClient\Model\ReactionTrigger**](ReactionTrigger.md) |  | [optional]
 **enabled** | **bool** |  | [optional]
-**hidden** | **bool** |  | [optional]
-**caption** | **string** |  | [optional]
-**locationId** | **int** |  | [optional]
-**altIcon** | **int** |  | [optional]
-**userIconId** | **int** |  | [optional]
-**operations** | [**\Supla\ApiClient\Model\ScenesOperations[]**](ScenesOperations.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

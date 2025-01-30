@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createScene()`
 
 ```php
-createScene($inlineObject11): \Supla\ApiClient\Model\Scene
+createScene($inlineObject12): \Supla\ApiClient\Model\Scene
 ```
 
 Create a scene
@@ -42,10 +42,10 @@ $apiInstance = new Supla\ApiClient\Api\ScenesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inlineObject11 = new \Supla\ApiClient\Model\InlineObject11(); // \Supla\ApiClient\Model\InlineObject11
+$inlineObject12 = new \Supla\ApiClient\Model\InlineObject12(); // \Supla\ApiClient\Model\InlineObject12
 
 try {
-    $result = $apiInstance->createScene($inlineObject11);
+    $result = $apiInstance->createScene($inlineObject12);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScenesApi->createScene: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject11** | [**\Supla\ApiClient\Model\InlineObject11**](../Model/InlineObject11.md)|  |
+ **inlineObject12** | [**\Supla\ApiClient\Model\InlineObject12**](../Model/InlineObject12.md)|  |
 
 ### Return type
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 ## `updateScene()`
 
 ```php
-updateScene($scene, $inlineObject12): \Supla\ApiClient\Model\Scene
+updateScene($scene, $inlineObject13): \Supla\ApiClient\Model\Scene
 ```
 
 Update the scene
@@ -478,10 +478,10 @@ $apiInstance = new Supla\ApiClient\Api\ScenesApi(
     $config
 );
 $scene = 56; // int | ID
-$inlineObject12 = new \Supla\ApiClient\Model\InlineObject12(); // \Supla\ApiClient\Model\InlineObject12
+$inlineObject13 = new \Supla\ApiClient\Model\InlineObject13(); // \Supla\ApiClient\Model\InlineObject13
 
 try {
-    $result = $apiInstance->updateScene($scene, $inlineObject12);
+    $result = $apiInstance->updateScene($scene, $inlineObject13);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScenesApi->updateScene: ', $e->getMessage(), PHP_EOL;
@@ -493,7 +493,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scene** | **int**| ID |
- **inlineObject12** | [**\Supla\ApiClient\Model\InlineObject12**](../Model/InlineObject12.md)|  |
+ **inlineObject13** | [**\Supla\ApiClient\Model\InlineObject13**](../Model/InlineObject13.md)|  |
 
 ### Return type
 

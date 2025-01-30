@@ -17,7 +17,6 @@ Install with [Composer](https://getcomposer.org/).
 ## Getting Started
 
 ```php
-<?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 use Supla\ApiClient\Api\ChannelsApi;
@@ -61,10 +60,12 @@ Class | Method | HTTP request | Description
 *ChannelGroupsApi* | [**updateChannelGroup**](docs/Api/ChannelGroupsApi.md#updatechannelgroup) | **PUT** /channel-groups/{id} | Update the channel group
 *ChannelsApi* | [**configureChannel**](docs/Api/ChannelsApi.md#configurechannel) | **PATCH** /channels/{id}/settings | 
 *ChannelsApi* | [**createChannelReaction**](docs/Api/ChannelsApi.md#createchannelreaction) | **POST** /channels/{channel}/reactions | Create channel reaction
+*ChannelsApi* | [**deleteChannel**](docs/Api/ChannelsApi.md#deletechannel) | **DELETE** /channels/{id} | Delete the channel
 *ChannelsApi* | [**deleteChannelMeasurementLogs**](docs/Api/ChannelsApi.md#deletechannelmeasurementlogs) | **DELETE** /channels/{channel}/measurement-logs | Delete channel measurement logs.
 *ChannelsApi* | [**deleteChannelReaction**](docs/Api/ChannelsApi.md#deletechannelreaction) | **DELETE** /channels/{channel}/reactions/{reaction} | Delete channel reaction
 *ChannelsApi* | [**downloadChannelMeasurementLogs**](docs/Api/ChannelsApi.md#downloadchannelmeasurementlogs) | **GET** /channels/{channel}/measurement-logs-download | Get measurement logs as a zipped CSV file.
 *ChannelsApi* | [**executeAction**](docs/Api/ChannelsApi.md#executeaction) | **PATCH** /channels/{id} | 
+*ChannelsApi* | [**executeSubDeviceAction**](docs/Api/ChannelsApi.md#executesubdeviceaction) | **PATCH** /channels/{channelId}/subdevice | 
 *ChannelsApi* | [**getChannel**](docs/Api/ChannelsApi.md#getchannel) | **GET** /channels/{id} | Get Channel
 *ChannelsApi* | [**getChannelChannelGroups**](docs/Api/ChannelsApi.md#getchannelchannelgroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to
 *ChannelsApi* | [**getChannelDirectLinks**](docs/Api/ChannelsApi.md#getchanneldirectlinks) | **GET** /channels/{channel}/direct-links | Get channel direct links
@@ -74,6 +75,8 @@ Class | Method | HTTP request | Description
 *ChannelsApi* | [**getChannelReactions**](docs/Api/ChannelsApi.md#getchannelreactions) | **GET** /channels/{channel}/reactions | Get channel reactions
 *ChannelsApi* | [**getChannelScenes**](docs/Api/ChannelsApi.md#getchannelscenes) | **GET** /channels/{channel}/scenes | Get channel scenes
 *ChannelsApi* | [**getChannels**](docs/Api/ChannelsApi.md#getchannels) | **GET** /channels | Get Channels
+*ChannelsApi* | [**getChannelsStates**](docs/Api/ChannelsApi.md#getchannelsstates) | **GET** /channels/states | Get Channels states
+*ChannelsApi* | [**getReactions**](docs/Api/ChannelsApi.md#getreactions) | **GET** /reactions | Get reactions
 *ChannelsApi* | [**updateChannel**](docs/Api/ChannelsApi.md#updatechannel) | **PUT** /channels/{id} | 
 *ChannelsApi* | [**updateChannelReaction**](docs/Api/ChannelsApi.md#updatechannelreaction) | **PUT** /channels/{channel}/reactions/{reaction} | Update channel reaction
 *ClientAppsApi* | [**deleteClientApp**](docs/Api/ClientAppsApi.md#deleteclientapp) | **DELETE** /client-apps/{id} | Delete the client app
@@ -84,12 +87,14 @@ Class | Method | HTTP request | Description
 *DevicesApi* | [**getIoDevice**](docs/Api/DevicesApi.md#getiodevice) | **GET** /iodevices/{id} | Get Device
 *DevicesApi* | [**getIoDeviceNotifications**](docs/Api/DevicesApi.md#getiodevicenotifications) | **GET** /iodevices/{device}/notifications | 
 *DevicesApi* | [**getIoDevices**](docs/Api/DevicesApi.md#getiodevices) | **GET** /iodevices | Get Devices
+*DevicesApi* | [**getSubDevices**](docs/Api/DevicesApi.md#getsubdevices) | **GET** /subdevices | 
 *DevicesApi* | [**updateDevice**](docs/Api/DevicesApi.md#updatedevice) | **PUT** /iodevices/{id} | 
 *DirectLinksApi* | [**getDirectLink**](docs/Api/DirectLinksApi.md#getdirectlink) | **GET** /direct-links/{directLink} | Get direct link
 *DirectLinksApi* | [**getDirectLinks**](docs/Api/DirectLinksApi.md#getdirectlinks) | **GET** /direct-links | Get Direct Links
 *EnumsApi* | [**getActionsEnum**](docs/Api/EnumsApi.md#getactionsenum) | **GET** /enum/actions | 
 *EnumsApi* | [**getChannelTypesEnum**](docs/Api/EnumsApi.md#getchanneltypesenum) | **GET** /enum/channel-types | 
 *EnumsApi* | [**getFunctionsEnum**](docs/Api/EnumsApi.md#getfunctionsenum) | **GET** /enum/functions | 
+*IntegrationsApi* | [**createMqttBrokerCredentials**](docs/Api/IntegrationsApi.md#createmqttbrokercredentials) | **POST** /integrations/mqtt-credentials | Creates MQTT Broker credentials for the OAuth Client.
 *LocationsApi* | [**createLocation**](docs/Api/LocationsApi.md#createlocation) | **POST** /locations | Create a new location
 *LocationsApi* | [**deleteLocation**](docs/Api/LocationsApi.md#deletelocation) | **DELETE** /locations/{id} | Delete the location
 *LocationsApi* | [**getLocation**](docs/Api/LocationsApi.md#getlocation) | **GET** /locations/{id} | Get location by ID
@@ -133,6 +138,7 @@ Class | Method | HTTP request | Description
 - [ChannelActionParamsDimmer](docs/Model/ChannelActionParamsDimmer.md)
 - [ChannelActionParamsDuration](docs/Model/ChannelActionParamsDuration.md)
 - [ChannelActionParamsPercentage](docs/Model/ChannelActionParamsPercentage.md)
+- [ChannelActionParamsPercentageAndTilt](docs/Model/ChannelActionParamsPercentageAndTilt.md)
 - [ChannelActionParamsRgbw](docs/Model/ChannelActionParamsRgbw.md)
 - [ChannelActionParamsRgbwOneOf](docs/Model/ChannelActionParamsRgbwOneOf.md)
 - [ChannelActionParamsRgbwOneOf1](docs/Model/ChannelActionParamsRgbwOneOf1.md)
@@ -148,6 +154,7 @@ Class | Method | HTTP request | Description
 - [ChannelConfigControllingTheGate](docs/Model/ChannelConfigControllingTheGate.md)
 - [ChannelConfigControllingTheGateClosingRule](docs/Model/ChannelConfigControllingTheGateClosingRule.md)
 - [ChannelConfigElectricityMeter](docs/Model/ChannelConfigElectricityMeter.md)
+- [ChannelConfigFacadeBlinds](docs/Model/ChannelConfigFacadeBlinds.md)
 - [ChannelConfigGeneralPurposeMeasurement](docs/Model/ChannelConfigGeneralPurposeMeasurement.md)
 - [ChannelConfigGeneralPurposeMeasurementDefaults](docs/Model/ChannelConfigGeneralPurposeMeasurementDefaults.md)
 - [ChannelConfigGeneralPurposeMeter](docs/Model/ChannelConfigGeneralPurposeMeter.md)
@@ -162,6 +169,7 @@ Class | Method | HTTP request | Description
 - [ChannelConfigHvacThermostatTemperatures](docs/Model/ChannelConfigHvacThermostatTemperatures.md)
 - [ChannelConfigImpulseCounter](docs/Model/ChannelConfigImpulseCounter.md)
 - [ChannelConfigInvertedLogic](docs/Model/ChannelConfigInvertedLogic.md)
+- [ChannelConfigRollerShutter](docs/Model/ChannelConfigRollerShutter.md)
 - [ChannelConfigStaircaseTimer](docs/Model/ChannelConfigStaircaseTimer.md)
 - [ChannelConfigThermometer](docs/Model/ChannelConfigThermometer.md)
 - [ChannelFunction](docs/Model/ChannelFunction.md)
@@ -179,6 +187,7 @@ Class | Method | HTTP request | Description
 - [ChannelStateDouble](docs/Model/ChannelStateDouble.md)
 - [ChannelStateElectricityMeter](docs/Model/ChannelStateElectricityMeter.md)
 - [ChannelStateElectricityMeterPhase](docs/Model/ChannelStateElectricityMeterPhase.md)
+- [ChannelStateFacadeBlind](docs/Model/ChannelStateFacadeBlind.md)
 - [ChannelStateHumidity](docs/Model/ChannelStateHumidity.md)
 - [ChannelStateHumidityAndTemperature](docs/Model/ChannelStateHumidityAndTemperature.md)
 - [ChannelStateHvac](docs/Model/ChannelStateHvac.md)
@@ -208,7 +217,8 @@ Class | Method | HTTP request | Description
 - [InlineObject10](docs/Model/InlineObject10.md)
 - [InlineObject11](docs/Model/InlineObject11.md)
 - [InlineObject12](docs/Model/InlineObject12.md)
-- [InlineObject14](docs/Model/InlineObject14.md)
+- [InlineObject13](docs/Model/InlineObject13.md)
+- [InlineObject15](docs/Model/InlineObject15.md)
 - [InlineObject2](docs/Model/InlineObject2.md)
 - [InlineObject3](docs/Model/InlineObject3.md)
 - [InlineObject4](docs/Model/InlineObject4.md)
@@ -219,9 +229,10 @@ Class | Method | HTTP request | Description
 - [InlineObject9](docs/Model/InlineObject9.md)
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InlineResponse2001](docs/Model/InlineResponse2001.md)
+- [InlineResponse2001Timezone](docs/Model/InlineResponse2001Timezone.md)
 - [InlineResponse2002](docs/Model/InlineResponse2002.md)
 - [InlineResponse2003](docs/Model/InlineResponse2003.md)
-- [InlineResponse200Timezone](docs/Model/InlineResponse200Timezone.md)
+- [InlineResponse2004](docs/Model/InlineResponse2004.md)
 - [InlineResponse400](docs/Model/InlineResponse400.md)
 - [InlineResponse4001](docs/Model/InlineResponse4001.md)
 - [InlineResponse4002](docs/Model/InlineResponse4002.md)
@@ -318,5 +329,5 @@ or your server instance.
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- Targeted Cloud version: `24.01.01-51-gd3ab095f`
+- Targeted Cloud version: `24.12-60-g8a642a3e7`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

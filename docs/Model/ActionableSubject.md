@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **ownSubjectType** | **string** |  | [optional]
 **state** | [**\Supla\ApiClient\Model\SceneState**](SceneState.md) |  | [optional]
 **config** | [**\Supla\ApiClient\Model\ScheduleConfigEntry[]**](ScheduleConfigEntry.md) |  | [optional]
+**conflictDetails** | **object** |  | [optional]
 **userIconId** | **int** |  | [optional]
 **userIcon** | [**\Supla\ApiClient\Model\UserIcon**](UserIcon.md) |  | [optional]
 **connected** | **bool** |  | [optional]

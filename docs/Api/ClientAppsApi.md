@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 ## `updateClientApp()`
 
 ```php
-updateClientApp($id, $inlineObject5): \Supla\ApiClient\Model\ClientApp
+updateClientApp($id, $inlineObject6): \Supla\ApiClient\Model\ClientApp
 ```
 
 Update the client app
@@ -159,10 +159,10 @@ $apiInstance = new Supla\ApiClient\Api\ClientAppsApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject5 = new \Supla\ApiClient\Model\InlineObject5(); // \Supla\ApiClient\Model\InlineObject5
+$inlineObject6 = new \Supla\ApiClient\Model\InlineObject6(); // \Supla\ApiClient\Model\InlineObject6
 
 try {
-    $result = $apiInstance->updateClientApp($id, $inlineObject5);
+    $result = $apiInstance->updateClientApp($id, $inlineObject6);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientAppsApi->updateClientApp: ', $e->getMessage(), PHP_EOL;
@@ -174,7 +174,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject5** | [**\Supla\ApiClient\Model\InlineObject5**](../Model/InlineObject5.md)|  |
+ **inlineObject6** | [**\Supla\ApiClient\Model\InlineObject6**](../Model/InlineObject6.md)|  |
 
 ### Return type
 

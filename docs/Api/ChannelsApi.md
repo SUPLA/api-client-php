@@ -6,10 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**configureChannel()**](ChannelsApi.md#configureChannel) | **PATCH** /channels/{id}/settings | 
 [**createChannelReaction()**](ChannelsApi.md#createChannelReaction) | **POST** /channels/{channel}/reactions | Create channel reaction
+[**deleteChannel()**](ChannelsApi.md#deleteChannel) | **DELETE** /channels/{id} | Delete the channel
 [**deleteChannelMeasurementLogs()**](ChannelsApi.md#deleteChannelMeasurementLogs) | **DELETE** /channels/{channel}/measurement-logs | Delete channel measurement logs.
 [**deleteChannelReaction()**](ChannelsApi.md#deleteChannelReaction) | **DELETE** /channels/{channel}/reactions/{reaction} | Delete channel reaction
 [**downloadChannelMeasurementLogs()**](ChannelsApi.md#downloadChannelMeasurementLogs) | **GET** /channels/{channel}/measurement-logs-download | Get measurement logs as a zipped CSV file.
 [**executeAction()**](ChannelsApi.md#executeAction) | **PATCH** /channels/{id} | 
+[**executeSubDeviceAction()**](ChannelsApi.md#executeSubDeviceAction) | **PATCH** /channels/{channelId}/subdevice | 
 [**getChannel()**](ChannelsApi.md#getChannel) | **GET** /channels/{id} | Get Channel
 [**getChannelChannelGroups()**](ChannelsApi.md#getChannelChannelGroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to
 [**getChannelDirectLinks()**](ChannelsApi.md#getChannelDirectLinks) | **GET** /channels/{channel}/direct-links | Get channel direct links
@@ -19,6 +21,8 @@ Method | HTTP request | Description
 [**getChannelReactions()**](ChannelsApi.md#getChannelReactions) | **GET** /channels/{channel}/reactions | Get channel reactions
 [**getChannelScenes()**](ChannelsApi.md#getChannelScenes) | **GET** /channels/{channel}/scenes | Get channel scenes
 [**getChannels()**](ChannelsApi.md#getChannels) | **GET** /channels | Get Channels
+[**getChannelsStates()**](ChannelsApi.md#getChannelsStates) | **GET** /channels/states | Get Channels states
+[**getReactions()**](ChannelsApi.md#getReactions) | **GET** /reactions | Get reactions
 [**updateChannel()**](ChannelsApi.md#updateChannel) | **PUT** /channels/{id} | 
 [**updateChannelReaction()**](ChannelsApi.md#updateChannelReaction) | **PUT** /channels/{channel}/reactions/{reaction} | Update channel reaction
 
@@ -89,7 +93,7 @@ Name | Type | Description  | Notes
 ## `createChannelReaction()`
 
 ```php
-createChannelReaction($channel, $inlineObject9, $include): \Supla\ApiClient\Model\Reaction
+createChannelReaction($channel, $inlineObject10, $include): \Supla\ApiClient\Model\Reaction
 ```
 
 Create channel reaction
@@ -115,11 +119,11 @@ $apiInstance = new Supla\ApiClient\Api\ChannelsApi(
     $config
 );
 $channel = 56; // int | ID
-$inlineObject9 = new \Supla\ApiClient\Model\InlineObject9(); // \Supla\ApiClient\Model\InlineObject9
+$inlineObject10 = new \Supla\ApiClient\Model\InlineObject10(); // \Supla\ApiClient\Model\InlineObject10
 $include = array('include_example'); // string[] | List of extra fields to include in the response.
 
 try {
-    $result = $apiInstance->createChannelReaction($channel, $inlineObject9, $include);
+    $result = $apiInstance->createChannelReaction($channel, $inlineObject10, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->createChannelReaction: ', $e->getMessage(), PHP_EOL;
@@ -131,7 +135,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel** | **int**| ID |
- **inlineObject9** | [**\Supla\ApiClient\Model\InlineObject9**](../Model/InlineObject9.md)|  |
+ **inlineObject10** | [**\Supla\ApiClient\Model\InlineObject10**](../Model/InlineObject10.md)|  |
  **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
 
 ### Return type
@@ -146,6 +150,68 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteChannel()`
+
+```php
+deleteChannel($id, $safe)
+```
+
+Delete the channel
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: BearerAuth
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Supla\ApiClient\Api\ChannelsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | ID
+$safe = True; // bool | Whether to perform actions that require data loss (e.g. delete schedules when deleting the channel)
+
+try {
+    $apiInstance->deleteChannel($id, $safe);
+} catch (Exception $e) {
+    echo 'Exception when calling ChannelsApi->deleteChannel: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| ID |
+ **safe** | **bool**| Whether to perform actions that require data loss (e.g. delete schedules when deleting the channel) | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -385,6 +451,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `executeSubDeviceAction()`
+
+```php
+executeSubDeviceAction($channelId, $inlineObject3): object
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: BearerAuth
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Supla\ApiClient\Api\ChannelsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$channelId = 56; // int | ID
+$inlineObject3 = new \Supla\ApiClient\Model\InlineObject3(); // \Supla\ApiClient\Model\InlineObject3
+
+try {
+    $result = $apiInstance->executeSubDeviceAction($channelId, $inlineObject3);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ChannelsApi->executeSubDeviceAction: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelId** | **int**| ID |
+ **inlineObject3** | [**\Supla\ApiClient\Model\InlineObject3**](../Model/InlineObject3.md)|  |
+
+### Return type
+
+**object**
 
 ### Authorization
 
@@ -994,6 +1123,125 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getChannelsStates()`
+
+```php
+getChannelsStates(): object[]
+```
+
+Get Channels states
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: BearerAuth
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Supla\ApiClient\Api\ChannelsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getChannelsStates();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ChannelsApi->getChannelsStates: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**object[]**
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getReactions()`
+
+```php
+getReactions($include): \Supla\ApiClient\Model\Reaction[]
+```
+
+Get reactions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: BearerAuth
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Supla\ApiClient\Api\ChannelsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$include = array('include_example'); // string[] | List of extra fields to include in the response.
+
+try {
+    $result = $apiInstance->getReactions($include);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ChannelsApi->getReactions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+
+### Return type
+
+[**\Supla\ApiClient\Model\Reaction[]**](../Model/Reaction.md)
+
+### Authorization
+
+[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `updateChannel()`
 
 ```php
@@ -1062,7 +1310,7 @@ Name | Type | Description  | Notes
 ## `updateChannelReaction()`
 
 ```php
-updateChannelReaction($channel, $reaction, $inlineObject10, $include): \Supla\ApiClient\Model\Reaction
+updateChannelReaction($channel, $reaction, $inlineObject11, $include): \Supla\ApiClient\Model\Reaction
 ```
 
 Update channel reaction
@@ -1089,11 +1337,11 @@ $apiInstance = new Supla\ApiClient\Api\ChannelsApi(
 );
 $channel = 56; // int | Channel ID
 $reaction = 56; // int | Reaction ID
-$inlineObject10 = new \Supla\ApiClient\Model\InlineObject10(); // \Supla\ApiClient\Model\InlineObject10
+$inlineObject11 = new \Supla\ApiClient\Model\InlineObject11(); // \Supla\ApiClient\Model\InlineObject11
 $include = array('include_example'); // string[] | List of extra fields to include in the response.
 
 try {
-    $result = $apiInstance->updateChannelReaction($channel, $reaction, $inlineObject10, $include);
+    $result = $apiInstance->updateChannelReaction($channel, $reaction, $inlineObject11, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelsApi->updateChannelReaction: ', $e->getMessage(), PHP_EOL;
@@ -1106,7 +1354,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channel** | **int**| Channel ID |
  **reaction** | **int**| Reaction ID |
- **inlineObject10** | [**\Supla\ApiClient\Model\InlineObject10**](../Model/InlineObject10.md)|  |
+ **inlineObject11** | [**\Supla\ApiClient\Model\InlineObject11**](../Model/InlineObject11.md)|  |
  **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
 
 ### Return type

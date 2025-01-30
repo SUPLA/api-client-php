@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getServerInfo()`
 
 ```php
-getServerInfo(): \Supla\ApiClient\Model\InlineResponse200
+getServerInfo(): \Supla\ApiClient\Model\InlineResponse2001
 ```
 
 Get the server info
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Supla\ApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Supla\ApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ No authorization required
 ## `getSuplaServerStatus()`
 
 ```php
-getSuplaServerStatus(): \Supla\ApiClient\Model\InlineResponse2001
+getSuplaServerStatus(): \Supla\ApiClient\Model\InlineResponse2002
 ```
 
 Get the SUPLA Server status
@@ -96,7 +96,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Supla\ApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Supla\ApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ No authorization required
 ## `getTokenInfo()`
 
 ```php
-getTokenInfo(): \Supla\ApiClient\Model\InlineResponse2002
+getTokenInfo(): \Supla\ApiClient\Model\InlineResponse2003
 ```
 
 Returns information about used access token
@@ -154,7 +154,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Supla\ApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Supla\ApiClient\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 

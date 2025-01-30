@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `issueAccessToken()`
 
 ```php
-issueAccessToken($accessTokenRequestBody): \Supla\ApiClient\Model\InlineResponse2003
+issueAccessToken($accessTokenRequestBody): \Supla\ApiClient\Model\InlineResponse2004
 ```
 
 Issues an access token based on authorization_code or refresh_token.
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Supla\ApiClient\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Supla\ApiClient\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 

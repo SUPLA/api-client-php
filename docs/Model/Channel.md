@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **ownSubjectType** | **string** |  | [optional]
 **state** | [**\Supla\ApiClient\Model\ChannelState**](ChannelState.md) |  | [optional]
 **config** | [**\Supla\ApiClient\Model\ChannelConfig**](ChannelConfig.md) |  | [optional]
+**conflictDetails** | **object** |  | [optional]
 **userIconId** | **int** |  | [optional]
 **userIcon** | [**\Supla\ApiClient\Model\UserIcon**](UserIcon.md) |  | [optional]
 **connected** | **bool** |  | [optional]

@@ -10,6 +10,7 @@ docs/Api/ClientAppsApi.md
 docs/Api/DevicesApi.md
 docs/Api/DirectLinksApi.md
 docs/Api/EnumsApi.md
+docs/Api/IntegrationsApi.md
 docs/Api/LocationsApi.md
 docs/Api/NotificationsApi.md
 docs/Api/OAuthApi.md
@@ -30,6 +31,7 @@ docs/Model/ChannelActionParamsCopy.md
 docs/Model/ChannelActionParamsDimmer.md
 docs/Model/ChannelActionParamsDuration.md
 docs/Model/ChannelActionParamsPercentage.md
+docs/Model/ChannelActionParamsPercentageAndTilt.md
 docs/Model/ChannelActionParamsRgbw.md
 docs/Model/ChannelActionParamsRgbwOneOf.md
 docs/Model/ChannelActionParamsRgbwOneOf1.md
@@ -45,6 +47,7 @@ docs/Model/ChannelConfigAlexaSettingsAlexa.md
 docs/Model/ChannelConfigControllingTheGate.md
 docs/Model/ChannelConfigControllingTheGateClosingRule.md
 docs/Model/ChannelConfigElectricityMeter.md
+docs/Model/ChannelConfigFacadeBlinds.md
 docs/Model/ChannelConfigGeneralPurposeMeasurement.md
 docs/Model/ChannelConfigGeneralPurposeMeasurementDefaults.md
 docs/Model/ChannelConfigGeneralPurposeMeter.md
@@ -59,6 +62,7 @@ docs/Model/ChannelConfigHvacThermostatTemperatureConstraints.md
 docs/Model/ChannelConfigHvacThermostatTemperatures.md
 docs/Model/ChannelConfigImpulseCounter.md
 docs/Model/ChannelConfigInvertedLogic.md
+docs/Model/ChannelConfigRollerShutter.md
 docs/Model/ChannelConfigStaircaseTimer.md
 docs/Model/ChannelConfigThermometer.md
 docs/Model/ChannelFunction.md
@@ -76,6 +80,7 @@ docs/Model/ChannelStateDistance.md
 docs/Model/ChannelStateDouble.md
 docs/Model/ChannelStateElectricityMeter.md
 docs/Model/ChannelStateElectricityMeterPhase.md
+docs/Model/ChannelStateFacadeBlind.md
 docs/Model/ChannelStateHumidity.md
 docs/Model/ChannelStateHumidityAndTemperature.md
 docs/Model/ChannelStateHvac.md
@@ -105,7 +110,8 @@ docs/Model/InlineObject1.md
 docs/Model/InlineObject10.md
 docs/Model/InlineObject11.md
 docs/Model/InlineObject12.md
-docs/Model/InlineObject14.md
+docs/Model/InlineObject13.md
+docs/Model/InlineObject15.md
 docs/Model/InlineObject2.md
 docs/Model/InlineObject3.md
 docs/Model/InlineObject4.md
@@ -116,9 +122,10 @@ docs/Model/InlineObject8.md
 docs/Model/InlineObject9.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
+docs/Model/InlineResponse2001Timezone.md
 docs/Model/InlineResponse2002.md
 docs/Model/InlineResponse2003.md
-docs/Model/InlineResponse200Timezone.md
+docs/Model/InlineResponse2004.md
 docs/Model/InlineResponse400.md
 docs/Model/InlineResponse4001.md
 docs/Model/InlineResponse4002.md
@@ -176,6 +183,7 @@ lib/Api/ClientAppsApi.php
 lib/Api/DevicesApi.php
 lib/Api/DirectLinksApi.php
 lib/Api/EnumsApi.php
+lib/Api/IntegrationsApi.php
 lib/Api/LocationsApi.php
 lib/Api/NotificationsApi.php
 lib/Api/OAuthApi.php
@@ -199,6 +207,7 @@ lib/Model/ChannelActionParamsCopy.php
 lib/Model/ChannelActionParamsDimmer.php
 lib/Model/ChannelActionParamsDuration.php
 lib/Model/ChannelActionParamsPercentage.php
+lib/Model/ChannelActionParamsPercentageAndTilt.php
 lib/Model/ChannelActionParamsRgbw.php
 lib/Model/ChannelActionParamsRgbwOneOf.php
 lib/Model/ChannelActionParamsRgbwOneOf1.php
@@ -214,6 +223,7 @@ lib/Model/ChannelConfigAlexaSettingsAlexa.php
 lib/Model/ChannelConfigControllingTheGate.php
 lib/Model/ChannelConfigControllingTheGateClosingRule.php
 lib/Model/ChannelConfigElectricityMeter.php
+lib/Model/ChannelConfigFacadeBlinds.php
 lib/Model/ChannelConfigGeneralPurposeMeasurement.php
 lib/Model/ChannelConfigGeneralPurposeMeasurementDefaults.php
 lib/Model/ChannelConfigGeneralPurposeMeter.php
@@ -228,6 +238,7 @@ lib/Model/ChannelConfigHvacThermostatTemperatureConstraints.php
 lib/Model/ChannelConfigHvacThermostatTemperatures.php
 lib/Model/ChannelConfigImpulseCounter.php
 lib/Model/ChannelConfigInvertedLogic.php
+lib/Model/ChannelConfigRollerShutter.php
 lib/Model/ChannelConfigStaircaseTimer.php
 lib/Model/ChannelConfigThermometer.php
 lib/Model/ChannelFunction.php
@@ -245,6 +256,7 @@ lib/Model/ChannelStateDistance.php
 lib/Model/ChannelStateDouble.php
 lib/Model/ChannelStateElectricityMeter.php
 lib/Model/ChannelStateElectricityMeterPhase.php
+lib/Model/ChannelStateFacadeBlind.php
 lib/Model/ChannelStateHumidity.php
 lib/Model/ChannelStateHumidityAndTemperature.php
 lib/Model/ChannelStateHvac.php
@@ -274,7 +286,8 @@ lib/Model/InlineObject1.php
 lib/Model/InlineObject10.php
 lib/Model/InlineObject11.php
 lib/Model/InlineObject12.php
-lib/Model/InlineObject14.php
+lib/Model/InlineObject13.php
+lib/Model/InlineObject15.php
 lib/Model/InlineObject2.php
 lib/Model/InlineObject3.php
 lib/Model/InlineObject4.php
@@ -285,9 +298,10 @@ lib/Model/InlineObject8.php
 lib/Model/InlineObject9.php
 lib/Model/InlineResponse200.php
 lib/Model/InlineResponse2001.php
+lib/Model/InlineResponse2001Timezone.php
 lib/Model/InlineResponse2002.php
 lib/Model/InlineResponse2003.php
-lib/Model/InlineResponse200Timezone.php
+lib/Model/InlineResponse2004.php
 lib/Model/InlineResponse400.php
 lib/Model/InlineResponse4001.php
 lib/Model/InlineResponse4002.php

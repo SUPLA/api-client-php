@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **currency** | **string** |  | [optional]
 **unit** | **string** |  | [optional]
 **initialValue** | **int** |  | [optional]
-**relatedChannelId** | **int** |  | [optional]
+**relatedRelayChannelId** | **int** |  | [optional]
+**ocrSettings** | **object** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

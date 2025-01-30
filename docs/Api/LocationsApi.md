@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 ## `updateLocation()`
 
 ```php
-updateLocation($id, $inlineObject8): \Supla\ApiClient\Model\Location
+updateLocation($id, $inlineObject9): \Supla\ApiClient\Model\Location
 ```
 
 Update the location
@@ -282,10 +282,10 @@ $apiInstance = new Supla\ApiClient\Api\LocationsApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject8 = new \Supla\ApiClient\Model\InlineObject8(); // \Supla\ApiClient\Model\InlineObject8
+$inlineObject9 = new \Supla\ApiClient\Model\InlineObject9(); // \Supla\ApiClient\Model\InlineObject9
 
 try {
-    $result = $apiInstance->updateLocation($id, $inlineObject8);
+    $result = $apiInstance->updateLocation($id, $inlineObject9);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->updateLocation: ', $e->getMessage(), PHP_EOL;
@@ -297,7 +297,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject8** | [**\Supla\ApiClient\Model\InlineObject8**](../Model/InlineObject8.md)|  |
+ **inlineObject9** | [**\Supla\ApiClient\Model\InlineObject9**](../Model/InlineObject9.md)|  |
 
 ### Return type
 

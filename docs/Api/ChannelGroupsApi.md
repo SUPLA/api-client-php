@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createChannelGroup()`
 
 ```php
-createChannelGroup($inlineObject3): \Supla\ApiClient\Model\ChannelGroup
+createChannelGroup($inlineObject4): \Supla\ApiClient\Model\ChannelGroup
 ```
 
 Create a new channel group
@@ -42,10 +42,10 @@ $apiInstance = new Supla\ApiClient\Api\ChannelGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inlineObject3 = new \Supla\ApiClient\Model\InlineObject3(); // \Supla\ApiClient\Model\InlineObject3
+$inlineObject4 = new \Supla\ApiClient\Model\InlineObject4(); // \Supla\ApiClient\Model\InlineObject4
 
 try {
-    $result = $apiInstance->createChannelGroup($inlineObject3);
+    $result = $apiInstance->createChannelGroup($inlineObject4);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->createChannelGroup: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject3** | [**\Supla\ApiClient\Model\InlineObject3**](../Model/InlineObject3.md)|  |
+ **inlineObject4** | [**\Supla\ApiClient\Model\InlineObject4**](../Model/InlineObject4.md)|  |
 
 ### Return type
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 ## `updateChannelGroup()`
 
 ```php
-updateChannelGroup($id, $inlineObject4): \Supla\ApiClient\Model\ChannelGroup
+updateChannelGroup($id, $inlineObject5): \Supla\ApiClient\Model\ChannelGroup
 ```
 
 Update the channel group
@@ -478,10 +478,10 @@ $apiInstance = new Supla\ApiClient\Api\ChannelGroupsApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject4 = new \Supla\ApiClient\Model\InlineObject4(); // \Supla\ApiClient\Model\InlineObject4
+$inlineObject5 = new \Supla\ApiClient\Model\InlineObject5(); // \Supla\ApiClient\Model\InlineObject5
 
 try {
-    $result = $apiInstance->updateChannelGroup($id, $inlineObject4);
+    $result = $apiInstance->updateChannelGroup($id, $inlineObject5);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->updateChannelGroup: ', $e->getMessage(), PHP_EOL;
@@ -493,7 +493,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject4** | [**\Supla\ApiClient\Model\InlineObject4**](../Model/InlineObject4.md)|  |
+ **inlineObject5** | [**\Supla\ApiClient\Model\InlineObject5**](../Model/InlineObject5.md)|  |
 
 ### Return type
 

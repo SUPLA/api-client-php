@@ -22,25 +22,27 @@ composer require supla/api-client@{{.}}
 ## Getting Started
 
 ```php
-<?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 use Supla\ApiClient\Api\ChannelsApi;
-use Supla\ApiClient\Model\ChannelFunctionEnumNames;
 
 // Get access token from OAuth flow or use a Personal Access Token
 $accessToken = '<YOUR_ACCESS_TOKEN_HERE>';
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken($accessToken);
 
-$apiInstance = new ChannelsApi( new GuzzleHttp\Client(), $config);
+$apiInstance = new ChannelsApi(new GuzzleHttp\Client(), $config);
 
 try {
-    $result = $apiInstance->getChannels([ChannelFunctionEnumNames::LIGHTSWITCH]);
+    $result = $apiInstance->getChannels();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SUPLA API: ', $e->getMessage(), PHP_EOL;
 }
 ```
+
+## Examples
+
+See the [examples folder](https://github.com/SUPLA/api-client-php/tree/master/examples) for more.
 
 ## API Endpoints
 

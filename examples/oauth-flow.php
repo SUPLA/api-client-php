@@ -6,6 +6,8 @@
  * Then configure the constants below to match your application. If your application is not public (i.e. you did not
  * pass the application registration flow), you need to set the CLOUD_URL to point your server instance, e.g. https://svr33.supla.org
  *
+ * In order for this script to work, set the redirect uri for your app to: http://localhost:8066
+ *
  * For the scopes available, consult the docs here: https://github.com/SUPLA/api-client-php?tab=readme-ov-file#oauth2
  *
  * If you request for the offline_access scope, the refresh token will be issued, too.

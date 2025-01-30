@@ -16,11 +16,11 @@
  * php -S localhost:8066 oauth-flow.php
  */
 
-const CLOUD_URL = 'http://localhost:8008';
-const CLIENT_ID = '3_CALLERzqczpc4wgk0oo4wsoss040k88sks4goc0osow4sk8cgc';
-const CLIENT_SECRET = 'CALLERgd2oowo408gws84kwwo88k8ck8kwk4w0kccog444wocc';
+const CLOUD_URL = 'https://cloud.supla.org';
+const CLIENT_ID = '<YOUR_CLIENT_ID>';
+const CLIENT_SECRET = '<YOUR_CLIENT_SECRET>';
 const REDIRECT_URI = 'http://localhost:8066';
-const SCOPE = 'mqtt_broker';
+const SCOPE = 'account_r channels_ea channels_r channelgroups_ea channelgroups_r scenes_ea scenes_r offline_access';
 
 use Supla\ApiClient\Api\OAuthApi;
 use Supla\ApiClient\Model\AccessTokenRequestBody;

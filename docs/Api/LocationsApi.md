@@ -1,14 +1,16 @@
 # Supla\ApiClient\LocationsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createLocation()**](LocationsApi.md#createLocation) | **POST** /locations | Create a new location
-[**deleteLocation()**](LocationsApi.md#deleteLocation) | **DELETE** /locations/{id} | Delete the location
-[**getLocation()**](LocationsApi.md#getLocation) | **GET** /locations/{id} | Get location by ID
-[**getLocations()**](LocationsApi.md#getLocations) | **GET** /locations | Get locations
-[**updateLocation()**](LocationsApi.md#updateLocation) | **PUT** /locations/{id} | Update the location
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createLocation()**](LocationsApi.md#createLocation) | **POST** /locations | Create a new location |
+| [**deleteLocation()**](LocationsApi.md#deleteLocation) | **DELETE** /locations/{id} | Delete the location |
+| [**getLocation()**](LocationsApi.md#getLocation) | **GET** /locations/{id} | Get location by ID |
+| [**getLocations()**](LocationsApi.md#getLocations) | **GET** /locations | Get locations |
+| [**updateLocation()**](LocationsApi.md#updateLocation) | **PUT** /locations/{id} | Update the location |
 
 
 ## `createLocation()`
@@ -108,9 +110,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
 
 ### Return type
 
@@ -170,10 +172,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -232,9 +234,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -294,10 +296,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **updateLocationRequest** | [**\Supla\ApiClient\Model\UpdateLocationRequest**](../Model/UpdateLocationRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **updateLocationRequest** | [**\Supla\ApiClient\Model\UpdateLocationRequest**](../Model/UpdateLocationRequest.md)|  | |
 
 ### Return type
 

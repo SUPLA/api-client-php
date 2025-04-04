@@ -1,17 +1,19 @@
 # Supla\ApiClient\ScenesApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createScene()**](ScenesApi.md#createScene) | **POST** /scenes | Create a scene
-[**deleteScene()**](ScenesApi.md#deleteScene) | **DELETE** /scenes/{scene} | Delete the scene
-[**executeScene()**](ScenesApi.md#executeScene) | **PATCH** /scenes/{scene} | 
-[**getScene()**](ScenesApi.md#getScene) | **GET** /scenes/{scene} | Get Scene
-[**getSceneDirectLinks()**](ScenesApi.md#getSceneDirectLinks) | **GET** /scenes/{scene}/direct-links | Get scene direct links
-[**getSceneScenes()**](ScenesApi.md#getSceneScenes) | **GET** /scenes/{scene}/scenes | Get scene scenes
-[**getScenes()**](ScenesApi.md#getScenes) | **GET** /scenes | Get Scenes
-[**updateScene()**](ScenesApi.md#updateScene) | **PUT** /scenes/{scene} | Update the scene
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createScene()**](ScenesApi.md#createScene) | **POST** /scenes | Create a scene |
+| [**deleteScene()**](ScenesApi.md#deleteScene) | **DELETE** /scenes/{scene} | Delete the scene |
+| [**executeScene()**](ScenesApi.md#executeScene) | **PATCH** /scenes/{scene} |  |
+| [**getScene()**](ScenesApi.md#getScene) | **GET** /scenes/{scene} | Get Scene |
+| [**getSceneDirectLinks()**](ScenesApi.md#getSceneDirectLinks) | **GET** /scenes/{scene}/direct-links | Get scene direct links |
+| [**getSceneScenes()**](ScenesApi.md#getSceneScenes) | **GET** /scenes/{scene}/scenes | Get scene scenes |
+| [**getScenes()**](ScenesApi.md#getScenes) | **GET** /scenes | Get Scenes |
+| [**updateScene()**](ScenesApi.md#updateScene) | **PUT** /scenes/{scene} | Update the scene |
 
 
 ## `createScene()`
@@ -54,9 +56,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createSceneRequest** | [**\Supla\ApiClient\Model\CreateSceneRequest**](../Model/CreateSceneRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **createSceneRequest** | [**\Supla\ApiClient\Model\CreateSceneRequest**](../Model/CreateSceneRequest.md)|  | |
 
 ### Return type
 
@@ -114,9 +116,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scene** | **int**| ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scene** | **int**| ID | |
 
 ### Return type
 
@@ -175,10 +177,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scene** | **int**| ID |
- **executeSceneRequest** | [**\Supla\ApiClient\Model\ExecuteSceneRequest**](../Model/ExecuteSceneRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scene** | **int**| ID | |
+| **executeSceneRequest** | [**\Supla\ApiClient\Model\ExecuteSceneRequest**](../Model/ExecuteSceneRequest.md)|  | |
 
 ### Return type
 
@@ -238,10 +240,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scene** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scene** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -301,10 +303,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scene** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scene** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -364,10 +366,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scene** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scene** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -427,10 +429,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
- **forIntegration** | **string**| Select an integration that the scenes should be returned for. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
+| **forIntegration** | **string**| Select an integration that the scenes should be returned for. | [optional] |
 
 ### Return type
 
@@ -490,10 +492,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scene** | **int**| ID |
- **createSceneRequest** | [**\Supla\ApiClient\Model\CreateSceneRequest**](../Model/CreateSceneRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scene** | **int**| ID | |
+| **createSceneRequest** | [**\Supla\ApiClient\Model\CreateSceneRequest**](../Model/CreateSceneRequest.md)|  | |
 
 ### Return type
 

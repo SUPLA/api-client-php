@@ -1,10 +1,12 @@
 # Supla\ApiClient\IntegrationsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createMqttBrokerCredentials()**](IntegrationsApi.md#createMqttBrokerCredentials) | **POST** /integrations/mqtt-credentials | Creates MQTT Broker credentials for the OAuth Client.
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createMqttBrokerCredentials()**](IntegrationsApi.md#createMqttBrokerCredentials) | **POST** /integrations/mqtt-credentials | Creates MQTT Broker credentials for the OAuth Client. |
 
 
 ## `createMqttBrokerCredentials()`

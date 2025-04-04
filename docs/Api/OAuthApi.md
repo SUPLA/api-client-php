@@ -1,10 +1,12 @@
 # Supla\ApiClient\OAuthApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**issueAccessToken()**](OAuthApi.md#issueAccessToken) | **POST** /oauth/v2/token | Issues an access token based on authorization_code or refresh_token.
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**issueAccessToken()**](OAuthApi.md#issueAccessToken) | **POST** /oauth/v2/token | Issues an access token based on authorization_code or refresh_token. |
 
 
 ## `issueAccessToken()`
@@ -40,9 +42,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessTokenRequestBody** | [**\Supla\ApiClient\Model\AccessTokenRequestBody**](../Model/AccessTokenRequestBody.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accessTokenRequestBody** | [**\Supla\ApiClient\Model\AccessTokenRequestBody**](../Model/AccessTokenRequestBody.md)|  | |
 
 ### Return type
 

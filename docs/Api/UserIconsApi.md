@@ -1,15 +1,17 @@
 # Supla\ApiClient\UserIconsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createUserIcon()**](UserIconsApi.md#createUserIcon) | **POST** /user-icons | Create a new User Icon
-[**createUserIconBase64()**](UserIconsApi.md#createUserIconBase64) | **POST** /user-icons.base64 | Create a new User Icon sent in Base64 format.
-[**deleteUserIcon()**](UserIconsApi.md#deleteUserIcon) | **DELETE** /user-icons/{id} | Delete the User Icon
-[**getUserIcon()**](UserIconsApi.md#getUserIcon) | **GET** /user-icons/{id} | Get User Icon
-[**getUserIconImage()**](UserIconsApi.md#getUserIconImage) | **GET** /user-icons/{id}/{imageIndex} | Get User Icon image at specified index
-[**getUserIcons()**](UserIconsApi.md#getUserIcons) | **GET** /user-icons | List User Icons
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createUserIcon()**](UserIconsApi.md#createUserIcon) | **POST** /user-icons | Create a new User Icon |
+| [**createUserIconBase64()**](UserIconsApi.md#createUserIconBase64) | **POST** /user-icons.base64 | Create a new User Icon sent in Base64 format. |
+| [**deleteUserIcon()**](UserIconsApi.md#deleteUserIcon) | **DELETE** /user-icons/{id} | Delete the User Icon |
+| [**getUserIcon()**](UserIconsApi.md#getUserIcon) | **GET** /user-icons/{id} | Get User Icon |
+| [**getUserIconImage()**](UserIconsApi.md#getUserIconImage) | **GET** /user-icons/{id}/{imageIndex} | Get User Icon image at specified index |
+| [**getUserIcons()**](UserIconsApi.md#getUserIcons) | **GET** /user-icons | List User Icons |
 
 
 ## `createUserIcon()`
@@ -61,18 +63,18 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **function** | **string**|  | [optional]
- **sourceIcon** | **int**| ID of an existing user icon to replace with these new files. Optional. | [optional]
- **image1** | **\SplFileObject****\SplFileObject**|  | [optional]
- **image2** | **\SplFileObject****\SplFileObject**|  | [optional]
- **image3** | **\SplFileObject****\SplFileObject**|  | [optional]
- **image4** | **\SplFileObject****\SplFileObject**|  | [optional]
- **imageDark1** | **\SplFileObject****\SplFileObject**|  | [optional]
- **imageDark2** | **\SplFileObject****\SplFileObject**|  | [optional]
- **imageDark3** | **\SplFileObject****\SplFileObject**|  | [optional]
- **imageDark4** | **\SplFileObject****\SplFileObject**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **function** | **string**|  | [optional] |
+| **sourceIcon** | **int**| ID of an existing user icon to replace with these new files. Optional. | [optional] |
+| **image1** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| **image2** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| **image3** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| **image4** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| **imageDark1** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| **imageDark2** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| **imageDark3** | **\SplFileObject****\SplFileObject**|  | [optional] |
+| **imageDark4** | **\SplFileObject****\SplFileObject**|  | [optional] |
 
 ### Return type
 
@@ -131,9 +133,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createUserIconBase64Request** | [**\Supla\ApiClient\Model\CreateUserIconBase64Request**](../Model/CreateUserIconBase64Request.md)| Request with Base64-encoded images to save as a new icon. The number of images required to be sent with the request is determined by the chosen function identifier (it must match the &#x60;function.possibleVisualStates&#x60; count). Each image represents the respective visual state from &#x60;function.possibleVisualStates&#x60; array. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **createUserIconBase64Request** | [**\Supla\ApiClient\Model\CreateUserIconBase64Request**](../Model/CreateUserIconBase64Request.md)| Request with Base64-encoded images to save as a new icon. The number of images required to be sent with the request is determined by the chosen function identifier (it must match the &#x60;function.possibleVisualStates&#x60; count). Each image represents the respective visual state from &#x60;function.possibleVisualStates&#x60; array. | |
 
 ### Return type
 
@@ -191,9 +193,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
 
 ### Return type
 
@@ -253,10 +255,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**|  |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -317,11 +319,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**|  |
- **imageIndex** | **int**|  |
- **dark** | **bool**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **imageIndex** | **int**|  | |
+| **dark** | **bool**|  | [optional] |
 
 ### Return type
 
@@ -382,11 +384,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **function** | [**string[]**](../Model/string.md)|  | [optional]
- **ids** | [**int[]**](../Model/int.md)|  | [optional]
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **function** | [**string[]**](../Model/string.md)|  | [optional] |
+| **ids** | [**int[]**](../Model/int.md)|  | [optional] |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 

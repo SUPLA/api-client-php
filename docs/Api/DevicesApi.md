@@ -1,16 +1,18 @@
 # Supla\ApiClient\DevicesApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteDevice()**](DevicesApi.md#deleteDevice) | **DELETE** /iodevices/{id} | Delete the device
-[**executeDeviceAction()**](DevicesApi.md#executeDeviceAction) | **PATCH** /iodevices/{id} | 
-[**getIoDevice()**](DevicesApi.md#getIoDevice) | **GET** /iodevices/{id} | Get Device
-[**getIoDeviceNotifications()**](DevicesApi.md#getIoDeviceNotifications) | **GET** /iodevices/{device}/notifications | 
-[**getIoDevices()**](DevicesApi.md#getIoDevices) | **GET** /iodevices | Get Devices
-[**getSubDevices()**](DevicesApi.md#getSubDevices) | **GET** /subdevices | 
-[**updateDevice()**](DevicesApi.md#updateDevice) | **PUT** /iodevices/{id} | 
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteDevice()**](DevicesApi.md#deleteDevice) | **DELETE** /iodevices/{id} | Delete the device |
+| [**executeDeviceAction()**](DevicesApi.md#executeDeviceAction) | **PATCH** /iodevices/{id} |  |
+| [**getIoDevice()**](DevicesApi.md#getIoDevice) | **GET** /iodevices/{id} | Get Device |
+| [**getIoDeviceNotifications()**](DevicesApi.md#getIoDeviceNotifications) | **GET** /iodevices/{device}/notifications |  |
+| [**getIoDevices()**](DevicesApi.md#getIoDevices) | **GET** /iodevices | Get Devices |
+| [**getSubDevices()**](DevicesApi.md#getSubDevices) | **GET** /subdevices |  |
+| [**updateDevice()**](DevicesApi.md#updateDevice) | **PUT** /iodevices/{id} |  |
 
 
 ## `deleteDevice()`
@@ -53,10 +55,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **safe** | **bool**| Whether to perform actions that require data loss (e.g. delete schedules when deleting the device) | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **safe** | **bool**| Whether to perform actions that require data loss (e.g. delete schedules when deleting the device) | [optional] |
 
 ### Return type
 
@@ -116,10 +118,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **executeSubDeviceActionRequest** | [**\Supla\ApiClient\Model\ExecuteSubDeviceActionRequest**](../Model/ExecuteSubDeviceActionRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **executeSubDeviceActionRequest** | [**\Supla\ApiClient\Model\ExecuteSubDeviceActionRequest**](../Model/ExecuteSubDeviceActionRequest.md)|  | |
 
 ### Return type
 
@@ -179,10 +181,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**\Supla\ApiClient\Model\GetIoDeviceIdParameter**](../Model/.md)| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**\Supla\ApiClient\Model\GetIoDeviceIdParameter**](../Model/.md)| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -242,10 +244,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **device** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -304,9 +306,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -425,11 +427,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **updateDeviceRequest** | [**\Supla\ApiClient\Model\UpdateDeviceRequest**](../Model/UpdateDeviceRequest.md)|  |
- **safe** | **bool**| Whether to perform actions that require data loss (e.g. disable schedules when disabling the device) | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **updateDeviceRequest** | [**\Supla\ApiClient\Model\UpdateDeviceRequest**](../Model/UpdateDeviceRequest.md)|  | |
+| **safe** | **bool**| Whether to perform actions that require data loss (e.g. disable schedules when disabling the device) | [optional] |
 
 ### Return type
 

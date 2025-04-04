@@ -1,12 +1,14 @@
 # Supla\ApiClient\NotificationsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getNotification()**](NotificationsApi.md#getNotification) | **GET** /notifications/{id} | Get Notification
-[**sendNotification()**](NotificationsApi.md#sendNotification) | **PATCH** /notifications | Send a notification.
-[**updateNotification()**](NotificationsApi.md#updateNotification) | **PUT** /notifications/{notification} | 
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getNotification()**](NotificationsApi.md#getNotification) | **GET** /notifications/{id} | Get Notification |
+| [**sendNotification()**](NotificationsApi.md#sendNotification) | **PATCH** /notifications | Send a notification. |
+| [**updateNotification()**](NotificationsApi.md#updateNotification) | **PUT** /notifications/{notification} |  |
 
 
 ## `getNotification()`
@@ -50,10 +52,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -111,9 +113,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channelActionParamsSend** | [**\Supla\ApiClient\Model\ChannelActionParamsSend**](../Model/ChannelActionParamsSend.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channelActionParamsSend** | [**\Supla\ApiClient\Model\ChannelActionParamsSend**](../Model/ChannelActionParamsSend.md)|  | |
 
 ### Return type
 
@@ -174,11 +176,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **notification** | **int**| ID |
- **channelActionParamsSend** | [**\Supla\ApiClient\Model\ChannelActionParamsSend**](../Model/ChannelActionParamsSend.md)|  |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **notification** | **int**| ID | |
+| **channelActionParamsSend** | [**\Supla\ApiClient\Model\ChannelActionParamsSend**](../Model/ChannelActionParamsSend.md)|  | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 

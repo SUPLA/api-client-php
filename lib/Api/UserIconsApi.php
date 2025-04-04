@@ -142,6 +142,8 @@ class UserIconsApi
      *
      * Create a new User Icon
      *
+     * Supla API Client
+     *
      * @param  string|null $function function (optional)
      * @param  int|null $sourceIcon ID of an existing user icon to replace with these new files. Optional. (optional)
      * @param  \SplFileObject|null $image1 image1 (optional)
@@ -168,6 +170,8 @@ class UserIconsApi
      * Operation createUserIconWithHttpInfo
      *
      * Create a new User Icon
+     *
+     * Supla API Client
      *
      * @param  string|null $function (optional)
      * @param  int|null $sourceIcon ID of an existing user icon to replace with these new files. Optional. (optional)
@@ -303,6 +307,8 @@ class UserIconsApi
      *
      * Create a new User Icon
      *
+     * Supla API Client
+     *
      * @param  string|null $function (optional)
      * @param  int|null $sourceIcon ID of an existing user icon to replace with these new files. Optional. (optional)
      * @param  \SplFileObject|null $image1 (optional)
@@ -332,6 +338,8 @@ class UserIconsApi
      * Operation createUserIconAsyncWithHttpInfo
      *
      * Create a new User Icon
+     *
+     * Supla API Client
      *
      * @param  string|null $function (optional)
      * @param  int|null $sourceIcon ID of an existing user icon to replace with these new files. Optional. (optional)
@@ -603,6 +611,8 @@ class UserIconsApi
      *
      * Create a new User Icon sent in Base64 format.
      *
+     * Supla API Client
+     *
      * @param  \Supla\ApiClient\Model\CreateUserIconBase64Request $createUserIconBase64Request Request with Base64-encoded images to save as a new icon. The number of images required to be sent with the request is determined by the chosen function identifier (it must match the &#x60;function.possibleVisualStates&#x60; count). Each image represents the respective visual state from &#x60;function.possibleVisualStates&#x60; array. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserIconBase64'] to see the possible values for this operation
      *
@@ -620,6 +630,8 @@ class UserIconsApi
      * Operation createUserIconBase64WithHttpInfo
      *
      * Create a new User Icon sent in Base64 format.
+     *
+     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\CreateUserIconBase64Request $createUserIconBase64Request Request with Base64-encoded images to save as a new icon. The number of images required to be sent with the request is determined by the chosen function identifier (it must match the &#x60;function.possibleVisualStates&#x60; count). Each image represents the respective visual state from &#x60;function.possibleVisualStates&#x60; array. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserIconBase64'] to see the possible values for this operation
@@ -746,6 +758,8 @@ class UserIconsApi
      *
      * Create a new User Icon sent in Base64 format.
      *
+     * Supla API Client
+     *
      * @param  \Supla\ApiClient\Model\CreateUserIconBase64Request $createUserIconBase64Request Request with Base64-encoded images to save as a new icon. The number of images required to be sent with the request is determined by the chosen function identifier (it must match the &#x60;function.possibleVisualStates&#x60; count). Each image represents the respective visual state from &#x60;function.possibleVisualStates&#x60; array. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserIconBase64'] to see the possible values for this operation
      *
@@ -766,6 +780,8 @@ class UserIconsApi
      * Operation createUserIconBase64AsyncWithHttpInfo
      *
      * Create a new User Icon sent in Base64 format.
+     *
+     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\CreateUserIconBase64Request $createUserIconBase64Request Request with Base64-encoded images to save as a new icon. The number of images required to be sent with the request is determined by the chosen function identifier (it must match the &#x60;function.possibleVisualStates&#x60; count). Each image represents the respective visual state from &#x60;function.possibleVisualStates&#x60; array. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createUserIconBase64'] to see the possible values for this operation
@@ -918,6 +934,8 @@ class UserIconsApi
      *
      * Delete the User Icon
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserIcon'] to see the possible values for this operation
      *
@@ -934,6 +952,8 @@ class UserIconsApi
      * Operation deleteUserIconWithHttpInfo
      *
      * Delete the User Icon
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserIcon'] to see the possible values for this operation
@@ -983,6 +1003,8 @@ class UserIconsApi
      *
      * Delete the User Icon
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserIcon'] to see the possible values for this operation
      *
@@ -1003,6 +1025,8 @@ class UserIconsApi
      * Operation deleteUserIconAsyncWithHttpInfo
      *
      * Delete the User Icon
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserIcon'] to see the possible values for this operation
@@ -1143,6 +1167,8 @@ class UserIconsApi
      *
      * Get User Icon
      *
+     * Supla API Client
+     *
      * @param  int $id id (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserIcon'] to see the possible values for this operation
@@ -1161,6 +1187,8 @@ class UserIconsApi
      * Operation getUserIconWithHttpInfo
      *
      * Get User Icon
+     *
+     * Supla API Client
      *
      * @param  int $id (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1288,6 +1316,8 @@ class UserIconsApi
      *
      * Get User Icon
      *
+     * Supla API Client
+     *
      * @param  int $id (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserIcon'] to see the possible values for this operation
@@ -1309,6 +1339,8 @@ class UserIconsApi
      * Operation getUserIconAsyncWithHttpInfo
      *
      * Get User Icon
+     *
+     * Supla API Client
      *
      * @param  int $id (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1474,6 +1506,8 @@ class UserIconsApi
      *
      * Get User Icon image at specified index
      *
+     * Supla API Client
+     *
      * @param  int $id id (required)
      * @param  int $imageIndex imageIndex (required)
      * @param  bool|null $dark dark (optional)
@@ -1493,6 +1527,8 @@ class UserIconsApi
      * Operation getUserIconImageWithHttpInfo
      *
      * Get User Icon image at specified index
+     *
+     * Supla API Client
      *
      * @param  int $id (required)
      * @param  int $imageIndex (required)
@@ -1621,6 +1657,8 @@ class UserIconsApi
      *
      * Get User Icon image at specified index
      *
+     * Supla API Client
+     *
      * @param  int $id (required)
      * @param  int $imageIndex (required)
      * @param  bool|null $dark (optional)
@@ -1643,6 +1681,8 @@ class UserIconsApi
      * Operation getUserIconImageAsyncWithHttpInfo
      *
      * Get User Icon image at specified index
+     *
+     * Supla API Client
      *
      * @param  int $id (required)
      * @param  int $imageIndex (required)
@@ -1825,6 +1865,8 @@ class UserIconsApi
      *
      * List User Icons
      *
+     * Supla API Client
+     *
      * @param  string[]|null $function function (optional)
      * @param  int[]|null $ids ids (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1844,6 +1886,8 @@ class UserIconsApi
      * Operation getUserIconsWithHttpInfo
      *
      * List User Icons
+     *
+     * Supla API Client
      *
      * @param  string[]|null $function (optional)
      * @param  int[]|null $ids (optional)
@@ -1972,6 +2016,8 @@ class UserIconsApi
      *
      * List User Icons
      *
+     * Supla API Client
+     *
      * @param  string[]|null $function (optional)
      * @param  int[]|null $ids (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1994,6 +2040,8 @@ class UserIconsApi
      * Operation getUserIconsAsyncWithHttpInfo
      *
      * List User Icons
+     *
+     * Supla API Client
      *
      * @param  string[]|null $function (optional)
      * @param  int[]|null $ids (optional)

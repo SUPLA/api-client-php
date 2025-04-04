@@ -133,6 +133,8 @@ class ClientAppsApi
      *
      * Delete the client app
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteClientApp'] to see the possible values for this operation
      *
@@ -149,6 +151,8 @@ class ClientAppsApi
      * Operation deleteClientAppWithHttpInfo
      *
      * Delete the client app
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteClientApp'] to see the possible values for this operation
@@ -198,6 +202,8 @@ class ClientAppsApi
      *
      * Delete the client app
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteClientApp'] to see the possible values for this operation
      *
@@ -218,6 +224,8 @@ class ClientAppsApi
      * Operation deleteClientAppAsyncWithHttpInfo
      *
      * Delete the client app
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteClientApp'] to see the possible values for this operation
@@ -358,6 +366,8 @@ class ClientAppsApi
      *
      * Get Client Apps
      *
+     * Supla API Client
+     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientApps'] to see the possible values for this operation
      *
@@ -375,6 +385,8 @@ class ClientAppsApi
      * Operation getClientAppsWithHttpInfo
      *
      * Get Client Apps
+     *
+     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientApps'] to see the possible values for this operation
@@ -501,6 +513,8 @@ class ClientAppsApi
      *
      * Get Client Apps
      *
+     * Supla API Client
+     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientApps'] to see the possible values for this operation
      *
@@ -521,6 +535,8 @@ class ClientAppsApi
      * Operation getClientAppsAsyncWithHttpInfo
      *
      * Get Client Apps
+     *
+     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientApps'] to see the possible values for this operation
@@ -669,6 +685,8 @@ class ClientAppsApi
      *
      * Update the client app
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateClientAppRequest $updateClientAppRequest updateClientAppRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateClientApp'] to see the possible values for this operation
@@ -687,6 +705,8 @@ class ClientAppsApi
      * Operation updateClientAppWithHttpInfo
      *
      * Update the client app
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateClientAppRequest $updateClientAppRequest (required)
@@ -814,6 +834,8 @@ class ClientAppsApi
      *
      * Update the client app
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateClientAppRequest $updateClientAppRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateClientApp'] to see the possible values for this operation
@@ -835,6 +857,8 @@ class ClientAppsApi
      * Operation updateClientAppAsyncWithHttpInfo
      *
      * Update the client app
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateClientAppRequest $updateClientAppRequest (required)

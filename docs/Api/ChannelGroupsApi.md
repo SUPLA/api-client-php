@@ -1,17 +1,19 @@
 # Supla\ApiClient\ChannelGroupsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createChannelGroup()**](ChannelGroupsApi.md#createChannelGroup) | **POST** /channel-groups | Create a new channel group
-[**deleteChannelGroup()**](ChannelGroupsApi.md#deleteChannelGroup) | **DELETE** /channel-groups/{id} | Delete the channel group
-[**executeActionOnChannelGroup()**](ChannelGroupsApi.md#executeActionOnChannelGroup) | **PATCH** /channel-groups/{id} | 
-[**getChannelGroup()**](ChannelGroupsApi.md#getChannelGroup) | **GET** /channel-groups/{id} | Get Channel Group
-[**getChannelGroupDirectLinks()**](ChannelGroupsApi.md#getChannelGroupDirectLinks) | **GET** /channel-groups/{channelGroup}/direct-links | Get channel group direct links
-[**getChannelGroupScenes()**](ChannelGroupsApi.md#getChannelGroupScenes) | **GET** /channel-groups/{channelGroup}/scenes | Get channel group scenes
-[**getChannelGroups()**](ChannelGroupsApi.md#getChannelGroups) | **GET** /channel-groups | Get Channel Groups
-[**updateChannelGroup()**](ChannelGroupsApi.md#updateChannelGroup) | **PUT** /channel-groups/{id} | Update the channel group
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createChannelGroup()**](ChannelGroupsApi.md#createChannelGroup) | **POST** /channel-groups | Create a new channel group |
+| [**deleteChannelGroup()**](ChannelGroupsApi.md#deleteChannelGroup) | **DELETE** /channel-groups/{id} | Delete the channel group |
+| [**executeActionOnChannelGroup()**](ChannelGroupsApi.md#executeActionOnChannelGroup) | **PATCH** /channel-groups/{id} |  |
+| [**getChannelGroup()**](ChannelGroupsApi.md#getChannelGroup) | **GET** /channel-groups/{id} | Get Channel Group |
+| [**getChannelGroupDirectLinks()**](ChannelGroupsApi.md#getChannelGroupDirectLinks) | **GET** /channel-groups/{channelGroup}/direct-links | Get channel group direct links |
+| [**getChannelGroupScenes()**](ChannelGroupsApi.md#getChannelGroupScenes) | **GET** /channel-groups/{channelGroup}/scenes | Get channel group scenes |
+| [**getChannelGroups()**](ChannelGroupsApi.md#getChannelGroups) | **GET** /channel-groups | Get Channel Groups |
+| [**updateChannelGroup()**](ChannelGroupsApi.md#updateChannelGroup) | **PUT** /channel-groups/{id} | Update the channel group |
 
 
 ## `createChannelGroup()`
@@ -54,9 +56,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createChannelGroupRequest** | [**\Supla\ApiClient\Model\CreateChannelGroupRequest**](../Model/CreateChannelGroupRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **createChannelGroupRequest** | [**\Supla\ApiClient\Model\CreateChannelGroupRequest**](../Model/CreateChannelGroupRequest.md)|  | |
 
 ### Return type
 
@@ -114,9 +116,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
 
 ### Return type
 
@@ -175,10 +177,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **executeActionOnChannelGroupRequest** | [**\Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest**](../Model/ExecuteActionOnChannelGroupRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **executeActionOnChannelGroupRequest** | [**\Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest**](../Model/ExecuteActionOnChannelGroupRequest.md)|  | |
 
 ### Return type
 
@@ -238,10 +240,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -301,10 +303,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channelGroup** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channelGroup** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -364,10 +366,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channelGroup** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channelGroup** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -427,10 +429,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **function** | [**string[]**](../Model/string.md)|  | [optional]
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **function** | [**string[]**](../Model/string.md)|  | [optional] |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -490,10 +492,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **createChannelGroupRequest** | [**\Supla\ApiClient\Model\CreateChannelGroupRequest**](../Model/CreateChannelGroupRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **createChannelGroupRequest** | [**\Supla\ApiClient\Model\CreateChannelGroupRequest**](../Model/CreateChannelGroupRequest.md)|  | |
 
 ### Return type
 

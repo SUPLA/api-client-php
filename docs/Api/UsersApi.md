@@ -1,10 +1,12 @@
 # Supla\ApiClient\UsersApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getCurrentUser()**](UsersApi.md#getCurrentUser) | **GET** /users/current | Get info about user for the token.
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getCurrentUser()**](UsersApi.md#getCurrentUser) | **GET** /users/current | Get info about user for the token. |
 
 
 ## `getCurrentUser()`

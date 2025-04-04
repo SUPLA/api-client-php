@@ -127,6 +127,8 @@ class SchedulesApi
      *
      * Get Schedules
      *
+     * Supla API Client
+     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchedules'] to see the possible values for this operation
      *
@@ -144,6 +146,8 @@ class SchedulesApi
      * Operation getSchedulesWithHttpInfo
      *
      * Get Schedules
+     *
+     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchedules'] to see the possible values for this operation
@@ -270,6 +274,8 @@ class SchedulesApi
      *
      * Get Schedules
      *
+     * Supla API Client
+     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchedules'] to see the possible values for this operation
      *
@@ -290,6 +296,8 @@ class SchedulesApi
      * Operation getSchedulesAsyncWithHttpInfo
      *
      * Get Schedules
+     *
+     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchedules'] to see the possible values for this operation

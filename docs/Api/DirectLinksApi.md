@@ -1,11 +1,13 @@
 # Supla\ApiClient\DirectLinksApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getDirectLink()**](DirectLinksApi.md#getDirectLink) | **GET** /direct-links/{directLink} | Get direct link
-[**getDirectLinks()**](DirectLinksApi.md#getDirectLinks) | **GET** /direct-links | Get Direct Links
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getDirectLink()**](DirectLinksApi.md#getDirectLink) | **GET** /direct-links/{directLink} | Get direct link |
+| [**getDirectLinks()**](DirectLinksApi.md#getDirectLinks) | **GET** /direct-links | Get Direct Links |
 
 
 ## `getDirectLink()`
@@ -49,10 +51,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **directLink** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **directLink** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -113,11 +115,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subjectType** | [**\Supla\ApiClient\Model\ActionableSubjectTypeNames**](../Model/.md)| Return links only for particular subjectType. Must be used with subjectId. | [optional]
- **subjectId** | **int**| Return links only for particular subjectId. Must be used with subjectType. | [optional]
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subjectType** | [**\Supla\ApiClient\Model\ActionableSubjectTypeNames**](../Model/.md)| Return links only for particular subjectType. Must be used with subjectId. | [optional] |
+| **subjectId** | **int**| Return links only for particular subjectId. Must be used with subjectType. | [optional] |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 

@@ -1,30 +1,32 @@
 # Supla\ApiClient\ChannelsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**configureChannel()**](ChannelsApi.md#configureChannel) | **PATCH** /channels/{id}/settings | 
-[**createChannelReaction()**](ChannelsApi.md#createChannelReaction) | **POST** /channels/{channel}/reactions | Create channel reaction
-[**deleteChannel()**](ChannelsApi.md#deleteChannel) | **DELETE** /channels/{id} | Delete the channel
-[**deleteChannelMeasurementLogs()**](ChannelsApi.md#deleteChannelMeasurementLogs) | **DELETE** /channels/{channel}/measurement-logs | Delete channel measurement logs.
-[**deleteChannelReaction()**](ChannelsApi.md#deleteChannelReaction) | **DELETE** /channels/{channel}/reactions/{reaction} | Delete channel reaction
-[**downloadChannelMeasurementLogs()**](ChannelsApi.md#downloadChannelMeasurementLogs) | **GET** /channels/{channel}/measurement-logs-download | Get measurement logs as a zipped CSV file.
-[**executeAction()**](ChannelsApi.md#executeAction) | **PATCH** /channels/{id} | 
-[**executeSubDeviceAction()**](ChannelsApi.md#executeSubDeviceAction) | **PATCH** /channels/{channelId}/subdevice | 
-[**getChannel()**](ChannelsApi.md#getChannel) | **GET** /channels/{id} | Get Channel
-[**getChannelChannelGroups()**](ChannelsApi.md#getChannelChannelGroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to
-[**getChannelDirectLinks()**](ChannelsApi.md#getChannelDirectLinks) | **GET** /channels/{channel}/direct-links | Get channel direct links
-[**getChannelMeasurementLogs()**](ChannelsApi.md#getChannelMeasurementLogs) | **GET** /channels/{channel}/measurement-logs | Get channel measurement logs.
-[**getChannelNotifications()**](ChannelsApi.md#getChannelNotifications) | **GET** /channels/{channel}/notifications | 
-[**getChannelReaction()**](ChannelsApi.md#getChannelReaction) | **GET** /channels/{channel}/reactions/{reaction} | Get channel reaction
-[**getChannelReactions()**](ChannelsApi.md#getChannelReactions) | **GET** /channels/{channel}/reactions | Get channel reactions
-[**getChannelScenes()**](ChannelsApi.md#getChannelScenes) | **GET** /channels/{channel}/scenes | Get channel scenes
-[**getChannels()**](ChannelsApi.md#getChannels) | **GET** /channels | Get Channels
-[**getChannelsStates()**](ChannelsApi.md#getChannelsStates) | **GET** /channels/states | Get Channels states
-[**getReactions()**](ChannelsApi.md#getReactions) | **GET** /reactions | Get reactions
-[**updateChannel()**](ChannelsApi.md#updateChannel) | **PUT** /channels/{id} | 
-[**updateChannelReaction()**](ChannelsApi.md#updateChannelReaction) | **PUT** /channels/{channel}/reactions/{reaction} | Update channel reaction
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**configureChannel()**](ChannelsApi.md#configureChannel) | **PATCH** /channels/{id}/settings |  |
+| [**createChannelReaction()**](ChannelsApi.md#createChannelReaction) | **POST** /channels/{channel}/reactions | Create channel reaction |
+| [**deleteChannel()**](ChannelsApi.md#deleteChannel) | **DELETE** /channels/{id} | Delete the channel |
+| [**deleteChannelMeasurementLogs()**](ChannelsApi.md#deleteChannelMeasurementLogs) | **DELETE** /channels/{channel}/measurement-logs | Delete channel measurement logs. |
+| [**deleteChannelReaction()**](ChannelsApi.md#deleteChannelReaction) | **DELETE** /channels/{channel}/reactions/{reaction} | Delete channel reaction |
+| [**downloadChannelMeasurementLogs()**](ChannelsApi.md#downloadChannelMeasurementLogs) | **GET** /channels/{channel}/measurement-logs-download | Get measurement logs as a zipped CSV file. |
+| [**executeAction()**](ChannelsApi.md#executeAction) | **PATCH** /channels/{id} |  |
+| [**executeSubDeviceAction()**](ChannelsApi.md#executeSubDeviceAction) | **PATCH** /channels/{channelId}/subdevice |  |
+| [**getChannel()**](ChannelsApi.md#getChannel) | **GET** /channels/{id} | Get Channel |
+| [**getChannelChannelGroups()**](ChannelsApi.md#getChannelChannelGroups) | **GET** /channels/{id}/channel-groups | Get Channel Groups that the given channel belongs to |
+| [**getChannelDirectLinks()**](ChannelsApi.md#getChannelDirectLinks) | **GET** /channels/{channel}/direct-links | Get channel direct links |
+| [**getChannelMeasurementLogs()**](ChannelsApi.md#getChannelMeasurementLogs) | **GET** /channels/{channel}/measurement-logs | Get channel measurement logs. |
+| [**getChannelNotifications()**](ChannelsApi.md#getChannelNotifications) | **GET** /channels/{channel}/notifications |  |
+| [**getChannelReaction()**](ChannelsApi.md#getChannelReaction) | **GET** /channels/{channel}/reactions/{reaction} | Get channel reaction |
+| [**getChannelReactions()**](ChannelsApi.md#getChannelReactions) | **GET** /channels/{channel}/reactions | Get channel reactions |
+| [**getChannelScenes()**](ChannelsApi.md#getChannelScenes) | **GET** /channels/{channel}/scenes | Get channel scenes |
+| [**getChannels()**](ChannelsApi.md#getChannels) | **GET** /channels | Get Channels |
+| [**getChannelsStates()**](ChannelsApi.md#getChannelsStates) | **GET** /channels/states | Get Channels states |
+| [**getReactions()**](ChannelsApi.md#getReactions) | **GET** /reactions | Get reactions |
+| [**updateChannel()**](ChannelsApi.md#updateChannel) | **PUT** /channels/{id} |  |
+| [**updateChannelReaction()**](ChannelsApi.md#updateChannelReaction) | **PUT** /channels/{channel}/reactions/{reaction} | Update channel reaction |
 
 
 ## `configureChannel()`
@@ -68,10 +70,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **configureChannelRequest** | [**\Supla\ApiClient\Model\ConfigureChannelRequest**](../Model/ConfigureChannelRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **configureChannelRequest** | [**\Supla\ApiClient\Model\ConfigureChannelRequest**](../Model/ConfigureChannelRequest.md)|  | |
 
 ### Return type
 
@@ -132,11 +134,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| ID |
- **createChannelReactionRequest** | [**\Supla\ApiClient\Model\CreateChannelReactionRequest**](../Model/CreateChannelReactionRequest.md)|  |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| ID | |
+| **createChannelReactionRequest** | [**\Supla\ApiClient\Model\CreateChannelReactionRequest**](../Model/CreateChannelReactionRequest.md)|  | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -195,10 +197,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **safe** | **bool**| Whether to perform actions that require data loss (e.g. delete schedules when deleting the channel) | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **safe** | **bool**| Whether to perform actions that require data loss (e.g. delete schedules when deleting the channel) | [optional] |
 
 ### Return type
 
@@ -257,10 +259,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| ID |
- **logsType** | **string**| Type of the logs to delete. Some devices may gather multiple log types. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| ID | |
+| **logsType** | **string**| Type of the logs to delete. Some devices may gather multiple log types. | [optional] |
 
 ### Return type
 
@@ -319,10 +321,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| Channel ID |
- **reaction** | **int**| Reaction ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| Channel ID | |
+| **reaction** | **int**| Reaction ID | |
 
 ### Return type
 
@@ -381,10 +383,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| ID |
- **logsType** | **string**| Type of the logs to delete. Some devices may gather multiple log types. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| ID | |
+| **logsType** | **string**| Type of the logs to delete. Some devices may gather multiple log types. | [optional] |
 
 ### Return type
 
@@ -443,10 +445,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **executeActionRequest** | [**\Supla\ApiClient\Model\ExecuteActionRequest**](../Model/ExecuteActionRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **executeActionRequest** | [**\Supla\ApiClient\Model\ExecuteActionRequest**](../Model/ExecuteActionRequest.md)|  | |
 
 ### Return type
 
@@ -506,10 +508,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channelId** | **int**| ID |
- **executeSubDeviceActionRequest** | [**\Supla\ApiClient\Model\ExecuteSubDeviceActionRequest**](../Model/ExecuteSubDeviceActionRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channelId** | **int**| ID | |
+| **executeSubDeviceActionRequest** | [**\Supla\ApiClient\Model\ExecuteSubDeviceActionRequest**](../Model/ExecuteSubDeviceActionRequest.md)|  | |
 
 ### Return type
 
@@ -569,10 +571,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -632,10 +634,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -695,10 +697,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -764,16 +766,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| ID |
- **afterTimestamp** | **int**| Fetch log items created after this timestamp. | [optional]
- **beforeTimestamp** | **int**| Fetch log items created before this timestamp. | [optional]
- **order** | **string**| Whether to order items ascending or descending by creation date. | [optional] [default to &#39;DESC&#39;]
- **sparse** | **int**| Set the maximum items to return from the given period. If specified, the &#x60;limit&#x60; and &#x60;offset&#x60; params are ignored. For example, if you fetches the logs from the whole year and set the &#x60;sparse&#x60; param to &#x60;12&#x60;, the API will try to return up to 12 log items, equally distributed throug the whole year. Min: 1, Max: 1000. | [optional]
- **logsType** | **string**| Type of the logs to return. Some devices may gather multiple log types. | [optional]
- **limit** | **int**| Maximum items count in response, from 1 to 5000. | [optional] [default to 5000]
- **offset** | **int**| Pagination offset. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| ID | |
+| **afterTimestamp** | **int**| Fetch log items created after this timestamp. | [optional] |
+| **beforeTimestamp** | **int**| Fetch log items created before this timestamp. | [optional] |
+| **order** | **string**| Whether to order items ascending or descending by creation date. | [optional] [default to &#39;DESC&#39;] |
+| **sparse** | **int**| Set the maximum items to return from the given period. If specified, the &#x60;limit&#x60; and &#x60;offset&#x60; params are ignored. For example, if you fetches the logs from the whole year and set the &#x60;sparse&#x60; param to &#x60;12&#x60;, the API will try to return up to 12 log items, equally distributed throug the whole year. Min: 1, Max: 1000. | [optional] |
+| **logsType** | **string**| Type of the logs to return. Some devices may gather multiple log types. | [optional] |
+| **limit** | **int**| Maximum items count in response, from 1 to 5000. | [optional] [default to 5000] |
+| **offset** | **int**| Pagination offset. | [optional] [default to 0] |
 
 ### Return type
 
@@ -834,11 +836,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| ID |
- **onlyManaged** | **bool**| Return only notification managed by the device (i.e. originating from the firmware). Can be only set to &#x60;true&#x60;. | [optional]
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| ID | |
+| **onlyManaged** | **bool**| Return only notification managed by the device (i.e. originating from the firmware). Can be only set to &#x60;true&#x60;. | [optional] |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -899,11 +901,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| Channel ID |
- **reaction** | **int**| Reaction ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| Channel ID | |
+| **reaction** | **int**| Reaction ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -963,10 +965,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| Channel ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| Channel ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -1026,10 +1028,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -1095,16 +1097,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **function** | [**string[]**](../Model/string.md)|  | [optional]
- **io** | **string**| Return only &#x60;input&#x60; or &#x60;output&#x60; channels. | [optional]
- **hasFunction** | **bool**| Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. | [optional]
- **skipIds** | [**int[]**](../Model/int.md)|  | [optional]
- **deviceIds** | [**int[]**](../Model/int.md)|  | [optional]
- **type** | [**string[]**](../Model/string.md)|  | [optional]
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
- **forIntegration** | **string**| Select an integration that the channels should be returned for. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **function** | [**string[]**](../Model/string.md)|  | [optional] |
+| **io** | **string**| Return only &#x60;input&#x60; or &#x60;output&#x60; channels. | [optional] |
+| **hasFunction** | **bool**| Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. | [optional] |
+| **skipIds** | [**int[]**](../Model/int.md)|  | [optional] |
+| **deviceIds** | [**int[]**](../Model/int.md)|  | [optional] |
+| **type** | [**string[]**](../Model/string.md)|  | [optional] |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
+| **forIntegration** | **string**| Select an integration that the channels should be returned for. | [optional] |
 
 ### Return type
 
@@ -1221,9 +1223,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -1284,11 +1286,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **updateChannelRequest** | [**\Supla\ApiClient\Model\UpdateChannelRequest**](../Model/UpdateChannelRequest.md)|  |
- **safe** | **bool**| Whether to perform actions that require data loss (e.g. delete schedules when changing channel function) | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **updateChannelRequest** | [**\Supla\ApiClient\Model\UpdateChannelRequest**](../Model/UpdateChannelRequest.md)|  | |
+| **safe** | **bool**| Whether to perform actions that require data loss (e.g. delete schedules when changing channel function) | [optional] |
 
 ### Return type
 
@@ -1350,12 +1352,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **channel** | **int**| Channel ID |
- **reaction** | **int**| Reaction ID |
- **createChannelReactionRequest** | [**\Supla\ApiClient\Model\CreateChannelReactionRequest**](../Model/CreateChannelReactionRequest.md)|  |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channel** | **int**| Channel ID | |
+| **reaction** | **int**| Reaction ID | |
+| **createChannelReactionRequest** | [**\Supla\ApiClient\Model\CreateChannelReactionRequest**](../Model/CreateChannelReactionRequest.md)|  | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 

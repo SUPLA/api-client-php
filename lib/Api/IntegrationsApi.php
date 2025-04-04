@@ -127,6 +127,8 @@ class IntegrationsApi
      *
      * Creates MQTT Broker credentials for the OAuth Client.
      *
+     * Supla API Client
+     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMqttBrokerCredentials'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -143,6 +145,8 @@ class IntegrationsApi
      * Operation createMqttBrokerCredentialsWithHttpInfo
      *
      * Creates MQTT Broker credentials for the OAuth Client.
+     *
+     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMqttBrokerCredentials'] to see the possible values for this operation
      *
@@ -268,6 +272,8 @@ class IntegrationsApi
      *
      * Creates MQTT Broker credentials for the OAuth Client.
      *
+     * Supla API Client
+     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMqttBrokerCredentials'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -287,6 +293,8 @@ class IntegrationsApi
      * Operation createMqttBrokerCredentialsAsyncWithHttpInfo
      *
      * Creates MQTT Broker credentials for the OAuth Client.
+     *
+     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMqttBrokerCredentials'] to see the possible values for this operation
      *

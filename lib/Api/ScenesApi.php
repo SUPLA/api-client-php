@@ -148,6 +148,8 @@ class ScenesApi
      *
      * Create a scene
      *
+     * Supla API Client
+     *
      * @param  \Supla\ApiClient\Model\CreateSceneRequest $createSceneRequest createSceneRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createScene'] to see the possible values for this operation
      *
@@ -165,6 +167,8 @@ class ScenesApi
      * Operation createSceneWithHttpInfo
      *
      * Create a scene
+     *
+     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\CreateSceneRequest $createSceneRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createScene'] to see the possible values for this operation
@@ -291,6 +295,8 @@ class ScenesApi
      *
      * Create a scene
      *
+     * Supla API Client
+     *
      * @param  \Supla\ApiClient\Model\CreateSceneRequest $createSceneRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createScene'] to see the possible values for this operation
      *
@@ -311,6 +317,8 @@ class ScenesApi
      * Operation createSceneAsyncWithHttpInfo
      *
      * Create a scene
+     *
+     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\CreateSceneRequest $createSceneRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createScene'] to see the possible values for this operation
@@ -463,6 +471,8 @@ class ScenesApi
      *
      * Delete the scene
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScene'] to see the possible values for this operation
      *
@@ -479,6 +489,8 @@ class ScenesApi
      * Operation deleteSceneWithHttpInfo
      *
      * Delete the scene
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScene'] to see the possible values for this operation
@@ -528,6 +540,8 @@ class ScenesApi
      *
      * Delete the scene
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScene'] to see the possible values for this operation
      *
@@ -548,6 +562,8 @@ class ScenesApi
      * Operation deleteSceneAsyncWithHttpInfo
      *
      * Delete the scene
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteScene'] to see the possible values for this operation
@@ -686,6 +702,8 @@ class ScenesApi
     /**
      * Operation executeScene
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSceneRequest $executeSceneRequest executeSceneRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeScene'] to see the possible values for this operation
@@ -701,6 +719,8 @@ class ScenesApi
 
     /**
      * Operation executeSceneWithHttpInfo
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSceneRequest $executeSceneRequest (required)
@@ -757,6 +777,8 @@ class ScenesApi
     /**
      * Operation executeSceneAsync
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSceneRequest $executeSceneRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeScene'] to see the possible values for this operation
@@ -776,6 +798,8 @@ class ScenesApi
 
     /**
      * Operation executeSceneAsyncWithHttpInfo
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSceneRequest $executeSceneRequest (required)
@@ -932,6 +956,8 @@ class ScenesApi
      *
      * Get Scene
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScene'] to see the possible values for this operation
@@ -950,6 +976,8 @@ class ScenesApi
      * Operation getSceneWithHttpInfo
      *
      * Get Scene
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1077,6 +1105,8 @@ class ScenesApi
      *
      * Get Scene
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScene'] to see the possible values for this operation
@@ -1098,6 +1128,8 @@ class ScenesApi
      * Operation getSceneAsyncWithHttpInfo
      *
      * Get Scene
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1263,6 +1295,8 @@ class ScenesApi
      *
      * Get scene direct links
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSceneDirectLinks'] to see the possible values for this operation
@@ -1281,6 +1315,8 @@ class ScenesApi
      * Operation getSceneDirectLinksWithHttpInfo
      *
      * Get scene direct links
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1408,6 +1444,8 @@ class ScenesApi
      *
      * Get scene direct links
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSceneDirectLinks'] to see the possible values for this operation
@@ -1429,6 +1467,8 @@ class ScenesApi
      * Operation getSceneDirectLinksAsyncWithHttpInfo
      *
      * Get scene direct links
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1594,6 +1634,8 @@ class ScenesApi
      *
      * Get scene scenes
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSceneScenes'] to see the possible values for this operation
@@ -1612,6 +1654,8 @@ class ScenesApi
      * Operation getSceneScenesWithHttpInfo
      *
      * Get scene scenes
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1739,6 +1783,8 @@ class ScenesApi
      *
      * Get scene scenes
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSceneScenes'] to see the possible values for this operation
@@ -1760,6 +1806,8 @@ class ScenesApi
      * Operation getSceneScenesAsyncWithHttpInfo
      *
      * Get scene scenes
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1925,6 +1973,8 @@ class ScenesApi
      *
      * Get Scenes
      *
+     * Supla API Client
+     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string|null $forIntegration Select an integration that the scenes should be returned for. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScenes'] to see the possible values for this operation
@@ -1943,6 +1993,8 @@ class ScenesApi
      * Operation getScenesWithHttpInfo
      *
      * Get Scenes
+     *
+     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string|null $forIntegration Select an integration that the scenes should be returned for. (optional)
@@ -2070,6 +2122,8 @@ class ScenesApi
      *
      * Get Scenes
      *
+     * Supla API Client
+     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string|null $forIntegration Select an integration that the scenes should be returned for. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScenes'] to see the possible values for this operation
@@ -2091,6 +2145,8 @@ class ScenesApi
      * Operation getScenesAsyncWithHttpInfo
      *
      * Get Scenes
+     *
+     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string|null $forIntegration Select an integration that the scenes should be returned for. (optional)
@@ -2251,6 +2307,8 @@ class ScenesApi
      *
      * Update the scene
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  \Supla\ApiClient\Model\CreateSceneRequest $createSceneRequest createSceneRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateScene'] to see the possible values for this operation
@@ -2269,6 +2327,8 @@ class ScenesApi
      * Operation updateSceneWithHttpInfo
      *
      * Update the scene
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  \Supla\ApiClient\Model\CreateSceneRequest $createSceneRequest (required)
@@ -2396,6 +2456,8 @@ class ScenesApi
      *
      * Update the scene
      *
+     * Supla API Client
+     *
      * @param  int $scene ID (required)
      * @param  \Supla\ApiClient\Model\CreateSceneRequest $createSceneRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateScene'] to see the possible values for this operation
@@ -2417,6 +2479,8 @@ class ScenesApi
      * Operation updateSceneAsyncWithHttpInfo
      *
      * Update the scene
+     *
+     * Supla API Client
      *
      * @param  int $scene ID (required)
      * @param  \Supla\ApiClient\Model\CreateSceneRequest $createSceneRequest (required)

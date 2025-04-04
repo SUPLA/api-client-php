@@ -1,6 +1,7 @@
-templateDir: templates
+# templateDir: templates
 additionalProperties:
   artifactId: supla/api-client
   invokerPackage: Supla\ApiClient
   variableNamingConvention: camelCase
   gitUserId: supla
+  composerPackageName: supla/api-client

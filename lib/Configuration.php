@@ -1,7 +1,7 @@
 <?php
 /**
  * Configuration
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -29,7 +29,7 @@ namespace Supla\ApiClient;
 
 /**
  * Configuration Class Doc Comment
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  Supla\ApiClient
@@ -38,6 +38,9 @@ namespace Supla\ApiClient;
  */
 class Configuration
 {
+    public const BOOLEAN_FORMAT_INT = 'int';
+    public const BOOLEAN_FORMAT_STRING = 'string';
+
     /**
      * @var Configuration
      */
@@ -65,6 +68,13 @@ class Configuration
     protected $accessToken = '';
 
     /**
+     * Boolean format for query string
+     *
+     * @var string
+     */
+    protected $booleanFormatForQueryString = self::BOOLEAN_FORMAT_INT;
+
+    /**
      * Username for HTTP basic authentication
      *
      * @var string
@@ -83,7 +93,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://cloud.supla.org/api/v3';
+    protected $host = 'https://svr107.supla.org/api/v3';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -182,15 +192,6 @@ class Configuration
      */
     public function setAccessToken($accessToken)
     {
-        $tokenParts = explode('.', $accessToken);
-        if (count($tokenParts) !== 2) {
-            throw new \InvalidArgumentException('Invalid SUPLA Access Token (invalid syntax).');
-        }
-        $suplaUrl = base64_decode($tokenParts[1]);
-        if (!is_string($suplaUrl) || strpos($suplaUrl, 'http') !== 0) {
-            throw new \InvalidArgumentException('Invalid SUPLA Access Token (invalid host).');
-        }
-        $this->setHost($suplaUrl . '/api/v3');
         $this->accessToken = $accessToken;
         return $this;
     }
@@ -203,6 +204,30 @@ class Configuration
     public function getAccessToken()
     {
         return $this->accessToken;
+    }
+
+    /**
+     * Sets boolean format for query string.
+     *
+     * @param string $booleanFormat Boolean format for query string
+     *
+     * @return $this
+     */
+    public function setBooleanFormatForQueryString(string $booleanFormat)
+    {
+        $this->booleanFormatForQueryString = $booleanFormat;
+
+        return $this;
+    }
+
+    /**
+     * Gets boolean format for query string.
+     *
+     * @return string Boolean format for query string
+     */
+    public function getBooleanFormatForQueryString(): string
+    {
+        return $this->booleanFormatForQueryString;
     }
 
     /**
@@ -447,39 +472,38 @@ class Configuration
     {
         return [
             [
-                "url" => $this->getHost(),
+                "url" => "https://svr107.supla.org/api/v3",
                 "description" => "No description provided",
             ]
         ];
     }
 
     /**
-     * Returns URL based on the index and variables
-     *
-     * @param int        $index     index of the host settings
-     * @param array|null $variables hash of variable and the corresponding value (optional)
-     * @return string URL based on host settings
-     */
-    public function getHostFromSettings($index, $variables = null)
+    * Returns URL based on host settings, index and variables
+    *
+    * @param array      $hostSettings array of host settings, generated from getHostSettings() or equivalent from the API clients
+    * @param int        $hostIndex    index of the host settings
+    * @param array|null $variables    hash of variable and the corresponding value (optional)
+    * @return string URL based on host settings
+    */
+    public static function getHostString(array $hostSettings, $hostIndex, ?array $variables = null)
     {
         if (null === $variables) {
             $variables = [];
         }
 
-        $hosts = $this->getHostSettings();
-
         // check array index out of bound
-        if ($index < 0 || $index >= sizeof($hosts)) {
-            throw new \InvalidArgumentException("Invalid index $index when selecting the host. Must be less than ".sizeof($hosts));
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index $hostIndex when selecting the host. Must be less than ".count($hostSettings));
         }
 
-        $host = $hosts[$index];
+        $host = $hostSettings[$hostIndex];
         $url = $host["url"];
 
         // go through variable and assign a value
         foreach ($host["variables"] ?? [] as $name => $variable) {
             if (array_key_exists($name, $variables)) { // check to see if it's in the variables provided by the user
-                if (in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
+                if (!isset($variable['enum_values']) || in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
                     $url = str_replace("{".$name."}", $variables[$name], $url);
                 } else {
                     throw new \InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".join(',', $variable["enum_values"]).".");
@@ -491,5 +515,17 @@ class Configuration
         }
 
         return $url;
+    }
+
+    /**
+     * Returns URL based on the index and variables
+     *
+     * @param int        $index     index of the host settings
+     * @param array|null $variables hash of variable and the corresponding value (optional)
+     * @return string URL based on host settings
+     */
+    public function getHostFromSettings($index, $variables = null)
+    {
+        return self::getHostString($this->getHostSettings(), $index, $variables);
     }
 }

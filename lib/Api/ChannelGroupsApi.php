@@ -148,6 +148,8 @@ class ChannelGroupsApi
      *
      * Create a new channel group
      *
+     * Supla API Client
+     *
      * @param  \Supla\ApiClient\Model\CreateChannelGroupRequest $createChannelGroupRequest createChannelGroupRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createChannelGroup'] to see the possible values for this operation
      *
@@ -165,6 +167,8 @@ class ChannelGroupsApi
      * Operation createChannelGroupWithHttpInfo
      *
      * Create a new channel group
+     *
+     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\CreateChannelGroupRequest $createChannelGroupRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createChannelGroup'] to see the possible values for this operation
@@ -291,6 +295,8 @@ class ChannelGroupsApi
      *
      * Create a new channel group
      *
+     * Supla API Client
+     *
      * @param  \Supla\ApiClient\Model\CreateChannelGroupRequest $createChannelGroupRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createChannelGroup'] to see the possible values for this operation
      *
@@ -311,6 +317,8 @@ class ChannelGroupsApi
      * Operation createChannelGroupAsyncWithHttpInfo
      *
      * Create a new channel group
+     *
+     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\CreateChannelGroupRequest $createChannelGroupRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createChannelGroup'] to see the possible values for this operation
@@ -463,6 +471,8 @@ class ChannelGroupsApi
      *
      * Delete the channel group
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannelGroup'] to see the possible values for this operation
      *
@@ -479,6 +489,8 @@ class ChannelGroupsApi
      * Operation deleteChannelGroupWithHttpInfo
      *
      * Delete the channel group
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannelGroup'] to see the possible values for this operation
@@ -528,6 +540,8 @@ class ChannelGroupsApi
      *
      * Delete the channel group
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannelGroup'] to see the possible values for this operation
      *
@@ -548,6 +562,8 @@ class ChannelGroupsApi
      * Operation deleteChannelGroupAsyncWithHttpInfo
      *
      * Delete the channel group
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannelGroup'] to see the possible values for this operation
@@ -686,6 +702,8 @@ class ChannelGroupsApi
     /**
      * Operation executeActionOnChannelGroup
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest $executeActionOnChannelGroupRequest executeActionOnChannelGroupRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeActionOnChannelGroup'] to see the possible values for this operation
@@ -701,6 +719,8 @@ class ChannelGroupsApi
 
     /**
      * Operation executeActionOnChannelGroupWithHttpInfo
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest $executeActionOnChannelGroupRequest (required)
@@ -757,6 +777,8 @@ class ChannelGroupsApi
     /**
      * Operation executeActionOnChannelGroupAsync
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest $executeActionOnChannelGroupRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeActionOnChannelGroup'] to see the possible values for this operation
@@ -776,6 +798,8 @@ class ChannelGroupsApi
 
     /**
      * Operation executeActionOnChannelGroupAsyncWithHttpInfo
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest $executeActionOnChannelGroupRequest (required)
@@ -932,6 +956,8 @@ class ChannelGroupsApi
      *
      * Get Channel Group
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelGroup'] to see the possible values for this operation
@@ -950,6 +976,8 @@ class ChannelGroupsApi
      * Operation getChannelGroupWithHttpInfo
      *
      * Get Channel Group
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1077,6 +1105,8 @@ class ChannelGroupsApi
      *
      * Get Channel Group
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelGroup'] to see the possible values for this operation
@@ -1098,6 +1128,8 @@ class ChannelGroupsApi
      * Operation getChannelGroupAsyncWithHttpInfo
      *
      * Get Channel Group
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1263,6 +1295,8 @@ class ChannelGroupsApi
      *
      * Get channel group direct links
      *
+     * Supla API Client
+     *
      * @param  int $channelGroup ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelGroupDirectLinks'] to see the possible values for this operation
@@ -1281,6 +1315,8 @@ class ChannelGroupsApi
      * Operation getChannelGroupDirectLinksWithHttpInfo
      *
      * Get channel group direct links
+     *
+     * Supla API Client
      *
      * @param  int $channelGroup ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1408,6 +1444,8 @@ class ChannelGroupsApi
      *
      * Get channel group direct links
      *
+     * Supla API Client
+     *
      * @param  int $channelGroup ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelGroupDirectLinks'] to see the possible values for this operation
@@ -1429,6 +1467,8 @@ class ChannelGroupsApi
      * Operation getChannelGroupDirectLinksAsyncWithHttpInfo
      *
      * Get channel group direct links
+     *
+     * Supla API Client
      *
      * @param  int $channelGroup ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1594,6 +1634,8 @@ class ChannelGroupsApi
      *
      * Get channel group scenes
      *
+     * Supla API Client
+     *
      * @param  int $channelGroup ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelGroupScenes'] to see the possible values for this operation
@@ -1612,6 +1654,8 @@ class ChannelGroupsApi
      * Operation getChannelGroupScenesWithHttpInfo
      *
      * Get channel group scenes
+     *
+     * Supla API Client
      *
      * @param  int $channelGroup ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1739,6 +1783,8 @@ class ChannelGroupsApi
      *
      * Get channel group scenes
      *
+     * Supla API Client
+     *
      * @param  int $channelGroup ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelGroupScenes'] to see the possible values for this operation
@@ -1760,6 +1806,8 @@ class ChannelGroupsApi
      * Operation getChannelGroupScenesAsyncWithHttpInfo
      *
      * Get channel group scenes
+     *
+     * Supla API Client
      *
      * @param  int $channelGroup ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1925,6 +1973,8 @@ class ChannelGroupsApi
      *
      * Get Channel Groups
      *
+     * Supla API Client
+     *
      * @param  string[]|null $function function (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelGroups'] to see the possible values for this operation
@@ -1943,6 +1993,8 @@ class ChannelGroupsApi
      * Operation getChannelGroupsWithHttpInfo
      *
      * Get Channel Groups
+     *
+     * Supla API Client
      *
      * @param  string[]|null $function (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -2070,6 +2122,8 @@ class ChannelGroupsApi
      *
      * Get Channel Groups
      *
+     * Supla API Client
+     *
      * @param  string[]|null $function (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelGroups'] to see the possible values for this operation
@@ -2091,6 +2145,8 @@ class ChannelGroupsApi
      * Operation getChannelGroupsAsyncWithHttpInfo
      *
      * Get Channel Groups
+     *
+     * Supla API Client
      *
      * @param  string[]|null $function (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -2251,6 +2307,8 @@ class ChannelGroupsApi
      *
      * Update the channel group
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelGroupRequest $createChannelGroupRequest createChannelGroupRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateChannelGroup'] to see the possible values for this operation
@@ -2269,6 +2327,8 @@ class ChannelGroupsApi
      * Operation updateChannelGroupWithHttpInfo
      *
      * Update the channel group
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelGroupRequest $createChannelGroupRequest (required)
@@ -2396,6 +2456,8 @@ class ChannelGroupsApi
      *
      * Update the channel group
      *
+     * Supla API Client
+     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelGroupRequest $createChannelGroupRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateChannelGroup'] to see the possible values for this operation
@@ -2417,6 +2479,8 @@ class ChannelGroupsApi
      * Operation updateChannelGroupAsyncWithHttpInfo
      *
      * Update the channel group
+     *
+     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelGroupRequest $createChannelGroupRequest (required)

@@ -130,6 +130,8 @@ class DirectLinksApi
      *
      * Get direct link
      *
+     * Supla API Client
+     *
      * @param  int $directLink ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDirectLink'] to see the possible values for this operation
@@ -148,6 +150,8 @@ class DirectLinksApi
      * Operation getDirectLinkWithHttpInfo
      *
      * Get direct link
+     *
+     * Supla API Client
      *
      * @param  int $directLink ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -275,6 +279,8 @@ class DirectLinksApi
      *
      * Get direct link
      *
+     * Supla API Client
+     *
      * @param  int $directLink ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDirectLink'] to see the possible values for this operation
@@ -296,6 +302,8 @@ class DirectLinksApi
      * Operation getDirectLinkAsyncWithHttpInfo
      *
      * Get direct link
+     *
+     * Supla API Client
      *
      * @param  int $directLink ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -461,6 +469,8 @@ class DirectLinksApi
      *
      * Get Direct Links
      *
+     * Supla API Client
+     *
      * @param  \Supla\ApiClient\Model\ActionableSubjectTypeNames|null $subjectType Return links only for particular subjectType. Must be used with subjectId. (optional)
      * @param  int|null $subjectId Return links only for particular subjectId. Must be used with subjectType. (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -480,6 +490,8 @@ class DirectLinksApi
      * Operation getDirectLinksWithHttpInfo
      *
      * Get Direct Links
+     *
+     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\ActionableSubjectTypeNames|null $subjectType Return links only for particular subjectType. Must be used with subjectId. (optional)
      * @param  int|null $subjectId Return links only for particular subjectId. Must be used with subjectType. (optional)
@@ -608,6 +620,8 @@ class DirectLinksApi
      *
      * Get Direct Links
      *
+     * Supla API Client
+     *
      * @param  \Supla\ApiClient\Model\ActionableSubjectTypeNames|null $subjectType Return links only for particular subjectType. Must be used with subjectId. (optional)
      * @param  int|null $subjectId Return links only for particular subjectId. Must be used with subjectType. (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -630,6 +644,8 @@ class DirectLinksApi
      * Operation getDirectLinksAsyncWithHttpInfo
      *
      * Get Direct Links
+     *
+     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\ActionableSubjectTypeNames|null $subjectType Return links only for particular subjectType. Must be used with subjectId. (optional)
      * @param  int|null $subjectId Return links only for particular subjectId. Must be used with subjectType. (optional)

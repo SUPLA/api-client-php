@@ -1,12 +1,14 @@
 # Supla\ApiClient\ClientAppsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteClientApp()**](ClientAppsApi.md#deleteClientApp) | **DELETE** /client-apps/{id} | Delete the client app
-[**getClientApps()**](ClientAppsApi.md#getClientApps) | **GET** /client-apps | Get Client Apps
-[**updateClientApp()**](ClientAppsApi.md#updateClientApp) | **PUT** /client-apps/{id} | Update the client app
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteClientApp()**](ClientAppsApi.md#deleteClientApp) | **DELETE** /client-apps/{id} | Delete the client app |
+| [**getClientApps()**](ClientAppsApi.md#getClientApps) | **GET** /client-apps | Get Client Apps |
+| [**updateClientApp()**](ClientAppsApi.md#updateClientApp) | **PUT** /client-apps/{id} | Update the client app |
 
 
 ## `deleteClientApp()`
@@ -48,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
 
 ### Return type
 
@@ -109,9 +111,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -171,10 +173,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **updateClientAppRequest** | [**\Supla\ApiClient\Model\UpdateClientAppRequest**](../Model/UpdateClientAppRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **updateClientAppRequest** | [**\Supla\ApiClient\Model\UpdateClientAppRequest**](../Model/UpdateClientAppRequest.md)|  | |
 
 ### Return type
 

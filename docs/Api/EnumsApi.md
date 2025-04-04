@@ -1,12 +1,14 @@
 # Supla\ApiClient\EnumsApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getActionsEnum()**](EnumsApi.md#getActionsEnum) | **GET** /enum/actions | 
-[**getChannelTypesEnum()**](EnumsApi.md#getChannelTypesEnum) | **GET** /enum/channel-types | 
-[**getFunctionsEnum()**](EnumsApi.md#getFunctionsEnum) | **GET** /enum/functions | 
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getActionsEnum()**](EnumsApi.md#getActionsEnum) | **GET** /enum/actions |  |
+| [**getChannelTypesEnum()**](EnumsApi.md#getChannelTypesEnum) | **GET** /enum/channel-types |  |
+| [**getFunctionsEnum()**](EnumsApi.md#getFunctionsEnum) | **GET** /enum/functions |  |
 
 
 ## `getActionsEnum()`

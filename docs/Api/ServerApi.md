@@ -1,12 +1,14 @@
 # Supla\ApiClient\ServerApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getServerInfo()**](ServerApi.md#getServerInfo) | **GET** /server-info | Get the server info
-[**getSuplaServerStatus()**](ServerApi.md#getSuplaServerStatus) | **GET** /server-status | Get the SUPLA Server status
-[**getTokenInfo()**](ServerApi.md#getTokenInfo) | **GET** /token-info | Returns information about used access token
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getServerInfo()**](ServerApi.md#getServerInfo) | **GET** /server-info | Get the server info |
+| [**getSuplaServerStatus()**](ServerApi.md#getSuplaServerStatus) | **GET** /server-status | Get the SUPLA Server status |
+| [**getTokenInfo()**](ServerApi.md#getTokenInfo) | **GET** /token-info | Returns information about used access token |
 
 
 ## `getServerInfo()`

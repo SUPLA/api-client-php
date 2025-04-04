@@ -1,14 +1,16 @@
 # Supla\ApiClient\AccessIdentifiersApi
 
-All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`.
+Supla API Client
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createAccessIdentifier()**](AccessIdentifiersApi.md#createAccessIdentifier) | **POST** /accessids | Create a new Access Identifier
-[**deleteAccessIdentifier()**](AccessIdentifiersApi.md#deleteAccessIdentifier) | **DELETE** /accessids/{id} | Delete the access identifier
-[**getAccessIdentifier()**](AccessIdentifiersApi.md#getAccessIdentifier) | **GET** /accessids/{id} | Get AID by ID
-[**getAccessIdentifiers()**](AccessIdentifiersApi.md#getAccessIdentifiers) | **GET** /accessids | Get Access Identifiers
-[**updateAccessIdentifier()**](AccessIdentifiersApi.md#updateAccessIdentifier) | **PUT** /accessids/{id} | Update the access identifier
+All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createAccessIdentifier()**](AccessIdentifiersApi.md#createAccessIdentifier) | **POST** /accessids | Create a new Access Identifier |
+| [**deleteAccessIdentifier()**](AccessIdentifiersApi.md#deleteAccessIdentifier) | **DELETE** /accessids/{id} | Delete the access identifier |
+| [**getAccessIdentifier()**](AccessIdentifiersApi.md#getAccessIdentifier) | **GET** /accessids/{id} | Get AID by ID |
+| [**getAccessIdentifiers()**](AccessIdentifiersApi.md#getAccessIdentifiers) | **GET** /accessids | Get Access Identifiers |
+| [**updateAccessIdentifier()**](AccessIdentifiersApi.md#updateAccessIdentifier) | **PUT** /accessids/{id} | Update the access identifier |
 
 
 ## `createAccessIdentifier()`
@@ -108,9 +110,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
 
 ### Return type
 
@@ -170,10 +172,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -232,9 +234,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional] |
 
 ### Return type
 
@@ -294,10 +296,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| ID |
- **updateAccessIdentifierRequest** | [**\Supla\ApiClient\Model\UpdateAccessIdentifierRequest**](../Model/UpdateAccessIdentifierRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| ID | |
+| **updateAccessIdentifierRequest** | [**\Supla\ApiClient\Model\UpdateAccessIdentifierRequest**](../Model/UpdateAccessIdentifierRequest.md)|  | |
 
 ### Return type
 

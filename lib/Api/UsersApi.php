@@ -127,6 +127,8 @@ class UsersApi
      *
      * Get info about user for the token.
      *
+     * Supla API Client
+     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentUser'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -143,6 +145,8 @@ class UsersApi
      * Operation getCurrentUserWithHttpInfo
      *
      * Get info about user for the token.
+     *
+     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentUser'] to see the possible values for this operation
      *
@@ -268,6 +272,8 @@ class UsersApi
      *
      * Get info about user for the token.
      *
+     * Supla API Client
+     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -287,6 +293,8 @@ class UsersApi
      * Operation getCurrentUserAsyncWithHttpInfo
      *
      * Get info about user for the token.
+     *
+     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentUser'] to see the possible values for this operation
      *

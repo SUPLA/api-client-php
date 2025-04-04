@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **percentage** | **int** |  | [optional]
 **brightness** | **int** |  | [optional]
-**color** | [**OneOfIntegerStringString**](OneOfIntegerStringString.md) |  | [optional]
+**color** | [**\Supla\ApiClient\Model\ChannelActionParamsRgbwOneOfColor**](ChannelActionParamsRgbwOneOfColor.md) |  | [optional]
 **colorBrightness** | **int** |  | [optional]
 **hue** | **int** |  | [optional]
 **hsv** | [**\Supla\ApiClient\Model\ChannelActionParamsRgbwOneOf2Hsv**](ChannelActionParamsRgbwOneOf2Hsv.md) |  | [optional]

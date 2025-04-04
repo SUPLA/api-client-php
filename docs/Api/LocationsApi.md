@@ -26,10 +26,10 @@ Create a new location
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -84,10 +84,10 @@ Delete the location
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -118,7 +118,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -144,10 +144,10 @@ Get location by ID
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -207,10 +207,10 @@ Get locations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 ## `updateLocation()`
 
 ```php
-updateLocation($id, $inlineObject9): \Supla\ApiClient\Model\Location
+updateLocation($id, $updateLocationRequest): \Supla\ApiClient\Model\Location
 ```
 
 Update the location
@@ -268,10 +268,10 @@ Update the location
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -282,10 +282,10 @@ $apiInstance = new Supla\ApiClient\Api\LocationsApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject9 = new \Supla\ApiClient\Model\InlineObject9(); // \Supla\ApiClient\Model\InlineObject9
+$updateLocationRequest = new \Supla\ApiClient\Model\UpdateLocationRequest(); // \Supla\ApiClient\Model\UpdateLocationRequest
 
 try {
-    $result = $apiInstance->updateLocation($id, $inlineObject9);
+    $result = $apiInstance->updateLocation($id, $updateLocationRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->updateLocation: ', $e->getMessage(), PHP_EOL;
@@ -297,7 +297,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject9** | [**\Supla\ApiClient\Model\InlineObject9**](../Model/InlineObject9.md)|  |
+ **updateLocationRequest** | [**\Supla\ApiClient\Model\UpdateLocationRequest**](../Model/UpdateLocationRequest.md)|  |
 
 ### Return type
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

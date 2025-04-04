@@ -1,0 +1,9 @@
+{
+  "name": "supla-api-client-php-generator",
+  "scripts": {
+    "generate": "openapi-generator-cli generate -i https://cloud.supla.org/api-docs/supla-api-docs-v3.yaml -g php -o .. -c config.yml"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.18.4"
+  }
+}

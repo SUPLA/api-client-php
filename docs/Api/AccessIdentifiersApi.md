@@ -26,10 +26,10 @@ Create a new Access Identifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -84,10 +84,10 @@ Delete the access identifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -118,7 +118,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -144,10 +144,10 @@ Get AID by ID
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -207,10 +207,10 @@ Get Access Identifiers
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 ## `updateAccessIdentifier()`
 
 ```php
-updateAccessIdentifier($id, $inlineObject): \Supla\ApiClient\Model\AccessIdentifier
+updateAccessIdentifier($id, $updateAccessIdentifierRequest): \Supla\ApiClient\Model\AccessIdentifier
 ```
 
 Update the access identifier
@@ -268,10 +268,10 @@ Update the access identifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -282,10 +282,10 @@ $apiInstance = new Supla\ApiClient\Api\AccessIdentifiersApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject = new \Supla\ApiClient\Model\InlineObject(); // \Supla\ApiClient\Model\InlineObject
+$updateAccessIdentifierRequest = new \Supla\ApiClient\Model\UpdateAccessIdentifierRequest(); // \Supla\ApiClient\Model\UpdateAccessIdentifierRequest
 
 try {
-    $result = $apiInstance->updateAccessIdentifier($id, $inlineObject);
+    $result = $apiInstance->updateAccessIdentifier($id, $updateAccessIdentifierRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccessIdentifiersApi->updateAccessIdentifier: ', $e->getMessage(), PHP_EOL;
@@ -297,7 +297,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject** | [**\Supla\ApiClient\Model\InlineObject**](../Model/InlineObject.md)|  |
+ **updateAccessIdentifierRequest** | [**\Supla\ApiClient\Model\UpdateAccessIdentifierRequest**](../Model/UpdateAccessIdentifierRequest.md)|  |
 
 ### Return type
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

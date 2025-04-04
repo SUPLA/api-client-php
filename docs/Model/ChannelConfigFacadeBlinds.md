@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **motorUpsideDown** | **bool** |  | [optional]
 **buttonsUpsideDown** | **bool** |  | [optional]
 **tiltControlType** | **string** |  | [optional]
-**timeMargin** | [**OneOfIntegerString**](OneOfIntegerString.md) |  | [optional]
+**timeMargin** | [**\Supla\ApiClient\Model\ChannelConfigFacadeBlindsTimeMargin**](ChannelConfigFacadeBlindsTimeMargin.md) |  | [optional]
 **tilt0Angle** | **int** |  | [optional]
 **tilt100Angle** | **int** |  | [optional]
 

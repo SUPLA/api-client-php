@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getServerInfo()`
 
 ```php
-getServerInfo(): \Supla\ApiClient\Model\InlineResponse2001
+getServerInfo(): \Supla\ApiClient\Model\GetServerInfo200Response
 ```
 
 Get the server info
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Supla\ApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Supla\ApiClient\Model\GetServerInfo200Response**](../Model/GetServerInfo200Response.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ No authorization required
 ## `getSuplaServerStatus()`
 
 ```php
-getSuplaServerStatus(): \Supla\ApiClient\Model\InlineResponse2002
+getSuplaServerStatus(): \Supla\ApiClient\Model\GetSuplaServerStatus200Response
 ```
 
 Get the SUPLA Server status
@@ -96,7 +96,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Supla\ApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Supla\ApiClient\Model\GetSuplaServerStatus200Response**](../Model/GetSuplaServerStatus200Response.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ No authorization required
 ## `getTokenInfo()`
 
 ```php
-getTokenInfo(): \Supla\ApiClient\Model\InlineResponse2003
+getTokenInfo(): \Supla\ApiClient\Model\GetTokenInfo200Response
 ```
 
 Returns information about used access token
@@ -126,10 +126,10 @@ Returns information about used access token
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -154,11 +154,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Supla\ApiClient\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Supla\ApiClient\Model\GetTokenInfo200Response**](../Model/GetTokenInfo200Response.md)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

@@ -24,10 +24,10 @@ Get Notification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -87,10 +87,10 @@ Send a notification.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -121,7 +121,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -147,10 +147,10 @@ updateNotification($notification, $channelActionParamsSend, $include): \Supla\Ap
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

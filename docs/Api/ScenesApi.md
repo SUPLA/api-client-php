@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createScene()`
 
 ```php
-createScene($inlineObject12): \Supla\ApiClient\Model\Scene
+createScene($createSceneRequest): \Supla\ApiClient\Model\Scene
 ```
 
 Create a scene
@@ -29,10 +29,10 @@ Create a scene
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -42,10 +42,10 @@ $apiInstance = new Supla\ApiClient\Api\ScenesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inlineObject12 = new \Supla\ApiClient\Model\InlineObject12(); // \Supla\ApiClient\Model\InlineObject12
+$createSceneRequest = new \Supla\ApiClient\Model\CreateSceneRequest(); // \Supla\ApiClient\Model\CreateSceneRequest
 
 try {
-    $result = $apiInstance->createScene($inlineObject12);
+    $result = $apiInstance->createScene($createSceneRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScenesApi->createScene: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject12** | [**\Supla\ApiClient\Model\InlineObject12**](../Model/InlineObject12.md)|  |
+ **createSceneRequest** | [**\Supla\ApiClient\Model\CreateSceneRequest**](../Model/CreateSceneRequest.md)|  |
 
 ### Return type
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -90,10 +90,10 @@ Delete the scene
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -124,7 +124,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ void (empty response body)
 ## `executeScene()`
 
 ```php
-executeScene($scene, $uNKNOWNBASETYPE)
+executeScene($scene, $executeSceneRequest)
 ```
 
 
@@ -150,10 +150,10 @@ executeScene($scene, $uNKNOWNBASETYPE)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -164,10 +164,10 @@ $apiInstance = new Supla\ApiClient\Api\ScenesApi(
     $config
 );
 $scene = 56; // int | ID
-$uNKNOWNBASETYPE = new \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE(); // \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE
+$executeSceneRequest = new \Supla\ApiClient\Model\ExecuteSceneRequest(); // \Supla\ApiClient\Model\ExecuteSceneRequest
 
 try {
-    $apiInstance->executeScene($scene, $uNKNOWNBASETYPE);
+    $apiInstance->executeScene($scene, $executeSceneRequest);
 } catch (Exception $e) {
     echo 'Exception when calling ScenesApi->executeScene: ', $e->getMessage(), PHP_EOL;
 }
@@ -178,7 +178,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scene** | **int**| ID |
- **uNKNOWNBASETYPE** | [**\Supla\ApiClient\Model\UNKNOWN_BASE_TYPE**](../Model/UNKNOWN_BASE_TYPE.md)|  |
+ **executeSceneRequest** | [**\Supla\ApiClient\Model\ExecuteSceneRequest**](../Model/ExecuteSceneRequest.md)|  |
 
 ### Return type
 
@@ -186,7 +186,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -212,10 +212,10 @@ Get Scene
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -275,10 +275,10 @@ Get scene direct links
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -338,10 +338,10 @@ Get scene scenes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -401,10 +401,10 @@ Get Scenes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 ## `updateScene()`
 
 ```php
-updateScene($scene, $inlineObject13): \Supla\ApiClient\Model\Scene
+updateScene($scene, $createSceneRequest): \Supla\ApiClient\Model\Scene
 ```
 
 Update the scene
@@ -464,10 +464,10 @@ Update the scene
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -478,10 +478,10 @@ $apiInstance = new Supla\ApiClient\Api\ScenesApi(
     $config
 );
 $scene = 56; // int | ID
-$inlineObject13 = new \Supla\ApiClient\Model\InlineObject13(); // \Supla\ApiClient\Model\InlineObject13
+$createSceneRequest = new \Supla\ApiClient\Model\CreateSceneRequest(); // \Supla\ApiClient\Model\CreateSceneRequest
 
 try {
-    $result = $apiInstance->updateScene($scene, $inlineObject13);
+    $result = $apiInstance->updateScene($scene, $createSceneRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScenesApi->updateScene: ', $e->getMessage(), PHP_EOL;
@@ -493,7 +493,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scene** | **int**| ID |
- **inlineObject13** | [**\Supla\ApiClient\Model\InlineObject13**](../Model/InlineObject13.md)|  |
+ **createSceneRequest** | [**\Supla\ApiClient\Model\CreateSceneRequest**](../Model/CreateSceneRequest.md)|  |
 
 ### Return type
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

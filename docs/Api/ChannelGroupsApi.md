@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createChannelGroup()`
 
 ```php
-createChannelGroup($inlineObject4): \Supla\ApiClient\Model\ChannelGroup
+createChannelGroup($createChannelGroupRequest): \Supla\ApiClient\Model\ChannelGroup
 ```
 
 Create a new channel group
@@ -29,10 +29,10 @@ Create a new channel group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -42,10 +42,10 @@ $apiInstance = new Supla\ApiClient\Api\ChannelGroupsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inlineObject4 = new \Supla\ApiClient\Model\InlineObject4(); // \Supla\ApiClient\Model\InlineObject4
+$createChannelGroupRequest = new \Supla\ApiClient\Model\CreateChannelGroupRequest(); // \Supla\ApiClient\Model\CreateChannelGroupRequest
 
 try {
-    $result = $apiInstance->createChannelGroup($inlineObject4);
+    $result = $apiInstance->createChannelGroup($createChannelGroupRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->createChannelGroup: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject4** | [**\Supla\ApiClient\Model\InlineObject4**](../Model/InlineObject4.md)|  |
+ **createChannelGroupRequest** | [**\Supla\ApiClient\Model\CreateChannelGroupRequest**](../Model/CreateChannelGroupRequest.md)|  |
 
 ### Return type
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -90,10 +90,10 @@ Delete the channel group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -124,7 +124,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ void (empty response body)
 ## `executeActionOnChannelGroup()`
 
 ```php
-executeActionOnChannelGroup($id, $uNKNOWNBASETYPE)
+executeActionOnChannelGroup($id, $executeActionOnChannelGroupRequest)
 ```
 
 
@@ -150,10 +150,10 @@ executeActionOnChannelGroup($id, $uNKNOWNBASETYPE)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -164,10 +164,10 @@ $apiInstance = new Supla\ApiClient\Api\ChannelGroupsApi(
     $config
 );
 $id = 56; // int | ID
-$uNKNOWNBASETYPE = new \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE(); // \Supla\ApiClient\Model\UNKNOWN_BASE_TYPE
+$executeActionOnChannelGroupRequest = new \Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest(); // \Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest
 
 try {
-    $apiInstance->executeActionOnChannelGroup($id, $uNKNOWNBASETYPE);
+    $apiInstance->executeActionOnChannelGroup($id, $executeActionOnChannelGroupRequest);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->executeActionOnChannelGroup: ', $e->getMessage(), PHP_EOL;
 }
@@ -178,7 +178,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **uNKNOWNBASETYPE** | [**\Supla\ApiClient\Model\UNKNOWN_BASE_TYPE**](../Model/UNKNOWN_BASE_TYPE.md)|  |
+ **executeActionOnChannelGroupRequest** | [**\Supla\ApiClient\Model\ExecuteActionOnChannelGroupRequest**](../Model/ExecuteActionOnChannelGroupRequest.md)|  |
 
 ### Return type
 
@@ -186,7 +186,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -212,10 +212,10 @@ Get Channel Group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -275,10 +275,10 @@ Get channel group direct links
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -338,10 +338,10 @@ Get channel group scenes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -401,10 +401,10 @@ Get Channel Groups
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 ## `updateChannelGroup()`
 
 ```php
-updateChannelGroup($id, $inlineObject5): \Supla\ApiClient\Model\ChannelGroup
+updateChannelGroup($id, $createChannelGroupRequest): \Supla\ApiClient\Model\ChannelGroup
 ```
 
 Update the channel group
@@ -464,10 +464,10 @@ Update the channel group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -478,10 +478,10 @@ $apiInstance = new Supla\ApiClient\Api\ChannelGroupsApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject5 = new \Supla\ApiClient\Model\InlineObject5(); // \Supla\ApiClient\Model\InlineObject5
+$createChannelGroupRequest = new \Supla\ApiClient\Model\CreateChannelGroupRequest(); // \Supla\ApiClient\Model\CreateChannelGroupRequest
 
 try {
-    $result = $apiInstance->updateChannelGroup($id, $inlineObject5);
+    $result = $apiInstance->updateChannelGroup($id, $createChannelGroupRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChannelGroupsApi->updateChannelGroup: ', $e->getMessage(), PHP_EOL;
@@ -493,7 +493,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject5** | [**\Supla\ApiClient\Model\InlineObject5**](../Model/InlineObject5.md)|  |
+ **createChannelGroupRequest** | [**\Supla\ApiClient\Model\CreateChannelGroupRequest**](../Model/CreateChannelGroupRequest.md)|  |
 
 ### Return type
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

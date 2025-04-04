@@ -92,7 +92,7 @@ Name | Type | Description | Notes
 **autoCalibrationAvailable** | **bool** |  | [optional]
 **motorUpsideDown** | **bool** |  | [optional]
 **buttonsUpsideDown** | **bool** |  | [optional]
-**timeMargin** | [**OneOfIntegerString**](OneOfIntegerString.md) |  | [optional]
+**timeMargin** | [**\Supla\ApiClient\Model\ChannelConfigFacadeBlindsTimeMargin**](ChannelConfigFacadeBlindsTimeMargin.md) |  | [optional]
 **tiltingTimeS** | **float** |  | [optional]
 **tiltControlType** | **string** |  | [optional]
 **tilt0Angle** | **int** |  | [optional]

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actionId** | **int** |  | [optional]
-**actionParam** | [**OneOfChannelActionParams**](OneOfChannelActionParams.md) |  | [optional]
+**actionParam** | [**\Supla\ApiClient\Model\CreateChannelReactionRequestActionParam**](CreateChannelReactionRequestActionParam.md) |  | [optional]
 **plannedTimestamp** | **\DateTime** |  | [optional]
 **resultTimestamp** | **\DateTime** |  | [optional]
 **failed** | **bool** |  | [optional]

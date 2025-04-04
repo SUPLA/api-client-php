@@ -27,10 +27,10 @@ Create a new User Icon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -42,14 +42,14 @@ $apiInstance = new Supla\ApiClient\Api\UserIconsApi(
 );
 $function = 'function_example'; // string
 $sourceIcon = 56; // int | ID of an existing user icon to replace with these new files. Optional.
-$image1 = "/path/to/file.txt"; // \SplFileObject
-$image2 = "/path/to/file.txt"; // \SplFileObject
-$image3 = "/path/to/file.txt"; // \SplFileObject
-$image4 = "/path/to/file.txt"; // \SplFileObject
-$imageDark1 = "/path/to/file.txt"; // \SplFileObject
-$imageDark2 = "/path/to/file.txt"; // \SplFileObject
-$imageDark3 = "/path/to/file.txt"; // \SplFileObject
-$imageDark4 = "/path/to/file.txt"; // \SplFileObject
+$image1 = '/path/to/file.txt'; // \SplFileObject
+$image2 = '/path/to/file.txt'; // \SplFileObject
+$image3 = '/path/to/file.txt'; // \SplFileObject
+$image4 = '/path/to/file.txt'; // \SplFileObject
+$imageDark1 = '/path/to/file.txt'; // \SplFileObject
+$imageDark2 = '/path/to/file.txt'; // \SplFileObject
+$imageDark3 = '/path/to/file.txt'; // \SplFileObject
+$imageDark4 = '/path/to/file.txt'; // \SplFileObject
 
 try {
     $result = $apiInstance->createUserIcon($function, $sourceIcon, $image1, $image2, $image3, $image4, $imageDark1, $imageDark2, $imageDark3, $imageDark4);
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 ## `createUserIconBase64()`
 
 ```php
-createUserIconBase64($inlineObject15): \Supla\ApiClient\Model\UserIcon
+createUserIconBase64($createUserIconBase64Request): \Supla\ApiClient\Model\UserIcon
 ```
 
 Create a new User Icon sent in Base64 format.
@@ -106,10 +106,10 @@ Create a new User Icon sent in Base64 format.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -119,10 +119,10 @@ $apiInstance = new Supla\ApiClient\Api\UserIconsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inlineObject15 = new \Supla\ApiClient\Model\InlineObject15(); // \Supla\ApiClient\Model\InlineObject15
+$createUserIconBase64Request = new \Supla\ApiClient\Model\CreateUserIconBase64Request(); // \Supla\ApiClient\Model\CreateUserIconBase64Request | Request with Base64-encoded images to save as a new icon. The number of images required to be sent with the request is determined by the chosen function identifier (it must match the `function.possibleVisualStates` count). Each image represents the respective visual state from `function.possibleVisualStates` array.
 
 try {
-    $result = $apiInstance->createUserIconBase64($inlineObject15);
+    $result = $apiInstance->createUserIconBase64($createUserIconBase64Request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserIconsApi->createUserIconBase64: ', $e->getMessage(), PHP_EOL;
@@ -133,7 +133,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject15** | [**\Supla\ApiClient\Model\InlineObject15**](../Model/InlineObject15.md)|  |
+ **createUserIconBase64Request** | [**\Supla\ApiClient\Model\CreateUserIconBase64Request**](../Model/CreateUserIconBase64Request.md)| Request with Base64-encoded images to save as a new icon. The number of images required to be sent with the request is determined by the chosen function identifier (it must match the &#x60;function.possibleVisualStates&#x60; count). Each image represents the respective visual state from &#x60;function.possibleVisualStates&#x60; array. |
 
 ### Return type
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -167,10 +167,10 @@ Delete the User Icon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -201,7 +201,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -227,10 +227,10 @@ Get User Icon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -290,10 +290,10 @@ Get User Icon image at specified index
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -329,12 +329,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/_*`
+- **Accept**: `image/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -355,10 +355,10 @@ List User Icons
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

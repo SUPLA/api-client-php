@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **autoCalibrationAvailable** | **bool** |  | [optional]
 **motorUpsideDown** | **bool** |  | [optional]
 **buttonsUpsideDown** | **bool** |  | [optional]
-**timeMargin** | [**OneOfIntegerString**](OneOfIntegerString.md) |  | [optional]
+**timeMargin** | [**\Supla\ApiClient\Model\ChannelConfigFacadeBlindsTimeMargin**](ChannelConfigFacadeBlindsTimeMargin.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

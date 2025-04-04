@@ -28,10 +28,10 @@ Delete the device
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -64,7 +64,7 @@ void (empty response body)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -78,7 +78,7 @@ void (empty response body)
 ## `executeDeviceAction()`
 
 ```php
-executeDeviceAction($id, $inlineObject8): \Supla\ApiClient\Model\Device
+executeDeviceAction($id, $executeSubDeviceActionRequest): \Supla\ApiClient\Model\Device
 ```
 
 
@@ -90,10 +90,10 @@ executeDeviceAction($id, $inlineObject8): \Supla\ApiClient\Model\Device
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -104,10 +104,10 @@ $apiInstance = new Supla\ApiClient\Api\DevicesApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject8 = new \Supla\ApiClient\Model\InlineObject8(); // \Supla\ApiClient\Model\InlineObject8
+$executeSubDeviceActionRequest = new \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest(); // \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest
 
 try {
-    $result = $apiInstance->executeDeviceAction($id, $inlineObject8);
+    $result = $apiInstance->executeDeviceAction($id, $executeSubDeviceActionRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DevicesApi->executeDeviceAction: ', $e->getMessage(), PHP_EOL;
@@ -119,7 +119,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject8** | [**\Supla\ApiClient\Model\InlineObject8**](../Model/InlineObject8.md)|  |
+ **executeSubDeviceActionRequest** | [**\Supla\ApiClient\Model\ExecuteSubDeviceActionRequest**](../Model/ExecuteSubDeviceActionRequest.md)|  |
 
 ### Return type
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -153,10 +153,10 @@ Get Device
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -166,7 +166,7 @@ $apiInstance = new Supla\ApiClient\Api\DevicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = new \Supla\ApiClient\Model\OneOfIntegerString(); // OneOfIntegerString | ID
+$id = new \Supla\ApiClient\Model\\Supla\ApiClient\Model\GetIoDeviceIdParameter(); // \Supla\ApiClient\Model\GetIoDeviceIdParameter | ID
 $include = array('include_example'); // string[] | List of extra fields to include in the response.
 
 try {
@@ -181,7 +181,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**OneOfIntegerString**](../Model/.md)| ID |
+ **id** | [**\Supla\ApiClient\Model\GetIoDeviceIdParameter**](../Model/.md)| ID |
  **include** | [**string[]**](../Model/string.md)| List of extra fields to include in the response. | [optional]
 
 ### Return type
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -216,10 +216,10 @@ getIoDeviceNotifications($device, $include): \Supla\ApiClient\Model\Notification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -279,10 +279,10 @@ Get Devices
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -340,10 +340,10 @@ getSubDevices(): object[]
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -372,7 +372,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -386,7 +386,7 @@ This endpoint does not need any parameter.
 ## `updateDevice()`
 
 ```php
-updateDevice($id, $inlineObject7, $safe): \Supla\ApiClient\Model\Device
+updateDevice($id, $updateDeviceRequest, $safe): \Supla\ApiClient\Model\Device
 ```
 
 
@@ -398,10 +398,10 @@ updateDevice($id, $inlineObject7, $safe): \Supla\ApiClient\Model\Device
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -412,11 +412,11 @@ $apiInstance = new Supla\ApiClient\Api\DevicesApi(
     $config
 );
 $id = 56; // int | ID
-$inlineObject7 = new \Supla\ApiClient\Model\InlineObject7(); // \Supla\ApiClient\Model\InlineObject7
+$updateDeviceRequest = new \Supla\ApiClient\Model\UpdateDeviceRequest(); // \Supla\ApiClient\Model\UpdateDeviceRequest
 $safe = True; // bool | Whether to perform actions that require data loss (e.g. disable schedules when disabling the device)
 
 try {
-    $result = $apiInstance->updateDevice($id, $inlineObject7, $safe);
+    $result = $apiInstance->updateDevice($id, $updateDeviceRequest, $safe);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DevicesApi->updateDevice: ', $e->getMessage(), PHP_EOL;
@@ -428,7 +428,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID |
- **inlineObject7** | [**\Supla\ApiClient\Model\InlineObject7**](../Model/InlineObject7.md)|  |
+ **updateDeviceRequest** | [**\Supla\ApiClient\Model\UpdateDeviceRequest**](../Model/UpdateDeviceRequest.md)|  |
  **safe** | **bool**| Whether to perform actions that require data loss (e.g. disable schedules when disabling the device) | [optional]
 
 ### Return type
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

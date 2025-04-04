@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `createMqttBrokerCredentials()`
 
 ```php
-createMqttBrokerCredentials(): \Supla\ApiClient\Model\InlineResponse200
+createMqttBrokerCredentials(): \Supla\ApiClient\Model\CreateMqttBrokerCredentials200Response
 ```
 
 Creates MQTT Broker credentials for the OAuth Client.
@@ -22,10 +22,10 @@ Creates MQTT Broker credentials for the OAuth Client.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: BearerAuth
+// Configure OAuth2 access token for authorization: OAuth2
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure OAuth2 access token for authorization: OAuth2
+// Configure Bearer authorization: BearerAuth
 $config = Supla\ApiClient\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -50,11 +50,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Supla\ApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Supla\ApiClient\Model\CreateMqttBrokerCredentials200Response**](../Model/CreateMqttBrokerCredentials200Response.md)
 
 ### Authorization
 
-[BearerAuth](../../README.md#BearerAuth), [OAuth2](../../README.md#OAuth2)
+[OAuth2](../../README.md#OAuth2), [BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

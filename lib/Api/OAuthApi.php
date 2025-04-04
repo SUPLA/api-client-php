@@ -127,8 +127,6 @@ class OAuthApi
      *
      * Issues an access token based on authorization_code or refresh_token.
      *
-     * Supla API Client
-     *
      * @param  \Supla\ApiClient\Model\AccessTokenRequestBody $accessTokenRequestBody accessTokenRequestBody (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['issueAccessToken'] to see the possible values for this operation
      *
@@ -146,8 +144,6 @@ class OAuthApi
      * Operation issueAccessTokenWithHttpInfo
      *
      * Issues an access token based on authorization_code or refresh_token.
-     *
-     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\AccessTokenRequestBody $accessTokenRequestBody (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['issueAccessToken'] to see the possible values for this operation
@@ -274,8 +270,6 @@ class OAuthApi
      *
      * Issues an access token based on authorization_code or refresh_token.
      *
-     * Supla API Client
-     *
      * @param  \Supla\ApiClient\Model\AccessTokenRequestBody $accessTokenRequestBody (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['issueAccessToken'] to see the possible values for this operation
      *
@@ -296,8 +290,6 @@ class OAuthApi
      * Operation issueAccessTokenAsyncWithHttpInfo
      *
      * Issues an access token based on authorization_code or refresh_token.
-     *
-     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\AccessTokenRequestBody $accessTokenRequestBody (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['issueAccessToken'] to see the possible values for this operation

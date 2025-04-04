@@ -93,7 +93,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://svr107.supla.org/api/v3';
+    protected $host = 'https://cloud.supla.org/api/v3';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -192,6 +192,15 @@ class Configuration
      */
     public function setAccessToken($accessToken)
     {
+        $tokenParts = explode('.', $accessToken);
+        if (count($tokenParts) !== 2) {
+            throw new \InvalidArgumentException('Invalid SUPLA Access Token (invalid syntax).');
+        }
+        $suplaUrl = base64_decode($tokenParts[1]);
+        if (!is_string($suplaUrl) || strpos($suplaUrl, 'http') !== 0) {
+            throw new \InvalidArgumentException('Invalid SUPLA Access Token (invalid host).');
+        }
+        $this->setHost($suplaUrl . '/api/v3');
         $this->accessToken = $accessToken;
         return $this;
     }
@@ -472,7 +481,7 @@ class Configuration
     {
         return [
             [
-                "url" => "https://svr107.supla.org/api/v3",
+                "url" => $this->getHost(),
                 "description" => "No description provided",
             ]
         ];

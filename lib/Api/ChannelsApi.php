@@ -185,8 +185,6 @@ class ChannelsApi
     /**
      * Operation configureChannel
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ConfigureChannelRequest $configureChannelRequest configureChannelRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['configureChannel'] to see the possible values for this operation
@@ -203,8 +201,6 @@ class ChannelsApi
 
     /**
      * Operation configureChannelWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ConfigureChannelRequest $configureChannelRequest (required)
@@ -330,8 +326,6 @@ class ChannelsApi
     /**
      * Operation configureChannelAsync
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ConfigureChannelRequest $configureChannelRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['configureChannel'] to see the possible values for this operation
@@ -351,8 +345,6 @@ class ChannelsApi
 
     /**
      * Operation configureChannelAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ConfigureChannelRequest $configureChannelRequest (required)
@@ -522,8 +514,6 @@ class ChannelsApi
      *
      * Create channel reaction
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelReactionRequest $createChannelReactionRequest createChannelReactionRequest (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -543,8 +533,6 @@ class ChannelsApi
      * Operation createChannelReactionWithHttpInfo
      *
      * Create channel reaction
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelReactionRequest $createChannelReactionRequest (required)
@@ -673,8 +661,6 @@ class ChannelsApi
      *
      * Create channel reaction
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelReactionRequest $createChannelReactionRequest (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -697,8 +683,6 @@ class ChannelsApi
      * Operation createChannelReactionAsyncWithHttpInfo
      *
      * Create channel reaction
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelReactionRequest $createChannelReactionRequest (required)
@@ -880,8 +864,6 @@ class ChannelsApi
      *
      * Delete the channel
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when deleting the channel) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannel'] to see the possible values for this operation
@@ -899,8 +881,6 @@ class ChannelsApi
      * Operation deleteChannelWithHttpInfo
      *
      * Delete the channel
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when deleting the channel) (optional)
@@ -951,8 +931,6 @@ class ChannelsApi
      *
      * Delete the channel
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when deleting the channel) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannel'] to see the possible values for this operation
@@ -974,8 +952,6 @@ class ChannelsApi
      * Operation deleteChannelAsyncWithHttpInfo
      *
      * Delete the channel
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when deleting the channel) (optional)
@@ -1128,8 +1104,6 @@ class ChannelsApi
      *
      * Delete channel measurement logs.
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  string|null $logsType Type of the logs to delete. Some devices may gather multiple log types. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannelMeasurementLogs'] to see the possible values for this operation
@@ -1147,8 +1121,6 @@ class ChannelsApi
      * Operation deleteChannelMeasurementLogsWithHttpInfo
      *
      * Delete channel measurement logs.
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  string|null $logsType Type of the logs to delete. Some devices may gather multiple log types. (optional)
@@ -1207,8 +1179,6 @@ class ChannelsApi
      *
      * Delete channel measurement logs.
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  string|null $logsType Type of the logs to delete. Some devices may gather multiple log types. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannelMeasurementLogs'] to see the possible values for this operation
@@ -1230,8 +1200,6 @@ class ChannelsApi
      * Operation deleteChannelMeasurementLogsAsyncWithHttpInfo
      *
      * Delete channel measurement logs.
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  string|null $logsType Type of the logs to delete. Some devices may gather multiple log types. (optional)
@@ -1384,8 +1352,6 @@ class ChannelsApi
      *
      * Delete channel reaction
      *
-     * Supla API Client
-     *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannelReaction'] to see the possible values for this operation
@@ -1403,8 +1369,6 @@ class ChannelsApi
      * Operation deleteChannelReactionWithHttpInfo
      *
      * Delete channel reaction
-     *
-     * Supla API Client
      *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
@@ -1455,8 +1419,6 @@ class ChannelsApi
      *
      * Delete channel reaction
      *
-     * Supla API Client
-     *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChannelReaction'] to see the possible values for this operation
@@ -1478,8 +1440,6 @@ class ChannelsApi
      * Operation deleteChannelReactionAsyncWithHttpInfo
      *
      * Delete channel reaction
-     *
-     * Supla API Client
      *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
@@ -1637,8 +1597,6 @@ class ChannelsApi
      *
      * Get measurement logs as a zipped CSV file.
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  string|null $logsType Type of the logs to delete. Some devices may gather multiple log types. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadChannelMeasurementLogs'] to see the possible values for this operation
@@ -1656,8 +1614,6 @@ class ChannelsApi
      * Operation downloadChannelMeasurementLogsWithHttpInfo
      *
      * Get measurement logs as a zipped CSV file.
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  string|null $logsType Type of the logs to delete. Some devices may gather multiple log types. (optional)
@@ -1716,8 +1672,6 @@ class ChannelsApi
      *
      * Get measurement logs as a zipped CSV file.
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  string|null $logsType Type of the logs to delete. Some devices may gather multiple log types. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadChannelMeasurementLogs'] to see the possible values for this operation
@@ -1739,8 +1693,6 @@ class ChannelsApi
      * Operation downloadChannelMeasurementLogsAsyncWithHttpInfo
      *
      * Get measurement logs as a zipped CSV file.
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  string|null $logsType Type of the logs to delete. Some devices may gather multiple log types. (optional)
@@ -1891,8 +1843,6 @@ class ChannelsApi
     /**
      * Operation executeAction
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteActionRequest $executeActionRequest executeActionRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAction'] to see the possible values for this operation
@@ -1908,8 +1858,6 @@ class ChannelsApi
 
     /**
      * Operation executeActionWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteActionRequest $executeActionRequest (required)
@@ -1966,8 +1914,6 @@ class ChannelsApi
     /**
      * Operation executeActionAsync
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteActionRequest $executeActionRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAction'] to see the possible values for this operation
@@ -1987,8 +1933,6 @@ class ChannelsApi
 
     /**
      * Operation executeActionAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteActionRequest $executeActionRequest (required)
@@ -2143,8 +2087,6 @@ class ChannelsApi
     /**
      * Operation executeSubDeviceAction
      *
-     * Supla API Client
-     *
      * @param  int $channelId ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest $executeSubDeviceActionRequest executeSubDeviceActionRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeSubDeviceAction'] to see the possible values for this operation
@@ -2161,8 +2103,6 @@ class ChannelsApi
 
     /**
      * Operation executeSubDeviceActionWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $channelId ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest $executeSubDeviceActionRequest (required)
@@ -2288,8 +2228,6 @@ class ChannelsApi
     /**
      * Operation executeSubDeviceActionAsync
      *
-     * Supla API Client
-     *
      * @param  int $channelId ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest $executeSubDeviceActionRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeSubDeviceAction'] to see the possible values for this operation
@@ -2309,8 +2247,6 @@ class ChannelsApi
 
     /**
      * Operation executeSubDeviceActionAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $channelId ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest $executeSubDeviceActionRequest (required)
@@ -2480,8 +2416,6 @@ class ChannelsApi
      *
      * Get Channel
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannel'] to see the possible values for this operation
@@ -2500,8 +2434,6 @@ class ChannelsApi
      * Operation getChannelWithHttpInfo
      *
      * Get Channel
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -2629,8 +2561,6 @@ class ChannelsApi
      *
      * Get Channel
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannel'] to see the possible values for this operation
@@ -2652,8 +2582,6 @@ class ChannelsApi
      * Operation getChannelAsyncWithHttpInfo
      *
      * Get Channel
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -2819,8 +2747,6 @@ class ChannelsApi
      *
      * Get Channel Groups that the given channel belongs to
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelChannelGroups'] to see the possible values for this operation
@@ -2839,8 +2765,6 @@ class ChannelsApi
      * Operation getChannelChannelGroupsWithHttpInfo
      *
      * Get Channel Groups that the given channel belongs to
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -2968,8 +2892,6 @@ class ChannelsApi
      *
      * Get Channel Groups that the given channel belongs to
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelChannelGroups'] to see the possible values for this operation
@@ -2991,8 +2913,6 @@ class ChannelsApi
      * Operation getChannelChannelGroupsAsyncWithHttpInfo
      *
      * Get Channel Groups that the given channel belongs to
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -3158,8 +3078,6 @@ class ChannelsApi
      *
      * Get channel direct links
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelDirectLinks'] to see the possible values for this operation
@@ -3178,8 +3096,6 @@ class ChannelsApi
      * Operation getChannelDirectLinksWithHttpInfo
      *
      * Get channel direct links
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -3307,8 +3223,6 @@ class ChannelsApi
      *
      * Get channel direct links
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelDirectLinks'] to see the possible values for this operation
@@ -3330,8 +3244,6 @@ class ChannelsApi
      * Operation getChannelDirectLinksAsyncWithHttpInfo
      *
      * Get channel direct links
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -3497,8 +3409,6 @@ class ChannelsApi
      *
      * Get channel measurement logs.
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  int|null $afterTimestamp Fetch log items created after this timestamp. (optional)
      * @param  int|null $beforeTimestamp Fetch log items created before this timestamp. (optional)
@@ -3523,8 +3433,6 @@ class ChannelsApi
      * Operation getChannelMeasurementLogsWithHttpInfo
      *
      * Get channel measurement logs.
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  int|null $afterTimestamp Fetch log items created after this timestamp. (optional)
@@ -3693,8 +3601,6 @@ class ChannelsApi
      *
      * Get channel measurement logs.
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  int|null $afterTimestamp Fetch log items created after this timestamp. (optional)
      * @param  int|null $beforeTimestamp Fetch log items created before this timestamp. (optional)
@@ -3722,8 +3628,6 @@ class ChannelsApi
      * Operation getChannelMeasurementLogsAsyncWithHttpInfo
      *
      * Get channel measurement logs.
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  int|null $afterTimestamp Fetch log items created after this timestamp. (optional)
@@ -3971,8 +3875,6 @@ class ChannelsApi
     /**
      * Operation getChannelNotifications
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  bool|null $onlyManaged Return only notification managed by the device (i.e. originating from the firmware). Can be only set to &#x60;true&#x60;. (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -3990,8 +3892,6 @@ class ChannelsApi
 
     /**
      * Operation getChannelNotificationsWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  bool|null $onlyManaged Return only notification managed by the device (i.e. originating from the firmware). Can be only set to &#x60;true&#x60;. (optional)
@@ -4118,8 +4018,6 @@ class ChannelsApi
     /**
      * Operation getChannelNotificationsAsync
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  bool|null $onlyManaged Return only notification managed by the device (i.e. originating from the firmware). Can be only set to &#x60;true&#x60;. (optional)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -4140,8 +4038,6 @@ class ChannelsApi
 
     /**
      * Operation getChannelNotificationsAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  bool|null $onlyManaged Return only notification managed by the device (i.e. originating from the firmware). Can be only set to &#x60;true&#x60;. (optional)
@@ -4319,8 +4215,6 @@ class ChannelsApi
      *
      * Get channel reaction
      *
-     * Supla API Client
-     *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -4340,8 +4234,6 @@ class ChannelsApi
      * Operation getChannelReactionWithHttpInfo
      *
      * Get channel reaction
-     *
-     * Supla API Client
      *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
@@ -4470,8 +4362,6 @@ class ChannelsApi
      *
      * Get channel reaction
      *
-     * Supla API Client
-     *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -4494,8 +4384,6 @@ class ChannelsApi
      * Operation getChannelReactionAsyncWithHttpInfo
      *
      * Get channel reaction
-     *
-     * Supla API Client
      *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
@@ -4678,8 +4566,6 @@ class ChannelsApi
      *
      * Get channel reactions
      *
-     * Supla API Client
-     *
      * @param  int $channel Channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelReactions'] to see the possible values for this operation
@@ -4698,8 +4584,6 @@ class ChannelsApi
      * Operation getChannelReactionsWithHttpInfo
      *
      * Get channel reactions
-     *
-     * Supla API Client
      *
      * @param  int $channel Channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -4827,8 +4711,6 @@ class ChannelsApi
      *
      * Get channel reactions
      *
-     * Supla API Client
-     *
      * @param  int $channel Channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelReactions'] to see the possible values for this operation
@@ -4850,8 +4732,6 @@ class ChannelsApi
      * Operation getChannelReactionsAsyncWithHttpInfo
      *
      * Get channel reactions
-     *
-     * Supla API Client
      *
      * @param  int $channel Channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -5017,8 +4897,6 @@ class ChannelsApi
      *
      * Get channel scenes
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelScenes'] to see the possible values for this operation
@@ -5037,8 +4915,6 @@ class ChannelsApi
      * Operation getChannelScenesWithHttpInfo
      *
      * Get channel scenes
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -5166,8 +5042,6 @@ class ChannelsApi
      *
      * Get channel scenes
      *
-     * Supla API Client
-     *
      * @param  int $channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelScenes'] to see the possible values for this operation
@@ -5189,8 +5063,6 @@ class ChannelsApi
      * Operation getChannelScenesAsyncWithHttpInfo
      *
      * Get channel scenes
-     *
-     * Supla API Client
      *
      * @param  int $channel ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -5356,8 +5228,6 @@ class ChannelsApi
      *
      * Get Channels
      *
-     * Supla API Client
-     *
      * @param  string[]|null $function function (optional)
      * @param  string|null $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
      * @param  bool|null $hasFunction Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. (optional)
@@ -5382,8 +5252,6 @@ class ChannelsApi
      * Operation getChannelsWithHttpInfo
      *
      * Get Channels
-     *
-     * Supla API Client
      *
      * @param  string[]|null $function (optional)
      * @param  string|null $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
@@ -5517,8 +5385,6 @@ class ChannelsApi
      *
      * Get Channels
      *
-     * Supla API Client
-     *
      * @param  string[]|null $function (optional)
      * @param  string|null $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
      * @param  bool|null $hasFunction Return only channels with (&#x60;true&#x60;) or without (&#x60;false&#x60;) chosen functions. (optional)
@@ -5546,8 +5412,6 @@ class ChannelsApi
      * Operation getChannelsAsyncWithHttpInfo
      *
      * Get Channels
-     *
-     * Supla API Client
      *
      * @param  string[]|null $function (optional)
      * @param  string|null $io Return only &#x60;input&#x60; or &#x60;output&#x60; channels. (optional)
@@ -5780,8 +5644,6 @@ class ChannelsApi
      *
      * Get Channels states
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelsStates'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5798,8 +5660,6 @@ class ChannelsApi
      * Operation getChannelsStatesWithHttpInfo
      *
      * Get Channels states
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelsStates'] to see the possible values for this operation
      *
@@ -5925,8 +5785,6 @@ class ChannelsApi
      *
      * Get Channels states
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelsStates'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5946,8 +5804,6 @@ class ChannelsApi
      * Operation getChannelsStatesAsyncWithHttpInfo
      *
      * Get Channels states
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelsStates'] to see the possible values for this operation
      *
@@ -6084,8 +5940,6 @@ class ChannelsApi
      *
      * Get reactions
      *
-     * Supla API Client
-     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReactions'] to see the possible values for this operation
      *
@@ -6103,8 +5957,6 @@ class ChannelsApi
      * Operation getReactionsWithHttpInfo
      *
      * Get reactions
-     *
-     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReactions'] to see the possible values for this operation
@@ -6231,8 +6083,6 @@ class ChannelsApi
      *
      * Get reactions
      *
-     * Supla API Client
-     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReactions'] to see the possible values for this operation
      *
@@ -6253,8 +6103,6 @@ class ChannelsApi
      * Operation getReactionsAsyncWithHttpInfo
      *
      * Get reactions
-     *
-     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReactions'] to see the possible values for this operation
@@ -6401,8 +6249,6 @@ class ChannelsApi
     /**
      * Operation updateChannel
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateChannelRequest $updateChannelRequest updateChannelRequest (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when changing channel function) (optional)
@@ -6420,8 +6266,6 @@ class ChannelsApi
 
     /**
      * Operation updateChannelWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateChannelRequest $updateChannelRequest (required)
@@ -6548,8 +6392,6 @@ class ChannelsApi
     /**
      * Operation updateChannelAsync
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateChannelRequest $updateChannelRequest (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when changing channel function) (optional)
@@ -6570,8 +6412,6 @@ class ChannelsApi
 
     /**
      * Operation updateChannelAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateChannelRequest $updateChannelRequest (required)
@@ -6753,8 +6593,6 @@ class ChannelsApi
      *
      * Update channel reaction
      *
-     * Supla API Client
-     *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelReactionRequest $createChannelReactionRequest createChannelReactionRequest (required)
@@ -6775,8 +6613,6 @@ class ChannelsApi
      * Operation updateChannelReactionWithHttpInfo
      *
      * Update channel reaction
-     *
-     * Supla API Client
      *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
@@ -6906,8 +6742,6 @@ class ChannelsApi
      *
      * Update channel reaction
      *
-     * Supla API Client
-     *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)
      * @param  \Supla\ApiClient\Model\CreateChannelReactionRequest $createChannelReactionRequest (required)
@@ -6931,8 +6765,6 @@ class ChannelsApi
      * Operation updateChannelReactionAsyncWithHttpInfo
      *
      * Update channel reaction
-     *
-     * Supla API Client
      *
      * @param  int $channel Channel ID (required)
      * @param  int $reaction Reaction ID (required)

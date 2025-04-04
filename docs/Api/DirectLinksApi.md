@@ -1,8 +1,6 @@
 # Supla\ApiClient\DirectLinksApi
 
-Supla API Client
-
-All URIs are relative to https://svr107.supla.org/api/v3, except if the operation defines another base path.
+All URIs are relative to `https://YOUR_SUPLA_SERVER/api/v3`, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |

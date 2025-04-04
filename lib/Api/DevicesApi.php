@@ -145,8 +145,6 @@ class DevicesApi
      *
      * Delete the device
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when deleting the device) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDevice'] to see the possible values for this operation
@@ -164,8 +162,6 @@ class DevicesApi
      * Operation deleteDeviceWithHttpInfo
      *
      * Delete the device
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when deleting the device) (optional)
@@ -216,8 +212,6 @@ class DevicesApi
      *
      * Delete the device
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when deleting the device) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDevice'] to see the possible values for this operation
@@ -239,8 +233,6 @@ class DevicesApi
      * Operation deleteDeviceAsyncWithHttpInfo
      *
      * Delete the device
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. delete schedules when deleting the device) (optional)
@@ -391,8 +383,6 @@ class DevicesApi
     /**
      * Operation executeDeviceAction
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest $executeSubDeviceActionRequest executeSubDeviceActionRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeDeviceAction'] to see the possible values for this operation
@@ -409,8 +399,6 @@ class DevicesApi
 
     /**
      * Operation executeDeviceActionWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest $executeSubDeviceActionRequest (required)
@@ -536,8 +524,6 @@ class DevicesApi
     /**
      * Operation executeDeviceActionAsync
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest $executeSubDeviceActionRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeDeviceAction'] to see the possible values for this operation
@@ -557,8 +543,6 @@ class DevicesApi
 
     /**
      * Operation executeDeviceActionAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\ExecuteSubDeviceActionRequest $executeSubDeviceActionRequest (required)
@@ -728,8 +712,6 @@ class DevicesApi
      *
      * Get Device
      *
-     * Supla API Client
-     *
      * @param  \Supla\ApiClient\Model\GetIoDeviceIdParameter $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getIoDevice'] to see the possible values for this operation
@@ -748,8 +730,6 @@ class DevicesApi
      * Operation getIoDeviceWithHttpInfo
      *
      * Get Device
-     *
-     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\GetIoDeviceIdParameter $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -877,8 +857,6 @@ class DevicesApi
      *
      * Get Device
      *
-     * Supla API Client
-     *
      * @param  \Supla\ApiClient\Model\GetIoDeviceIdParameter $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getIoDevice'] to see the possible values for this operation
@@ -900,8 +878,6 @@ class DevicesApi
      * Operation getIoDeviceAsyncWithHttpInfo
      *
      * Get Device
-     *
-     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\GetIoDeviceIdParameter $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1065,8 +1041,6 @@ class DevicesApi
     /**
      * Operation getIoDeviceNotifications
      *
-     * Supla API Client
-     *
      * @param  int $device ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getIoDeviceNotifications'] to see the possible values for this operation
@@ -1083,8 +1057,6 @@ class DevicesApi
 
     /**
      * Operation getIoDeviceNotificationsWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $device ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1210,8 +1182,6 @@ class DevicesApi
     /**
      * Operation getIoDeviceNotificationsAsync
      *
-     * Supla API Client
-     *
      * @param  int $device ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getIoDeviceNotifications'] to see the possible values for this operation
@@ -1231,8 +1201,6 @@ class DevicesApi
 
     /**
      * Operation getIoDeviceNotificationsAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $device ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1398,8 +1366,6 @@ class DevicesApi
      *
      * Get Devices
      *
-     * Supla API Client
-     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getIoDevices'] to see the possible values for this operation
      *
@@ -1417,8 +1383,6 @@ class DevicesApi
      * Operation getIoDevicesWithHttpInfo
      *
      * Get Devices
-     *
-     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getIoDevices'] to see the possible values for this operation
@@ -1545,8 +1509,6 @@ class DevicesApi
      *
      * Get Devices
      *
-     * Supla API Client
-     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getIoDevices'] to see the possible values for this operation
      *
@@ -1567,8 +1529,6 @@ class DevicesApi
      * Operation getIoDevicesAsyncWithHttpInfo
      *
      * Get Devices
-     *
-     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getIoDevices'] to see the possible values for this operation
@@ -1715,8 +1675,6 @@ class DevicesApi
     /**
      * Operation getSubDevices
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubDevices'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1731,8 +1689,6 @@ class DevicesApi
 
     /**
      * Operation getSubDevicesWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubDevices'] to see the possible values for this operation
      *
@@ -1856,8 +1812,6 @@ class DevicesApi
     /**
      * Operation getSubDevicesAsync
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubDevices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1875,8 +1829,6 @@ class DevicesApi
 
     /**
      * Operation getSubDevicesAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubDevices'] to see the possible values for this operation
      *
@@ -2011,8 +1963,6 @@ class DevicesApi
     /**
      * Operation updateDevice
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateDeviceRequest $updateDeviceRequest updateDeviceRequest (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. disable schedules when disabling the device) (optional)
@@ -2030,8 +1980,6 @@ class DevicesApi
 
     /**
      * Operation updateDeviceWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateDeviceRequest $updateDeviceRequest (required)
@@ -2158,8 +2106,6 @@ class DevicesApi
     /**
      * Operation updateDeviceAsync
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateDeviceRequest $updateDeviceRequest (required)
      * @param  bool|null $safe Whether to perform actions that require data loss (e.g. disable schedules when disabling the device) (optional)
@@ -2180,8 +2126,6 @@ class DevicesApi
 
     /**
      * Operation updateDeviceAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateDeviceRequest $updateDeviceRequest (required)

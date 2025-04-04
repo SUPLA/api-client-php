@@ -131,8 +131,6 @@ class EnumsApi
     /**
      * Operation getActionsEnum
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActionsEnum'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -147,8 +145,6 @@ class EnumsApi
 
     /**
      * Operation getActionsEnumWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActionsEnum'] to see the possible values for this operation
      *
@@ -272,8 +268,6 @@ class EnumsApi
     /**
      * Operation getActionsEnumAsync
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActionsEnum'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -291,8 +285,6 @@ class EnumsApi
 
     /**
      * Operation getActionsEnumAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getActionsEnum'] to see the possible values for this operation
      *
@@ -427,8 +419,6 @@ class EnumsApi
     /**
      * Operation getChannelTypesEnum
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelTypesEnum'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -443,8 +433,6 @@ class EnumsApi
 
     /**
      * Operation getChannelTypesEnumWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelTypesEnum'] to see the possible values for this operation
      *
@@ -568,8 +556,6 @@ class EnumsApi
     /**
      * Operation getChannelTypesEnumAsync
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelTypesEnum'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -587,8 +573,6 @@ class EnumsApi
 
     /**
      * Operation getChannelTypesEnumAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChannelTypesEnum'] to see the possible values for this operation
      *
@@ -723,8 +707,6 @@ class EnumsApi
     /**
      * Operation getFunctionsEnum
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFunctionsEnum'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -739,8 +721,6 @@ class EnumsApi
 
     /**
      * Operation getFunctionsEnumWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFunctionsEnum'] to see the possible values for this operation
      *
@@ -864,8 +844,6 @@ class EnumsApi
     /**
      * Operation getFunctionsEnumAsync
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFunctionsEnum'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -883,8 +861,6 @@ class EnumsApi
 
     /**
      * Operation getFunctionsEnumAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFunctionsEnum'] to see the possible values for this operation
      *

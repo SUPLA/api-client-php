@@ -133,8 +133,6 @@ class ServerApi
      *
      * Get the server info
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -151,8 +149,6 @@ class ServerApi
      * Operation getServerInfoWithHttpInfo
      *
      * Get the server info
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
      *
@@ -278,8 +274,6 @@ class ServerApi
      *
      * Get the server info
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -299,8 +293,6 @@ class ServerApi
      * Operation getServerInfoAsyncWithHttpInfo
      *
      * Get the server info
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
      *
@@ -429,8 +421,6 @@ class ServerApi
      *
      * Get the SUPLA Server status
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuplaServerStatus'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -447,8 +437,6 @@ class ServerApi
      * Operation getSuplaServerStatusWithHttpInfo
      *
      * Get the SUPLA Server status
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuplaServerStatus'] to see the possible values for this operation
      *
@@ -609,8 +597,6 @@ class ServerApi
      *
      * Get the SUPLA Server status
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuplaServerStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -630,8 +616,6 @@ class ServerApi
      * Operation getSuplaServerStatusAsyncWithHttpInfo
      *
      * Get the SUPLA Server status
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuplaServerStatus'] to see the possible values for this operation
      *
@@ -760,8 +744,6 @@ class ServerApi
      *
      * Returns information about used access token
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTokenInfo'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -778,8 +760,6 @@ class ServerApi
      * Operation getTokenInfoWithHttpInfo
      *
      * Returns information about used access token
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTokenInfo'] to see the possible values for this operation
      *
@@ -905,8 +885,6 @@ class ServerApi
      *
      * Returns information about used access token
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTokenInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -926,8 +904,6 @@ class ServerApi
      * Operation getTokenInfoAsyncWithHttpInfo
      *
      * Returns information about used access token
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTokenInfo'] to see the possible values for this operation
      *

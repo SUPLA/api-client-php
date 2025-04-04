@@ -139,8 +139,6 @@ class AccessIdentifiersApi
      *
      * Create a new Access Identifier
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessIdentifier'] to see the possible values for this operation
      *
      * @throws \Supla\ApiClient\ApiException on non-2xx response or if the response body is not in the expected format
@@ -157,8 +155,6 @@ class AccessIdentifiersApi
      * Operation createAccessIdentifierWithHttpInfo
      *
      * Create a new Access Identifier
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessIdentifier'] to see the possible values for this operation
      *
@@ -284,8 +280,6 @@ class AccessIdentifiersApi
      *
      * Create a new Access Identifier
      *
-     * Supla API Client
-     *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessIdentifier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -305,8 +299,6 @@ class AccessIdentifiersApi
      * Operation createAccessIdentifierAsyncWithHttpInfo
      *
      * Create a new Access Identifier
-     *
-     * Supla API Client
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessIdentifier'] to see the possible values for this operation
      *
@@ -443,8 +435,6 @@ class AccessIdentifiersApi
      *
      * Delete the access identifier
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessIdentifier'] to see the possible values for this operation
      *
@@ -461,8 +451,6 @@ class AccessIdentifiersApi
      * Operation deleteAccessIdentifierWithHttpInfo
      *
      * Delete the access identifier
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessIdentifier'] to see the possible values for this operation
@@ -512,8 +500,6 @@ class AccessIdentifiersApi
      *
      * Delete the access identifier
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessIdentifier'] to see the possible values for this operation
      *
@@ -534,8 +520,6 @@ class AccessIdentifiersApi
      * Operation deleteAccessIdentifierAsyncWithHttpInfo
      *
      * Delete the access identifier
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessIdentifier'] to see the possible values for this operation
@@ -676,8 +660,6 @@ class AccessIdentifiersApi
      *
      * Get AID by ID
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessIdentifier'] to see the possible values for this operation
@@ -696,8 +678,6 @@ class AccessIdentifiersApi
      * Operation getAccessIdentifierWithHttpInfo
      *
      * Get AID by ID
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -825,8 +805,6 @@ class AccessIdentifiersApi
      *
      * Get AID by ID
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessIdentifier'] to see the possible values for this operation
@@ -848,8 +826,6 @@ class AccessIdentifiersApi
      * Operation getAccessIdentifierAsyncWithHttpInfo
      *
      * Get AID by ID
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -1015,8 +991,6 @@ class AccessIdentifiersApi
      *
      * Get Access Identifiers
      *
-     * Supla API Client
-     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessIdentifiers'] to see the possible values for this operation
      *
@@ -1034,8 +1008,6 @@ class AccessIdentifiersApi
      * Operation getAccessIdentifiersWithHttpInfo
      *
      * Get Access Identifiers
-     *
-     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessIdentifiers'] to see the possible values for this operation
@@ -1162,8 +1134,6 @@ class AccessIdentifiersApi
      *
      * Get Access Identifiers
      *
-     * Supla API Client
-     *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessIdentifiers'] to see the possible values for this operation
      *
@@ -1184,8 +1154,6 @@ class AccessIdentifiersApi
      * Operation getAccessIdentifiersAsyncWithHttpInfo
      *
      * Get Access Identifiers
-     *
-     * Supla API Client
      *
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessIdentifiers'] to see the possible values for this operation
@@ -1334,8 +1302,6 @@ class AccessIdentifiersApi
      *
      * Update the access identifier
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateAccessIdentifierRequest $updateAccessIdentifierRequest updateAccessIdentifierRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccessIdentifier'] to see the possible values for this operation
@@ -1354,8 +1320,6 @@ class AccessIdentifiersApi
      * Operation updateAccessIdentifierWithHttpInfo
      *
      * Update the access identifier
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateAccessIdentifierRequest $updateAccessIdentifierRequest (required)
@@ -1483,8 +1447,6 @@ class AccessIdentifiersApi
      *
      * Update the access identifier
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateAccessIdentifierRequest $updateAccessIdentifierRequest (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccessIdentifier'] to see the possible values for this operation
@@ -1506,8 +1468,6 @@ class AccessIdentifiersApi
      * Operation updateAccessIdentifierAsyncWithHttpInfo
      *
      * Update the access identifier
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  \Supla\ApiClient\Model\UpdateAccessIdentifierRequest $updateAccessIdentifierRequest (required)

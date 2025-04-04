@@ -133,8 +133,6 @@ class NotificationsApi
      *
      * Get Notification
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getNotification'] to see the possible values for this operation
@@ -153,8 +151,6 @@ class NotificationsApi
      * Operation getNotificationWithHttpInfo
      *
      * Get Notification
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -282,8 +278,6 @@ class NotificationsApi
      *
      * Get Notification
      *
-     * Supla API Client
-     *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getNotification'] to see the possible values for this operation
@@ -305,8 +299,6 @@ class NotificationsApi
      * Operation getNotificationAsyncWithHttpInfo
      *
      * Get Notification
-     *
-     * Supla API Client
      *
      * @param  int $id ID (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -472,8 +464,6 @@ class NotificationsApi
      *
      * Send a notification.
      *
-     * Supla API Client
-     *
      * @param  \Supla\ApiClient\Model\ChannelActionParamsSend $channelActionParamsSend channelActionParamsSend (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sendNotification'] to see the possible values for this operation
      *
@@ -490,8 +480,6 @@ class NotificationsApi
      * Operation sendNotificationWithHttpInfo
      *
      * Send a notification.
-     *
-     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\ChannelActionParamsSend $channelActionParamsSend (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sendNotification'] to see the possible values for this operation
@@ -549,8 +537,6 @@ class NotificationsApi
      *
      * Send a notification.
      *
-     * Supla API Client
-     *
      * @param  \Supla\ApiClient\Model\ChannelActionParamsSend $channelActionParamsSend (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sendNotification'] to see the possible values for this operation
      *
@@ -571,8 +557,6 @@ class NotificationsApi
      * Operation sendNotificationAsyncWithHttpInfo
      *
      * Send a notification.
-     *
-     * Supla API Client
      *
      * @param  \Supla\ApiClient\Model\ChannelActionParamsSend $channelActionParamsSend (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sendNotification'] to see the possible values for this operation
@@ -710,8 +694,6 @@ class NotificationsApi
     /**
      * Operation updateNotification
      *
-     * Supla API Client
-     *
      * @param  int $notification ID (required)
      * @param  \Supla\ApiClient\Model\ChannelActionParamsSend $channelActionParamsSend channelActionParamsSend (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -729,8 +711,6 @@ class NotificationsApi
 
     /**
      * Operation updateNotificationWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $notification ID (required)
      * @param  \Supla\ApiClient\Model\ChannelActionParamsSend $channelActionParamsSend (required)
@@ -857,8 +837,6 @@ class NotificationsApi
     /**
      * Operation updateNotificationAsync
      *
-     * Supla API Client
-     *
      * @param  int $notification ID (required)
      * @param  \Supla\ApiClient\Model\ChannelActionParamsSend $channelActionParamsSend (required)
      * @param  string[]|null $include List of extra fields to include in the response. (optional)
@@ -879,8 +857,6 @@ class NotificationsApi
 
     /**
      * Operation updateNotificationAsyncWithHttpInfo
-     *
-     * Supla API Client
      *
      * @param  int $notification ID (required)
      * @param  \Supla\ApiClient\Model\ChannelActionParamsSend $channelActionParamsSend (required)

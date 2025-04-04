@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **connected** | **bool** | Whether the device is now connected to the SUPLA Server. | [optional]
 **relationsCount** | [**\Supla\ApiClient\Model\DeviceRelationsCount**](DeviceRelationsCount.md) |  | [optional]
 **enterConfigurationModeAvailable** | **bool** |  | [optional]
-**pairingSubdevicesAvailable** | **bool** |  | [optional]
+**flags** | **object** |  | [optional]
 **isSleepModeEnabled** | **bool** |  | [optional]
 **config** | [**\Supla\ApiClient\Model\DeviceConfig**](DeviceConfig.md) |  | [optional]
 **pairingResult** | **object** |  | [optional]

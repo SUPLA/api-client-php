@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **clockError** | **bool** |  | [optional]
 **forcedOffBySensor** | **bool** |  | [optional]
 **weeklyScheduleTemporalOverride** | **bool** |  | [optional]
+**batteryCoverOpen** | **bool** |  | [optional]
+**calibrationError** | **bool** |  | [optional]
 **mode** | **string** |  | [optional]
 **temperatureHeat** | **float** |  | [optional]
 **temperatureCool** | **float** |  | [optional]

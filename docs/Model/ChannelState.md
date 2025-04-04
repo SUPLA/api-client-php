@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **connected** | **bool** |  | [optional]
-**operational** | **bool** |  | [optional]
+**connectedCode** | **string** |  | [optional]
 **brightness** | **int** | current dimmer brightness value in percent | [optional]
 **on** | **bool** |  | [optional]
 **color** | **string** | integer (hex) value of a current color, ranging from &#x60;0x000001&#x60; to &#x60;0xFFFFFF&#x60; | [optional]
@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **clockError** | **bool** |  | [optional]
 **forcedOffBySensor** | **bool** |  | [optional]
 **weeklyScheduleTemporalOverride** | **bool** |  | [optional]
+**batteryCoverOpen** | **bool** |  | [optional]
+**calibrationError** | **bool** |  | [optional]
 **mode** | **string** |  | [optional]
 **temperatureHeat** | **float** |  | [optional]
 **temperatureCool** | **float** |  | [optional]

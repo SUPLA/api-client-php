@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **userIconId** | **int** |  | [optional]
 **userIcon** | [**\Supla\ApiClient\Model\UserIcon**](UserIcon.md) |  | [optional]
 **connected** | **bool** |  | [optional]
+**deletable** | **bool** |  | [optional]
 **relationsCount** | [**\Supla\ApiClient\Model\ChannelRelationsCount**](ChannelRelationsCount.md) |  | [optional]
 **supportedFunctions** | [**\Supla\ApiClient\Model\ChannelFunction[]**](ChannelFunction.md) |  | [optional]
 
